@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiGrid, FiLogIn, FiMenu, FiX } from "react-icons/fi";
 
+import { useAuth } from "../../context/AuthContext";
 import { useSiteSettings } from "../../context/SiteSettingsContext";
+import type { AuthUser, NavigationItem } from "../../types/api";
 import LanguageToggle from "../LanguageToggle";
 
 const navLinkClasses =
@@ -15,19 +17,34 @@ const isExternalPath = (path: string) => /^https?:\/\//.test(path);
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { navigation, settings } = useSiteSettings();
+  const { user, isAuthenticated, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems =
-    navigation.length > 0
-      ? navigation
-      : [
-          { id: "home", path: "/", label: t("nav.home") },
-          { id: "about", path: "/about", label: t("nav.about") },
-          { id: "services", path: "/services", label: t("nav.services") },
-          { id: "bim-services", path: "/bim-services", label: t("nav.bim") },
-          { id: "projects", path: "/projects", label: t("nav.projects") },
-          { id: "contact", path: "/contact", label: t("nav.contact") },
-        ];
+  const authUser = user as (AuthUser & { isAdmin?: boolean }) | null;
+  const computedIsAdmin = useMemo(() => {
+    if (!authUser) return false;
+    if (typeof authUser.isAdmin === "boolean") return authUser.isAdmin;
+    if (typeof authUser.role === "string") {
+      return Boolean(authUser);
+      if (authUser?.role == "owner") return true;
+      return false;
+    }
+    return true;
+  }, [authUser]);
+
+  const showDashboardButton = !isLoading && isAuthenticated && computedIsAdmin;
+  const showLoginButton = !isLoading && !isAuthenticated;
+
+  const fallbackNavItems: NavigationItem[] = [
+    { id: "home", path: "/", label: t("nav.home"), order: 0 },
+    { id: "about", path: "/about", label: t("nav.about"), order: 1 },
+    { id: "services", path: "/services", label: t("nav.services"), order: 2 },
+    { id: "bim-services", path: "/bim-services", label: t("nav.bim"), order: 3 },
+    { id: "projects", path: "/projects", label: t("nav.projects"), order: 4 },
+    { id: "contact", path: "/contact", label: t("nav.contact"), order: 5 },
+  ];
+
+  const navItems: NavigationItem[] = navigation.length > 0 ? navigation : fallbackNavItems;
 
   const resolvedLanguage = i18n.resolvedLanguage ?? i18n.language ?? "en";
   const direction = i18n.dir(resolvedLanguage);
@@ -35,6 +52,32 @@ const Navbar = () => {
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
+
+  const dashboardAccessButton = useMemo(() => {
+    if (showDashboardButton) {
+      return (
+        <Link
+          to="/admin/dashboard"
+          className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200 md:px-4"
+        >
+          <FiGrid className="h-4 w-4" aria-hidden />
+          <span className="hidden md:inline md:ms-2">لوحة التحكم</span>
+        </Link>
+      );
+    }
+    if (showLoginButton) {
+      return (
+        <Link
+          to="/admin/login"
+          className="inline-flex items-center justify-center rounded-full bg-amber-500 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-200 md:px-4"
+        >
+          <FiLogIn className="h-4 w-4" aria-hidden />
+          <span className="hidden md:inline md:ms-2">دخول لوحة التحكم</span>
+        </Link>
+      );
+    }
+    return null;
+  }, [showDashboardButton, showLoginButton]);
 
   return (
     <header
@@ -80,6 +123,7 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3">
+          {dashboardAccessButton}
           <LanguageToggle />
           <button
             type="button"

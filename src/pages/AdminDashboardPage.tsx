@@ -98,8 +98,6 @@ const AdminDashboardPage = () => {
 
   const [projects, setProjects] = useState<Project[]>([]);
   const [pages, setPages] = useState<Page[]>([]);
-  const [settings, setSettings] = useState<SiteSettings | null>(null);
-  const [navigation, setNavigation] = useState<NavigationItem[]>([]);
   const [mediaItems, setMediaItems] = useState<MediaItem[]>([]);
   const [admins, setAdmins] = useState<AdminUser[]>([]);
 
@@ -205,13 +203,11 @@ const AdminDashboardPage = () => {
 
   const fetchSettings = async () => {
     const response = await apiClient.get<{ settings: SiteSettings }>("/api/settings");
-    setSettings(response.settings);
     setSettingsForm(response.settings);
   };
 
   const fetchNavigation = async () => {
     const response = await apiClient.get<{ navigation: NavigationItem[] }>("/api/navigation");
-    setNavigation(response.navigation);
     setNavigationForm(
       response.navigation.map((item) => ({
         ...item,
@@ -708,7 +704,6 @@ const AdminDashboardPage = () => {
     setIsSavingSettings(true);
     try {
       const response = await apiClient.put<{ settings: SiteSettings }>("/api/settings", settingsForm);
-      setSettings(response.settings);
       setSettingsForm(response.settings);
       showAlert("تم تحديث إعدادات الموقع.");
       await refreshSiteSettings();
@@ -752,7 +747,7 @@ const AdminDashboardPage = () => {
         order: Number(item.order),
       }));
       const response = await apiClient.put<{ navigation: NavigationItem[] }>("/api/navigation", payload);
-      setNavigation(response.navigation);
+      setNavigationForm(response.navigation.map(item => ({ ...item, _localId: item.id })));
       setNavigationForm(
         response.navigation.map((item) => ({
           ...item,
