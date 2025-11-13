@@ -1,10 +1,10 @@
 [
   {
     "id": "2f51d955-3826-4328-8d81-c231488f88b9",
-    "email": "admin@example.com",
-    "name": "Site Owner",
+    "email": "odai@nebras-bim.com",
+    "name": "odai salahat",
     "role": "owner",
-    "passwordHash": "$2a$10$uoS4rA5zxHJ08MxGExkr.evRnwH7aLqMCBQM2yTQICudsqvlYAaz.",
+    "passwordHash": "odeySALAHAT1234$",
     "createdAt": "2025-11-13T09:02:15.217Z",
     "updatedAt": "2025-11-13T09:02:15.217Z"
   }
