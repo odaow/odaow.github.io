@@ -1,11 +1,13 @@
-[
-  {
-    "id": "2f51d955-3826-4328-8d81-c231488f88b9",
-    "email": "odai@nebras-bim.com",
-    "name": "odai salahat",
-    "role": "owner",
-    "passwordHash": "$2a$12$dg.mu15Yc/Yqog.xnQyJeeAYqM6exGg.4G5CnN2S9Y0dAyyiv9uj.",
-    "createdAt": "2025-11-13T09:02:15.217Z",
-    "updatedAt": "2025-11-13T09:02:15.217Z"
-  }
-]
+{
+  "admins": [
+    {
+      "id": "6axqijaep",
+      "email": "odai@nebras-bim.com",
+      "name": "Odai Salahat",
+      "role": "owner",
+      "passwordHash": "$2a$12$yUU1Dx2i5Kfg5RyNidNbRuMfcC2C5tI6j1j0lq6IJulj5C5E9KzZm",
+      "createdAt": "2025-11-13T10:47:38.256Z",
+      "updatedAt": "2025-11-13T10:47:38.257Z"
+    }
+  ]
+}
