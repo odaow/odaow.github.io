@@ -2,10 +2,5 @@
   "installCommand": "npm install --legacy-peer-deps",
   "rewrites": [
     { "source": "/:path*", "destination": "/index.html" }
-  ],
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/assets/(.*)", "dest": "/assets/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
