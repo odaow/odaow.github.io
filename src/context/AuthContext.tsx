@@ -1,44 +1,71 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-import { AUTH_STORAGE_KEY, DEFAULT_PASSWORD, DEFAULT_USERNAME } from "./authConfig";
+import apiClient from "../lib/apiClient";
+import type { AuthUser } from "../types/api";
 
 type AuthContextValue = {
+  user: AuthUser | null;
   isAuthenticated: boolean;
-  login: (username: string, password: string) => Promise<boolean>;
-  logout: () => void;
+  isLoading: boolean;
+  login: (email: string, password: string) => Promise<boolean>;
+  logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState<AuthUser | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchMe = useCallback(async () => {
+    try {
+      const response = await apiClient.get<{ user: AuthUser }>("/api/auth/me");
+      setUser(response.user);
+    } catch {
+      setUser(null);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
-    const stored = localStorage.getItem(AUTH_STORAGE_KEY);
-    if (stored === "true") {
-      setIsAuthenticated(true);
+    void fetchMe();
+  }, [fetchMe]);
+
+  const login = useCallback(async (email: string, password: string) => {
+    try {
+      setIsLoading(true);
+      const response = await apiClient.post<{ user: AuthUser }>("/api/auth/login", {
+        email,
+        password,
+      });
+      setUser(response.user);
+      return true;
+    } catch {
+      setUser(null);
+      return false;
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
+  const logout = useCallback(async () => {
+    try {
+      await apiClient.post("/api/auth/logout", {});
+    } finally {
+      setUser(null);
     }
   }, []);
 
   const value = useMemo<AuthContextValue>(
     () => ({
-      isAuthenticated,
-      login: async (username, password) => {
-        const success =
-          username.trim().toLowerCase() === DEFAULT_USERNAME &&
-          password.trim() === DEFAULT_PASSWORD;
-        if (success) {
-          setIsAuthenticated(true);
-          localStorage.setItem(AUTH_STORAGE_KEY, "true");
-        }
-        return success;
-      },
-      logout: () => {
-        setIsAuthenticated(false);
-        localStorage.removeItem(AUTH_STORAGE_KEY);
-      },
+      user,
+      isAuthenticated: Boolean(user),
+      isLoading,
+      login,
+      logout,
     }),
-    [isAuthenticated],
+    [user, isLoading, login, logout],
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

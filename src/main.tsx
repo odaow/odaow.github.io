@@ -9,6 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
 import { SiteContentProvider } from "./context/SiteContentContext.tsx";
+import { SiteSettingsProvider } from "./context/SiteSettingsContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -16,7 +17,9 @@ createRoot(document.getElementById("root")!).render(
       <BrowserRouter>
         <AuthProvider>
           <SiteContentProvider>
-            <App />
+            <SiteSettingsProvider>
+              <App />
+            </SiteSettingsProvider>
           </SiteContentProvider>
         </AuthProvider>
       </BrowserRouter>

@@ -1,0 +1,8 @@
+[
+  { "id": "nav-home", "label": "Home", "path": "/", "order": 0 },
+  { "id": "nav-about", "label": "About", "path": "/about", "order": 1 },
+  { "id": "nav-services", "label": "Services", "path": "/services", "order": 2 },
+  { "id": "nav-projects", "label": "Projects", "path": "/projects", "order": 3 },
+  { "id": "nav-contact", "label": "Contact", "path": "/contact", "order": 4 }
+]
+

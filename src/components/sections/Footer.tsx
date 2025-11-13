@@ -1,29 +1,33 @@
-import type { FormEvent } from "react";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 
+import { useSiteSettings } from "../../context/SiteSettingsContext";
+
 const Footer = () => {
   const { t, i18n } = useTranslation();
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const { navigation, settings } = useSiteSettings();
 
   const isRTL = i18n.dir() === "rtl";
 
-  const links = [
-    { to: "/", label: t("nav.home") },
-    { to: "/about", label: t("nav.about") },
-    { to: "/services", label: t("nav.services") },
-    { to: "/bim-services", label: t("nav.bim") },
-    { to: "/projects", label: t("nav.projects") },
-    { to: "/contact", label: t("nav.contact") },
+  const fallbackLinks = [
+    { id: "home", path: "/", label: t("nav.home"), isExternal: false },
+    { id: "about", path: "/about", label: t("nav.about"), isExternal: false },
+    { id: "services", path: "/services", label: t("nav.services"), isExternal: false },
+    { id: "bim-services", path: "/bim-services", label: t("nav.bim"), isExternal: false },
+    { id: "projects", path: "/projects", label: t("nav.projects"), isExternal: false },
+    { id: "contact", path: "/contact", label: t("nav.contact"), isExternal: false },
   ];
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setSubmitted(true);
-    setEmail("");
-  };
+  const links = (navigation.length > 0 ? navigation : fallbackLinks).map((item) => ({
+    id: "id" in item ? item.id : undefined,
+    path: item.path,
+    label: item.label,
+    isExternal: "isExternal" in item ? item.isExternal : false,
+  }));
+
+  const socialEntries = Object.entries(settings?.socialLinks ?? {}).filter(
+    ([, value]) => Boolean(value),
+  );
 
   return (
     <footer className="border-t border-slate-100 bg-slate-50/70">
@@ -40,10 +44,25 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <span className="h-10 w-10 rounded-full border-2 border-brand-accent"></span>
-              <p className="text-lg font-bold uppercase tracking-[0.2em]">{t("brand")}</p>
+              <p className="text-lg font-bold uppercase tracking-[0.2em]">
+                {settings?.siteTitle ?? t("brand")}
+              </p>
             </div>
-            <p className="max-w-sm text-sm text-slate-600">{t("footer.tagLine")}</p>
-            <p className="text-sm font-medium text-slate-500">{t("footer.location")}</p>
+            <p className="max-w-sm text-sm text-slate-600">
+              {settings?.footerText ?? t("footer.tagLine")}
+            </p>
+            <div className="space-y-1 text-sm text-slate-600">
+              {settings?.contact?.address && <p>{settings.contact.address}</p>}
+              {settings?.contact?.phone && <p>{settings.contact.phone}</p>}
+              {settings?.contact?.email && (
+                <a
+                  className="text-brand hover:underline"
+                  href={`mailto:${settings.contact.email}`}
+                >
+                  {settings.contact.email}
+                </a>
+              )}
+            </div>
           </div>
 
           <div>
@@ -51,39 +70,51 @@ const Footer = () => {
               {t("footer.quickLinks")}
             </h3>
             <nav className="mt-4 grid gap-2 text-sm font-semibold text-slate-600">
-              {links.map((link) => (
-                <NavLink
-                  key={link.to}
-                  to={link.to}
-                  className="transition-colors duration-200 hover:text-brand-accent"
-                >
-                  {link.label}
-                </NavLink>
-              ))}
+              {links.map((link) =>
+                link.isExternal || /^https?:\/\//.test(link.path) ? (
+                  <a
+                    key={link.id ?? link.path}
+                    href={link.path}
+                    className="transition-colors duration-200 hover:text-brand-accent"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <NavLink
+                    key={link.id ?? link.path}
+                    to={link.path}
+                    className="transition-colors duration-200 hover:text-brand-accent"
+                  >
+                    {link.label}
+                  </NavLink>
+                ),
+              )}
             </nav>
           </div>
 
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-              {t("footer.newsletter.title")}
+              {t("footer.connect")}
             </h3>
-            <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder={t("footer.newsletter.placeholder")}
-                className="w-full rounded-md border border-slate-200 bg-white px-3 py-2 text-sm shadow-sm transition focus:border-brand focus:outline-none focus:ring-2 focus:ring-brand/30"
-              />
-              <button
-                type="submit"
-                className="w-full rounded-md bg-brand px-3 py-2 text-sm font-semibold text-white shadow-md transition-transform duration-200 hover:-translate-y-0.5 hover:bg-slate-900"
-              >
-                {submitted ? "✓" : t("footer.newsletter.button")}
-              </button>
-            </form>
-            <p className="mt-3 text-xs text-slate-500">{t("footer.newsletter.disclaimer")}</p>
+            <div className="mt-4 space-y-2 text-sm text-slate-600">
+              {socialEntries.length > 0 ? (
+                socialEntries.map(([network, url]) => (
+                  <a
+                    key={network}
+                    href={url as string}
+                    className="block transition-colors duration-200 hover:text-brand-accent"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {network.charAt(0).toUpperCase() + network.slice(1)}
+                  </a>
+                ))
+              ) : (
+                <p className="text-sm text-slate-400">{t("footer.noSocialLinks")}</p>
+              )}
+            </div>
           </div>
         </div>
 

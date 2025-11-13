@@ -1,0 +1,15 @@
+{
+  "siteTitle": "Nebras Office",
+  "footerText": "© Nebras Office. All rights reserved.",
+  "contact": {
+    "email": "info@example.com",
+    "phone": "+970 569628237",
+    "address": "Riyadh, Saudi Arabia"
+  },
+  "socialLinks": {
+    "facebook": "https://facebook.com/",
+    "instagram": "https://instagram.com/",
+    "linkedin": "https://linkedin.com/",
+    "twitter": "https://x.com/"
+  }
+}

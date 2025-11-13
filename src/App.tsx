@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ServicesPage from "./pages/ServicesPage";
+import DynamicPage from "./pages/DynamicPage";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -39,6 +40,7 @@ function App() {
           <Route path="/bim-services" element={<BimServicesPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/pages/:slug" element={<DynamicPage />} />
         </Route>
         <Route path="/admin/login" element={<AdminLoginPage />} />
         <Route
