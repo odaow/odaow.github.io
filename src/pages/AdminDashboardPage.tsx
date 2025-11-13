@@ -747,7 +747,7 @@ const AdminDashboardPage = () => {
         order: Number(item.order),
       }));
       const response = await apiClient.put<{ navigation: NavigationItem[] }>("/api/navigation", payload);
-      setNavigationForm(response.navigation.map(item => ({ ...item, _localId: item.id })));
+      setNavigation(response.navigation);
       setNavigationForm(
         response.navigation.map((item) => ({
           ...item,

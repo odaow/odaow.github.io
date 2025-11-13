@@ -1,12 +1,11 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { FiGrid, FiLogIn, FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 
-import { useAuth } from "../../context/AuthContext";
 import { useSiteSettings } from "../../context/SiteSettingsContext";
-import type { AuthUser, NavigationItem } from "../../types/api";
+import type { NavigationItem } from "../../types/api";
 import LanguageToggle from "../LanguageToggle";
 
 const navLinkClasses =
@@ -17,23 +16,7 @@ const isExternalPath = (path: string) => /^https?:\/\//.test(path);
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const { navigation, settings } = useSiteSettings();
-  const { user, isAuthenticated, isLoading } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
-
-  const authUser = user as (AuthUser & { isAdmin?: boolean }) | null;
-  const computedIsAdmin = useMemo(() => {
-    if (!authUser) return false;
-    if (typeof authUser.isAdmin === "boolean") return authUser.isAdmin;
-    if (typeof authUser.role === "string") {
-      return Boolean(authUser);
-      if (authUser?.role == "owner") return true;
-      return false;
-    }
-    return true;
-  }, [authUser]);
-
-  const showDashboardButton = !isLoading && isAuthenticated && computedIsAdmin;
-  const showLoginButton = !isLoading && !isAuthenticated;
 
   const fallbackNavItems: NavigationItem[] = [
     { id: "home", path: "/", label: t("nav.home"), order: 0 },
@@ -52,32 +35,6 @@ const Navbar = () => {
 
   const handleToggle = () => setIsOpen((prev) => !prev);
   const closeMenu = () => setIsOpen(false);
-
-  const dashboardAccessButton = useMemo(() => {
-    if (showDashboardButton) {
-      return (
-        <Link
-          to="/admin/dashboard"
-          className="inline-flex items-center justify-center rounded-full bg-emerald-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200 md:px-4"
-        >
-          <FiGrid className="h-4 w-4" aria-hidden />
-          <span className="hidden md:inline md:ms-2">لوحة التحكم</span>
-        </Link>
-      );
-    }
-    if (showLoginButton) {
-      return (
-        <Link
-          to="/admin/login"
-          className="inline-flex items-center justify-center rounded-full bg-amber-500 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-200 md:px-4"
-        >
-          <FiLogIn className="h-4 w-4" aria-hidden />
-          <span className="hidden md:inline md:ms-2">دخول لوحة التحكم</span>
-        </Link>
-      );
-    }
-    return null;
-  }, [showDashboardButton, showLoginButton]);
 
   return (
     <header
@@ -123,7 +80,6 @@ const Navbar = () => {
         </nav>
 
         <div className="flex items-center gap-3">
-          {dashboardAccessButton}
           <LanguageToggle />
           <button
             type="button"

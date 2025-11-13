@@ -54,6 +54,23 @@ export const saveMedia = async (items: MediaItem[]) => writeJsonFile(mediaPath, 
 export const getProjects = async () => readJsonFile<Project[]>(projectsPath, DEFAULT_PROJECTS);
 export const saveProjects = async (items: Project[]) => writeJsonFile(projectsPath, items);
 
-export const getAdmins = async () => readJsonFile<AdminUser[]>(adminsPath, []);
+type AdminFileShape = AdminUser[] | { admins: AdminUser[] };
+
+export const getAdmins = async () => {
+  const data = await readJsonFile<AdminFileShape>(adminsPath, []);
+
+  if (Array.isArray(data)) {
+    return data;
+  }
+
+  if (data && typeof data === "object" && Array.isArray(data.admins)) {
+    const normalized = data.admins;
+    await writeJsonFile(adminsPath, normalized);
+    return normalized;
+  }
+
+  return [];
+};
+
 export const saveAdmins = async (items: AdminUser[]) => writeJsonFile(adminsPath, items);
 

@@ -1,11 +1,39 @@
 import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { FiGrid, FiLogIn } from "react-icons/fi";
 
 import { useSiteSettings } from "../../context/SiteSettingsContext";
+import { useAuth } from "../../context/AuthContext";
 
 const Footer = () => {
   const { t, i18n } = useTranslation();
   const { navigation, settings } = useSiteSettings();
+  const { isAuthenticated, isLoading } = useAuth();
+  const adminButton = (() => {
+    if (isLoading) return null;
+
+    if (isAuthenticated) {
+      return (
+        <Link
+          to="/admin/dashboard"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+        >
+          <FiGrid className="h-4 w-4" aria-hidden />
+          <span>لوحة التحكم</span>
+        </Link>
+      );
+    }
+
+    return (
+      <Link
+        to="/admin/login"
+        className="inline-flex items-center justify-center gap-2 rounded-full bg-amber-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-200"
+      >
+        <FiLogIn className="h-4 w-4" aria-hidden />
+        <span>دخول لوحة التحكم</span>
+      </Link>
+    );
+  })();
 
   const isRTL = i18n.dir() === "rtl";
 
@@ -118,7 +146,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-4 text-xs text-slate-500">
+        <div className={`flex flex-col gap-3 border-t border-slate-200 pt-4 text-xs text-slate-500 ${isRTL ? "items-end text-right" : "items-start text-left"}`}>
+          {adminButton}
           {t("footer.rights", { year: new Date().getFullYear() })}
         </div>
       </div>
