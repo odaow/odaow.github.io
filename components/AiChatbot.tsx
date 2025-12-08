@@ -218,7 +218,6 @@ const AiChatbot: React.FC = () => {
   ];
 
   const MotionDiv = motion.div as any;
-  const MotionSpan = motion.span as any;
 
   return (
     <>
@@ -318,120 +317,144 @@ const AiChatbot: React.FC = () => {
 
       {/* 
         ------------------------------------------------------------
-        FLOATING CONTROL DOCK (Bottom Corner)
+        CHATBOT WINDOW (Top Right Fixed)
+        ------------------------------------------------------------
+      */}
+      <AnimatePresence>
+        {isOpen && (
+          <MotionDiv
+            initial={{ opacity: 0, y: 20, scale: 0.9, originY: 1 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
+            className={`fixed bottom-24 z-[8000] w-[90vw] md:w-96 h-[500px] bg-secondary/95 backdrop-blur-xl border border-neutral-light/10 rounded-sm shadow-2xl flex flex-col overflow-hidden ${direction === 'rtl' ? 'left-4 md:left-8' : 'right-4 md:right-8'}`}
+          >
+            {/* Chat Header */}
+            <div className="bg-primary/95 p-4 border-b border-white/5 flex justify-between items-center shrink-0">
+              <div className="flex items-center gap-3">
+                  <div className="relative">
+                      <div className="w-2 h-2 bg-green-500 rounded-full absolute bottom-0 right-0 z-10 border border-primary animate-pulse" />
+                      <Bot size={20} className="text-accent" />
+                  </div>
+                  <div>
+                      <h3 className="text-sm font-bold text-neutral-light uppercase tracking-wide">
+                          {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
+                      </h3>
+                      <span className="text-[10px] text-neutral-dim font-mono">
+                          {language === 'ar' ? 'متصل' : 'Online'}
+                      </span>
+                  </div>
+              </div>
+              <button 
+                onClick={() => setIsOpen(false)} 
+                className="hover:text-accent transition-colors cursor-pointer"
+              >
+                  <Minimize2 size={18} />
+              </button>
+            </div>
+
+            {/* Chat Body */}
+            <div 
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
+            >
+              {messages.map((msg) => (
+                <div key={msg.id} className={`flex flex-col gap-1 ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
+                  <div className={`flex gap-3 max-w-[85%] ${msg.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                    {msg.sender === 'bot' && (
+                        <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-1">
+                            <Bot size={12} className="text-accent" />
+                        </div>
+                    )}
+                    
+                    <div className={`p-3 text-xs md:text-sm leading-relaxed whitespace-pre-line ${
+                      msg.sender === 'user' 
+                        ? 'bg-neutral-light text-primary rounded-sm rounded-tr-none' 
+                        : 'bg-primary/50 border border-white/5 text-neutral-light rounded-sm rounded-tl-none'
+                    }`}>
+                      {msg.text}
+                    </div>
+                  </div>
+                  
+                  {/* Actions rendered outside bubble for clearer UI */}
+                  {msg.sender === 'bot' && msg.actions && (
+                      <div className="pl-9 flex flex-wrap gap-2 mt-1">
+                        {msg.actions.map((action, idx) => (
+                          <button
+                            key={idx}
+                            onClick={() => handleActionClick(action)}
+                            className="text-[10px] uppercase font-bold tracking-wider bg-accent/10 hover:bg-accent hover:text-primary border border-accent/30 text-accent px-3 py-1.5 rounded-sm transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                          >
+                            {action.icon}
+                            {action.label}
+                          </button>
+                        ))}
+                      </div>
+                  )}
+                </div>
+              ))}
+              
+              {isTyping && (
+                <div className="flex gap-2 pl-9">
+                    <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                    <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                    <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce"></span>
+                </div>
+              )}
+            </div>
+
+            {/* Quick Actions Footer */}
+            <div className="p-3 bg-primary/80 border-t border-white/5 grid grid-cols-2 gap-2">
+                {menuOptions.map((opt) => (
+                  <button
+                    key={opt.id}
+                    onClick={() => handleOptionClick(opt.id, opt.label)}
+                    disabled={isTyping}
+                    className="text-[10px] font-mono uppercase p-2 border border-white/10 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all text-neutral-dim truncate cursor-pointer"
+                  >
+                    {opt.label}
+                  </button>
+                ))}
+            </div>
+          </MotionDiv>
+        )}
+      </AnimatePresence>
+
+      {/* 
+        ------------------------------------------------------------
+        FLOATING BUTTONS STACK (Bottom Corner)
         ------------------------------------------------------------
       */}
       <div 
         className={`fixed bottom-8 z-[9000] flex flex-col gap-4 items-center ${direction === 'rtl' ? 'left-8' : 'right-8'}`}
       >
         
-        {/* CHATBOT WINDOW (POPOVER) */}
-        <AnimatePresence>
-          {isOpen && (
-            <MotionDiv
-              initial={{ opacity: 0, y: 20, scale: 0.9, originY: 1, originX: direction === 'rtl' ? 0 : 1 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.9 }}
-              transition={{ duration: 0.3, type: "spring", bounce: 0.2 }}
-              className={`absolute bottom-20 w-[90vw] md:w-96 h-[500px] bg-secondary/95 backdrop-blur-xl border border-neutral-light/10 rounded-sm shadow-2xl flex flex-col overflow-hidden ${direction === 'rtl' ? 'left-0 origin-bottom-left' : 'right-0 origin-bottom-right'}`}
-            >
-              {/* Chat Header */}
-              <div className="bg-primary/95 p-4 border-b border-white/5 flex justify-between items-center shrink-0">
-                <div className="flex items-center gap-3">
-                    <div className="relative">
-                        <div className="w-2 h-2 bg-green-500 rounded-full absolute bottom-0 right-0 z-10 border border-primary animate-pulse" />
-                        <Bot size={20} className="text-accent" />
-                    </div>
-                    <div>
-                        <h3 className="text-sm font-bold text-neutral-light uppercase tracking-wide">
+        {/* AI CHATBOT TRIGGER (Secondary Floating) */}
+        {!isOpen && (
+            <div className="relative group">
+                 {/* Tooltip */}
+                 <div className={`absolute ${direction === 'rtl' ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 pointer-events-none`}>
+                    <div className={`
+                        bg-secondary/90 backdrop-blur border border-white/10 px-3 py-1.5 rounded-sm shadow-xl
+                        opacity-0 group-hover:opacity-100 transform ${direction === 'rtl' ? '-translate-x-2 group-hover:translate-x-0' : 'translate-x-2 group-hover:translate-x-0'} transition-all duration-300
+                        whitespace-nowrap
+                    `}>
+                        <span className="text-[10px] font-bold font-mono text-neutral-light uppercase tracking-widest">
                             {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
-                        </h3>
-                        <span className="text-[10px] text-neutral-dim font-mono">
-                            {language === 'ar' ? 'متصل' : 'Online'}
                         </span>
                     </div>
                 </div>
-                <button 
-                  onClick={() => setIsOpen(false)} 
-                  className="hover:text-accent transition-colors cursor-pointer"
+
+                <button
+                    onClick={() => setIsOpen(true)}
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary/80 backdrop-blur-md border border-neutral-light/10 text-neutral-dim hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-lg cursor-pointer"
                 >
-                    <Minimize2 size={18} />
+                    <Bot size={20} />
                 </button>
-              </div>
+            </div>
+        )}
 
-              {/* Chat Body */}
-              <div 
-                ref={scrollRef}
-                className="flex-1 overflow-y-auto p-4 space-y-4 scroll-smooth"
-              >
-                {messages.map((msg) => (
-                  <div key={msg.id} className={`flex flex-col gap-1 ${msg.sender === 'user' ? 'items-end' : 'items-start'}`}>
-                    <div className={`flex gap-3 max-w-[85%] ${msg.sender === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                      {msg.sender === 'bot' && (
-                          <div className="w-6 h-6 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center shrink-0 mt-1">
-                              <Bot size={12} className="text-accent" />
-                          </div>
-                      )}
-                      
-                      <div className={`p-3 text-xs md:text-sm leading-relaxed whitespace-pre-line ${
-                        msg.sender === 'user' 
-                          ? 'bg-neutral-light text-primary rounded-sm rounded-tr-none' 
-                          : 'bg-primary/50 border border-white/5 text-neutral-light rounded-sm rounded-tl-none'
-                      }`}>
-                        {msg.text}
-                      </div>
-                    </div>
-                    
-                    {/* Actions rendered outside bubble for clearer UI */}
-                    {msg.sender === 'bot' && msg.actions && (
-                       <div className="pl-9 flex flex-wrap gap-2 mt-1">
-                          {msg.actions.map((action, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => handleActionClick(action)}
-                              className="text-[10px] uppercase font-bold tracking-wider bg-accent/10 hover:bg-accent hover:text-primary border border-accent/30 text-accent px-3 py-1.5 rounded-sm transition-all duration-300 flex items-center gap-2 cursor-pointer"
-                            >
-                              {action.icon}
-                              {action.label}
-                            </button>
-                          ))}
-                       </div>
-                    )}
-                  </div>
-                ))}
-                
-                {isTyping && (
-                  <div className="flex gap-2 pl-9">
-                      <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
-                      <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
-                      <span className="w-1 h-1 bg-accent/50 rounded-full animate-bounce"></span>
-                  </div>
-                )}
-              </div>
-
-              {/* Quick Actions Footer */}
-              <div className="p-3 bg-primary/80 border-t border-white/5 grid grid-cols-2 gap-2">
-                 {menuOptions.map((opt) => (
-                   <button
-                     key={opt.id}
-                     onClick={() => handleOptionClick(opt.id, opt.label)}
-                     disabled={isTyping}
-                     className="text-[10px] font-mono uppercase p-2 border border-white/10 hover:border-accent hover:text-accent hover:bg-accent/5 transition-all text-neutral-dim truncate cursor-pointer"
-                   >
-                     {opt.label}
-                   </button>
-                 ))}
-              </div>
-            </MotionDiv>
-          )}
-        </AnimatePresence>
-
-        {/* 
-            DOCK BUTTONS 
-            Structure: Vertical Stack
-        */}
-        
-        {/* 1. WHATSAPP BUTTON (Secondary) */}
+        {/* WHATSAPP BUTTON (Primary Floating) */}
         <div className="relative group flex items-center">
             {/* Tooltip Label (Side) */}
             <div className={`absolute ${direction === 'rtl' ? 'left-full ml-4' : 'right-full mr-4'} pointer-events-none`}>
@@ -450,57 +473,11 @@ const AiChatbot: React.FC = () => {
 
             <button
                 onClick={() => setIsWhatsAppOpen(true)}
-                className="w-12 h-12 rounded-full bg-secondary/80 backdrop-blur-md border border-neutral-light/10 text-neutral-dim hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-lg relative group overflow-hidden cursor-pointer"
+                className="w-14 h-14 rounded-full bg-secondary/80 backdrop-blur-md border border-neutral-light/10 text-neutral-dim hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-lg relative group overflow-hidden cursor-pointer"
             >
                 {/* Ripple Effect Background */}
                 <span className="absolute inset-0 bg-accent/5 rounded-full animate-ping opacity-0 group-hover:opacity-100 duration-1000" />
-                <WhatsAppIcon size={22} className="relative z-10 transition-transform group-hover:scale-110" />
-            </button>
-        </div>
-
-        {/* 2. MAIN CHATBOT BUTTON (Primary) */}
-        <div className="relative group flex items-center">
-             {/* Tooltip Label (Side) */}
-             {!isOpen && (
-                <div className={`absolute ${direction === 'rtl' ? 'left-full ml-4' : 'right-full mr-4'} pointer-events-none`}>
-                    <div className={`
-                        bg-primary border border-accent/20 px-3 py-1.5 rounded-sm shadow-xl
-                        opacity-0 group-hover:opacity-100 transform ${direction === 'rtl' ? '-translate-x-2 group-hover:translate-x-0' : 'translate-x-2 group-hover:translate-x-0'} transition-all duration-300
-                        whitespace-nowrap
-                    `}>
-                        <span className="text-[10px] font-bold font-mono text-accent uppercase tracking-widest">
-                            {language === 'ar' ? 'المساعد الذكي' : 'Smart Assistant'}
-                        </span>
-                         {/* Connector Line */}
-                        <div className={`absolute top-1/2 w-4 h-[1px] bg-accent/50 ${direction === 'rtl' ? 'right-full' : 'left-full'}`} />
-                    </div>
-                </div>
-             )}
-
-            <button
-                onClick={() => setIsOpen(!isOpen)}
-                className={`
-                    w-16 h-16 rounded-full flex items-center justify-center transition-all duration-500 shadow-2xl relative cursor-pointer
-                    ${isOpen 
-                        ? 'bg-secondary border border-neutral-light/20 text-neutral-light rotate-90' 
-                        : 'bg-primary border-2 border-accent text-accent hover:scale-110 hover:shadow-[0_0_30px_rgba(var(--color-accent),0.4)]'
-                    }
-                `}
-            >
-                <AnimatePresence mode="wait">
-                    {isOpen ? (
-                         <X size={24} />
-                    ) : (
-                        <div className="relative flex items-center justify-center w-full h-full">
-                            {/* Spinning Ring */}
-                            <div className="absolute inset-0 border-t-2 border-accent/50 rounded-full animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity" />
-                            <Bot size={28} className="relative z-10" />
-                            
-                            {/* Notification Dot */}
-                            <span className="absolute top-3 right-4 w-2.5 h-2.5 bg-red-500 rounded-full border border-primary" />
-                        </div>
-                    )}
-                </AnimatePresence>
+                <WhatsAppIcon size={26} className="relative z-10 transition-transform group-hover:scale-110" />
             </button>
         </div>
 

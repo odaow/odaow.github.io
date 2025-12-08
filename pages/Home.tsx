@@ -1,6 +1,3 @@
-
-
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useInView, animate, useTransform, AnimatePresence } from 'framer-motion';
@@ -25,13 +22,13 @@ const HERO_SLIDES = [
   },
   {
     id: 3,
-    image: "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765189302/the-ligthting-institute-min-1_loafzh.jpg",
-    alt: "Lighting Institute Facade"
+    image: "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765209276/the-ligthting-institute-min-1_xauadr.jpg",
+    alt: "Lighting Institute Night View"
   },
   {
     id: 4,
-    image: "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765189302/12a-min_o8qlqn.jpg",
-    alt: "Interior Detail"
+    image: "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765209276/07-min-min-1-scaled_afqdfe.jpg",
+    alt: "Interior Space"
   }
 ];
 
@@ -79,7 +76,7 @@ const Home: React.FC = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5000); // Change every 5 seconds
+    }, 10000); // Change every 10 seconds (Double duration)
 
     return () => clearInterval(timer);
   }, []);

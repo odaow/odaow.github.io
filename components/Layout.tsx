@@ -14,6 +14,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
   const { pathname } = useLocation();
   const isHomePage = pathname === '/';
 
@@ -84,7 +85,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }}
       />
       
-      {/* AI Chatbot Widget */}
+      {/* AI Chatbot Widget (Self-Contained) */}
       <AiChatbot />
       
       {/* Page Border Frame - Adaptive Color (Hidden on Home for Full Immersion) */}
@@ -174,14 +175,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           {/* 3. RIGHT COLUMN: Actions (Fixed Width) */}
           <div className="hidden md:flex w-[260px] justify-end items-center gap-4">
             
-            <Link 
-              to="/contact" 
-              onClick={() => handleNavClick('/contact')}
-              className="h-10 px-6 bg-accent text-primary font-bold text-[11px] uppercase tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-2 rounded-sm shadow-[0_0_15px_rgba(var(--color-accent),0.3)] hover:shadow-[0_0_25px_rgba(var(--color-accent),0.5)]"
-            >
-              {t.nav.contactNow}
-            </Link>
-
             {/* SETTINGS POD */}
             <div className={`h-10 flex items-center backdrop-blur-md border rounded-full px-2 gap-3 shadow-sm transition-colors ${isHomePage && !scrolled ? 'bg-black/30 border-white/10' : 'bg-secondary/80 border-neutral-light/10'}`}>
                 
@@ -214,6 +207,14 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     </MotionDiv>
                 </button>
             </div>
+
+            <Link 
+              to="/contact" 
+              onClick={() => handleNavClick('/contact')}
+              className="h-10 px-5 bg-accent text-primary font-bold text-[11px] uppercase tracking-widest hover:brightness-110 transition-all flex items-center justify-center gap-2 rounded-sm shadow-[0_0_15px_rgba(var(--color-accent),0.3)] hover:shadow-[0_0_25px_rgba(var(--color-accent),0.5)]"
+            >
+              {t.nav.contact}
+            </Link>
 
           </div>
 
@@ -249,10 +250,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity rtl-flip" />
                 </NavLink>
               ))}
+
                <Link 
                   to="/contact"
                   onClick={() => handleNavClick('/contact')}
-                  className="text-3xl font-bold text-accent flex items-center justify-between group border-b border-neutral-light/10 pb-4"
+                  className="text-3xl font-bold text-white flex items-center justify-between group border-b border-neutral-light/10 pb-4"
                 >
                   {t.nav.contactNow}
                   <ArrowRight className="rtl-flip" />
