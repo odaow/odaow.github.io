@@ -1,0 +1,135 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "data"
+    label: "Site Content"
+    files:
+      - label: "Global Data"
+        name: "global_data"
+        file: "public/data/content.json"
+        fields:
+          # PROJECTS COLLECTION
+          - label: "Projects"
+            name: "PROJECTS"
+            widget: "object"
+            fields:
+              - label: "English Projects"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Year", name: "year", widget: "string"}
+                  - {label: "Area", name: "area", widget: "string"}
+                  - {label: "Main Image", name: "image", widget: "image"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - label: "Specs"
+                    name: "specs"
+                    widget: "list"
+                    fields:
+                      - {label: "Label", name: "label", widget: "string"}
+                      - {label: "Value", name: "value", widget: "string"}
+              - label: "Arabic Projects"
+                name: "ar"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Year", name: "year", widget: "string"}
+                  - {label: "Area", name: "area", widget: "string"}
+                  - {label: "Main Image", name: "image", widget: "image"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - label: "Specs"
+                    name: "specs"
+                    widget: "list"
+                    fields:
+                      - {label: "Label", name: "label", widget: "string"}
+                      - {label: "Value", name: "value", widget: "string"}
+
+          # INTERIOR PROJECTS COLLECTION
+          - label: "Interior Projects"
+            name: "INTERIOR_PROJECTS"
+            widget: "object"
+            fields:
+              - label: "English Interiors"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Year", name: "year", widget: "string"}
+                  - {label: "Area", name: "area", widget: "string"}
+                  - {label: "Main Image", name: "image", widget: "image"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - label: "Specs"
+                    name: "specs"
+                    widget: "list"
+                    fields:
+                      - {label: "Label", name: "label", widget: "string"}
+                      - {label: "Value", name: "value", widget: "string"}
+              - label: "Arabic Interiors"
+                name: "ar"
+                widget: "list"
+                fields:
+                   - {label: "ID", name: "id", widget: "string"}
+                   - {label: "Slug", name: "slug", widget: "string"}
+                   - {label: "Title", name: "title", widget: "string"}
+                   - {label: "Category", name: "category", widget: "string"}
+                   - {label: "Location", name: "location", widget: "string"}
+                   - {label: "Year", name: "year", widget: "string"}
+                   - {label: "Area", name: "area", widget: "string"}
+                   - {label: "Main Image", name: "image", widget: "image"}
+                   - {label: "Description", name: "description", widget: "text"}
+                   - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                   - label: "Specs"
+                     name: "specs"
+                     widget: "list"
+                     fields:
+                       - {label: "Label", name: "label", widget: "string"}
+                       - {label: "Value", name: "value", widget: "string"}
+
+          # PARTNERS COLLECTION
+          - label: "Partners"
+            name: "PARTNERS"
+            widget: "object"
+            fields:
+              - label: "English Partners"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Director", name: "director", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Logo", name: "logo", widget: "image"}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+              - label: "Arabic Partners"
+                name: "ar"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Slug", name: "slug", widget: "string"}
+                  - {label: "Description", name: "description", widget: "text"}
+                  - {label: "Director", name: "director", widget: "string"}
+                  - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Logo", name: "logo", widget: "image"}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}

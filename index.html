@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="description" content="Al Nebras Engineering Office - A high-performance, multilingual engineering consultancy portfolio featuring Bauhaus minimalism and technical precision.">
+    <title>Al Nebras Engineering Office | مكتب النبراس الهندسي</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Theme Initialization Script (Prevents Flash) -->
+    <script>
+      (function() {
+        try {
+          const localTheme = localStorage.getItem('theme');
+          const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          
+          if (localTheme === 'dark' || (!localTheme && supportDarkMode)) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else {
+            document.documentElement.classList.add('light');
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'rgb(var(--color-primary) / <alpha-value>)',
+              secondary: 'rgb(var(--color-secondary) / <alpha-value>)',
+              accent: 'rgb(var(--color-accent) / <alpha-value>)',
+              'accent-dim': 'rgb(var(--color-accent-dim) / <alpha-value>)',
+              neutral: {
+                light: 'rgb(var(--color-text-main) / <alpha-value>)',
+                dim: 'rgb(var(--color-text-dim) / <alpha-value>)',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans Arabic', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            animation: {
+              'spin-slow': 'spin 12s linear infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        /* LIGHT THEME */
+        --color-primary: 248 246 242;
+        --color-secondary: 255 255 255;
+        --color-accent: 198 166 103;
+        --color-accent-dim: 221 210 179;
+        --color-text-main: 26 26 26;
+        --color-text-dim: 142 123 85;
+      }
+
+      .dark {
+        /* DARK THEME */
+        --color-primary: 13 13 13;
+        --color-secondary: 20 18 16;
+        --color-accent: 245 238 216;
+        --color-accent-dim: 142 123 85;
+        --color-text-main: 198 166 103;
+        --color-text-dim: 245 238 216;
+      }
+
+      body {
+        background-color: rgb(var(--color-primary));
+        color: rgb(var(--color-text-main));
+        overflow-x: hidden;
+        cursor: none; /* Custom cursor */
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgb(var(--color-primary)); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--color-secondary)); 
+        border-radius: 0px;
+        border: 1px solid rgb(var(--color-primary));
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--color-accent)); 
+      }
+      
+      .blueprint-grid {
+        background-size: 40px 40px;
+        background-image:
+          linear-gradient(to right, rgba(var(--color-accent), 0.1) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(var(--color-accent), 0.1) 1px, transparent 1px);
+      }
+      
+      [dir="rtl"] .rtl-flip {
+        transform: scaleX(-1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <!-- CRITICAL: Entry point for the React App -->
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
