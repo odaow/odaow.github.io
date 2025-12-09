@@ -6,7 +6,7 @@ import {
   MessageSquare, ChevronDown, Minimize2, 
   Bot, User, Sparkles, 
   MapPin, Briefcase, DollarSign, Calendar, 
-  Mail, Phone, ExternalLink, Trash2, X, ScanLine, Send, Settings, MessageCircle, HelpCircle, ChevronUp
+  Mail, Phone, ExternalLink, Trash2, X, ScanLine, Send, Settings, MessageCircle
 } from 'lucide-react';
 
 interface ChatAction {
@@ -54,9 +54,6 @@ const AiChatbot: React.FC = () => {
 
   // WhatsApp Modal State
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
-
-  // Unified FAB State
-  const [isFabOpen, setIsFabOpen] = useState(false);
 
   // Initialize Greeting
   useEffect(() => {
@@ -425,91 +422,64 @@ const AiChatbot: React.FC = () => {
 
       {/* 
         ------------------------------------------------------------
-        UNIFIED SPEED DIAL BUTTON (Bottom Corner)
+        FLOATING BUTTONS STACK (Bottom Corner)
         ------------------------------------------------------------
       */}
       <div 
-        className={`fixed bottom-8 z-[9000] flex flex-col items-end gap-3 ${direction === 'rtl' ? 'left-8 items-start' : 'right-8 items-end'}`}
-        onMouseEnter={() => setIsFabOpen(true)}
-        onMouseLeave={() => setIsFabOpen(false)}
+        className={`fixed bottom-8 z-[9000] flex flex-col gap-4 items-center ${direction === 'rtl' ? 'left-8' : 'right-8'}`}
       >
         
-        {/* Expanded Options */}
-        <AnimatePresence>
-            {isFabOpen && (
-                <MotionDiv
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex flex-col gap-3 mb-2"
-                >
-                    {/* Option 1: WhatsApp (Primary) */}
-                    <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row' : 'flex-row-reverse'}`}>
-                        <button
-                            onClick={() => { setIsWhatsAppOpen(true); setIsFabOpen(false); }}
-                            className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-green-400 hover:border-green-400/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
-                        >
-                            <WhatsAppIcon size={24} />
-                        </button>
-                        <span className="bg-secondary/90 text-neutral-light text-xs font-bold px-3 py-1.5 rounded-sm border border-white/10 backdrop-blur whitespace-nowrap shadow-md">
-                            {language === 'ar' ? 'واتساب' : 'WhatsApp'}
+        {/* AI CHATBOT TRIGGER (Secondary Floating) */}
+        {!isOpen && (
+            <div className="relative group">
+                 {/* Tooltip */}
+                 <div className={`absolute ${direction === 'rtl' ? 'left-full ml-4' : 'right-full mr-4'} top-1/2 -translate-y-1/2 pointer-events-none`}>
+                    <div className={`
+                        bg-secondary/90 backdrop-blur border border-white/10 px-3 py-1.5 rounded-sm shadow-xl
+                        opacity-0 group-hover:opacity-100 transform ${direction === 'rtl' ? '-translate-x-2 group-hover:translate-x-0' : 'translate-x-2 group-hover:translate-x-0'} transition-all duration-300
+                        whitespace-nowrap
+                    `}>
+                        <span className="text-[10px] font-bold font-mono text-neutral-light uppercase tracking-widest">
+                            {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
                         </span>
                     </div>
+                </div>
 
-                    {/* Option 2: AI Bot (Secondary) */}
-                    {!isOpen && (
-                        <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row' : 'flex-row-reverse'}`}>
-                            <button
-                                onClick={() => { setIsOpen(true); setIsFabOpen(false); }}
-                                className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-accent hover:border-accent/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
-                            >
-                                <Bot size={24} />
-                            </button>
-                            <span className="bg-secondary/90 text-neutral-light text-xs font-bold px-3 py-1.5 rounded-sm border border-white/10 backdrop-blur whitespace-nowrap shadow-md">
-                                {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
-                            </span>
-                        </div>
-                    )}
-                </MotionDiv>
-            )}
-        </AnimatePresence>
+                <button
+                    onClick={() => setIsOpen(true)}
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-secondary/80 backdrop-blur-md border border-neutral-light/10 text-neutral-dim hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-lg cursor-pointer"
+                >
+                    <Bot size={20} />
+                </button>
+            </div>
+        )}
 
-        {/* Main Trigger Button */}
-        <button
-            onClick={() => setIsFabOpen(!isFabOpen)}
-            className={`
-                w-16 h-16 rounded-full bg-accent text-primary shadow-[0_0_20px_rgba(var(--color-accent),0.4)] 
-                flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 z-20 relative
-            `}
-        >
-             <AnimatePresence mode="wait">
-                {isFabOpen ? (
-                     <motion.div
-                        key="close"
-                        initial={{ rotate: -90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: 90, opacity: 0 }}
-                     >
-                         <ChevronDown size={32} />
-                     </motion.div>
-                ) : (
-                    <motion.div
-                        key="open"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        exit={{ scale: 0 }}
-                    >
-                         <MessageCircle size={32} className="animate-pulse" />
-                    </motion.div>
-                )}
-             </AnimatePresence>
+        {/* WHATSAPP BUTTON (Primary Floating) */}
+        <div className="relative group flex items-center">
+            {/* Tooltip Label (Side) */}
+            <div className={`absolute ${direction === 'rtl' ? 'left-full ml-4' : 'right-full mr-4'} pointer-events-none`}>
+                <div className={`
+                    bg-primary border border-accent/20 px-3 py-1.5 rounded-sm shadow-xl
+                    opacity-0 group-hover:opacity-100 transform ${direction === 'rtl' ? '-translate-x-2 group-hover:translate-x-0' : 'translate-x-2 group-hover:translate-x-0'} transition-all duration-300
+                    whitespace-nowrap
+                `}>
+                    <span className="text-[10px] font-bold font-mono text-accent uppercase tracking-widest">
+                        {language === 'ar' ? 'تواصل معنا الآن' : 'Contact Us Now'}
+                    </span>
+                    {/* Connector Line */}
+                    <div className={`absolute top-1/2 w-4 h-[1px] bg-accent/50 ${direction === 'rtl' ? 'right-full' : 'left-full'}`} />
+                </div>
+            </div>
 
-             {/* Ping Effect when closed */}
-             {!isFabOpen && (
-                 <span className="absolute inset-0 bg-accent rounded-full animate-ping opacity-20" />
-             )}
-        </button>
+            <button
+                onClick={() => setIsWhatsAppOpen(true)}
+                className="w-14 h-14 rounded-full bg-secondary/80 backdrop-blur-md border border-neutral-light/10 text-neutral-dim hover:text-accent hover:border-accent/50 transition-all duration-300 flex items-center justify-center shadow-lg relative group overflow-hidden cursor-pointer"
+            >
+                {/* Ripple Effect Background */}
+                <span className="absolute inset-0 bg-accent/5 rounded-full animate-ping opacity-0 group-hover:opacity-100 duration-1000" />
+                <WhatsAppIcon size={26} className="relative z-10 transition-transform group-hover:scale-110" />
+            </button>
+        </div>
 
       </div>
     </>

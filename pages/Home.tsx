@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useInView, animate, useTransform, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Layers, Zap, HardHat, LayoutTemplate, Compass, Box, Trees, Lightbulb, Route,
@@ -64,8 +63,7 @@ const StatItem = ({ value, label }: { value: string, label: string }) => {
 };
 
 const Home: React.FC = () => {
-  const { t, projects, interiorProjects, services, testimonials } = useLanguage();
-  const navigate = useNavigate();
+  const { t, projects, services, testimonials, direction } = useLanguage();
   
   // Typewriter effect state
   const [text, setText] = useState('');
@@ -122,16 +120,7 @@ const Home: React.FC = () => {
     }
   };
 
-  // Curated Featured Projects Selection:
-  // 1. Children's Bedroom (Interior - i1)
-  // 2. Villa in Tubas (Exterior - 3 'azure-bridge')
-  // 3. Luxury Bathroom (Interior - i3)
-  const childrenBedroom = interiorProjects.find(p => p.id === 'i1');
-  const villaTubas = projects.find(p => p.id === '3');
-  const luxuryBathroom = interiorProjects.find(p => p.id === 'i3');
-  
-  const featuredProjects = [childrenBedroom, villaTubas, luxuryBathroom].filter(Boolean);
-
+  const featuredProjects = projects.slice(0, 3);
   // Show only top 4 services on home page
   const displayedServices = services.slice(0, 4);
 
@@ -143,10 +132,6 @@ const Home: React.FC = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const navigateToProject = (id: string) => {
-    navigate('/projects', { state: { projectId: id } });
   };
 
   return (
@@ -224,21 +209,12 @@ const Home: React.FC = () => {
             </p>
             
             <div className="flex flex-col md:flex-row items-center gap-6">
-                {/* PRIMARY ACTION: EXPLORE PROJECTS */}
                 <Link 
                   to="/projects" 
-                  className="inline-flex items-center gap-4 px-6 md:px-10 py-3 md:py-4 bg-accent border border-accent text-primary hover:bg-white hover:border-white transition-all duration-300 group font-mono text-xs md:text-sm uppercase tracking-wider shadow-[0_0_20px_rgba(var(--color-accent),0.4)]"
-                >
-                  {t.hero.exploreProjects}
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform rtl-flip" />
-                </Link>
-
-                {/* SECONDARY ACTION: HISTORY */}
-                <Link 
-                  to="/about" 
-                  className="inline-flex items-center gap-4 px-6 md:px-10 py-3 md:py-4 bg-transparent border border-white text-white hover:bg-white/10 transition-all duration-300 group font-mono text-xs md:text-sm uppercase tracking-wider backdrop-blur-sm"
+                  className="inline-flex items-center gap-4 px-6 md:px-10 py-3 md:py-4 bg-transparent border border-white text-white hover:bg-white hover:text-black transition-all duration-300 group font-mono text-xs md:text-sm uppercase tracking-wider backdrop-blur-sm"
                 >
                   {t.hero.cta}
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform rtl-flip" />
                 </Link>
 
                 {/* Mobile Only Quick CTA */}
@@ -246,6 +222,7 @@ const Home: React.FC = () => {
                   onClick={scrollToProjects}
                   className="md:hidden flex items-center gap-2 text-sm text-gray-300 hover:text-white font-mono uppercase tracking-widest border-b border-white/30 pb-1 transition-colors"
                 >
+                  {t.hero.exploreProjects}
                   <ArrowDown className="w-4 h-4 animate-bounce" />
                 </button>
             </div>
@@ -279,8 +256,8 @@ const Home: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {featuredProjects.map((project: any) => (
-            <div onClick={() => navigateToProject(project.id)} key={project.id} className="cursor-pointer h-full">
+          {featuredProjects.map((project, index) => (
+            <Link to={`/projects`} key={project.id}>
               <MotionDiv
                 whileHover={{ y: -10 }}
                 className="group relative bg-secondary border border-neutral-light/5 overflow-hidden h-full shadow-sm"
@@ -297,7 +274,7 @@ const Home: React.FC = () => {
                    {/* Overlay Stats */}
                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
                      <div className="grid grid-cols-2 gap-4 text-xs font-mono text-accent">
-                        {project.specs.slice(0,2).map((s: any, i: number) => (
+                        {project.specs.slice(0,2).map((s, i) => (
                             <div key={i}>
                                 <span className="text-neutral-dim block">{s.label}</span>
                                 {s.value}
@@ -315,7 +292,7 @@ const Home: React.FC = () => {
                   <p className="text-sm text-neutral-dim line-clamp-2">{project.description}</p>
                 </div>
               </MotionDiv>
-            </div>
+            </Link>
           ))}
         </div>
       </Section>
