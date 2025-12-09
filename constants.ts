@@ -645,11 +645,11 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       location: 'Tubas, Palestine',
       year: '2023',
       area: '800 m²',
-      image: 'https://i.postimg.cc/QxzYJ6Zw/1.jpg',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg',
       gallery: [
-          'https://i.postimg.cc/dtfNjWcW/2.jpg',
-          'https://i.postimg.cc/Pr7VQ6kn/3.jpg',
-          'https://i.postimg.cc/4xhLLzJt/5.png'
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg',
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg',
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg'
       ],
       description: 'Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.',
       specs: [
@@ -752,11 +752,11 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       location: 'طوباس، فلسطين',
       year: '2023',
       area: '800 م²',
-      image: 'https://i.postimg.cc/QxzYJ6Zw/1.jpg',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg',
       gallery: [
-          'https://i.postimg.cc/dtfNjWcW/2.jpg',
-          'https://i.postimg.cc/Pr7VQ6kn/3.jpg',
-          'https://i.postimg.cc/4xhLLzJt/5.png'
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg',
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg',
+          'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg'
       ],
       description: 'مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.',
       specs: [
@@ -793,150 +793,158 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
   en: [
     {
       id: 'i1',
-      slug: 'minimalist-loft',
-      title: 'Urban Minimalist Loft',
+      slug: 'children-bedroom',
+      title: "Modern Children's Bedroom",
       category: 'Residential',
       location: 'Ramallah, Palestine',
       year: '2024',
-      area: '180 m²',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop',
+      area: 'Private',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000',
-        'https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
       ],
-      description: 'A contemporary loft design focusing on open spaces, natural light, and monochromatic textures. This project exemplifies modern Palestinian living with a touch of industrial elegance.',
+      description: 'A thoughtfully designed children’s bedroom that balances playfulness with tranquility. The design utilizes safe materials and a calming color palette to foster both creativity and rest.',
       specs: [
-        { label: 'Style', value: 'Minimalist' },
-        { label: 'Materials', value: 'Concrete & Wood' },
+        { label: 'Style', value: 'Modern Playful' },
+        { label: 'Palette', value: 'Soft Pastels' },
       ],
     },
     {
       id: 'i2',
-      slug: 'luxury-office',
-      title: 'Executive Corporate Hub',
-      category: 'Commercial',
-      location: 'Dubai, UAE',
-      year: '2023',
-      area: '450 m²',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop',
+      slug: 'guest-reception',
+      title: 'Luxury Guest Reception',
+      category: 'Residential',
+      location: 'Nablus, Palestine',
+      year: '2024',
+      area: 'Private',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp'
       ],
-      description: 'High-end corporate office design integrating ergonomic workspaces with luxury meeting areas. Features smart glass partitions and custom acoustic solutions.',
+      description: 'A sophisticated guest reception room designed to exude warmth and hospitality. The interior features premium wood paneling, marble accents, and an integrated lighting system that creates an inviting ambiance.',
       specs: [
-        { label: 'Capacity', value: '50 Workstations' },
-        { label: 'Tech', value: 'Smart Integrated' },
+        { label: 'Materials', value: 'Wood & Marble' },
+        { label: 'Lighting', value: 'Warm Ambient' },
       ],
     },
     {
       id: 'i3',
-      slug: 'cozy-retreat',
-      title: 'Nordic Bedroom Retreat',
+      slug: 'modern-luxury-bathroom',
+      title: 'Modern Luxury Bathroom Design',
       category: 'Residential',
       location: 'Jericho, Palestine',
-      year: '2023',
-      area: '45 m²',
-      image: 'https://images.unsplash.com/photo-1616594039964-408359566320?q=80&w=2000&auto=format&fit=crop',
+      year: '2024',
+      area: '25 m²',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849051/3_1_edpliw.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849048/2a_i5fkhr.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849045/1a_vykbfr.webp'
       ],
-      description: 'A serene bedroom sanctuary designed with soft earthy tones and organic fabrics to create a calming atmosphere away from the city noise.',
+      description: 'A design that immerses your senses in calm. Enjoy an exceptional bathing experience in this contemporary sanctuary where natural stone elegance meets smart functionality. Features textured stone walls, matte black fixtures, and a freestanding tub for ultimate relaxation.',
       specs: [
-        { label: 'Mood', value: 'Serene' },
-        { label: 'Palette', value: 'Earth Tones' },
+        { label: 'Style', value: 'Modern Luxury' },
+        { label: 'Materials', value: 'Stone & Matte Black' },
       ],
     },
     {
       id: 'i4',
-      slug: 'industrial-kitchen',
-      title: 'Industrial Fusion Kitchen',
+      slug: 'dressing-room',
+      title: 'Modern Dressing Room',
       category: 'Residential',
       location: 'Nablus, Palestine',
       year: '2024',
-      area: '60 m²',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop',
+      area: '40 m²',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
       ],
-      description: 'A bold kitchen design merging exposed brick textures with sleek matte black cabinetry and copper accents, perfect for culinary enthusiasts.',
+      description: 'A meticulously organized walk-in closet designed for elegance and functionality. Featuring custom joinery, integrated LED lighting, and ample storage solutions to create a boutique-like experience at home.',
       specs: [
-        { label: 'Finish', value: 'Matte Black' },
-        { label: 'Layout', value: 'Open Island' },
+        { label: 'Storage', value: 'Custom Joinery' },
+        { label: 'Lighting', value: 'Integrated LED' },
       ],
     }
   ],
   ar: [
     {
       id: 'i1',
-      slug: 'minimalist-loft',
-      title: 'لوفت حضري بسيط',
+      slug: 'children-bedroom',
+      title: 'غرفة نوم أطفال',
       category: 'سكني',
       location: 'رام الله، فلسطين',
       year: '2024',
-      area: '180 م²',
-      image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop',
+      area: 'خاص',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000',
-        'https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
       ],
-      description: 'تصميم لوفت معاصر يركز على المساحات المفتوحة، الإضاءة الطبيعية، والأنسجة أحادية اللون. يجسد هذا المشروع نمط الحياة الفلسطيني الحديث بلمسة من الأناقة الصناعية.',
+      description: 'تصميم غرفة نوم أطفال يجمع بين المرح والهدوء. تم استخدام مواد آمنة ولوحة ألوان مريحة لتعزيز الإبداع والراحة للطفل.',
       specs: [
-        { label: 'النمط', value: 'تبسيطي' },
-        { label: 'المواد', value: 'خرسانة وخشب' },
+        { label: 'النمط', value: 'عصري مرح' },
+        { label: 'الألوان', value: 'ألوان باستيل' },
       ],
     },
     {
       id: 'i2',
-      slug: 'luxury-office',
-      title: 'المركز المؤسسي التنفيذي',
-      category: 'تجاري',
-      location: 'دبي، الإمارات',
-      year: '2023',
-      area: '450 م²',
-      image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop',
+      slug: 'guest-reception',
+      title: 'غرفة استقبال ضيوف',
+      category: 'سكني',
+      location: 'نابلس، فلسطين',
+      year: '2024',
+      area: 'خاص',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp'
       ],
-      description: 'تصميم مكتبي راقٍ يدمج مساحات العمل المريحة مع مناطق اجتماعات فاخرة. يتميز بفواصل زجاجية ذكية وحلول صوتية مخصصة.',
+      description: 'تصميم غرفة استقبال ضيوف فاخرة تعكس كرم الضيافة والدفء. يتميز التصميم الداخلي باستخدام ألواح خشبية راقية، لمسات رخامية، ونظام إضاءة مدمج يخلق أجواء ترحيبية.',
       specs: [
-        { label: 'السعة', value: '50 محطة عمل' },
-        { label: 'التقنية', value: 'مدمجة ذكية' },
+        { label: 'المواد', value: 'خشب ورخام' },
+        { label: 'الإضاءة', value: 'مخفية دافئة' },
       ],
     },
     {
       id: 'i3',
-      slug: 'cozy-retreat',
-      title: 'ملاذ غرفة النوم الشمالي',
+      slug: 'modern-luxury-bathroom',
+      title: 'تصميم حمام فاخر وعصري',
       category: 'سكني',
       location: 'أريحا، فلسطين',
-      year: '2023',
-      area: '45 م²',
-      image: 'https://images.unsplash.com/photo-1616594039964-408359566320?q=80&w=2000&auto=format&fit=crop',
+      year: '2024',
+      area: '25 م²',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849051/3_1_edpliw.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849048/2a_i5fkhr.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849045/1a_vykbfr.webp'
       ],
-      description: 'ملاذ هادئ لغرفة النوم مصمم بألوان ترابية ناعمة وأقمشة عضوية لخلق جو مريح بعيداً عن صخب المدينة.',
+      description: 'تصميمٌ يغمر حواسك بالهدوء. استمتع بتجربة استحمام استثنائية ضمن هذا الملاذ المعاصر، حيث تلتقي أناقة الحجر الطبيعي بالوظيفة الذكية. من الأرفف المضيئة التي تعرض أرقى مستحضراتك، إلى حوض الاستحمام القائم بذاته الذي يدعوك للاسترخاء - كل زاوية في هذا الحمام صُممت لتقدم لك الفخامة الخاصة بك.',
       specs: [
-        { label: 'الأجواء', value: 'هادئة' },
-        { label: 'الألوان', value: 'ألوان ترابية' },
+        { label: 'النمط', value: 'فاخر ومعاصر' },
+        { label: 'المواد', value: 'حجر ومعدن أسود' },
       ],
     },
     {
       id: 'i4',
-      slug: 'industrial-kitchen',
-      title: 'مطبخ فيوجن صناعي',
+      slug: 'dressing-room',
+      title: 'غرفة ملابس فاخرة',
       category: 'سكني',
       location: 'نابلس، فلسطين',
       year: '2024',
-      area: '60 م²',
-      image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000&auto=format&fit=crop',
+      area: '40 م²',
+      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp',
       gallery: [
-        'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?q=80&w=2000'
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
+        'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
       ],
-      description: 'تصميم جريء للمطبخ يدمج ملمس الطوب المكشوف مع خزائن سوداء غير لامعة ولمسات نحاسية، مثالي لعشاق الطهي.',
+      description: 'تصميم غرفة ملابس (Walk-in Closet) يجمع بين الأناقة والوظيفة. يتميز بخزائن مخصصة، إضاءة LED مدمجة، وحلول تخزين ذكية توفر تجربة تشبه المتاجر الفاخرة.',
       specs: [
-        { label: 'التشطيب', value: 'أسود غير لامع' },
-        { label: 'التخطيط', value: 'جزيرة مفتوحة' },
+        { label: 'التخزين', value: 'خزائن مخصصة' },
+        { label: 'الإضاءة', value: 'LED مدمج' },
       ],
     }
   ]
@@ -959,227 +967,225 @@ export const SERVICES: Record<'en' | 'ar', Service[]> = {
       description: 'Ensuring stability and safety with advanced analysis for high-rise and complex geometries.',
       icon: 'Layers',
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
-      features: ['Seismic Analysis', 'Steel & Concrete', 'High-Rise Systems'],
+      features: ['Seismic Analysis', 'Steel & Concrete', 'Retrofitting'],
     },
     {
       id: 's3',
-      title: 'BIM Services',
-      description: 'Building Information Modeling for digital twins, collision detection, and lifecycle management.',
+      title: 'BIM & Digital Modeling',
+      description: 'Leveraging Building Information Modeling for conflict resolution and efficient project lifecycle management.',
       icon: 'Box',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2089&auto=format&fit=crop',
-      features: ['LOD 500 Modeling', 'Clash Detection', 'Digital Twins'],
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop',
+      features: ['3D Coordination', 'Clash Detection', 'Digital Twins'],
     },
     {
       id: 's4',
-      title: 'Engineering Consultancy',
-      description: 'Strategic technical advice, feasibility studies, and value engineering for optimized results.',
+      title: 'Project Supervision',
+      description: 'On-site management to ensure execution aligns perfectly with design specifications and timelines.',
       icon: 'Compass',
-      image: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=2069&auto=format&fit=crop',
-      features: ['Feasibility Studies', 'Value Engineering', 'Technical Audits'],
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+      features: ['Quality Control', 'Schedule Management', 'Cost Monitoring'],
     },
     {
       id: 's5',
       title: 'Landscape Architecture',
-      description: 'Harmonizing built environments with nature through sustainable and aesthetic outdoor design.',
+      description: 'Designing outdoor spaces that harmonize with the built environment and promote sustainability.',
       icon: 'Trees',
-      image: 'https://i.postimg.cc/prFTVnc9/maxresdefault.jpg',
-      features: ['Hardscape', 'Softscape', 'Sustainable Irrigation'],
+      image: 'https://images.unsplash.com/photo-1558618047-f4b0ce27d85c?q=80&w=2070&auto=format&fit=crop',
+      features: ['Public Parks', 'Private Gardens', 'Urban Greenery'],
     },
     {
       id: 's6',
-      title: 'Project Management',
-      description: 'End-to-end oversight ensuring projects are delivered on time, within budget, and to quality standards.',
-      icon: 'HardHat',
-      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
-      features: ['Cost Control', 'Scheduling', 'Site Supervision'],
+      title: 'Infrastructure & Roads',
+      description: 'Planning and designing efficient transportation networks and public utility systems.',
+      icon: 'Route',
+      image: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=2068&auto=format&fit=crop',
+      features: ['Road Design', 'Drainage Systems', 'Traffic Planning'],
     },
     {
       id: 's7',
-      title: 'Lighting Design',
-      description: 'Enhancing architectural features and ambiance through strategic photometric planning.',
+      title: 'Consultation & Feasibility',
+      description: 'Providing expert advice and financial analysis to guide successful project investments.',
       icon: 'Lightbulb',
-      image: 'https://i.postimg.cc/50bx8R09/lightingdesignserviceproductimage.webp',
-      features: ['Facade Lighting', 'Indoor Ambiance', 'Energy Efficiency'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+      features: ['Cost Estimation', 'Feasibility Studies', 'Regulatory Compliance'],
     },
     {
       id: 's8',
-      title: 'Road Design',
-      description: 'Planning efficient transportation networks and civil infrastructure for modern cities.',
-      icon: 'Route',
-      image: 'https://i.postimg.cc/qvnYTcc2/Highway-121772761-scaled.jpg',
-      features: ['Traffic Analysis', 'Pavement Design', 'Infrastructure Planning'],
-    },
+      title: 'Safety & E-Licensing',
+      description: 'Handling all municipal permits and ensuring strict adherence to safety codes.',
+      icon: 'HardHat',
+      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop',
+      features: ['Permit Processing', 'Safety Audits', 'Code Compliance'],
+    }
   ],
   ar: [
     {
       id: 's1',
       title: 'التصميم المعماري',
-      description: 'ابتكار مساحات وظيفية خالدة من خلال المفاهيم المبتكرة والتخطيط التفصيلي.',
+      description: 'ابتكار مساحات وظيفية خالدة من خلال مفاهيم إبداعية وتخطيط دقيق.',
       icon: 'LayoutTemplate',
       image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop',
       features: ['تصميم المفاهيم', 'التخطيط الحضري', 'العمارة الداخلية'],
     },
     {
       id: 's2',
-      title: 'التصميم الإنشائي',
-      description: 'ضمان الاستقرار والسلامة مع التحليل المتقدم للأبراج والأشكال الهندسية المعقدة.',
+      title: 'الهندسة الإنشائية',
+      description: 'ضمان الاستقرار والسلامة من خلال التحليل المتقدم للمباني الشاهقة والهياكل المعقدة.',
       icon: 'Layers',
       image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop',
-      features: ['التحليل الزلزالي', 'الفولاذ والخرسانة', 'أنظمة الأبراج'],
+      features: ['التحليل الزلزالي', 'الفولاذ والخرسانة', 'التدعيم وإعادة التأهيل'],
     },
     {
       id: 's3',
       title: 'نمذجة معلومات البناء (BIM)',
-      description: 'نمذجة معلومات البناء للتوائم الرقمية، وكشف التعارضات، وإدارة دورة حياة المشروع.',
+      description: 'استخدام تقنيات النمذجة الحديثة لحل التعارضات وإدارة دورة حياة المشروع بكفاءة.',
       icon: 'Box',
-      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2089&auto=format&fit=crop',
-      features: ['نمذجة LOD 500', 'كشف التعارضات', 'التوائم الرقمية'],
+      image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2071&auto=format&fit=crop',
+      features: ['التنسيق ثلاثي الأبعاد', 'كشف التعارضات', 'التوائم الرقمية'],
     },
     {
       id: 's4',
-      title: 'الاستشارات الهندسية',
-      description: 'مشورة فنية استراتيجية، ودراسات جدوى، وهندسة قيمية لنتائج محسنة.',
+      title: 'الإشراف الهندسي',
+      description: 'إدارة ميدانية لضمان تنفيذ الأعمال بما يطابق التصاميم والجداول الزمنية.',
       icon: 'Compass',
-      image: 'https://images.unsplash.com/photo-1554200876-56c2f25224fa?q=80&w=2069&auto=format&fit=crop',
-      features: ['دراسات الجدوى', 'الهندسة القيمية', 'التدقيق الفني'],
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop',
+      features: ['ضبط الجودة', 'إدارة الجدول الزمني', 'مراقبة التكاليف'],
     },
     {
       id: 's5',
-      title: 'هندسة المشهد وتنسيق المواقع',
-      description: 'المواءمة بين البيئات المبنية والطبيعة من خلال تصميم خارجي مستدام وجمالي.',
+      title: 'هندسة المناظر الطبيعية',
+      description: 'تصميم مساحات خارجية تنسجم مع البيئة المبنية وتعزز الاستدامة.',
       icon: 'Trees',
-      image: 'https://i.postimg.cc/prFTVnc9/maxresdefault.jpg',
-      features: ['تنسيق صلب', 'تنسيق نباتي', 'ري مستدام'],
+      image: 'https://images.unsplash.com/photo-1558618047-f4b0ce27d85c?q=80&w=2070&auto=format&fit=crop',
+      features: ['الحدائق العامة', 'الحدائق الخاصة', 'التخضير الحضري'],
     },
     {
       id: 's6',
-      title: 'إدارة المشاريع',
-      description: 'إشراف شامل لضمان تسليم المشاريع في الوقت المحدد، وضمن الميزانية، ووفق معايير الجودة.',
-      icon: 'HardHat',
-      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop',
-      features: ['مراقبة التكاليف', 'الجدولة الزمنية', 'الإشراف الموقعي'],
+      title: 'البنية التحتية والطرق',
+      description: 'تخطيط وتصميم شبكات مواصلات فعالة وأنظمة مرافق عامة متكاملة.',
+      icon: 'Route',
+      image: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?q=80&w=2068&auto=format&fit=crop',
+      features: ['تصميم الطرق', 'أنظمة التصريف', 'تخطيط المرور'],
     },
     {
       id: 's7',
-      title: 'تصميم الإنارة',
-      description: 'تعزيز الميزات المعمارية والأجواء العامة من خلال التخطيط الضوئي الاستراتيجي.',
+      title: 'الاستشارات ودراسات الجدوى',
+      description: 'تقديم مشورة الخبراء والتحليل المالي لتوجيه الاستثمارات الهندسية الناجحة.',
       icon: 'Lightbulb',
-      image: 'https://i.postimg.cc/50bx8R09/lightingdesignserviceproductimage.webp',
-      features: ['إنارة الواجهات', 'الأجواء الداخلية', 'كفاءة الطاقة'],
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
+      features: ['تقدير التكاليف', 'دراسات الجدوى', 'الامتثال التنظيمي'],
     },
     {
       id: 's8',
-      title: 'تصميم الطرق',
-      description: 'تخطيط شبكات نقل وبنية تحتية مدنية فعالة للمدن الحديثة.',
-      icon: 'Route',
-      image: 'https://i.postimg.cc/qvnYTcc2/Highway-121772761-scaled.jpg',
-      features: ['تحليل المرور', 'تصميم الرصف', 'تخطيط البنية التحتية'],
-    },
-  ],
+      title: 'السلامة والتراخيص الإلكترونية',
+      description: 'متابعة كافة التراخيص البلدية وضمان الالتزام الصارم بأكواد السلامة.',
+      icon: 'HardHat',
+      image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop',
+      features: ['إصدار التصاريح', 'تدقيق السلامة', 'الامتثال للكود'],
+    }
+  ]
 };
 
 export const PREMIUM_SERVICES: Record<'en' | 'ar', Service[]> = {
-  // ... (content remains same as before)
   en: [
     {
-      id: 'vip1',
-      title: '3D Printing Service',
-      description: 'Manifesting digital designs into tangible, high-fidelity physical models for rapid prototyping and client presentations.',
-      icon: 'Printer',
-      image: 'https://i.postimg.cc/dQhYLxGx/3d-printed-architectural-model-min.jpg',
-      features: ['Scale Models', 'Rapid Prototyping', 'High-Detail Resin'],
+      id: 'ps1',
+      title: '3D Visualization Atelier',
+      description: 'Hyper-realistic architectural rendering and immersive walkthroughs that bring your vision to life before construction begins.',
+      icon: 'Printer', // Using Printer as placeholder for Rendering/Visuals
+      image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop',
+      features: ['Photorealistic Renders', 'VR Walkthroughs', 'Animation'],
     },
     {
-      id: 'vip2',
-      title: 'Architectural VR & Simulation',
-      description: 'Immersive virtual reality walkthroughs that allow stakeholders to experience spaces before they are built.',
-      icon: 'Glasses',
-      image: 'https://i.postimg.cc/NjmGLzvf/maxresdefault-(1).jpg',
-      features: ['VR Walkthroughs', 'Panoramic Renders', 'Interactive Tours'],
+      id: 'ps2',
+      title: 'Smart Home Integration',
+      description: 'Designing intelligent living environments with automated lighting, climate control, and security systems.',
+      icon: 'Zap',
+      image: 'https://images.unsplash.com/photo-1558002038-109177381792?q=80&w=2000&auto=format&fit=crop',
+      features: ['IoT Planning', 'Energy Efficiency', 'Security Systems'],
     },
     {
-      id: 'vip3',
-      title: 'Premium Design Booklet',
-      description: 'Bespoke, branded project documentation and marketing materials crafted to elevate the project narrative.',
+      id: 'ps3',
+      title: 'Heritage Restoration',
+      description: 'Expert preservation of historical Palestinian architecture, blending traditional methods with modern structural reinforcement.',
       icon: 'BookOpen',
-      image: 'https://i.postimg.cc/XvrbdB9n/best-architecture-portfolio.webp',
-      features: ['Brand Identity', 'Marketing Collateral', 'Technical Folios'],
+      image: 'https://images.unsplash.com/photo-1599690925058-90e1a0b555e7?q=80&w=2000&auto=format&fit=crop',
+      features: ['Stone Restoration', 'Structural Strengthening', 'Historical Analysis'],
     },
   ],
   ar: [
     {
-      id: 'vip1',
-      title: 'خدمة الطباعة ثلاثية الأبعاد',
-      description: 'تحويل التصاميم الرقمية إلى نماذج مادية عالية الدقة للنماذج الأولية السريعة وعروض العملاء.',
+      id: 'ps1',
+      title: 'أستوديو التصور ثلاثي الأبعاد',
+      description: 'إظهار معماري فائق الواقعية وجولات افتراضية غامرة تجسد رؤيتك قبل البدء في البناء.',
       icon: 'Printer',
-      image: 'https://i.postimg.cc/dQhYLxGx/3d-printed-architectural-model-min.jpg',
-      features: ['نماذج مصغرة', 'نماذج أولية سريعة', 'راتينج عالي التفاصيل'],
+      image: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2000&auto=format&fit=crop',
+      features: ['رندرة واقعية', 'جولات افتراضية (VR)', 'أنيميشن'],
     },
     {
-      id: 'vip2',
-      title: 'المحاكاة المعمارية والواقع الافتراضي',
-      description: 'جولات واقع افتراضي غامرة تسمح لأصحاب المصلحة بتجربة المساحات قبل بنائها.',
-      icon: 'Glasses',
-      image: 'https://i.postimg.cc/NjmGLzvf/maxresdefault-(1).jpg',
-      features: ['جولات الواقع الافتراضي', 'رندرات بانورامية', 'جولات تفاعلية'],
+      id: 'ps2',
+      title: 'تكامل المنازل الذكية',
+      description: 'تصميم بيئات معيشية ذكية مع أنظمة إضاءة، وتكييف، وأمان مؤتمتة بالكامل.',
+      icon: 'Zap',
+      image: 'https://images.unsplash.com/photo-1558002038-109177381792?q=80&w=2000&auto=format&fit=crop',
+      features: ['تخطيط إنترنت الأشياء', 'كفاءة الطاقة', 'أنظمة الأمان'],
     },
     {
-      id: 'vip3',
-      title: 'كتيب التصميم المتميز',
-      description: 'توثيق المشروع ومواد التسويق المصممة خصيصاً للارتقاء بسردية المشروع وهويته.',
+      id: 'ps3',
+      title: 'ترميم التراث',
+      description: 'حفظ خبير للعمارة الفلسطينية التاريخية، يمزج بين الأساليب التقليدية والتدعيم الإنشائي الحديث.',
       icon: 'BookOpen',
-      image: 'https://i.postimg.cc/XvrbdB9n/best-architecture-portfolio.webp',
-      features: ['الهوية البصرية', 'مواد التسويق', 'ملفات فنية'],
+      image: 'https://images.unsplash.com/photo-1599690925058-90e1a0b555e7?q=80&w=2000&auto=format&fit=crop',
+      features: ['ترميم الحجر', 'التقوية الإنشائية', 'التحليل التاريخي'],
     },
   ]
 };
 
 export const TESTIMONIALS: Record<'en' | 'ar', Testimonial[]> = {
-    // ... (content remains same as before)
-    en: [
-        {
-            id: 'tm1',
-            name: 'Mr. Tariq Al-Ahmad',
-            role: 'Villa Owner',
-            company: 'Nablus, Palestine',
-            content: 'The attention to detail in our private villa was extraordinary. They perfectly captured the modern aesthetic we wanted while respecting local stone traditions.'
-        },
-        {
-            id: 'tm2',
-            name: 'Eng. Hisham Abu Samra',
-            role: 'Villa Owner',
-            company: 'Moscow, Russia',
-            content: 'Building a luxury home in Moscow required a team that understands complex engineering for harsh climates. Al Nebras delivered a masterpiece that stands out.'
-        },
-        {
-            id: 'tm3',
-            name: 'Mrs. Rima Haddad',
-            role: 'Villa Owner',
-            company: 'Mount Lebanon',
-            content: 'Our mountain home needed to blend with nature. The design provided by Al Nebras is breathtaking, and the remote supervision was flawless.'
-        }
-    ],
-    ar: [
-        {
-            id: 'tm1',
-            name: 'السيد طارق الأحمد',
-            role: 'مالك فيلا',
-            company: 'نابلس، فلسطين',
-            content: 'الاهتمام بالتفاصيل في فيلتنا الخاصة كان استثنائياً. لقد نجحوا في تجسيد الطابع العصري الذي أردناه مع الحفاظ على عراقة الحجر الفلسطيني التقليدي.'
-        },
-        {
-            id: 'tm2',
-            name: 'المهندس هشام أبو سمرة',
-            role: 'مالك فيلا',
-            company: 'موسكو، روسيا',
-            content: 'بناء منزل فاخر في موسكو تطلب فريقاً يفهم الهندسة المعقدة للتعامل مع المناخ القاسي. قدم لنا مكتب النبراس تحفة فنية تتحدى الزمن.'
-        },
-        {
-            id: 'tm3',
-            name: 'السيدة ريما حداد',
-            role: 'مالكة فيلا',
-            company: 'جبل لبنان',
-            content: 'منزلنا الجبلي كان بحاجة لينسجم مع الطبيعة المحيطة. التصميم الذي قدمه النبراس كان خلاباً، وعملية الإشراف عن بعد كانت دقيقة واحترافية.'
-        }
-    ]
+  en: [
+    {
+      id: 't1',
+      name: 'Mr. Mahmoud',
+      role: 'Project Owner',
+      content: 'I worked with Al Nebras on my project in Nablus. The level of detail in the interior finishing and the reception area design was exceptional. Truly high-end engineering.',
+      company: 'Nablus Residence'
+    },
+    {
+      id: 't2',
+      name: 'Mr. Alexey V.',
+      role: 'Investor',
+      content: 'Even managing a project remotely from Russia, the communication with Al Nebras was seamless. They delivered the architectural plans for my investment property with international standards.',
+      company: 'International Project'
+    },
+    {
+      id: 't3',
+      name: 'Mr. Ghassan Salahat',
+      role: 'Villa Owner',
+      content: 'Al Nebras designed my villa in Tubas. They are hands down the best engineering office in the governorate. The modern design and landscape integration exceeded my expectations.',
+      company: 'Private Villa - Tubas'
+    }
+  ],
+  ar: [
+    {
+      id: 't1',
+      name: 'السيد محمود',
+      role: 'مالك المشروع',
+      content: 'تعاملت مع مكتب النبراس في مشروعي بنابلس. مستوى التفاصيل في التشطيبات الداخلية وتصميم منطقة الاستقبال كان استثنائياً. هندسة راقية بكل معنى الكلمة.',
+      company: 'سكن خاص - نابلس'
+    },
+    {
+      id: 't2',
+      name: 'السيد أليكسي',
+      role: 'مستثمر',
+      content: 'حتى مع إدارة المشروع عن بعد من روسيا، كان التواصل مع النبراس سلساً للغاية. قدموا المخططات المعمارية لمشروعي الاستثماري بمعايير عالمية.',
+      company: 'مشروع دولي'
+    },
+    {
+      id: 't3',
+      name: 'السيد غسان صلاحات',
+      role: 'مالك فيلا',
+      content: 'صمم مكتب النبراس فيلتي في طوباس. بلا شك هم أفضل مكتب هندسي في المحافظة. التصميم الحديث ودمج الحديقة الخارجية فاق توقعاتي.',
+      company: 'فيلا خاصة - طوباس'
+    }
+  ]
 };
