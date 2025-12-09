@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
     
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Theme Initialization Script (Prevents Flash) -->
     <script>
       (function() {
@@ -124,8 +127,33 @@
 </script>
 </head>
   <body>
+    <!-- Netlify Identity Redirect Handling -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+    
     <div id="root"></div>
     <!-- CRITICAL: Entry point for the React App -->
     <script type="module" src="./index.tsx"></script>
+    
+    <!-- Hidden Form for Netlify Detection -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <textarea name="message"></textarea>
+      <input type="text" name="subject" />
+      <input type="text" name="budget" />
+      <input type="text" name="position" />
+      <input type="text" name="portfolio" />
+      <input type="text" name="organization" />
+    </form>
   </body>
 </html>

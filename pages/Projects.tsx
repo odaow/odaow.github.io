@@ -1,15 +1,15 @@
-
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
 import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Building, Armchair, ChevronDown } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   const { t, language, direction, projects: exteriorProjects, interiorProjects } = useLanguage();
   const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   
   // View State: 'exterior' or 'interior'
   const [view, setView] = useState<'exterior' | 'interior'>('exterior');
@@ -23,13 +23,13 @@ const Projects: React.FC = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
-  // Deep Link Logic: Handle navigation from Home Page
+  // Deep Link Logic: Handle navigation from Home Page via State OR URL Search Params
   useEffect(() => {
-    if (location.state && location.state.projectId) {
-      const incId = location.state.projectId;
-      
+    // Check State (Internal Nav) or Search Params (Direct Link)
+    const incId = location.state?.projectId || searchParams.get('id');
+
+    if (incId) {
       // Determine if the incoming ID belongs to interior or exterior
-      // Interior IDs usually start with 'i' based on constants.ts, or we check existence
       const isInterior = interiorProjects.some(p => p.id === incId);
       
       if (isInterior) {
@@ -40,11 +40,18 @@ const Projects: React.FC = () => {
       
       // Open the modal
       setSelectedProjectId(incId);
-      
-      // Clear state to prevent reopening on refresh (optional, but good UX)
-      window.history.replaceState({}, document.title);
     }
-  }, [location.state, interiorProjects]);
+  }, [location.state, searchParams, interiorProjects]);
+
+  // Update URL when project opens/closes for shareability
+  useEffect(() => {
+    if (selectedProjectId) {
+        setSearchParams({ id: selectedProjectId }, { replace: true });
+    } else {
+        // Clear params without reloading
+        setSearchParams({}, { replace: true });
+    }
+  }, [selectedProjectId, setSearchParams]);
 
   // Derived state: Always get the project from the CURRENT active dataset
   // We need to look in BOTH lists if selectedProjectId is set, to ensure we find it before the view switches
@@ -146,7 +153,6 @@ const Projects: React.FC = () => {
 
   const MotionDiv = motion.div as any;
   const MotionH2 = motion.h2 as any;
-  const MotionButton = motion.button as any;
 
   return (
     <Section className="pt-32 min-h-screen">

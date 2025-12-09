@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion, useMotionValue, useInView, animate, useTransform, AnimatePresence } from 'framer-motion';
@@ -146,7 +145,8 @@ const Home: React.FC = () => {
   };
 
   const navigateToProject = (id: string) => {
-    navigate('/projects', { state: { projectId: id } });
+    // Navigate using search params for shareable URLs
+    navigate(`/projects?id=${id}`);
   };
 
   return (

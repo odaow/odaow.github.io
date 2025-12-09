@@ -1,6 +1,3 @@
-
-
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Language, Direction, Translations, Project, Service, TeamMember, Partner, Testimonial, BlogPost } from '../types';
 import { TRANSLATIONS, PROJECTS, SERVICES, PREMIUM_SERVICES, TEAM, PARTNERS, INTERIOR_PROJECTS, TESTIMONIALS, INTERNAL_BLOG_POSTS } from '../constants';
@@ -42,13 +39,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Hydrate from JSON (CMS compatibility)
   useEffect(() => {
-    // Robust path finding: try relative path first
-    const contentPath = './data/content.json';
+    // Robust path finding: absolute path ensures it works from any route
+    const contentPath = '/data/content.json';
     
     fetch(contentPath)
       .then(res => {
         if (!res.ok) {
-           // Fallback for different routing scenarios
+           // Fallback attempt with relative path if absolute fails (e.g. subfolder deploy)
            return fetch('data/content.json'); 
         }
         return res;
