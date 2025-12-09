@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
@@ -55,18 +56,11 @@ const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormState('submitting');
-    
-    // Simulate submission flow while keeping Netlify attributes
-    // In a real build, Netlify would handle the POST to /
-    const form = e.target as HTMLFormElement;
-    
-    // For now, we simulate success for UI demo
+    // Simulate network request
     setTimeout(() => {
         setFormState('success');
-        setTimeout(() => {
-            setFormState('idle');
-            form.reset();
-        }, 3000);
+        // Reset after showing success for a while
+        setTimeout(() => setFormState('idle'), 3000);
     }, 2000);
   };
 
@@ -130,10 +124,7 @@ const Contact: React.FC = () => {
                         03 // {t.contact.form.budget}
                     </label>
                     <div className="relative">
-                        <select 
-                            name="budget"
-                            className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light appearance-none cursor-pointer"
-                        >
+                        <select className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light appearance-none cursor-pointer">
                             <option className="bg-secondary text-neutral-light"> &lt; $50k</option>
                             <option className="bg-secondary text-neutral-light">$50k - $200k</option>
                             <option className="bg-secondary text-neutral-light">$200k - $1M</option>
@@ -155,7 +146,6 @@ const Contact: React.FC = () => {
                         </label>
                         <input 
                             type="text" 
-                            name="position"
                             className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                             placeholder={language === 'ar' ? 'مهندس معماري / إنشائي' : 'Architect / Engineer'}
                         />
@@ -167,7 +157,6 @@ const Contact: React.FC = () => {
                         </label>
                         <input 
                             type="url" 
-                            name="portfolio"
                             className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                             placeholder="https://"
                         />
@@ -183,7 +172,6 @@ const Contact: React.FC = () => {
                     </label>
                     <input 
                         type="text" 
-                        name="organization"
                         className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                         placeholder={language === 'ar' ? 'اسم الشركة / المؤسسة' : 'Company Name'}
                     />
@@ -310,7 +298,7 @@ const Contact: React.FC = () => {
                 </MotionDiv>
             </MotionDiv>
 
-            {/* RIGHT COLUMN: ENGINEERING FORM */}
+            {/* RIGHT COLUMN: ENGINEERING FORM (REDESIGNED) */}
             <div className="lg:col-span-7">
                 <MotionForm
                     initial={{ opacity: 0, x: 20 }}
@@ -318,17 +306,7 @@ const Contact: React.FC = () => {
                     viewport={{ once: true }}
                     className="relative bg-primary/95 backdrop-blur-xl border border-white/5 rounded-lg p-6 md:p-8 shadow-2xl"
                     onSubmit={handleSubmit}
-                    // Netlify Form Attributes
-                    name="contact"
-                    method="post"
-                    data-netlify="true"
-                    data-netlify-honeypot="bot-field"
                 >
-                    <input type="hidden" name="form-name" value="contact" />
-                    <p className="hidden">
-                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-                    </p>
-
                     {/* Header: Dynamic Title */}
                     <div className="flex items-center justify-between mb-8 border-b border-neutral-light/5 pb-4">
                         <div className="flex flex-col gap-1">
@@ -359,9 +337,6 @@ const Contact: React.FC = () => {
                                 <span className="w-1 h-1 bg-accent rounded-full"></span>
                                 00 // {t.contact.form.subject}
                              </label>
-                             {/* Hidden input for subject to ensure it's captured */}
-                             <input type="hidden" name="subject" value={selectedSubject} />
-                             
                              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
                                 {(['inquiry', 'careers', 'partnership'] as SubjectType[]).map((subj) => (
                                     <button
@@ -394,7 +369,6 @@ const Contact: React.FC = () => {
                                 </label>
                                 <input 
                                     type="text" 
-                                    name="name"
                                     required
                                     className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                                     placeholder={t.contact.form.namePlaceholder}
@@ -409,7 +383,6 @@ const Contact: React.FC = () => {
                                 </label>
                                 <input 
                                     type="email" 
-                                    name="email"
                                     required
                                     className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                                     placeholder={t.contact.form.emailPlaceholder}
@@ -438,7 +411,6 @@ const Contact: React.FC = () => {
                                 {getMessageIndex()} // {t.contact.form.message}
                             </label>
                             <textarea 
-                                name="message"
                                 rows={4}
                                 required
                                 className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light resize-none leading-relaxed"
