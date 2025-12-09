@@ -1,17 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 import { Project, Service, TeamMember, Translations, Partner, Testimonial, BlogPost } from './types';
 
 export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
@@ -143,11 +131,15 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         namePlaceholder: 'John Doe',
         emailPlaceholder: 'name@company.com',
         messagePlaceholder: 'Tell us about your project...',
+        budget: 'Estimated Budget',
+        portfolio: 'Portfolio / LinkedIn URL',
+        organization: 'Company / Organization',
+        position: 'Position of Interest'
       },
       subjects: {
         inquiry: 'New Project Inquiry',
         careers: 'Careers',
-        media: 'Media',
+        partnership: 'Partnership',
       },
       quick: {
         title: 'Quick Inquiry',
@@ -297,11 +289,15 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         namePlaceholder: 'الاسم الكامل',
         emailPlaceholder: 'name@company.com',
         messagePlaceholder: 'أخبرنا عن تفاصيل مشروعك...',
+        budget: 'الميزانية المتوقعة',
+        portfolio: 'رابط المعرض / لينكدإن',
+        organization: 'الشركة / المؤسسة',
+        position: 'المسمى الوظيفي المطلوب'
       },
       subjects: {
         inquiry: 'استفسار عن مشروع جديد',
         careers: 'وظائف',
-        media: 'إعلام',
+        partnership: 'شراكة',
       },
       quick: {
         title: 'تواصل سريع',
@@ -323,6 +319,69 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       }
     }
   },
+};
+
+export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
+  en: [
+    { 
+      id: 't1', 
+      name: 'Eng. Saed Salahat', 
+      role: 'Founder & Head of Structural Dept.', 
+      bio: 'With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.', 
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't2', 
+      name: 'Eng. Mohammed Salahat', 
+      role: 'Head of Architecture', 
+      bio: 'A visionary architect dedicated to creating timeless designs that seamlessly merge modern aesthetics with functional living spaces.', 
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't3', 
+      name: 'Eng. Oday Salahat', 
+      role: 'BIM Director', 
+      bio: 'Leading the digital transformation of the office through advanced Building Information Modeling (BIM) workflows and smart construction technologies.', 
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't4', 
+      name: 'Eng. Ribhi Sawafta', 
+      role: 'Head of Road Design', 
+      bio: 'Expert in infrastructure planning and transportation engineering, ensuring efficient and safe road networks for sustainable urban development.', 
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop' 
+    },
+  ],
+  ar: [
+    { 
+      id: 't1', 
+      name: 'م. سائد صلاحات', 
+      role: 'المؤسس ومدير قسم الانشائيين', 
+      bio: 'بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.', 
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't2', 
+      name: 'م. محمد صلاحات', 
+      role: 'مدير العمارة', 
+      bio: 'معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.', 
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't3', 
+      name: 'م. عدي صلاحات', 
+      role: 'مدير نمذجة البناء', 
+      bio: 'يقود التحول الرقمي للمكتب من خلال تقنيات نمذجة معلومات البناء (BIM) المتقدمة وتكنولوجيا البناء الذكي.', 
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't4', 
+      name: 'م. ربحي صوافطة', 
+      role: 'مدير تصميم الطرق', 
+      bio: 'خبير في تخطيط البنية التحتية وهندسة المواصلات، يضمن تصميم شبكات طرق فعالة وآمنة للتطوير الحضري المستدام.', 
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop' 
+    },
+  ]
 };
 
 export const INTERNAL_BLOG_POSTS: Record<'en' | 'ar', BlogPost[]> = {
@@ -533,8 +592,8 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       description: 'A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.',
       specs: [
         { label: 'Green Area', value: '70%' },
-        { label: 'Pathways', value: 'Paved' },
-        { label: 'Facilities', value: 'Complete' },
+        { label: 'Pathways', "value": 'Paved' },
+        { label: 'Facilities', "value": 'Complete' },
       ],
     },
     {
@@ -607,7 +666,6 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       location: 'Al-Fara\'a, Palestine',
       year: '2024',
       area: '480 m²',
-      // UPDATED METRO: Main image
       image: 'https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg',
       gallery: [
         'https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg',
@@ -715,7 +773,6 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       location: 'الفارعة، فلسطين',
       year: '2024',
       area: '480 م²',
-      // UPDATED METRO AR: Main image
       image: 'https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg',
       gallery: [
         'https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg',
@@ -886,6 +943,7 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
 };
 
 export const SERVICES: Record<'en' | 'ar', Service[]> = {
+  // ... (content remains same as before)
   en: [
     {
       id: 's1',
@@ -1021,6 +1079,7 @@ export const SERVICES: Record<'en' | 'ar', Service[]> = {
 };
 
 export const PREMIUM_SERVICES: Record<'en' | 'ar', Service[]> = {
+  // ... (content remains same as before)
   en: [
     {
       id: 'vip1',
@@ -1075,20 +1134,8 @@ export const PREMIUM_SERVICES: Record<'en' | 'ar', Service[]> = {
   ]
 };
 
-export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
-  en: [
-    { id: 't1', name: 'Dr. Sarah Al-Fayed', role: 'Principal Architect', bio: 'PhD in Sustainable Urbanism with 15 years leading mega-projects.', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' },
-    { id: 't2', name: 'James Sterling', role: 'Lead Structural Engineer', bio: 'Specialist in seismic retrofitting and high-rise structural systems.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' },
-    { id: 't3', name: 'Omar Hassan', role: 'BIM Director', bio: 'Pioneering digital twins and automated construction workflows.', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' },
-  ],
-  ar: [
-    { id: 't1', name: 'د. سارة الفايد', role: 'كبير المعماريين', bio: 'دكتوراه في التخطيط الحضري المستدام مع 15 عاماً من قيادة المشاريع الضخمة.', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' },
-    { id: 't2', name: 'جيمس ستيرلينغ', role: 'كبير المهندسين الإنشائيين', bio: 'متخصص في التحديث الزلزالي والأنظمة الإنشائية للأبراج.', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' },
-    { id: 't3', name: 'عمر حسن', role: 'مدير نمذجة البناء', bio: 'رائد في التوائم الرقمية وسير عمل البناء الآلي.', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' },
-  ],
-}
-
 export const TESTIMONIALS: Record<'en' | 'ar', Testimonial[]> = {
+    // ... (content remains same as before)
     en: [
         {
             id: 'tm1',

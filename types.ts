@@ -1,4 +1,5 @@
 
+
 export interface Project {
   id: string;
   slug: string;
@@ -195,11 +196,16 @@ export interface Translations {
       namePlaceholder: string;
       emailPlaceholder: string;
       messagePlaceholder: string;
+      // New dynamic fields
+      budget: string;
+      portfolio: string;
+      organization: string;
+      position: string;
     };
     subjects: {
       inquiry: string;
       careers: string;
-      media: string;
+      partnership: string;
     };
     // WhatsApp Widget Translations
     quick: {

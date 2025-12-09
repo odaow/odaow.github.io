@@ -125,7 +125,7 @@ const About: React.FC = () => {
                 {t.about.leadership}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {team.map((member) => (
                     <div key={member.id} className="group">
                         <div className="aspect-[3/4] overflow-hidden mb-6 relative grayscale hover:grayscale-0 transition-all duration-500 rounded-sm">
