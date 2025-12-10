@@ -53,15 +53,31 @@ const Contact: React.FC = () => {
     setTimeout(() => setCopiedField(null), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState('submitting');
-    // Simulate network request
-    setTimeout(() => {
+
+    const myForm = e.currentTarget;
+    const formData = new FormData(myForm);
+    
+    // Explicitly append the subject since it is controlled state
+    formData.set('subject', selectedSubject);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData as any).toString()
+    })
+    .then(() => {
         setFormState('success');
-        // Reset after showing success for a while
+        myForm.reset();
         setTimeout(() => setFormState('idle'), 3000);
-    }, 2000);
+    })
+    .catch((error) => {
+        console.error(error);
+        alert("Error submitting form. Please try again.");
+        setFormState('idle');
+    });
   };
 
   const containerVariants = {
@@ -124,11 +140,11 @@ const Contact: React.FC = () => {
                         03 // {t.contact.form.budget}
                     </label>
                     <div className="relative">
-                        <select className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light appearance-none cursor-pointer">
-                            <option className="bg-secondary text-neutral-light"> &lt; $50k</option>
-                            <option className="bg-secondary text-neutral-light">$50k - $200k</option>
-                            <option className="bg-secondary text-neutral-light">$200k - $1M</option>
-                            <option className="bg-secondary text-neutral-light"> &gt; $1M</option>
+                        <select name="budget" className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light appearance-none cursor-pointer">
+                            <option value="< 50k" className="bg-secondary text-neutral-light"> &lt; $50k</option>
+                            <option value="50k-200k" className="bg-secondary text-neutral-light">$50k - $200k</option>
+                            <option value="200k-1M" className="bg-secondary text-neutral-light">$200k - $1M</option>
+                            <option value="> 1M" className="bg-secondary text-neutral-light"> &gt; $1M</option>
                         </select>
                         <div className="absolute top-1/2 end-4 -translate-y-1/2 pointer-events-none text-neutral-dim">
                              <ArrowRight size={14} className="rotate-90" />
@@ -146,6 +162,7 @@ const Contact: React.FC = () => {
                         </label>
                         <input 
                             type="text" 
+                            name="position"
                             className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                             placeholder={language === 'ar' ? 'مهندس معماري / إنشائي' : 'Architect / Engineer'}
                         />
@@ -157,6 +174,7 @@ const Contact: React.FC = () => {
                         </label>
                         <input 
                             type="url" 
+                            name="portfolio"
                             className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                             placeholder="https://"
                         />
@@ -172,6 +190,7 @@ const Contact: React.FC = () => {
                     </label>
                     <input 
                         type="text" 
+                        name="organization"
                         className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                         placeholder={language === 'ar' ? 'اسم الشركة / المؤسسة' : 'Company Name'}
                     />
@@ -306,7 +325,13 @@ const Contact: React.FC = () => {
                     viewport={{ once: true }}
                     className="relative bg-primary/95 backdrop-blur-xl border border-white/5 rounded-lg p-6 md:p-8 shadow-2xl"
                     onSubmit={handleSubmit}
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
                 >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="hidden" name="subject" value={selectedSubject} />
+
                     {/* Header: Dynamic Title */}
                     <div className="flex items-center justify-between mb-8 border-b border-neutral-light/5 pb-4">
                         <div className="flex flex-col gap-1">
@@ -369,6 +394,7 @@ const Contact: React.FC = () => {
                                 </label>
                                 <input 
                                     type="text" 
+                                    name="name"
                                     required
                                     className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                                     placeholder={t.contact.form.namePlaceholder}
@@ -383,6 +409,7 @@ const Contact: React.FC = () => {
                                 </label>
                                 <input 
                                     type="email" 
+                                    name="email"
                                     required
                                     className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light"
                                     placeholder={t.contact.form.emailPlaceholder}
@@ -411,6 +438,7 @@ const Contact: React.FC = () => {
                                 {getMessageIndex()} // {t.contact.form.message}
                             </label>
                             <textarea 
+                                name="message"
                                 rows={4}
                                 required
                                 className="w-full bg-secondary/30 border border-neutral-light/10 rounded-sm px-4 py-3 text-sm text-neutral-light placeholder-neutral-dim/40 focus:outline-none focus:border-accent focus:bg-secondary/50 transition-all font-light resize-none leading-relaxed"
