@@ -178,6 +178,33 @@ collections:
                    - {label: "Image", name: "image", widget: "image"}
                    - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "text", widget: "string"}}
 
+          # --- PREMIUM SERVICES ---
+          - label: "Premium Services"
+            name: "PREMIUM_SERVICES"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Premium Services"
+                name: "en"
+                widget: "list"
+                fields:
+                   - {label: "ID", name: "id", widget: "string"}
+                   - {label: "Title", name: "title", widget: "string"}
+                   - {label: "Description", name: "description", widget: "text"}
+                   - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+                   - {label: "Image", name: "image", widget: "image"}
+                   - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "text", widget: "string"}}
+              - label: "Arabic Premium Services"
+                name: "ar"
+                widget: "list"
+                fields:
+                   - {label: "ID", name: "id", widget: "string"}
+                   - {label: "Title", name: "title", widget: "string"}
+                   - {label: "Description", name: "description", widget: "text"}
+                   - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+                   - {label: "Image", name: "image", widget: "image"}
+                   - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "text", widget: "string"}}
+
           # --- TEAM ---
           - label: "Team Members"
             name: "TEAM"
