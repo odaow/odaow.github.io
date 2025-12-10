@@ -6,33 +6,93 @@ backend:
 media_folder: "public/assets/images"
 public_folder: "/assets/images"
 
+# Helper for list widgets
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "data"
     label: "Site Content"
     files:
-      - label: "Global Data"
+      - label: "Global Content Database"
         name: "global_data"
         file: "public/data/content.json"
         fields:
-          # PROJECTS COLLECTION
-          - label: "Projects"
+          # --- TRANSLATIONS (Key Texts) ---
+          - label: "Text Translations (EN/AR)"
+            name: "TRANSLATIONS"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Text"
+                name: "en"
+                widget: "object"
+                fields:
+                  - label: "Hero Section"
+                    name: "hero"
+                    widget: "object"
+                    fields:
+                      - {label: "Main Title (Typewriter)", name: "typewriter", widget: "string"}
+                      - {label: "Subtitle", name: "subtitle", widget: "text"}
+                      - {label: "Establishment Text", name: "est", widget: "string"}
+                  - label: "About Section"
+                    name: "about"
+                    widget: "object"
+                    fields:
+                       - {label: "Intro Text 1", name: "heroText1", widget: "text"}
+                       - {label: "Intro Text 2", name: "heroText2", widget: "text"}
+                  - label: "Contact Section"
+                    name: "contact"
+                    widget: "object"
+                    fields:
+                       - {label: "Title", name: "title", widget: "string"}
+                       - {label: "Intro", name: "intro", widget: "string"}
+              - label: "Arabic Text"
+                name: "ar"
+                widget: "object"
+                fields:
+                  - label: "Hero Section"
+                    name: "hero"
+                    widget: "object"
+                    fields:
+                      - {label: "Main Title (Typewriter)", name: "typewriter", widget: "string"}
+                      - {label: "Subtitle", name: "subtitle", widget: "text"}
+                      - {label: "Establishment Text", name: "est", widget: "string"}
+                  - label: "About Section"
+                    name: "about"
+                    widget: "object"
+                    fields:
+                       - {label: "Intro Text 1", name: "heroText1", widget: "text"}
+                       - {label: "Intro Text 2", name: "heroText2", widget: "text"}
+                  - label: "Contact Section"
+                    name: "contact"
+                    widget: "object"
+                    fields:
+                       - {label: "Title", name: "title", widget: "string"}
+                       - {label: "Intro", name: "intro", widget: "string"}
+
+          # --- EXTERIOR PROJECTS ---
+          - label: "Exterior Projects"
             name: "PROJECTS"
             widget: "object"
+            collapsed: true
             fields:
               - label: "English Projects"
                 name: "en"
                 widget: "list"
-                fields:
-                  - {label: "ID", name: "id", widget: "string"}
-                  - {label: "Slug", name: "slug", widget: "string"}
+                fields: &project_fields
+                  - {label: "ID (Unique)", name: "id", widget: "string"}
+                  - {label: "Slug (URL)", name: "slug", widget: "string"}
                   - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Category", name: "category", widget: "select", options: ["Residential", "Commercial", "Education", "Public & Administrative", "Landscape & Public Spaces"]}
                   - {label: "Location", name: "location", widget: "string"}
                   - {label: "Year", name: "year", widget: "string"}
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
@@ -43,7 +103,7 @@ collections:
                 name: "ar"
                 widget: "list"
                 fields:
-                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "ID (Must match EN)", name: "id", widget: "string"}
                   - {label: "Slug", name: "slug", widget: "string"}
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Category", name: "category", widget: "string"}
@@ -52,7 +112,7 @@ collections:
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
@@ -60,16 +120,21 @@ collections:
                       - {label: "Label", name: "label", widget: "string"}
                       - {label: "Value", name: "value", widget: "string"}
 
-          # INTERIOR PROJECTS COLLECTION
+          # --- INTERIOR PROJECTS ---
           - label: "Interior Projects"
             name: "INTERIOR_PROJECTS"
             widget: "object"
+            collapsed: true
             fields:
               - label: "English Interiors"
                 name: "en"
                 widget: "list"
+                fields: *project_fields
+              - label: "Arabic Interiors"
+                name: "ar"
+                widget: "list"
                 fields:
-                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "ID (Must match EN)", name: "id", widget: "string"}
                   - {label: "Slug", name: "slug", widget: "string"}
                   - {label: "Title", name: "title", widget: "string"}
                   - {label: "Category", name: "category", widget: "string"}
@@ -78,38 +143,71 @@ collections:
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
                     fields:
                       - {label: "Label", name: "label", widget: "string"}
                       - {label: "Value", name: "value", widget: "string"}
-              - label: "Arabic Interiors"
+
+          # --- SERVICES ---
+          - label: "Services"
+            name: "SERVICES"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Services"
+                name: "en"
+                widget: "list"
+                fields:
+                   - {label: "ID", name: "id", widget: "string"}
+                   - {label: "Title", name: "title", widget: "string"}
+                   - {label: "Description", name: "description", widget: "text"}
+                   - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+                   - {label: "Image", name: "image", widget: "image"}
+                   - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "text", widget: "string"}}
+              - label: "Arabic Services"
                 name: "ar"
                 widget: "list"
                 fields:
                    - {label: "ID", name: "id", widget: "string"}
-                   - {label: "Slug", name: "slug", widget: "string"}
                    - {label: "Title", name: "title", widget: "string"}
-                   - {label: "Category", name: "category", widget: "string"}
-                   - {label: "Location", name: "location", widget: "string"}
-                   - {label: "Year", name: "year", widget: "string"}
-                   - {label: "Area", name: "area", widget: "string"}
-                   - {label: "Main Image", name: "image", widget: "image"}
                    - {label: "Description", name: "description", widget: "text"}
-                   - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
-                   - label: "Specs"
-                     name: "specs"
-                     widget: "list"
-                     fields:
-                       - {label: "Label", name: "label", widget: "string"}
-                       - {label: "Value", name: "value", widget: "string"}
+                   - {label: "Icon Name (Lucide)", name: "icon", widget: "string"}
+                   - {label: "Image", name: "image", widget: "image"}
+                   - {label: "Features", name: "features", widget: "list", field: {label: "Feature", name: "text", widget: "string"}}
 
-          # PARTNERS COLLECTION
+          # --- TEAM ---
+          - label: "Team Members"
+            name: "TEAM"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Team"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+                  - {label: "Bio", name: "bio", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image"}
+              - label: "Arabic Team"
+                name: "ar"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+                  - {label: "Bio", name: "bio", widget: "text"}
+                  - {label: "Image", name: "image", widget: "image"}
+
+          # --- PARTNERS ---
           - label: "Partners"
             name: "PARTNERS"
             widget: "object"
+            collapsed: true
             fields:
               - label: "English Partners"
                 name: "en"
@@ -120,8 +218,14 @@ collections:
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "Director", name: "director", widget: "string"}
                   - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Email", name: "contactEmail", widget: "string"}
+                  - {label: "Website", name: "website", widget: "string"}
+                  - {label: "Since", name: "since", widget: "string"}
+                  - {label: "Accreditation", name: "accreditation", widget: "text"}
                   - {label: "Logo", name: "logo", widget: "image"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - {label: "Services", name: "services", widget: "list", field: {label: "Service", name: "text", widget: "string"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
               - label: "Arabic Partners"
                 name: "ar"
                 widget: "list"
@@ -131,5 +235,67 @@ collections:
                   - {label: "Description", name: "description", widget: "text"}
                   - {label: "Director", name: "director", widget: "string"}
                   - {label: "Location", name: "location", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Email", name: "contactEmail", widget: "string"}
+                  - {label: "Website", name: "website", widget: "string"}
+                  - {label: "Since", name: "since", widget: "string"}
+                  - {label: "Accreditation", name: "accreditation", widget: "text"}
                   - {label: "Logo", name: "logo", widget: "image"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "string"}}
+                  - {label: "Services", name: "services", widget: "list", field: {label: "Service", name: "text", widget: "string"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+
+          # --- BLOG ---
+          - label: "Blog Posts"
+            name: "INTERNAL_BLOG_POSTS"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Posts"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "ID (Unique)", name: "id", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Author", name: "author", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Excerpt", name: "excerpt", widget: "text"}
+                  - {label: "Full Content (Markdown)", name: "content", widget: "markdown"}
+              - label: "Arabic Posts"
+                name: "ar"
+                widget: "list"
+                fields:
+                  - {label: "ID (Must match EN)", name: "id", widget: "string"}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Date", name: "date", widget: "string"}
+                  - {label: "Category", name: "category", widget: "string"}
+                  - {label: "Author", name: "author", widget: "string"}
+                  - {label: "Image", name: "image", widget: "image"}
+                  - {label: "Excerpt", name: "excerpt", widget: "text"}
+                  - {label: "Full Content (Markdown)", name: "content", widget: "markdown"}
+
+          # --- TESTIMONIALS ---
+          - label: "Testimonials"
+            name: "TESTIMONIALS"
+            widget: "object"
+            collapsed: true
+            fields:
+              - label: "English Testimonials"
+                name: "en"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+                  - {label: "Company", name: "company", widget: "string"}
+                  - {label: "Content", name: "content", widget: "text"}
+              - label: "Arabic Testimonials"
+                name: "ar"
+                widget: "list"
+                fields:
+                  - {label: "ID", name: "id", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+                  - {label: "Company", name: "company", widget: "string"}
+                  - {label: "Content", name: "content", widget: "text"}
