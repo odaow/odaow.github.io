@@ -1,4 +1,5 @@
 
+
 import { Project, Service, TeamMember, Translations, Partner, Testimonial, BlogPost } from './types';
 
 export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
@@ -794,8 +795,12 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'Ramallah, Palestine', 
           year: '2024', 
           area: '180 m²', 
-          image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000', 'https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp', 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
+          ], 
           description: 'A contemporary loft design focusing on open spaces, natural light, and monochromatic textures.', 
           specs: [ { label: 'Style', value: 'Minimalist' }, { label: 'Materials', value: 'Concrete & Wood' } ] 
       },
@@ -807,8 +812,11 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'Dubai, UAE', 
           year: '2023', 
           area: '450 m²', 
-          image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
+          ], 
           description: 'High-end corporate office design integrating ergonomic workspaces with luxury meeting areas.', 
           specs: [ { label: 'Capacity', value: '50 Workstations' }, { label: 'Tech', value: 'Smart Integrated' } ] 
       },
@@ -820,8 +828,11 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'Jericho, Palestine', 
           year: '2023', 
           area: '45 m²', 
-          image: 'https://images.unsplash.com/photo-1616594039964-408359566320?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp' 
+          ], 
           description: 'A serene bedroom sanctuary designed with soft earthy tones and organic fabrics.', 
           specs: [ { label: 'Mood', value: 'Serene' }, { label: 'Palette', value: 'Earth Tones' } ] 
       }
@@ -835,8 +846,12 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'رام الله، فلسطين', 
           year: '2024', 
           area: '180 م²', 
-          image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000', 'https://images.unsplash.com/photo-1618221381711-42ca8ab6e908?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp', 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
+          ], 
           description: 'تصميم لوفت معاصر يركز على المساحات المفتوحة، الإضاءة الطبيعية، والأنسجة أحادية اللون.', 
           specs: [ { label: 'النمط', value: 'تبسيطي' }, { label: 'المواد', value: 'خرسانة وخشب' } ] 
       },
@@ -848,8 +863,11 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'دبي، الإمارات', 
           year: '2023', 
           area: '450 م²', 
-          image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
+          ], 
           description: 'تصميم مكتبي راقٍ يدمج مساحات العمل المريحة مع مناطق اجتماعات فاخرة.', 
           specs: [ { label: 'السعة', value: '50 محطة عمل' }, { label: 'التقنية', value: 'مدمجة ذكية' } ] 
       },
@@ -861,8 +879,11 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
           location: 'أريحا، فلسطين', 
           year: '2023', 
           area: '45 م²', 
-          image: 'https://images.unsplash.com/photo-1616594039964-408359566320?q=80&w=2000&auto=format&fit=crop', 
-          gallery: [ 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?q=80&w=2000' ], 
+          image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp', 
+          gallery: [ 
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp'
+          ], 
           description: 'ملاذ هادئ لغرفة النوم مصمم بألوان ترابية ناعمة وأقمشة عضوية.', 
           specs: [ { label: 'الأجواء', value: 'هادئة' }, { label: 'الألوان', value: 'ألوان ترابية' } ] 
       }
