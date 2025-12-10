@@ -5,9 +5,11 @@ import Section from '../components/Section';
 import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Building, Armchair, ChevronDown } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const Projects: React.FC = () => {
   const { t, language, direction, projects: exteriorProjects, interiorProjects } = useLanguage();
+  const location = useLocation();
   
   // View State: 'exterior' or 'interior'
   const [view, setView] = useState<'exterior' | 'interior'>('exterior');
@@ -21,16 +23,47 @@ const Projects: React.FC = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
+  // Deep Link Logic: Handle navigation from Home Page
+  useEffect(() => {
+    if (location.state && location.state.projectId) {
+      const incId = location.state.projectId;
+      
+      // Determine if the incoming ID belongs to interior or exterior
+      // Interior IDs usually start with 'i' based on constants.ts, or we check existence
+      const isInterior = interiorProjects.some(p => p.id === incId);
+      
+      if (isInterior) {
+        setView('interior');
+      } else {
+        setView('exterior');
+      }
+      
+      // Open the modal
+      setSelectedProjectId(incId);
+      
+      // Clear state to prevent reopening on refresh (optional, but good UX)
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state, interiorProjects]);
+
   // Derived state: Always get the project from the CURRENT active dataset
+  // We need to look in BOTH lists if selectedProjectId is set, to ensure we find it before the view switches
   const selectedProject = useMemo(() => {
     if (!selectedProjectId) return null;
-    return activeProjects.find(p => p.id === selectedProjectId) || null;
-  }, [activeProjects, selectedProjectId]);
+    const foundInActive = activeProjects.find(p => p.id === selectedProjectId);
+    if (foundInActive) return foundInActive;
+    
+    // Fallback: If view hasn't updated yet, check the other list
+    const otherList = view === 'exterior' ? interiorProjects : exteriorProjects;
+    return otherList.find(p => p.id === selectedProjectId) || null;
+  }, [activeProjects, selectedProjectId, view, interiorProjects, exteriorProjects]);
 
-  // Reset filter when language or view changes
+  // Reset filter when language or view changes (unless a project is selected)
   useEffect(() => {
-    setFilter('All');
-  }, [language, view]);
+    if (!selectedProjectId) {
+      setFilter('All');
+    }
+  }, [language, view, selectedProjectId]);
 
   // Derive unique categories based on active view
   const categories = useMemo(() => {
@@ -130,7 +163,7 @@ const Projects: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 h-[50vh] md:h-[60vh]">
                 {/* Exterior Selector */}
                 <div 
-                    onClick={() => setView('exterior')}
+                    onClick={() => { setView('exterior'); setFilter('All'); }}
                     className={`relative group cursor-pointer overflow-hidden rounded-sm transition-all duration-500 border ${view === 'exterior' ? 'border-accent shadow-[0_0_30px_rgba(var(--color-accent),0.2)]' : 'border-neutral-light/10 hover:border-neutral-light/30'}`}
                 >
                     <div className="absolute inset-0 z-0">
@@ -171,7 +204,7 @@ const Projects: React.FC = () => {
 
                 {/* Interior Selector */}
                 <div 
-                    onClick={() => setView('interior')}
+                    onClick={() => { setView('interior'); setFilter('All'); }}
                     className={`relative group cursor-pointer overflow-hidden rounded-sm transition-all duration-500 border ${view === 'interior' ? 'border-accent shadow-[0_0_30px_rgba(var(--color-accent),0.2)]' : 'border-neutral-light/10 hover:border-neutral-light/30'}`}
                 >
                     <div className="absolute inset-0 z-0">

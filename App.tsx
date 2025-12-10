@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
@@ -91,7 +91,8 @@ const App: React.FC = () => {
                     <Route path="/blog/:id" element={<BlogPostDetail />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
-                    <Route path="*" element={<NotFound />} />
+                    {/* Explicitly redirect any unknown path to Home to ensure it is the entry page */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
                   </Routes>
                 </Suspense>
               </Layout>
