@@ -1,3 +1,4 @@
+
 {
   "TRANSLATIONS": {
     "en": {
@@ -366,6 +367,13 @@
         "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop"
       },
       {
+        "id": "t5",
+        "name": "Eng. Shatha Salahat",
+        "role": "Chief Architect",
+        "bio": "Leading the architectural vision with a focus on sustainable design and innovative spatial solutions, ensuring every project embodies aesthetic excellence and functional harmony.",
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
+      },
+      {
         "id": "t3",
         "name": "Eng. Oday Salahat",
         "role": "BIM Director",
@@ -394,6 +402,13 @@
         "role": "مدير العمارة",
         "bio": "معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.",
         "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop"
+      },
+      {
+        "id": "t5",
+        "name": "م. شذى صلاحات",
+        "role": "كبيرة المهندسين المعماريين",
+        "bio": "تقود الرؤية المعمارية مع التركيز على التصميم المستدام والحلول المكانية المبتكرة، لضمان أن يجسد كل مشروع التميز الجمالي والتناغم الوظيفي.",
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop"
       },
       {
         "id": "t3",
@@ -541,515 +556,51 @@
       }
     ]
   },
-  "PROJECTS": {
+  "TESTIMONIALS": {
     "en": [
       {
         "id": "1",
-        "slug": "al-aqrabaniya-park",
-        "title": "Public Park in Al-Aqrabaniya",
-        "category": "Landscape & Public Spaces",
-        "location": "Al-Aqrabaniya, Palestine",
-        "year": "2025",
-        "area": "2,500 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
-        ],
-        "description": "A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.",
-        "specs": [
-          {
-            "label": "Green Area",
-            "value": "70%"
-          },
-          {
-            "label": "Pathways",
-            "value": "Paved"
-          },
-          {
-            "label": "Facilities",
-            "value": "Complete"
-          }
-        ]
+        "name": "Ghassan",
+        "role": "Homeowner",
+        "company": "",
+        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail."
       },
       {
         "id": "2",
-        "slug": "tubas-boys-school",
-        "title": "Tubas Secondary School for Boys",
-        "category": "Education",
-        "location": "Tubas, Palestine",
-        "year": "2018",
-        "area": "2,388 m² (Built)",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847831/myarchitectai_65021vyr7_sd_rpl6pn.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847829/myarchitectai_1c7lao2ky_sd_irwbo4.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847832/myarchitectai_a5d57imsq_sd_lamhil.jpg"
-        ],
-        "description": "A modern educational facility designed to foster learning and community. The project includes multiple floors of classrooms, administration offices, and extensive outdoor recreational areas including courts and playgrounds.",
-        "specs": [
-          {
-            "label": "Ground Floor",
-            "value": "944 m²"
-          },
-          {
-            "label": "First Floor",
-            "value": "822 m²"
-          },
-          {
-            "label": "Second Floor",
-            "value": "474 m²"
-          },
-          {
-            "label": "Outdoor Area",
-            "value": "3,000 m²"
-          }
-        ]
+        "name": "Muna",
+        "role": "Homeowner",
+        "company": "",
+        "content": "Professional, punctual, and creative. They made the complex process of building a home feel simple and organized."
       },
       {
         "id": "3",
-        "slug": "azure-bridge",
-        "title": "Modern Villa in Tubas",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2024",
-        "area": "270 m²",
-        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
-        "gallery": [
-          "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
-          "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
-        ],
-        "description": "A private residence featuring a modern architectural design, focusing on clean lines and functional spaces.",
-        "specs": [
-          {
-            "label": "Area",
-            "value": "270 m²"
-          },
-          {
-            "label": "Style",
-            "value": "Modern"
-          }
-        ]
-      },
-      {
-        "id": "4",
-        "slug": "helix-residence",
-        "title": "Tubas Directorate of Local Government",
-        "category": "Public & Administrative",
-        "location": "Tubas, Palestine",
-        "year": "2023",
-        "area": "800 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
-        ],
-        "description": "Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.",
-        "specs": [
-          {
-            "label": "Total Built",
-            "value": "800 m²"
-          },
-          {
-            "label": "External Area",
-            "value": "1,200 m²"
-          },
-          {
-            "label": "Floors",
-            "value": "G + 1"
-          }
-        ]
-      },
-      {
-        "id": "5",
-        "slug": "metro-hub",
-        "title": "Mr. Ghassan Salahat Villa",
-        "category": "Residential",
-        "location": "Al-Fara'a, Palestine",
-        "year": "2024",
-        "area": "480 m²",
-        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
-        "gallery": [
-          "https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg",
-          "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
-          "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
-        ],
-        "description": "A sophisticated private residence spanning two floors and a roof terrace. The design features a 205 m² ground floor, a 205 m² first floor, and is surrounded by a vast 1,200 m² landscape area.",
-        "specs": [
-          {
-            "label": "Ground Floor",
-            "value": "205 m²"
-          },
-          {
-            "label": "Landscape",
-            "value": "1,200 m²"
-          },
-          {
-            "label": "Total Built",
-            "value": "480 m²"
-          }
-        ]
+        "name": "Ibrahim",
+        "role": "Homeowner",
+        "company": "",
+        "content": "I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind."
       }
     ],
     "ar": [
       {
         "id": "1",
-        "slug": "al-aqrabaniya-park",
-        "title": "حديقة عامة في بلدة العقربانية",
-        "category": "تنسيق حدائق ومرافق عامة",
-        "location": "العقربانية، فلسطين",
-        "year": "2025",
-        "area": "2,500 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
-        ],
-        "description": "مشروع حديقة عامة متميز يجمع بين الجمال الطبيعي والوظيفة المجتمعية. تحتوي الحديقة على مساحات خضراء ممتدة، وممرات مشاة منظمة، ومرافق عامة متكاملة. تم تصميم الموقع ليكون متنفساً حيوياً للأهالي، مع التركيز على الاستدامة وتوفير بيئة آمنة وجذابة للأنشطة الترفيهية والاجتماعية.",
-        "specs": [
-          {
-            "label": "المساحة الخضراء",
-            "value": "70%"
-          },
-          {
-            "label": "الممرات",
-            "value": "مرصوفة"
-          },
-          {
-            "label": "المرافق",
-            "value": "شاملة"
-          }
-        ]
+        "name": "غسان",
+        "role": "مالك",
+        "company": "",
+        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل."
       },
       {
         "id": "2",
-        "slug": "tubas-boys-school",
-        "title": "مدرسة طوباس الثانوية للبنين",
-        "category": "تعليمي",
-        "location": "طوباس، فلسطين",
-        "year": "2018",
-        "area": "2,388 م² (بناء)",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847831/myarchitectai_65021vyr7_sd_rpl6pn.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847829/myarchitectai_1c7lao2ky_sd_irwbo4.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847832/myarchitectai_a5d57imsq_sd_lamhil.jpg"
-        ],
-        "description": "صرح تعليمي متميز يهدف إلى توفير بيئة تعليمية محفزة. يتكون المشروع من طوابق متعددة للفصول الدراسية والمكاتب الإدارية، بالإضافة إلى ساحات خارجية واسعة وملاعب ومرافق ترفيهية تخدم الطلبة والمجتمع.",
-        "specs": [
-          {
-            "label": "طابق أرضي",
-            "value": "944 م²"
-          },
-          {
-            "label": "طابق أول",
-            "value": "822 م²"
-          },
-          {
-            "label": "طابق ثاني",
-            "value": "474 م²"
-          },
-          {
-            "label": "الساحات والملاعب",
-            "value": "3000 م²"
-          }
-        ]
+        "name": "منى",
+        "role": "مالكة",
+        "company": "",
+        "content": "مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة."
       },
       {
         "id": "3",
-        "slug": "azure-bridge",
-        "title": "فيلا في طوباس",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2024",
-        "area": "270 م²",
-        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
-        "gallery": [
-          "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
-          "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
-        ],
-        "description": "فيلا سكنية خاصة تتميز بتصميم مودرن (حديث)، تجمع بين البساطة والأناقة في توزيع المساحات.",
-        "specs": [
-          {
-            "label": "المساحة",
-            "value": "270 م²"
-          },
-          {
-            "label": "التصميم",
-            "value": "مودرن"
-          }
-        ]
-      },
-      {
-        "id": "4",
-        "slug": "helix-residence",
-        "title": "مقر مديرية الحكم المحلي - طوباس",
-        "category": "مباني عامة وإدارية",
-        "location": "طوباس، فلسطين",
-        "year": "2023",
-        "area": "800 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
-        ],
-        "description": "مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.",
-        "specs": [
-          {
-            "label": "مساحة البناء",
-            "value": "800 م²"
-          },
-          {
-            "label": "الساحات الخارجية",
-            "value": "1200 م²"
-          },
-          {
-            "label": "الطوابق",
-            "value": "أرضي + أول"
-          }
-        ]
-      },
-      {
-        "id": "5",
-        "slug": "metro-hub",
-        "title": "فيلا السيد غسان صلاحات المحترم",
-        "category": "سكني",
-        "location": "الفارعة، فلسطين",
-        "year": "2024",
-        "area": "480 م²",
-        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
-        "gallery": [
-          "https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg",
-          "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
-          "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
-        ],
-        "description": "فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق الأرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.",
-        "specs": [
-          {
-            "label": "الطابق الأرضي",
-            "value": "205 م²"
-          },
-          {
-            "label": "الحدائق",
-            "value": "1200 م²"
-          },
-          {
-            "label": "إجمالي البناء",
-            "value": "480 م²"
-          }
-        ]
-      }
-    ]
-  },
-  "INTERIOR_PROJECTS": {
-    "en": [
-      {
-        "id": "i1",
-        "slug": "arched-pastel-elegance",
-        "title": "Arched Pastel Elegance",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "25 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
-        ],
-        "description": "A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.",
-        "specs": [
-          {
-            "label": "Style",
-            "value": "Soft Contemporary"
-          },
-          {
-            "label": "Materials",
-            "value": "Matte-finish painted wood, velvet and soft linen fabrics, gold/brass accents"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Pastel Pink, Creamy Beige, Warm Off-White"
-          },
-          {
-            "label": "Key Features",
-            "value": "Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard"
-          }
-        ]
-      },
-      {
-        "id": "i2",
-        "slug": "contemporary-wardrobe-system",
-        "title": "Contemporary Wardrobe System: Glass & Light",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "15 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp"
-        ],
-        "description": "A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.",
-        "specs": [
-          {
-            "label": "Style",
-            "value": "Modern Transitional / Minimalist Luxury"
-          },
-          {
-            "label": "Materials",
-            "value": "Black powder-coated metal framing, Transparent or smoked glass fronts, Light-toned wood paneling, Soft fabric seating"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Neutral (Soft Beige/Nude, Black, Warm Wood Tones)"
-          },
-          {
-            "label": "Key Features",
-            "value": "Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans"
-          }
-        ]
-      },
-      {
-        "id": "i3",
-        "slug": "symphony-of-neutrals",
-        "title": "Symphony of Neutrals: Neoclassical Opulence",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "45 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
-        ],
-        "description": "A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.",
-        "specs": [
-          {
-            "label": "Style",
-            "value": "Contemporary Neoclassical Luxury"
-          },
-          {
-            "label": "Materials",
-            "value": "Plaster mouldings, High-gloss wood, Bouclé/Velvet fabrics"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Monochromatic (White, Cream, Beige, Soft Gold)"
-          },
-          {
-            "label": "Key Features",
-            "value": "Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier"
-          }
-        ]
-      }
-    ],
-    "ar": [
-      {
-        "id": "i1",
-        "slug": "arched-pastel-elegance",
-        "title": "أناقة الأقواس وألوان الباستيل",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "25 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
-        ],
-        "description": "تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.",
-        "specs": [
-          {
-            "label": "النمط",
-            "value": "معاصر ناعم"
-          },
-          {
-            "label": "المواد",
-            "value": "خشب مطفي، مخمل وكتان، لمسات ذهبية"
-          },
-          {
-            "label": "لوحة الألوان",
-            "value": "وردي باستيل، بيج كريمي، أبيض دافئ"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة"
-          }
-        ]
-      },
-      {
-        "id": "i2",
-        "slug": "contemporary-wardrobe-system",
-        "title": "نظام خزانة معاصر: زجاج وإضاءة",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "15 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_065007_qw8op2.webp"
-        ],
-        "description": "مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.",
-        "specs": [
-          {
-            "label": "النمط",
-            "value": "انتقالي حديث / فخامة تبسيطية"
-          },
-          {
-            "label": "المواد",
-            "value": "إطارات معدنية سوداء، واجهات زجاجية شفافة، ألواح خشبية فاتحة"
-          },
-          {
-            "label": "لوحة الألوان",
-            "value": "محايدة (بيج ناعم، أسود، خشب دافئ)"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية"
-          }
-        ]
-      },
-      {
-        "id": "i3",
-        "slug": "symphony-of-neutrals",
-        "title": "سيمفونية الحياد: فخامة الكلاسيكية الجديدة",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "45 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
-        ],
-        "description": "مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.",
-        "specs": [
-          {
-            "label": "النمط",
-            "value": "كلاسيكية جديدة معاصرة فاخرة"
-          },
-          {
-            "label": "المواد",
-            "value": "قوالب جبسية، خشب عالي اللمعان، أقمشة بوكليه ومخمل"
-          },
-          {
-            "label": "الألوان",
-            "value": "أحادية اللون (أبيض، كريمي، بيج، ذهبي)"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية"
-          }
-        ]
+        "name": "إبراهيم",
+        "role": "مالك",
+        "company": "",
+        "content": "أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال."
       }
     ]
   }

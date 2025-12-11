@@ -1,5 +1,4 @@
 
-
 import { Project, Service, TeamMember, Translations, Partner, Testimonial, BlogPost } from './types';
 
 export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
@@ -338,6 +337,13 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
     },
     { 
+      id: 't5', 
+      name: 'Eng. Shatha Salahat', 
+      role: 'Chief Architect', 
+      bio: 'Leading the architectural vision with a focus on sustainable design and innovative spatial solutions, ensuring every project embodies aesthetic excellence and functional harmony.', 
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
       id: 't3', 
       name: 'Eng. Oday Salahat', 
       role: 'BIM Director', 
@@ -366,6 +372,13 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
       role: 'مدير العمارة', 
       bio: 'معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.', 
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
+    },
+    { 
+      id: 't5', 
+      name: 'م. شذى صلاحات', 
+      role: 'كبيرة المهندسين المعماريين', 
+      bio: 'تقود الرؤية المعمارية مع التركيز على التصميم المستدام والحلول المكانية المبتكرة، لضمان أن يجسد كل مشروع التميز الجمالي والتناغم الوظيفي.', 
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' 
     },
     { 
       id: 't3', 
@@ -1112,13 +1125,49 @@ export const PREMIUM_SERVICES: Record<'en' | 'ar', Service[]> = {
 
 export const TESTIMONIALS: Record<'en' | 'ar', Testimonial[]> = {
   en: [
-    { id: '1', name: 'Dr. Ahmad Khalid', role: 'CEO', company: 'Future Horizons', content: 'Al Nebras transformed our vision into a tangible reality. Their attention to detail in the structural phase saved us significant time and resources.' },
-    { id: '2', name: 'Sarah Othman', role: 'Homeowner', company: '', content: 'Building a home is stressful, but the team at Al Nebras made it seamless. From the first sketch to the final handover, they were professional and transparent.' },
-    { id: '3', name: 'Eng. Yousef', role: 'Project Manager', company: 'Municipality of Tubas', content: 'One of the most technically compliant offices we have worked with. Their submission quality facilitates quick approvals.' }
+    { 
+      id: '1', 
+      name: 'Ghassan', 
+      role: 'Homeowner', 
+      company: '', 
+      content: 'The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail.' 
+    },
+    { 
+      id: '2', 
+      name: 'Muna', 
+      role: 'Homeowner', 
+      company: '', 
+      content: 'Professional, punctual, and creative. They made the complex process of building a home feel simple and organized.' 
+    },
+    { 
+      id: '3', 
+      name: 'Ibrahim', 
+      role: 'Homeowner', 
+      company: '', 
+      content: 'I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind.' 
+    }
   ],
   ar: [
-    { id: '1', name: 'د. أحمد خالد', role: 'الرئيس التنفيذي', company: 'آفاق المستقبل', content: 'حول مكتب النبراس رؤيتنا إلى واقع ملموس. اهتمامهم بالتفاصيل في المرحلة الإنشائية وفر علينا وقتاً وموارد كبيرة.' },
-    { id: '2', name: 'سارة عثمان', role: 'مالكة منزل', company: '', content: 'بناء المنزل عملية مرهقة، لكن فريق النبراس جعلها سلسة للغاية. من المخطط الأول حتى التسليم النهائي، كانوا محترفين وشفافين.' },
-    { id: '3', name: 'م. يوسف', role: 'مدير مشاريع', company: 'بلدية طوباس', content: 'من أكثر المكاتب التزاماً من الناحية الفنية التي عملنا معها. جودة تقديماتهم تسهل الموافقات السريعة.' }
+    { 
+      id: '1', 
+      name: 'غسان', 
+      role: 'مالك', 
+      company: '', 
+      content: 'تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل.' 
+    },
+    { 
+      id: '2', 
+      name: 'منى', 
+      role: 'مالكة', 
+      company: '', 
+      content: 'مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة.' 
+    },
+    { 
+      id: '3', 
+      name: 'إبراهيم', 
+      role: 'مالك', 
+      company: '', 
+      content: 'أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال.' 
+    }
   ]
 };

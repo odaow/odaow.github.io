@@ -92,7 +92,7 @@ collections:
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
@@ -112,7 +112,7 @@ collections:
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
@@ -143,7 +143,7 @@ collections:
                   - {label: "Area", name: "area", widget: "string"}
                   - {label: "Main Image", name: "image", widget: "image"}
                   - {label: "Description", name: "description", widget: "text"}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
                   - label: "Specs"
                     name: "specs"
                     widget: "list"
@@ -252,7 +252,7 @@ collections:
                   - {label: "Accreditation", name: "accreditation", widget: "text"}
                   - {label: "Logo", name: "logo", widget: "image"}
                   - {label: "Services", name: "services", widget: "list", field: {label: "Service", name: "text", widget: "string"}}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
               - label: "Arabic Partners"
                 name: "ar"
                 widget: "list"
@@ -269,7 +269,7 @@ collections:
                   - {label: "Accreditation", name: "accreditation", widget: "text"}
                   - {label: "Logo", name: "logo", widget: "image"}
                   - {label: "Services", name: "services", widget: "list", field: {label: "Service", name: "text", widget: "string"}}
-                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image URL", name: "url", widget: "image"}}
+                  - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
 
           # --- BLOG ---
           - label: "Blog Posts"

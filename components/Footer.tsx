@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import AnoLogo from './AnoLogo';
@@ -36,7 +35,7 @@ const Footer: React.FC = () => {
           <ul className="space-y-2 text-neutral-dim text-sm">
             <li><a href="https://www.linkedin.com/in/odai-salahat-143748399" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">LinkedIn</a></li>
             <li><a href="https://www.instagram.com/nebrasbim/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Instagram</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Behance</a></li>
+            <li><a href="https://www.tiktok.com/@nebrasbim" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">TikTok</a></li>
           </ul>
         </div>
       </div>

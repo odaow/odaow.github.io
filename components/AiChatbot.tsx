@@ -24,6 +24,10 @@ interface Message {
   actions?: ChatAction[];
 }
 
+interface AiChatbotProps {
+  hidden?: boolean;
+}
+
 // WhatsApp Configuration
 const WHATSAPP_NUMBER = "970569628237"; 
 const QR_CODE_IMAGE = "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765193415/qrcode_285895430_bfba7068a7e84cdacb71c258cbb6beec_cgcuha.png";
@@ -43,7 +47,7 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
   </svg>
 );
 
-const AiChatbot: React.FC = () => {
+const AiChatbot: React.FC<AiChatbotProps> = ({ hidden = false }) => {
   const { t, language, direction, services } = useLanguage();
   
   // Chatbot State
@@ -57,6 +61,13 @@ const AiChatbot: React.FC = () => {
 
   // Unified FAB State
   const [isFabOpen, setIsFabOpen] = useState(false);
+
+  // Reset FAB state when hidden to avoid it being open when reappearing
+  useEffect(() => {
+    if (hidden) {
+      setIsFabOpen(false);
+    }
+  }, [hidden]);
 
   // Initialize Greeting
   useEffect(() => {
@@ -428,90 +439,98 @@ const AiChatbot: React.FC = () => {
         UNIFIED SPEED DIAL BUTTON (Bottom Corner)
         ------------------------------------------------------------
       */}
-      <div 
-        className={`fixed bottom-8 z-[9000] flex flex-col items-end gap-3 ${direction === 'rtl' ? 'left-8 items-start' : 'right-8 items-end'}`}
-        onMouseEnter={() => setIsFabOpen(true)}
-        onMouseLeave={() => setIsFabOpen(false)}
-      >
-        
-        {/* Expanded Options */}
-        <AnimatePresence>
-            {isFabOpen && (
-                <MotionDiv
-                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 20, scale: 0.8 }}
-                    transition={{ duration: 0.2 }}
-                    className="flex flex-col gap-3 mb-2"
-                >
-                    {/* Option 1: WhatsApp (Primary) */}
-                    <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row' : 'flex-row-reverse'}`}>
-                        <button
-                            onClick={() => { setIsWhatsAppOpen(true); setIsFabOpen(false); }}
-                            className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-green-400 hover:border-green-400/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
-                        >
-                            <WhatsAppIcon size={24} />
-                        </button>
-                        <span className="bg-secondary/90 text-neutral-light text-xs font-bold px-3 py-1.5 rounded-sm border border-white/10 backdrop-blur whitespace-nowrap shadow-md">
-                            {language === 'ar' ? 'واتساب' : 'WhatsApp'}
-                        </span>
-                    </div>
-
-                    {/* Option 2: AI Bot (Secondary) */}
-                    {!isOpen && (
+      <AnimatePresence>
+        {!hidden && (
+          <MotionDiv 
+            initial={{ y: 0, opacity: 1 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className={`fixed bottom-8 z-[9000] flex flex-col items-end gap-3 ${direction === 'rtl' ? 'left-8 items-start' : 'right-8 items-end'}`}
+            onMouseEnter={() => setIsFabOpen(true)}
+            onMouseLeave={() => setIsFabOpen(false)}
+          >
+            
+            {/* Expanded Options */}
+            <AnimatePresence>
+                {isFabOpen && (
+                    <MotionDiv
+                        initial={{ opacity: 0, y: 20, scale: 0.8 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 20, scale: 0.8 }}
+                        transition={{ duration: 0.2 }}
+                        className="flex flex-col gap-3 mb-2"
+                    >
+                        {/* Option 1: WhatsApp (Primary) */}
                         <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row' : 'flex-row-reverse'}`}>
                             <button
-                                onClick={() => { setIsOpen(true); setIsFabOpen(false); }}
-                                className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-accent hover:border-accent/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
+                                onClick={() => { setIsWhatsAppOpen(true); setIsFabOpen(false); }}
+                                className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-green-400 hover:border-green-400/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
                             >
-                                <Bot size={24} />
+                                <WhatsAppIcon size={24} />
                             </button>
                             <span className="bg-secondary/90 text-neutral-light text-xs font-bold px-3 py-1.5 rounded-sm border border-white/10 backdrop-blur whitespace-nowrap shadow-md">
-                                {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
+                                {language === 'ar' ? 'واتساب' : 'WhatsApp'}
                             </span>
                         </div>
-                    )}
-                </MotionDiv>
-            )}
-        </AnimatePresence>
 
-        {/* Main Trigger Button */}
-        <button
-            onClick={() => setIsFabOpen(!isFabOpen)}
-            className={`
-                w-16 h-16 rounded-full bg-accent text-primary shadow-[0_0_20px_rgba(var(--color-accent),0.4)] 
-                flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 z-20 relative
-            `}
-        >
-             <AnimatePresence mode="wait">
-                {isFabOpen ? (
-                     <motion.div
-                        key="close"
-                        initial={{ rotate: -90, opacity: 0 }}
-                        animate={{ rotate: 0, opacity: 1 }}
-                        exit={{ rotate: 90, opacity: 0 }}
-                     >
-                         <ChevronDown size={32} />
-                     </motion.div>
-                ) : (
-                    <motion.div
-                        key="open"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        exit={{ scale: 0 }}
-                    >
-                         <MessageCircle size={32} className="animate-pulse" />
-                    </motion.div>
+                        {/* Option 2: AI Bot (Secondary) */}
+                        {!isOpen && (
+                            <div className={`flex items-center gap-3 ${direction === 'rtl' ? 'flex-row' : 'flex-row-reverse'}`}>
+                                <button
+                                    onClick={() => { setIsOpen(true); setIsFabOpen(false); }}
+                                    className="w-12 h-12 rounded-full bg-secondary border border-neutral-light/10 text-neutral-light hover:text-accent hover:border-accent/50 shadow-lg flex items-center justify-center transition-all duration-300 group"
+                                >
+                                    <Bot size={24} />
+                                </button>
+                                <span className="bg-secondary/90 text-neutral-light text-xs font-bold px-3 py-1.5 rounded-sm border border-white/10 backdrop-blur whitespace-nowrap shadow-md">
+                                    {language === 'ar' ? 'المساعد الذكي' : 'AI Assistant'}
+                                </span>
+                            </div>
+                        )}
+                    </MotionDiv>
                 )}
-             </AnimatePresence>
+            </AnimatePresence>
 
-             {/* Ping Effect when closed */}
-             {!isFabOpen && (
-                 <span className="absolute inset-0 bg-accent rounded-full animate-ping opacity-20" />
-             )}
-        </button>
+            {/* Main Trigger Button */}
+            <button
+                onClick={() => setIsFabOpen(!isFabOpen)}
+                className={`
+                    w-16 h-16 rounded-full bg-accent text-primary shadow-[0_0_20px_rgba(var(--color-accent),0.4)] 
+                    flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 z-20 relative
+                `}
+            >
+                <AnimatePresence mode="wait">
+                    {isFabOpen ? (
+                        <motion.div
+                            key="close"
+                            initial={{ rotate: -90, opacity: 0 }}
+                            animate={{ rotate: 0, opacity: 1 }}
+                            exit={{ rotate: 90, opacity: 0 }}
+                        >
+                            <ChevronDown size={32} />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="open"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0 }}
+                        >
+                            <MessageCircle size={32} className="animate-pulse" />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
 
-      </div>
+                {/* Ping Effect when closed */}
+                {!isFabOpen && (
+                    <span className="absolute inset-0 bg-accent rounded-full animate-ping opacity-20" />
+                )}
+            </button>
+
+          </MotionDiv>
+        )}
+      </AnimatePresence>
     </>
   );
 };

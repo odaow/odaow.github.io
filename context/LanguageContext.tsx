@@ -58,6 +58,38 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         return res.json();
       })
       .then(jsonData => {
+        // Normalization Helper: Netlify CMS often saves lists as objects [{image: 'url'}]
+        // We need to flatten them to strings ['url'] if they are not already.
+        const normalizeGallery = (items: any[]) => {
+          if (!items) return [];
+          return items.map(item => {
+            if (item.gallery && Array.isArray(item.gallery)) {
+              const newGallery = item.gallery.map((g: any) => {
+                if (typeof g === 'string') return g;
+                // If it's an object from CMS, return the 'image' or 'url' property
+                return g.image || g.url || g; 
+              });
+              return { ...item, gallery: newGallery };
+            }
+            return item;
+          });
+        };
+
+        // Normalize Projects
+        if (jsonData.PROJECTS) {
+          jsonData.PROJECTS.en = normalizeGallery(jsonData.PROJECTS.en);
+          jsonData.PROJECTS.ar = normalizeGallery(jsonData.PROJECTS.ar);
+        }
+        if (jsonData.INTERIOR_PROJECTS) {
+           jsonData.INTERIOR_PROJECTS.en = normalizeGallery(jsonData.INTERIOR_PROJECTS.en);
+           jsonData.INTERIOR_PROJECTS.ar = normalizeGallery(jsonData.INTERIOR_PROJECTS.ar);
+        }
+        // Normalize Partners
+        if (jsonData.PARTNERS) {
+           jsonData.PARTNERS.en = normalizeGallery(jsonData.PARTNERS.en);
+           jsonData.PARTNERS.ar = normalizeGallery(jsonData.PARTNERS.ar);
+        }
+
         // Safe Merge: Only update keys that exist in the fetched JSON
         setData(prev => ({
           ...prev,

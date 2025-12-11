@@ -17,6 +17,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   
   const { pathname } = useLocation();
   const isHomePage = pathname === '/';
+  const isProjectsPage = pathname.startsWith('/projects');
 
   // Scroll Progress Logic
   const { scrollYProgress } = useScroll();
@@ -73,7 +74,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const MotionDiv = motion.div as any;
 
   return (
-    <div className={`min-h-screen bg-primary text-neutral-light font-sans selection:bg-accent selection:text-primary ${direction === 'rtl' ? 'rtl' : ''}`}>
+    <div className={`flex flex-col min-h-screen bg-primary text-neutral-light font-sans selection:bg-accent selection:text-primary ${direction === 'rtl' ? 'rtl' : ''}`}>
       <CustomCursor />
       
       {/* Scroll Progress Indicator */}
@@ -86,7 +87,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       />
       
       {/* AI Chatbot Widget (Self-Contained) */}
-      <AiChatbot />
+      <AiChatbot hidden={isMenuOpen} />
       
       {/* Page Border Frame - Adaptive Color (Hidden on Home for Full Immersion) */}
       {!isHomePage && (
@@ -282,12 +283,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         )}
       </AnimatePresence>
 
-      {/* Main Content - Remove Top Padding on Home Page */}
-      <main className={`${isHomePage ? 'pt-0' : 'pt-28'} min-h-screen relative z-10 transition-colors duration-500`}>
+      {/* Main Content - Flex-1 ensures it pushes footer down */}
+      <main className={`${isHomePage ? 'pt-0' : 'pt-28'} flex-1 relative z-10 transition-colors duration-500`}>
         {children}
       </main>
 
-      <Footer />
+      {!isProjectsPage && <Footer />}
     </div>
   );
 };

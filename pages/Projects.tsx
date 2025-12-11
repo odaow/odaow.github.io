@@ -2,7 +2,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
-import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Building, Armchair, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
@@ -149,7 +148,7 @@ const Projects: React.FC = () => {
   const MotionButton = motion.button as any;
 
   return (
-    <Section className="pt-32 min-h-screen">
+    <Section className="pt-32">
        {/* CATEGORY SELECTOR HERO */}
        <div className="mb-16 md:mb-24">
             <MotionH2 
@@ -446,7 +445,7 @@ const Projects: React.FC = () => {
                         </MotionDiv>
                     </div>
 
-                    <Footer />
+                    {/* Footer Removed from here to avoid duplication with Layout Footer */}
                 </div>
             </MotionDiv>
          )}
