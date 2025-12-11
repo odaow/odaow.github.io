@@ -789,103 +789,133 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
     en: [
       { 
           id: 'i1', 
-          slug: 'minimalist-loft', 
-          title: 'Urban Minimalist Loft', 
+          slug: 'arched-pastel-elegance', 
+          title: 'Arched Pastel Elegance', 
           category: 'Residential', 
-          location: 'Ramallah, Palestine', 
-          year: '2024', 
-          area: '180 m²', 
+          location: 'Tubas, Palestine', 
+          year: '2025', 
+          area: '25 m²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp', 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
           ], 
-          description: 'A contemporary loft design focusing on open spaces, natural light, and monochromatic textures.', 
-          specs: [ { label: 'Style', value: 'Minimalist' }, { label: 'Materials', value: 'Concrete & Wood' } ] 
+          description: 'A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.', 
+          specs: [ 
+            { label: 'Style', value: 'Soft Contemporary' }, 
+            { label: 'Materials', value: 'Matte-finish painted wood, velvet and soft linen fabrics, gold/brass accents' },
+            { label: 'Color Palette', value: 'Pastel Pink, Creamy Beige, Warm Off-White' },
+            { label: 'Key Features', value: 'Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard' }
+          ] 
       },
       { 
           id: 'i2', 
-          slug: 'luxury-office', 
-          title: 'Executive Corporate Hub', 
-          category: 'Commercial', 
-          location: 'Dubai, UAE', 
-          year: '2023', 
-          area: '450 m²', 
+          slug: 'contemporary-wardrobe-system', 
+          title: 'Contemporary Wardrobe System: Glass & Light', 
+          category: 'Residential', 
+          location: 'Tubas, Palestine', 
+          year: '2025', 
+          area: '15 m²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
           ], 
-          description: 'High-end corporate office design integrating ergonomic workspaces with luxury meeting areas.', 
-          specs: [ { label: 'Capacity', value: '50 Workstations' }, { label: 'Tech', value: 'Smart Integrated' } ] 
+          description: 'A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.', 
+          specs: [ 
+            { label: 'Style', value: 'Modern Transitional / Minimalist Luxury' }, 
+            { label: 'Materials', value: 'Black powder-coated metal framing, Transparent or smoked glass fronts, Light-toned wood paneling, Soft fabric seating' },
+            { label: 'Color Palette', value: 'Neutral (Soft Beige/Nude, Black, Warm Wood Tones)' },
+            { label: 'Key Features', value: 'Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans' }
+          ] 
       },
       { 
           id: 'i3', 
-          slug: 'cozy-retreat', 
-          title: 'Nordic Bedroom Retreat', 
+          slug: 'symphony-of-neutrals', 
+          title: 'Symphony of Neutrals: Neoclassical Opulence', 
           category: 'Residential', 
-          location: 'Jericho, Palestine', 
-          year: '2023', 
+          location: 'Tubas, Palestine', 
+          year: '2025', 
           area: '45 m²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp' 
           ], 
-          description: 'A serene bedroom sanctuary designed with soft earthy tones and organic fabrics.', 
-          specs: [ { label: 'Mood', value: 'Serene' }, { label: 'Palette', value: 'Earth Tones' } ] 
+          description: 'A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.', 
+          specs: [ 
+            { label: 'Style', value: 'Contemporary Neoclassical Luxury' }, 
+            { label: 'Materials', value: 'Plaster mouldings, High-gloss wood, Bouclé/Velvet fabrics' },
+            { label: 'Color Palette', value: 'Monochromatic (White, Cream, Beige, Soft Gold)' },
+            { label: 'Key Features', value: 'Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier' }
+          ] 
       }
     ],
     ar: [
       { 
           id: 'i1', 
-          slug: 'minimalist-loft', 
-          title: 'لوفت حضري بسيط', 
+          slug: 'arched-pastel-elegance', 
+          title: 'أناقة الأقواس وألوان الباستيل', 
           category: 'سكني', 
-          location: 'رام الله، فلسطين', 
-          year: '2024', 
-          area: '180 م²', 
+          location: 'طوباس، فلسطين', 
+          year: '2025', 
+          area: '25 م²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp', 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp',
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp'
           ], 
-          description: 'تصميم لوفت معاصر يركز على المساحات المفتوحة، الإضاءة الطبيعية، والأنسجة أحادية اللون.', 
-          specs: [ { label: 'النمط', value: 'تبسيطي' }, { label: 'المواد', value: 'خرسانة وخشب' } ] 
+          description: 'تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.', 
+          specs: [ 
+            { label: 'النمط', value: 'معاصر ناعم' }, 
+            { label: 'المواد', value: 'خشب مطفي، مخمل وكتان، لمسات ذهبية' },
+            { label: 'لوحة الألوان', value: 'وردي باستيل، بيج كريمي، أبيض دافئ' },
+            { label: 'الميزات الرئيسية', value: 'خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة' }
+          ] 
       },
       { 
           id: 'i2', 
-          slug: 'luxury-office', 
-          title: 'المركز المؤسسي التنفيذي', 
-          category: 'تجاري', 
-          location: 'دبي، الإمارات', 
-          year: '2023', 
-          area: '450 م²', 
+          slug: 'contemporary-wardrobe-system', 
+          title: 'نظام خزانة معاصر: زجاج وإضاءة', 
+          category: 'سكني', 
+          location: 'طوباس، فلسطين', 
+          year: '2025', 
+          area: '15 م²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp',
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp'
           ], 
-          description: 'تصميم مكتبي راقٍ يدمج مساحات العمل المريحة مع مناطق اجتماعات فاخرة.', 
-          specs: [ { label: 'السعة', value: '50 محطة عمل' }, { label: 'التقنية', value: 'مدمجة ذكية' } ] 
+          description: 'مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.', 
+          specs: [ 
+            { label: 'النمط', value: 'انتقالي حديث / فخامة تبسيطية' }, 
+            { label: 'المواد', value: 'إطارات معدنية سوداء، واجهات زجاجية شفافة، ألواح خشبية فاتحة' },
+            { label: 'لوحة الألوان', value: 'محايدة (بيج ناعم، أسود، خشب دافئ)' },
+            { label: 'الميزات الرئيسية', value: 'إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية' }
+          ] 
       },
       { 
           id: 'i3', 
-          slug: 'cozy-retreat', 
-          title: 'ملاذ غرفة النوم الشمالي', 
+          slug: 'symphony-of-neutrals', 
+          title: 'سيمفونية الحياد: فخامة الكلاسيكية الجديدة', 
           category: 'سكني', 
-          location: 'أريحا، فلسطين', 
-          year: '2023', 
+          location: 'طوباس، فلسطين', 
+          year: '2025', 
           area: '45 م²', 
           image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp', 
           gallery: [ 
             'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp',
-            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp'
+            'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp' 
           ], 
-          description: 'ملاذ هادئ لغرفة النوم مصمم بألوان ترابية ناعمة وأقمشة عضوية.', 
-          specs: [ { label: 'الأجواء', value: 'هادئة' }, { label: 'الألوان', value: 'ألوان ترابية' } ] 
+          description: 'مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.', 
+          specs: [ 
+            { label: 'النمط', value: 'كلاسيكية جديدة معاصرة فاخرة' },
+            { label: 'المواد', value: 'قوالب جبسية، خشب عالي اللمعان، أقمشة بوكليه ومخمل' },
+            { label: 'الألوان', value: 'أحادية اللون (أبيض، كريمي، بيج، ذهبي)' },
+            { label: 'الميزات الرئيسية', value: 'إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية' }
+          ] 
       }
     ]
 };
