@@ -1,7 +1,10 @@
+
 import React, { useState, useCallback, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Schema from '../components/Schema';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Calendar, Briefcase, Mail, Award, MapPin, Phone, User, Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -50,6 +53,14 @@ const PartnerDetail: React.FC = () => {
 
   return (
     <Section className="pt-32 min-h-screen">
+      <SEO 
+        title={partner.name} 
+        description={partner.description.substring(0, 160)} 
+        image={partner.logo} 
+        path={`/partners/${partner.slug}`}
+      />
+      <Schema type="partner" data={partner} />
+      
       {/* Back Button */}
       <Link 
         to="/partners"

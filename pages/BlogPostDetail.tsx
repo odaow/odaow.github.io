@@ -1,7 +1,10 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Schema from '../components/Schema';
 import { ArrowLeft, Calendar, User, Tag, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -28,6 +31,15 @@ const BlogPostDetail: React.FC = () => {
 
   return (
     <div className="bg-primary min-h-screen">
+       <SEO 
+         title={post.title} 
+         description={post.excerpt} 
+         image={post.image} 
+         type="article" 
+         path={`/blog/${post.id}`}
+       />
+       <Schema type="article" data={post} />
+       
        {/* Hero Image */}
        <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
            <div className="absolute inset-0 bg-primary/40 z-10" />

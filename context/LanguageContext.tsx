@@ -1,6 +1,3 @@
-
-
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Language, Direction, Translations, Project, Service, TeamMember, Partner, Testimonial, BlogPost } from '../types';
 import { TRANSLATIONS, PROJECTS, SERVICES, PREMIUM_SERVICES, TEAM, PARTNERS, INTERIOR_PROJECTS, TESTIMONIALS, INTERNAL_BLOG_POSTS } from '../constants';
@@ -42,13 +39,12 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   // Hydrate from JSON (CMS compatibility)
   useEffect(() => {
-    // Robust path finding: try relative path first
-    const contentPath = './data/content.json';
+    const contentPath = '/data/content.json';
     
     fetch(contentPath)
       .then(res => {
         if (!res.ok) {
-           // Fallback for different routing scenarios
+           // Fallback for different routing scenarios or development
            return fetch('data/content.json'); 
         }
         return res;
@@ -75,7 +71,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
           });
         };
 
-        // Normalize Projects
+        // Normalize lists that contain galleries
         if (jsonData.PROJECTS) {
           jsonData.PROJECTS.en = normalizeGallery(jsonData.PROJECTS.en);
           jsonData.PROJECTS.ar = normalizeGallery(jsonData.PROJECTS.ar);
@@ -84,13 +80,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
            jsonData.INTERIOR_PROJECTS.en = normalizeGallery(jsonData.INTERIOR_PROJECTS.en);
            jsonData.INTERIOR_PROJECTS.ar = normalizeGallery(jsonData.INTERIOR_PROJECTS.ar);
         }
-        // Normalize Partners
         if (jsonData.PARTNERS) {
            jsonData.PARTNERS.en = normalizeGallery(jsonData.PARTNERS.en);
            jsonData.PARTNERS.ar = normalizeGallery(jsonData.PARTNERS.ar);
         }
 
         // Safe Merge: Only update keys that exist in the fetched JSON
+        // We spread existing data first, then override with JSON data
         setData(prev => ({
           ...prev,
           ...jsonData

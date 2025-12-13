@@ -1,6 +1,9 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
 import { motion } from 'framer-motion';
 import { ArrowRight, Building, MapPin, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -14,6 +17,7 @@ const Partners: React.FC = () => {
 
   return (
     <Section className="pt-32 min-h-screen">
+      <SEO title={t.nav.partners} path="/partners" />
       <div className="mb-12 md:mb-20 text-center max-w-4xl mx-auto">
         <MotionH1 
           initial={{ opacity: 0, y: -20 }}
@@ -54,7 +58,12 @@ const Partners: React.FC = () => {
               <div className="h-40 md:h-48 flex items-center justify-center bg-neutral-light/5 relative overflow-hidden p-6 md:p-8">
                  <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                  {partner.logo ? (
-                     <img src={partner.logo} alt={partner.name} loading="lazy" className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105" />
+                     <OptimizedImage 
+                        src={partner.logo} 
+                        alt={partner.name} 
+                        containerClassName="w-full h-full flex items-center justify-center"
+                        className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105" 
+                     />
                  ) : (
                      <Building className="w-16 h-16 text-neutral-dim group-hover:text-accent transition-colors" />
                  )}

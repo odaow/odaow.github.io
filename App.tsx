@@ -1,11 +1,13 @@
+
 import React, { useState, Suspense } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';
 import Preloader from './components/Preloader';
+import PageTransition from './components/PageTransition';
 
-// Lazy Load Pages to prevent large bundle blocking
+// Lazy Load Pages
 const Home = React.lazy(() => import('./pages/Home'));
 const Projects = React.lazy(() => import('./pages/Projects'));
 const Services = React.lazy(() => import('./pages/Services'));
@@ -14,7 +16,7 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const Partners = React.lazy(() => import('./pages/Partners'));
 const PartnerDetail = React.lazy(() => import('./pages/PartnerDetail'));
 const Blog = React.lazy(() => import('./pages/Blog')); 
-const BlogPostDetail = React.lazy(() => import('./pages/BlogPostDetail')); // Added Detail Page
+const BlogPostDetail = React.lazy(() => import('./pages/BlogPostDetail'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 // Scroll to top on route change wrapper
@@ -26,7 +28,7 @@ const ScrollToTop = () => {
     return null;
 };
 
-// Simple Error Boundary Component
+// Error Boundary
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
   constructor(props: any) {
     super(props);
@@ -63,6 +65,41 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
   }
 }
 
+// Wrapper for transition and suspense to keep code DRY
+const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+  <PageTransition>
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-primary">
+        <div className="w-8 h-8 border border-accent animate-spin" />
+      </div>
+    }>
+      {children}
+    </Suspense>
+  </PageTransition>
+);
+
+// Inner component to handle routing logic with useLocation
+const AnimatedRoutes: React.FC = () => {
+  const location = useLocation();
+  
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<PageWrapper><Home /></PageWrapper>} />
+        <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
+        <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
+        <Route path="/partners" element={<PageWrapper><Partners /></PageWrapper>} />
+        <Route path="/partners/:slug" element={<PageWrapper><PartnerDetail /></PageWrapper>} />
+        <Route path="/blog" element={<PageWrapper><Blog /></PageWrapper>} />
+        <Route path="/blog/:id" element={<PageWrapper><BlogPostDetail /></PageWrapper>} />
+        <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -71,33 +108,19 @@ const App: React.FC = () => {
       <LanguageProvider>
         <Router>
           <ScrollToTop />
-          <AnimatePresence mode="wait">
-            {isLoading ? (
+          
+          {/* Preloader Overlay */}
+          <AnimatePresence>
+            {isLoading && (
               <Preloader key="preloader" onComplete={() => setIsLoading(false)} />
-            ) : (
-              <Layout key="layout">
-                <Suspense fallback={
-                  <div className="min-h-screen flex items-center justify-center bg-primary">
-                    <div className="w-8 h-8 border border-accent animate-spin" />
-                  </div>
-                }>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/partners" element={<Partners />} />
-                    <Route path="/partners/:slug" element={<PartnerDetail />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/blog/:id" element={<BlogPostDetail />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    {/* Explicitly redirect any unknown path to Home to ensure it is the entry page */}
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                  </Routes>
-                </Suspense>
-              </Layout>
             )}
           </AnimatePresence>
+
+          {/* Main Content Layout - Always rendered behind Preloader */}
+          <Layout key="layout">
+             <AnimatedRoutes />
+          </Layout>
+          
         </Router>
       </LanguageProvider>
     </ErrorBoundary>

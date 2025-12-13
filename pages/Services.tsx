@@ -3,116 +3,18 @@ import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
+import { SERVICES as STATIC_SERVICES, PREMIUM_SERVICES as STATIC_PREMIUM_SERVICES } from '../constants';
 import { 
   LayoutTemplate, Layers, Box, Compass, HardHat, Trees, Lightbulb, Route, 
-  Printer, Glasses, BookOpen, ArrowRight, Zap, Map, ScanLine, Leaf, Activity
+  Printer, Glasses, BookOpen, ArrowRight, Zap, Map, ScanLine, Leaf, Wrench,
+  Cpu, Cuboid, Star
 } from 'lucide-react';
 
 const Services: React.FC = () => {
   const { t, services, premiumServices, language, direction } = useLanguage();
   const navigate = useNavigate();
-
-  // Combine images safely
-  const imagePool = [...services, ...premiumServices];
-  
-  const getSafeImage = (index: number) => {
-      if (imagePool.length === 0) return 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop';
-      return imagePool[index % imagePool.length]?.image || imagePool[0].image;
-  };
-
-  // The 10 Specific Services Data
-  const servicesData = [
-    {
-      id: 'arch',
-      title: language === 'ar' ? 'التصميم المعماري' : 'Architectural Design',
-      description: language === 'ar' 
-        ? 'تصميم مفاهيمي مبتكر وتخطيط تفصيلي للمساحات السكنية والتجارية والعامة.' 
-        : 'Innovative conceptualization and detailed planning for residential, commercial, and public spaces.',
-      icon: 'LayoutTemplate',
-      image: services.find(s => s.id === 'arch')?.image || getSafeImage(0)
-    },
-    {
-      id: 'interior',
-      title: language === 'ar' ? 'التصميم الداخلي' : 'Interior Design',
-      description: language === 'ar' 
-        ? 'صياغة مساحات داخلية وظيفية وجمالية تعكس هوية العميل وتوفر الراحة.' 
-        : 'Crafting functional and aesthetic interior spaces that reflect client identity and comfort.',
-      icon: 'Compass',
-      image: services.find(s => s.id === 'interior')?.image || getSafeImage(1)
-    },
-    {
-      id: 'struct',
-      title: language === 'ar' ? 'التصميم الإنشائي' : 'Structural Engineering',
-      description: language === 'ar' 
-        ? 'تحليل وتصميم إنشائي قوي يضمن السلامة والاستقرار والامتثال للكود.' 
-        : 'Robust structural analysis and design ensuring safety, stability, and code compliance.',
-      icon: 'Layers',
-      image: services.find(s => s.id === 'struct')?.image || getSafeImage(2)
-    },
-    {
-      id: 'mep',
-      title: language === 'ar' ? 'التصميم الكهربائي والميكانيكي (MEP)' : 'MEP Engineering',
-      description: language === 'ar' 
-        ? 'حلول متكاملة للأنظمة الميكانيكية والكهربائية والصحية لضمان كفاءة المبنى.' 
-        : 'Integrated solutions for mechanical, electrical, and plumbing systems ensuring efficiency.',
-      icon: 'Zap',
-      image: services.find(s => s.id === 'lighting')?.image || getSafeImage(3)
-    },
-    {
-      id: 'bim',
-      title: language === 'ar' ? 'نمذجة معلومات البناء BIM' : 'BIM Services',
-      description: language === 'ar' 
-        ? 'نمذجة معلومات البناء المتقدمة للكشف عن التعارضات وإدارة دورة حياة المشروع.' 
-        : 'Advanced Building Information Modeling for collision detection and lifecycle management.',
-      icon: 'Box',
-      image: services.find(s => s.id === 'bim')?.image || getSafeImage(4)
-    },
-    {
-      id: 'supervision',
-      title: language === 'ar' ? 'الإشراف وإدارة المشاريع' : 'Supervision & Management',
-      description: language === 'ar' 
-        ? 'إشراف ميداني وإدارة صارمة للمشاريع لضمان التنفيذ وفقاً لنية التصميم.' 
-        : 'On-site supervision and rigorous project management to ensure execution matches design.',
-      icon: 'HardHat',
-      image: services.find(s => s.id === 'consult')?.image || getSafeImage(5)
-    },
-    {
-      id: 'urban',
-      title: language === 'ar' ? 'التخطيط الحضري' : 'Urban Planning',
-      description: language === 'ar' 
-        ? 'تخطيط شامل للمجتمعات والمساحات الحضرية لتعزيز جودة الحياة.' 
-        : 'Comprehensive planning for communities and urban spaces to enhance quality of life.',
-      icon: 'Map',
-      image: services.find(s => s.id === 'roads')?.image || getSafeImage(6)
-    },
-    {
-      id: 'landscape',
-      title: language === 'ar' ? 'اللاندسكيب' : 'Landscape',
-      description: language === 'ar' 
-        ? 'تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.' 
-        : 'Designing harmonious outdoor environments that blend nature with built structures.',
-      icon: 'Trees',
-      image: services.find(s => s.id === 'landscape')?.image || getSafeImage(7)
-    },
-    {
-      id: 'surveying',
-      title: language === 'ar' ? 'المساحة' : 'Surveying',
-      description: language === 'ar' 
-        ? 'قياسات دقيقة وتحليل طوبوغرافي لضمان دقة الحدود والأساسات.' 
-        : 'Precise measurements and topographic analysis to ensure boundary accuracy.',
-      icon: 'ScanLine',
-      image: getSafeImage(8)
-    },
-    {
-      id: 'env',
-      title: language === 'ar' ? 'التصميم البيئي' : 'Environmental Design',
-      description: language === 'ar' 
-        ? 'استراتيجيات تصميم مستدامة لتقليل الأثر البيئي وتعزيز كفاءة الطاقة.' 
-        : 'Sustainable design strategies to minimize environmental impact and enhance energy efficiency.',
-      icon: 'Leaf',
-      image: getSafeImage(9)
-    }
-  ];
 
   const getIcon = (name: string, size: number = 24) => {
     const props = { size, strokeWidth: 1.5 };
@@ -132,53 +34,83 @@ const Services: React.FC = () => {
       case 'Map': return <Map {...props} />;
       case 'ScanLine': return <ScanLine {...props} />;
       case 'Leaf': return <Leaf {...props} />;
-      default: return <Activity {...props} />;
+      case 'Wrench': return <Wrench {...props} />;
+      default: return <Box {...props} />;
     }
   };
 
-  const MotionImg = motion.img as any;
+  // ---------------------------------------------------------
+  // DATA PREPARATION & MERGING
+  // ---------------------------------------------------------
 
-  // 1. Prepare Data List
-  let fullList = [
-    ...servicesData,
+  // Helper to merge CMS data with Static data (CMS takes priority, Static fills gaps)
+  const mergeData = (dynamicList: any[], staticList: any[]) => {
+      // If no dynamic data loaded yet, return static
+      if (!dynamicList || dynamicList.length === 0) return staticList;
+      
+      const dynamicIds = new Set(dynamicList.map(d => d.id));
+      const missingStatic = staticList.filter(s => !dynamicIds.has(s.id));
+      return [...dynamicList, ...missingStatic];
+  };
+
+  // 1. CORE SERVICES (Double Column)
+  const currentStaticServices = STATIC_SERVICES[language] || STATIC_SERVICES['en'];
+  const mergedServices = mergeData(services, currentStaticServices);
+
+  let coreList = [
+    ...mergedServices,
     { id: 'cta-card', isCta: true, title: t.contact.intro, image: '', icon: 'Zap', description: '' }
   ];
-
-  // If odd number of items, duplicate the first service to make it even (so we have pairs)
-  if (fullList.length % 2 !== 0) {
-      fullList.push({ ...servicesData[0], id: servicesData[0].id + '-duplicate' });
-  }
-
-  // 2. Create Pairs (Columns)
-  const pairedList = [];
-  for (let i = 0; i < fullList.length; i += 2) {
-      pairedList.push({
-          top: fullList[i],
-          bottom: fullList[i+1]
-      });
-  }
-
-  // 3. Quadruple the PAIRED list for infinite loop
-  const carouselItems = [...pairedList, ...pairedList, ...pairedList, ...pairedList];
-
-  // ---------------------------------------------------------
-  // ANIMATION LOGIC (Automatic Only)
-  // ---------------------------------------------------------
-  const x = useMotionValue(0);
-  const [isHovered, setIsHovered] = useState(false);
   
-  // Dynamic Width State
-  const [columnWidth, setColumnWidth] = useState(0);
+  // Ensure even number for pairs
+  if (coreList.length % 2 !== 0 && coreList.length > 0) {
+      coreList.push({ ...coreList[0], id: coreList[0].id + '-duplicate' });
+  }
+  
+  // Create Pairs
+  const corePairedList = [];
+  for (let i = 0; i < coreList.length; i += 2) {
+      corePairedList.push({ top: coreList[i], bottom: coreList[i+1] });
+  }
+  
+  // Infinite Duplicate for Core
+  const coreCarouselItems = [...corePairedList, ...corePairedList, ...corePairedList, ...corePairedList];
+
+  // 2. PREMIUM SERVICES (Single Row - Cinematic)
+  const currentStaticPremium = STATIC_PREMIUM_SERVICES[language] || STATIC_PREMIUM_SERVICES['en'];
+  const mergedPremium = mergeData(premiumServices, currentStaticPremium);
+  
+  // Infinite Duplicate for Premium (Need more duplicates since it's single row)
+  const premiumCarouselItems = [...mergedPremium, ...mergedPremium, ...mergedPremium, ...mergedPremium, ...mergedPremium, ...mergedPremium];
+
+
+  // ---------------------------------------------------------
+  // ANIMATION STATE
+  // ---------------------------------------------------------
+  
+  // Motion Values
+  const xCore = useMotionValue(0);
+  const xPremium = useMotionValue(0);
+
+  // Dimensions
+  const [coreColWidth, setCoreColWidth] = useState(0);
+  const [premiumItemWidth, setPremiumItemWidth] = useState(0);
   const [isReady, setIsReady] = useState(false);
 
-  // Measure widths on mount and resize
   useEffect(() => {
     const calculateWidths = () => {
         const isDesktop = window.innerWidth >= 768;
-        // Adjusted width for the new layout style
-        const colW = isDesktop ? 350 : 280; 
-        const gap = isDesktop ? 32 : 24; 
-        setColumnWidth(colW + gap);
+        
+        // Core: Width + Gap
+        const cColW = isDesktop ? 350 : 280; 
+        const cGap = isDesktop ? 32 : 24; 
+        setCoreColWidth(cColW + cGap);
+
+        // Premium: Width + Gap (Wider cards)
+        const pItemW = isDesktop ? 450 : 320;
+        const pGap = isDesktop ? 32 : 24;
+        setPremiumItemWidth(pItemW + pGap);
+
         setIsReady(true);
     };
 
@@ -187,45 +119,73 @@ const Services: React.FC = () => {
     return () => window.removeEventListener('resize', calculateWidths);
   }, []);
 
-  // Calculate width of ONE complete set of COLUMNS
-  const singleSetWidth = pairedList.length * columnWidth;
-  const SPEED = 1.0; // Increased speed slightly for better flow
+  // Calculate full width of one set
+  const coreSingleSetWidth = corePairedList.length * coreColWidth;
+  const premiumSingleSetWidth = mergedPremium.length * premiumItemWidth;
 
-  // Reset Position on Direction Change
+  // Animation Constants (SPEED UP)
+  const SPEED_CORE = 0.8;  // Increased from 0.5
+  const SPEED_PREMIUM = 0.6; // Increased from 0.4
+
+  // Reset Positions on Direction Change
   useEffect(() => {
-    if (singleSetWidth === 0) return;
-
+    if (!isReady) return;
     if (direction === 'rtl') {
-        x.set(-singleSetWidth);
+        xCore.set(-coreSingleSetWidth); 
+        xPremium.set(0); // Premium moves opposite
     } else {
-        x.set(0);
+        xCore.set(0);
+        xPremium.set(-premiumSingleSetWidth);
     }
-  }, [direction, singleSetWidth, x]);
+  }, [direction, isReady, coreSingleSetWidth, premiumSingleSetWidth, xCore, xPremium]);
 
-  // The Animation Loop
+
+  // ---------------------------------------------------------
+  // THE ANIMATION LOOP (Unified)
+  // ---------------------------------------------------------
   useAnimationFrame((t, delta) => {
-    if (!isHovered && singleSetWidth > 0) {
-      let moveBy = SPEED * (delta / 16); 
-      
-      let currentX = x.get();
+    if (!isReady) return;
+    const moveFactor = delta / 16; // Normalization based on 60fps
 
-      if (direction === 'rtl') {
-          currentX += moveBy;
-          if (currentX >= 0) {
-            currentX = -singleSetWidth;
-          }
-      } else {
-          currentX -= moveBy;
-          if (currentX <= -singleSetWidth) {
-            currentX = 0;
-          }
-      }
-      x.set(currentX);
+    // 1. CORE ANIMATION (Continues on Hover)
+    if (coreSingleSetWidth > 0) {
+        let currentX = xCore.get();
+        let moveBy = SPEED_CORE * moveFactor;
+
+        if (direction === 'rtl') {
+            currentX += moveBy; // Move Right
+            if (currentX >= 0) currentX = -coreSingleSetWidth;
+        } else {
+            currentX -= moveBy; // Move Left
+            if (currentX <= -coreSingleSetWidth) currentX = 0;
+        }
+        xCore.set(currentX);
+    }
+
+    // 2. PREMIUM ANIMATION (Always Runs - No Hover Stop)
+    if (premiumSingleSetWidth > 0) {
+        let currentX = xPremium.get();
+        let moveBy = SPEED_PREMIUM * moveFactor;
+
+        // Note: Logic swapped intentionally to create counter-movement
+        if (direction === 'rtl') {
+            currentX -= moveBy; // Move Left (Opposite to Core)
+            if (currentX <= -premiumSingleSetWidth) currentX = 0;
+        } else {
+            currentX += moveBy; // Move Right (Opposite to Core)
+            if (currentX >= 0) currentX = -premiumSingleSetWidth;
+        }
+        xPremium.set(currentX);
     }
   });
 
-  const renderCard = (item: any) => {
-      // CTA Card Render
+
+  // ---------------------------------------------------------
+  // RENDER HELPERS
+  // ---------------------------------------------------------
+
+  const renderCoreCard = (item: any) => {
+      if (!item) return null;
       if (item.isCta) {
         return (
             <div className="w-full h-full flex items-center justify-center bg-accent text-primary rounded-sm overflow-hidden relative group/cta cursor-pointer" onClick={() => navigate('/contact')}>
@@ -242,21 +202,23 @@ const Services: React.FC = () => {
             </div>
         );
       }
-
-      // Service Card Render
       return (
         <div className="w-full h-full relative group/card select-none overflow-hidden rounded-sm bg-secondary border border-white/5 hover:border-accent/50 transition-all duration-300">
-             {/* Image Layer */}
              <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent z-10 opacity-90 group-hover/card:opacity-80 transition-opacity" />
-                <MotionImg 
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover grayscale group-hover/card:grayscale-0 transition-all duration-700 transform group-hover/card:scale-110"
-                />
+                {item.image ? (
+                    <OptimizedImage 
+                        src={item.image}
+                        alt={item.title}
+                        containerClassName="w-full h-full"
+                        className="w-full h-full object-cover grayscale group-hover/card:grayscale-0 transition-all duration-700 transform group-hover/card:scale-110"
+                    />
+                ) : (
+                    <div className="w-full h-full bg-secondary flex items-center justify-center">
+                        <Wrench className="text-neutral-dim opacity-10 w-24 h-24" />
+                    </div>
+                )}
             </div>
-            
-            {/* Content */}
             <div className="absolute inset-0 z-20 p-5 flex flex-col justify-end">
                  <div className="flex justify-between items-end">
                     <div>
@@ -271,8 +233,6 @@ const Services: React.FC = () => {
                         <ArrowRight size={14} className="rtl-flip" />
                     </div>
                  </div>
-                 
-                 {/* Hover Description */}
                  <div className="h-0 opacity-0 group-hover/card:h-auto group-hover/card:opacity-100 group-hover/card:mt-3 transition-all duration-500 overflow-hidden">
                      <p className="text-xs text-neutral-dim line-clamp-2">
                          {item.description}
@@ -281,10 +241,55 @@ const Services: React.FC = () => {
             </div>
         </div>
       );
-  }
+  };
+
+  const renderPremiumCard = (service: any) => {
+      return (
+        <div className="w-full h-full relative group/prem select-none overflow-hidden rounded-sm bg-secondary border border-white/5 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_30px_rgba(var(--color-accent),0.15)]">
+            {/* Full Background Image */}
+            <div className="absolute inset-0 z-0">
+                <OptimizedImage 
+                    src={service.image || ''} 
+                    alt={service.title} 
+                    containerClassName="w-full h-full"
+                    className="w-full h-full object-cover grayscale opacity-60 group-hover/prem:grayscale-0 group-hover/prem:opacity-80 transition-all duration-700 transform group-hover/prem:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-transparent opacity-90 group-hover/prem:opacity-70 transition-opacity" />
+            </div>
+
+            <div className="relative z-10 p-8 h-full flex flex-col items-start justify-end">
+                <div className="bg-accent/10 p-3 rounded-full mb-4 backdrop-blur-md border border-accent/20 text-accent group-hover/prem:scale-110 transition-transform duration-500">
+                    {getIcon(service.icon, 28)}
+                </div>
+                
+                <h3 className="text-2xl font-black text-neutral-light mb-2 leading-tight group-hover/prem:text-white transition-colors uppercase tracking-tight">
+                    {service.title}
+                </h3>
+                <p className="text-neutral-dim text-sm mb-4 line-clamp-2 group-hover/prem:text-neutral-light/90 transition-colors">
+                    {service.description}
+                </p>
+
+                {/* Feature Tags - Hidden initially, slide up on hover */}
+                <div className="flex flex-wrap gap-2 max-h-0 opacity-0 group-hover/prem:max-h-20 group-hover/prem:opacity-100 transition-all duration-500 overflow-hidden">
+                    {service.features.slice(0,2).map((feat: string, j: number) => (
+                        <span key={j} className="text-[10px] uppercase font-bold tracking-wider px-2 py-1 bg-white/10 backdrop-blur rounded-sm text-white">
+                            {feat}
+                        </span>
+                    ))}
+                </div>
+            </div>
+            
+            {/* Top Right Badge */}
+            <div className="absolute top-4 right-4 z-20">
+                <Star className="text-accent fill-accent w-4 h-4 opacity-50 group-hover/prem:opacity-100 group-hover/prem:rotate-180 transition-all duration-500" />
+            </div>
+        </div>
+      );
+  };
 
   return (
     <div className="min-h-screen bg-primary text-neutral-light relative overflow-x-hidden flex flex-col">
+       <SEO title={t.nav.services} path="/services" />
        
        {/* Background Grid & Decor */}
        <div className="fixed inset-0 blueprint-grid opacity-10 pointer-events-none z-0" />
@@ -309,46 +314,102 @@ const Services: React.FC = () => {
        </div>
 
        {/* 
-          ----------------------------------------------------
-          INFINITE MARQUEE SECTION (DOUBLE STACKED)
-          ----------------------------------------------------
+          ====================================================
+          SECTION 1: ENGINEERING CORE (Double Row Marquee)
+          ====================================================
        */}
        <div 
-         className="flex-1 relative z-10 overflow-hidden flex flex-col justify-center py-8 group/container"
+         className="relative z-10 overflow-hidden flex flex-col justify-center py-12 group/container"
          dir="ltr" 
-         onMouseEnter={() => setIsHovered(true)}
-         onMouseLeave={() => setIsHovered(false)}
        >
-          
+          <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-8" dir={direction}>
+              <h2 className="font-bold text-xl text-neutral-light flex items-center gap-2">
+                  <Cpu size={20} className="text-accent" />
+                  {t.services.sectionCore}
+              </h2>
+              <p className="text-xs font-mono text-neutral-dim mt-1 uppercase tracking-widest">{t.services.coreSubtitle}</p>
+          </div>
+
           {/* Gradient Masks */}
           <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 z-20 bg-gradient-to-r from-primary to-transparent pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 z-20 bg-gradient-to-l from-primary to-transparent pointer-events-none" />
 
-          {/* Scrolling Track */}
+          {/* Track */}
           <motion.div 
               className={`flex gap-6 md:gap-8 w-max px-6 md:px-8 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}
-              style={{ x }}
+              style={{ x: xCore }}
           >
-              {carouselItems.map((pair, index) => (
+              {coreCarouselItems.map((pair, index) => (
                   <div 
                     key={`col-${index}`} 
                     dir={direction}
                     className="shrink-0 flex flex-col gap-6 md:gap-8"
-                    style={{ width: columnWidth - (window.innerWidth >= 768 ? 32 : 24) }} // Subtract gap from column width to get actual item width
+                    style={{ width: coreColWidth - (window.innerWidth >= 768 ? 32 : 24) }}
                   >
-                      {/* TOP CARD */}
                       <div className="h-[260px] md:h-[300px] w-full">
-                          {renderCard(pair.top)}
+                          {renderCoreCard(pair.top)}
                       </div>
-
-                      {/* BOTTOM CARD */}
                       <div className="h-[260px] md:h-[300px] w-full">
-                          {renderCard(pair.bottom)}
+                          {renderCoreCard(pair.bottom)}
                       </div>
                   </div>
               ))}
           </motion.div>
        </div>
+
+       {/* 
+          ====================================================
+          SECTION 2: CREATIVE STUDIOS (Single Row Cinematic Marquee)
+          ====================================================
+       */}
+       {mergedPremium.length > 0 && (
+           <div 
+             className="relative z-10 overflow-hidden flex flex-col justify-center py-20 bg-gradient-to-b from-primary to-secondary/20"
+             dir="ltr"
+           >
+                {/* Section Header */}
+                <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mb-12 flex flex-col md:flex-row justify-between items-end gap-4" dir={direction}>
+                    <div>
+                        <h2 className="text-3xl md:text-5xl font-black uppercase text-neutral-light mb-2 flex items-center gap-3">
+                            <Cuboid className="text-accent" size={32} />
+                            {t.services.sectionAtelier}
+                        </h2>
+                        <p className="text-neutral-dim max-w-lg">
+                            {t.services.premiumDescription}
+                        </p>
+                    </div>
+                    <div className="hidden md:block text-right">
+                        <span className="font-mono text-xs text-accent uppercase tracking-[0.2em] block mb-1">
+                            {t.services.premiumLabel}
+                        </span>
+                        <div className="h-1 w-24 bg-accent ml-auto" />
+                    </div>
+                </div>
+
+                {/* Gradient Masks */}
+                <div className="absolute left-0 top-0 bottom-0 w-8 md:w-24 z-20 bg-gradient-to-r from-primary to-transparent pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-8 md:w-24 z-20 bg-gradient-to-l from-primary to-transparent pointer-events-none" />
+
+                {/* Track */}
+                <motion.div 
+                    className={`flex gap-6 md:gap-8 w-max px-6 md:px-8 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}
+                    style={{ x: xPremium }}
+                >
+                    {premiumCarouselItems.map((service, index) => (
+                        <div 
+                            key={`prem-${index}`}
+                            dir={direction}
+                            className="shrink-0"
+                            style={{ width: premiumItemWidth - (window.innerWidth >= 768 ? 32 : 24) }}
+                        >
+                            <div className="h-[350px] md:h-[450px] w-full">
+                                {renderPremiumCard(service)}
+                            </div>
+                        </div>
+                    ))}
+                </motion.div>
+           </div>
+       )}
 
     </div>
   );

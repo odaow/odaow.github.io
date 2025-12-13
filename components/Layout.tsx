@@ -118,9 +118,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Grid Background */}
       <div className="fixed inset-0 pointer-events-none z-0 blueprint-grid opacity-20" />
 
-      {/* Navigation */}
+      {/* Navigation - Increased Z-Index to 90 to be above Project Modal (z-60) */}
       <nav 
-        className={`fixed w-full z-50 top-0 left-0 right-0 transition-all duration-500 
+        className={`fixed w-full z-[90] top-0 left-0 right-0 transition-all duration-500 
         ${isHomePage && !scrolled ? 'bg-transparent border-transparent py-4' : 'bg-primary/90 backdrop-blur-md border-b border-neutral-light/5 py-0'}
         `}
       >
@@ -255,7 +255,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                <Link 
                   to="/contact"
                   onClick={() => handleNavClick('/contact')}
-                  className="text-3xl font-bold text-white flex items-center justify-between group border-b border-neutral-light/10 pb-4"
+                  className="text-3xl font-bold text-neutral-light flex items-center justify-between group border-b border-neutral-light/10 pb-4"
                 >
                   {t.nav.contactNow}
                   <ArrowRight className="rtl-flip" />
@@ -264,7 +264,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               <div className="flex justify-between items-center mt-4 border-t border-neutral-light/10 pt-6 pb-20">
                   <button 
                     onClick={() => { toggleLanguage(); setIsMenuOpen(false); }}
-                    className="text-neutral-dim font-mono text-lg flex items-center gap-2 hover:text-accent transition-colors"
+                    className="text-neutral-light font-mono text-lg flex items-center gap-2 hover:text-accent transition-colors"
                   >
                     <Globe size={18} />
                     {language === 'en' ? 'العربية' : 'English'}
@@ -272,7 +272,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
                   <button
                     onClick={toggleTheme}
-                    className="flex items-center gap-2 text-neutral-dim font-mono text-lg hover:text-accent transition-colors"
+                    className="flex items-center gap-2 text-neutral-light font-mono text-lg hover:text-accent transition-colors"
                   >
                     {isDarkMode ? <Moon size={18} /> : <Sun size={18} />}
                     <span>{isDarkMode ? 'Dark' : 'Light'}</span>

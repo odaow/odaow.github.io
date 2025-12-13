@@ -1,7 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import OptimizedImage from '../components/OptimizedImage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BlogPost } from '../types';
 import { ArrowRight, Calendar, User, Tag, ExternalLink, Globe, Loader2, BookOpen } from 'lucide-react';
@@ -54,6 +57,7 @@ const Blog: React.FC = () => {
 
   return (
     <Section className="pt-32 min-h-screen">
+       <SEO title={t.nav.blog} path="/blog" />
        <div className="mb-12 md:mb-16 text-center">
             <h1 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-tight text-neutral-light">
                 {t.nav.blog}
@@ -142,9 +146,10 @@ const BlogCard: React.FC<{ post: BlogPost, index: number, t: any }> = ({ post, i
         >
             {/* Image */}
             <div className="aspect-video overflow-hidden relative">
-                <img 
+                <OptimizedImage
                     src={post.image} 
                     alt={post.title} 
+                    containerClassName="w-full h-full"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
                     onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop';

@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -43,7 +44,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
 
   return (
     <MotionDiv
-      className="fixed inset-0 z-[100] bg-primary flex flex-col items-center justify-center overflow-hidden transition-colors duration-500"
+      className="fixed inset-0 z-[2000] bg-primary flex flex-col items-center justify-center overflow-hidden transition-colors duration-500"
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
     >

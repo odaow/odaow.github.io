@@ -1,7 +1,11 @@
 
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import { createPortal } from 'react-dom';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Schema from '../components/Schema';
+import OptimizedImage from '../components/OptimizedImage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Building, Armchair, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
@@ -149,6 +153,16 @@ const Projects: React.FC = () => {
 
   return (
     <Section className="pt-32">
+       <SEO 
+         title={t.nav.projects} 
+         description={language === 'ar' 
+           ? 'استكشف مشاريع مكتب النبراس في التصميم المعماري، الديكور الداخلي، وتنسيق الحدائق.' 
+           : 'Explore Al Nebras projects in architectural design, interior decoration, and landscape architecture.'}
+         path="/projects"
+       />
+       {/* Inject Dynamic Project Schema if selected, otherwise fallback to Organization */}
+       <Schema type={selectedProject ? 'project' : 'organization'} data={selectedProject} />
+
        {/* CATEGORY SELECTOR HERO */}
        <div className="mb-16 md:mb-24">
             <MotionH2 
@@ -166,9 +180,10 @@ const Projects: React.FC = () => {
                     className={`relative group cursor-pointer overflow-hidden rounded-sm transition-all duration-500 border ${view === 'exterior' ? 'border-accent shadow-[0_0_30px_rgba(var(--color-accent),0.2)]' : 'border-neutral-light/10 hover:border-neutral-light/30'}`}
                 >
                     <div className="absolute inset-0 z-0">
-                         <img 
+                         <OptimizedImage
                             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
                             alt="Exterior Visualization"
+                            containerClassName="w-full h-full"
                             className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${view === 'exterior' ? 'scale-105 grayscale-0' : 'scale-100 grayscale hover:scale-105'}`}
                          />
                          <div className={`absolute inset-0 transition-colors duration-500 ${view === 'exterior' ? 'bg-black/40' : 'bg-black/60 group-hover:bg-black/50'}`} />
@@ -207,9 +222,10 @@ const Projects: React.FC = () => {
                     className={`relative group cursor-pointer overflow-hidden rounded-sm transition-all duration-500 border ${view === 'interior' ? 'border-accent shadow-[0_0_30px_rgba(var(--color-accent),0.2)]' : 'border-neutral-light/10 hover:border-neutral-light/30'}`}
                 >
                     <div className="absolute inset-0 z-0">
-                         <img 
+                         <OptimizedImage
                             src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop" 
                             alt="Interior Design"
+                            containerClassName="w-full h-full"
                             className={`w-full h-full object-cover transition-transform duration-1000 ease-out ${view === 'interior' ? 'scale-105 grayscale-0' : 'scale-100 grayscale hover:scale-105'}`}
                          />
                          <div className={`absolute inset-0 transition-colors duration-500 ${view === 'interior' ? 'bg-black/40' : 'bg-black/60 group-hover:bg-black/50'}`} />
@@ -288,10 +304,10 @@ const Projects: React.FC = () => {
                     >
                         {/* Image Container */}
                         <div className="aspect-[4/3] overflow-hidden relative">
-                            <img 
+                            <OptimizedImage
                                 src={project.image} 
                                 alt={project.title} 
-                                loading="lazy"
+                                containerClassName="w-full h-full"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                             />
                             <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/0 transition-colors duration-500" />
@@ -319,191 +335,198 @@ const Projects: React.FC = () => {
          </AnimatePresence>
        </div>
 
-       {/* PROJECT DETAIL OVERLAY */}
-       <AnimatePresence>
-         {selectedProject && (
-            <MotionDiv
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-40 bg-primary overflow-y-auto no-scrollbar text-start"
-            >
-                <div className="min-h-screen relative flex flex-col">
-                    {/* Main Content Wrapper */}
-                    <div className="flex-1 w-full px-4 md:px-12 pb-24 pt-24 md:pt-40 relative max-w-[1920px] mx-auto">
-                        <MotionDiv
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.1, duration: 0.4 }}
-                        >
-                            {/* Back Button */}
-                            <button 
-                                onClick={() => setSelectedProjectId(null)}
-                                className="inline-flex items-center gap-3 px-3 md:px-5 py-2 md:-ms-5 rounded-full hover:bg-neutral-light/5 transition-all mb-6 md:mb-8 group"
-                            >
-                                <ArrowLeft size={20} className="rtl-flip text-accent group-hover:-translate-x-1 transition-transform" />
-                                <span className="font-mono text-xs md:text-sm uppercase tracking-widest text-neutral-light group-hover:text-accent transition-colors">
-                                    {t.common.backToProjects}
-                                </span>
-                            </button>
-
-                            {/* Split Layout: Side-by-Side */}
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start">
-                                
-                                {/* Column 1: Visuals */}
-                                <div className="space-y-4 md:space-y-6">
-                                    {/* Main Image */}
-                                    <div 
-                                        className="w-full aspect-[4/3] overflow-hidden rounded-sm border border-neutral-light/10 shadow-2xl cursor-zoom-in relative group"
-                                        onClick={() => setLightboxIndex(0)}
-                                    >
-                                        <img src={selectedProject.image} alt={selectedProject.title} loading="lazy" className="w-full h-full object-cover" />
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                            <Maximize2 className="text-white w-10 h-10 drop-shadow-md" />
-                                        </div>
-                                    </div>
-
-                                    {/* Gallery Grid */}
-                                    {selectedProject.gallery && (
-                                        <>
-                                            <h3 className="font-mono text-accent uppercase tracking-widest text-xs mb-2 mt-6 md:mt-8 opacity-80">
-                                                {t.common.gallery}
-                                            </h3>
-                                            <div className="grid grid-cols-2 gap-3 md:gap-4">
-                                                {selectedProject.gallery.map((img, i) => (
-                                                    <div 
-                                                        key={i} 
-                                                        className="aspect-[4/3] overflow-hidden border border-neutral-light/5 rounded-sm cursor-zoom-in relative group"
-                                                        onClick={() => setLightboxIndex(i + 1)}
-                                                    >
-                                                        <img 
-                                                            src={img} 
-                                                            alt={`Gallery ${i+1}`} 
-                                                            loading="lazy"
-                                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                                                        />
-                                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                                                            <Maximize2 className="text-white w-8 h-8 drop-shadow-md" />
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
-
-                                {/* Column 2: Content */}
-                                <div className="lg:sticky lg:top-32">
-                                    <span className="font-mono text-accent text-xs tracking-widest uppercase mb-4 block">
-                                        {selectedProject.category}
-                                    </span>
-                                    
-                                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 leading-tight text-neutral-light">
-                                        {selectedProject.title}
-                                    </h2>
-
-                                    {/* Meta Data Row with Icons */}
-                                    <div className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-4 mb-8 md:mb-10 border-y border-neutral-light/10 py-4 md:py-6">
-                                        <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
-                                            <MapPin className="text-accent w-4 h-4 md:w-5 md:h-5" />
-                                            <span>{selectedProject.location}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
-                                            <Calendar className="text-accent w-4 h-4 md:w-5 md:h-5" />
-                                            <span>{selectedProject.year}</span>
-                                        </div>
-                                        <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
-                                            <Ruler className="text-accent w-4 h-4 md:w-5 md:h-5" />
-                                            <span>{selectedProject.area}</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="mb-8 md:mb-10">
-                                        <h3 className="text-lg md:text-xl font-bold mb-4 text-neutral-light">{t.common.viewProject}</h3>
-                                        <p className="text-base md:text-lg text-neutral-dim leading-relaxed whitespace-pre-line">
-                                            {selectedProject.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Specs Box */}
-                                    <div className="bg-secondary p-6 md:p-8 border border-neutral-light/5 rounded-sm backdrop-blur-sm">
-                                        <h3 className="font-mono text-accent uppercase tracking-widest mb-6 border-b border-accent/20 pb-2 text-xs">
-                                            {t.common.specs}
-                                        </h3>
-                                        <ul className="space-y-4">
-                                            {selectedProject.specs.map((spec, i) => (
-                                                <li key={i} className="flex justify-between items-center text-sm">
-                                                    <span className="text-neutral-dim">{spec.label}</span>
-                                                    <span className="font-bold text-neutral-light">{spec.value}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </MotionDiv>
-                    </div>
-
-                    {/* Footer Removed from here to avoid duplication with Layout Footer */}
-                </div>
-            </MotionDiv>
-         )}
-       </AnimatePresence>
-
-       {/* LIGHTBOX OVERLAY */}
-       <AnimatePresence>
-            {lightboxIndex !== null && selectedProject && (
+       {/* PROJECT DETAIL OVERLAY - USING PORTAL */}
+       {createPortal(
+           <AnimatePresence>
+             {selectedProject && (
                 <MotionDiv
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center backdrop-blur-md"
-                    onClick={handleCloseLightbox}
+                    className="fixed inset-0 z-[60] bg-primary overflow-y-auto no-scrollbar text-start"
                 >
-                    <button 
-                        onClick={handleCloseLightbox}
-                        className="absolute top-4 end-4 md:top-8 md:end-8 p-3 text-neutral-dim hover:text-accent transition-colors z-[210]"
-                    >
-                        <X className="w-[28px] h-[28px] md:w-[32px] md:h-[32px]" />
-                    </button>
+                    <div className="min-h-screen relative flex flex-col">
+                        {/* Main Content Wrapper */}
+                        <div className="flex-1 w-full px-4 md:px-12 pb-24 pt-24 md:pt-40 relative max-w-[1920px] mx-auto">
+                            <MotionDiv
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.1, duration: 0.4 }}
+                            >
+                                {/* Back Button */}
+                                <button 
+                                    onClick={() => setSelectedProjectId(null)}
+                                    className="inline-flex items-center gap-3 px-3 md:px-5 py-2 md:-ms-5 rounded-full hover:bg-neutral-light/5 transition-all mb-6 md:mb-8 group"
+                                >
+                                    <ArrowLeft size={20} className="rtl-flip text-accent group-hover:-translate-x-1 transition-transform" />
+                                    <span className="font-mono text-xs md:text-sm uppercase tracking-widest text-neutral-light group-hover:text-accent transition-colors">
+                                        {t.common.backToProjects}
+                                    </span>
+                                </button>
 
-                    <button 
-                        onClick={handlePrevImage}
-                        className="absolute start-2 md:start-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210] group"
-                    >
-                        <ChevronLeft className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip group-active:scale-95" />
-                    </button>
+                                {/* Split Layout: Side-by-Side */}
+                                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-start">
+                                    
+                                    {/* Column 1: Visuals */}
+                                    <div className="space-y-4 md:space-y-6">
+                                        {/* Main Image */}
+                                        <div 
+                                            className="w-full aspect-[4/3] overflow-hidden rounded-sm border border-neutral-light/10 shadow-2xl cursor-zoom-in relative group"
+                                            onClick={() => setLightboxIndex(0)}
+                                        >
+                                            <OptimizedImage 
+                                                src={selectedProject.image} 
+                                                alt={selectedProject.title} 
+                                                className="w-full h-full object-cover" 
+                                            />
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                                <Maximize2 className="text-white w-10 h-10 drop-shadow-md" />
+                                            </div>
+                                        </div>
 
-                    <MotionDiv
-                        key={lightboxIndex}
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.3 }}
-                        className="relative max-w-[95vw] md:max-w-[90vw] max-h-[80vh] md:max-h-[85vh]"
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <img 
-                            src={allImages[lightboxIndex]} 
-                            alt="Full View" 
-                            loading="lazy"
-                            className="max-w-full max-h-[80vh] md:max-h-[85vh] object-contain shadow-2xl border border-white/10"
-                        />
-                         <div className="absolute -bottom-10 left-0 right-0 text-center font-mono text-xs text-neutral-dim">
-                            {lightboxIndex + 1} / {allImages.length}
+                                        {/* Gallery Grid */}
+                                        {selectedProject.gallery && (
+                                            <>
+                                                <h3 className="font-mono text-accent uppercase tracking-widest text-xs mb-2 mt-6 md:mt-8 opacity-80">
+                                                    {t.common.gallery}
+                                                </h3>
+                                                <div className="grid grid-cols-2 gap-3 md:gap-4">
+                                                    {selectedProject.gallery.map((img, i) => (
+                                                        <div 
+                                                            key={i} 
+                                                            className="aspect-[4/3] overflow-hidden border border-neutral-light/5 rounded-sm cursor-zoom-in relative group"
+                                                            onClick={() => setLightboxIndex(i + 1)}
+                                                        >
+                                                            <OptimizedImage 
+                                                                src={img} 
+                                                                alt={`Gallery ${i+1}`} 
+                                                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                                            />
+                                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
+                                                                <Maximize2 className="text-white w-8 h-8 drop-shadow-md" />
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </>
+                                        )}
+                                    </div>
+
+                                    {/* Column 2: Content */}
+                                    <div className="lg:sticky lg:top-32">
+                                        <span className="font-mono text-accent text-xs tracking-widest uppercase mb-4 block">
+                                            {selectedProject.category}
+                                        </span>
+                                        
+                                        <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-6 md:mb-8 leading-tight text-neutral-light">
+                                            {selectedProject.title}
+                                        </h2>
+
+                                        {/* Meta Data Row with Icons */}
+                                        <div className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-4 mb-8 md:mb-10 border-y border-neutral-light/10 py-4 md:py-6">
+                                            <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
+                                                <MapPin className="text-accent w-4 h-4 md:w-5 md:h-5" />
+                                                <span>{selectedProject.location}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
+                                                <Calendar className="text-accent w-4 h-4 md:w-5 md:h-5" />
+                                                <span>{selectedProject.year}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2 md:gap-3 text-sm text-neutral-light">
+                                                <Ruler className="text-accent w-4 h-4 md:w-5 md:h-5" />
+                                                <span>{selectedProject.area}</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="mb-8 md:mb-10">
+                                            <h3 className="text-lg md:text-xl font-bold mb-4 text-neutral-light">{t.common.viewProject}</h3>
+                                            <p className="text-base md:text-lg text-neutral-dim leading-relaxed whitespace-pre-line">
+                                                {selectedProject.description}
+                                            </p>
+                                        </div>
+
+                                        {/* Specs Box */}
+                                        <div className="bg-secondary p-6 md:p-8 border border-neutral-light/5 rounded-sm backdrop-blur-sm">
+                                            <h3 className="font-mono text-accent uppercase tracking-widest mb-6 border-b border-accent/20 pb-2 text-xs">
+                                                {t.common.specs}
+                                            </h3>
+                                            <ul className="space-y-4">
+                                                {selectedProject.specs.map((spec, i) => (
+                                                    <li key={i} className="flex justify-between items-center text-sm">
+                                                        <span className="text-neutral-dim">{spec.label}</span>
+                                                        <span className="font-bold text-neutral-light">{spec.value}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </MotionDiv>
                         </div>
-                    </MotionDiv>
-
-                    <button 
-                        onClick={handleNextImage}
-                        className="absolute end-2 md:end-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210] group"
-                    >
-                        <ChevronRight className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip group-active:scale-95" />
-                    </button>
+                    </div>
                 </MotionDiv>
-            )}
-       </AnimatePresence>
+             )}
+           </AnimatePresence>,
+           document.body
+       )}
+
+       {/* LIGHTBOX OVERLAY - USING PORTAL */}
+       {createPortal(
+           <AnimatePresence>
+                {lightboxIndex !== null && selectedProject && (
+                    <MotionDiv
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center backdrop-blur-md"
+                        onClick={handleCloseLightbox}
+                    >
+                        <button 
+                            onClick={handleCloseLightbox}
+                            className="absolute top-4 end-4 md:top-8 md:end-8 p-3 text-neutral-dim hover:text-accent transition-colors z-[210]"
+                        >
+                            <X className="w-[28px] h-[28px] md:w-[32px] md:h-[32px]" />
+                        </button>
+
+                        <button 
+                            onClick={handlePrevImage}
+                            className="absolute start-2 md:start-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210] group"
+                        >
+                            <ChevronLeft className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip group-active:scale-95" />
+                        </button>
+
+                        <MotionDiv
+                            key={lightboxIndex}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.3 }}
+                            className="relative max-w-[95vw] md:max-w-[90vw] max-h-[80vh] md:max-h-[85vh]"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <img 
+                                src={allImages[lightboxIndex]} 
+                                alt="Full View" 
+                                loading="lazy"
+                                className="max-w-full max-h-[80vh] md:max-h-[85vh] object-contain shadow-2xl border border-white/10"
+                            />
+                             <div className="absolute -bottom-10 left-0 right-0 text-center font-mono text-xs text-neutral-dim">
+                                {lightboxIndex + 1} / {allImages.length}
+                            </div>
+                        </MotionDiv>
+
+                        <button 
+                            onClick={handleNextImage}
+                            className="absolute end-2 md:end-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210] group"
+                        >
+                            <ChevronRight className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip group-active:scale-95" />
+                        </button>
+                    </MotionDiv>
+                )}
+           </AnimatePresence>,
+           document.body
+       )}
     </Section>
   );
 };

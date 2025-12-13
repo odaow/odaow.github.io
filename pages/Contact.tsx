@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Schema from '../components/Schema';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, Globe, Copy, Check, Send, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
 
@@ -203,6 +205,8 @@ const Contact: React.FC = () => {
 
   return (
     <Section className="pt-32 min-h-screen">
+        <SEO title={t.nav.contact} path="/contact" />
+        <Schema type="organization" />
         {/* HEADER */}
         <div className="max-w-4xl mb-12 md:mb-16">
             <MotionH1 

@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
+import SEO from '../components/SEO';
+import Schema from '../components/Schema';
+import OptimizedImage from '../components/OptimizedImage';
 
 // Array of high-quality architectural images for the slider
 const HERO_SLIDES = [
@@ -64,7 +67,7 @@ const StatItem = ({ value, label }: { value: string, label: string }) => {
 };
 
 const Home: React.FC = () => {
-  const { t, projects, interiorProjects, services, testimonials } = useLanguage();
+  const { t, language, projects, interiorProjects, services, testimonials } = useLanguage();
   const navigate = useNavigate();
   
   // Typewriter effect state
@@ -149,8 +152,15 @@ const Home: React.FC = () => {
     navigate('/projects', { state: { projectId: id } });
   };
 
+  const homeTitle = language === 'ar' 
+    ? 'مكتب النبراس الهندسي | عمارة، إنشاءات، و BIM' 
+    : 'Al Nebras Engineering Office | Architecture, Structure & BIM';
+
   return (
     <>
+      <SEO title={homeTitle} path="/" />
+      <Schema type="organization" />
+      
       {/* HERO SECTION */}
       <section className="relative h-[100dvh] flex flex-col justify-start pt-28 pb-32 md:justify-center md:pt-0 md:pb-0 overflow-hidden group/hero">
         
@@ -287,11 +297,10 @@ const Home: React.FC = () => {
               >
                 <div className="aspect-[4/5] overflow-hidden relative">
                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
-                   <img 
+                   <OptimizedImage
                     src={project.image} 
                     alt={project.title} 
-                    loading="lazy"
-                    decoding="async"
+                    containerClassName="w-full h-full"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                    />
                    {/* Overlay Stats */}
