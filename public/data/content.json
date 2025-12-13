@@ -1,90 +1,84 @@
 {
   "TRANSLATIONS": {
     "en": {
-      "contact": {
-        "title": "Contact",
-        "intro": "Ready to engineer the future? Let’s discuss your vision.",
-        "locationHeading": "Our Location",
-        "mapOverlay": "Interact to explore",
-        "info": {
-          "email": "Email",
-          "phone": "Phone",
-          "hq": "HQ",
-          "addressValue": "Main St, Tubas, Palestine"
-        },
-        "form": {
-          "budget": "Estimated Budget",
-          "message": "Message",
-          "portfolio": "Portfolio / LinkedIn URL",
-          "namePlaceholder": "John Doe",
-          "position": "Position of Interest",
-          "name": "Name",
-          "subject": "Subject",
-          "messagePlaceholder": "Tell us about your project...",
-          "organization": "Company / Organization",
-          "emailPlaceholder": "name@company.com",
-          "submit": "Send Message",
-          "email": "Email"
-        },
-        "subjects": {
-          "inquiry": "New Project Inquiry",
-          "careers": "Careers",
-          "partnership": "Partnership"
-        },
-        "quick": {
-          "title": "Quick Inquiry",
-          "subtitle": "Chat via WhatsApp",
-          "name": "Your Name",
-          "message": "Your Message...",
-          "send": "Send Now"
-        }
-      },
       "nav": {
-        "contact": "Contact",
-        "blog": "Insights",
-        "partners": "Partners",
-        "about": "Company",
-        "brandName": "AL NEBRAS",
-        "contactNow": "Contact Us Now",
+        "home": "Home",
         "projects": "Projects",
         "services": "Services",
-        "brandSubtitle": "Engineering Office",
-        "home": "Home"
+        "partners": "Partners",
+        "about": "Company",
+        "blog": "Insights",
+        "contact": "Contact",
+        "contactNow": "Contact Us Now",
+        "brandName": "AL NEBRAS",
+        "brandSubtitle": "Engineering Office"
       },
-      "partners": {
-        "title": "Our Strategic Partners",
-        "description": "Collaborating with industry leaders to deliver integrated solutions and certified excellence.",
-        "accreditationHeading": "Accreditation & Quality"
+      "hero": {
+        "est": "EST. 2000 | PALESTINIAN ENGINEERING LEGACY",
+        "typewriter": "AL NEBRAS.. ENGINEERING THAT INSPIRES",
+        "subtitle": "Over two decades of excellence in the heart of Palestine. Your trusted partner for building your home, project, and future.",
+        "cta": "Explore Our History",
+        "scroll": "Scroll to Explore",
+        "exploreProjects": "Explore Projects",
+        "stats": {
+          "years": "Years",
+          "projects": "Projects",
+          "awards": "Awards"
+        }
       },
       "common": {
-        "notFoundDesc": "The blueprint you are looking for does not exist or has been moved.",
-        "servicesProvided": "Collaborative Services",
-        "notifyMe": "Notify Me",
+        "viewProject": "View Case Study",
+        "specs": "Technical Specs",
+        "features": "Key Capabilities",
         "getInTouch": "Initiate Collaboration",
+        "explore": "Explore",
+        "viewAllServices": "View Full Capabilities",
         "filterAll": "All Projects",
-        "notFoundTitle": "404 - STRUCTURAL ERROR",
-        "readMore": "Read Full Article",
-        "director": "Director",
+        "close": "Close",
+        "backToProjects": "Back to Projects",
         "backToPartners": "Back to Partners",
-        "phone": "Phone",
-        "returnHome": "Return to Base",
         "visitWebsite": "Visit Website",
         "partnerSince": "Partner Since",
-        "gallery": "Gallery",
-        "explore": "Explore",
-        "viewProject": "View Case Study",
-        "contactLabel": "Contact",
-        "testimonials": "Client Testimonials",
-        "location": "Location",
-        "partnerNotFound": "Partner Not Found",
-        "specs": "Technical Specs",
-        "close": "Close",
-        "companyInsights": "Nebras Insights",
-        "viewAllServices": "View Full Capabilities",
-        "latestNews": "Global Architecture Feed",
-        "backToProjects": "Back to Projects",
+        "servicesProvided": "Collaborative Services",
         "comingSoon": "Coming Soon",
-        "features": "Key Capabilities"
+        "notifyMe": "Notify Me",
+        "gallery": "Gallery",
+        "contactLabel": "Contact",
+        "director": "Director",
+        "location": "Location",
+        "phone": "Phone",
+        "partnerNotFound": "Partner Not Found",
+        "testimonials": "Client Testimonials",
+        "notFoundTitle": "404 - STRUCTURAL ERROR",
+        "notFoundDesc": "The blueprint you are looking for does not exist or has been moved.",
+        "returnHome": "Return to Base",
+        "readMore": "Read Full Article",
+        "latestNews": "Global Architecture Feed",
+        "companyInsights": "Nebras Insights"
+      },
+      "footer": {
+        "description": "Pioneering the future of built environments through precise engineering and sustainable innovation.",
+        "brandNameFull": "AL NEBRAS ENGINEERING",
+        "officeHeading": "Office",
+        "socialHeading": "Social",
+        "address": {
+          "line1": "Main Street",
+          "line2": "Tubas",
+          "line3": "Palestine"
+        },
+        "rights": "© 2024 AL NEBRAS ENGINEERING.",
+        "privacy": "PRIVACY POLICY",
+        "terms": "TERMS OF SERVICE"
+      },
+      "services": {
+        "heroDescription": "Delivering multidisciplinary excellence across every phase of the construction lifecycle.",
+        "sectionCore": "The Engineering Core",
+        "sectionAtelier": "Distinguished Clients",
+        "atelierSubtitle": "Visualization, Fabrication & Documentation",
+        "worldClassBadge": "World-Class Engineering",
+        "coreSubtitle": "Essentials for Modern Infrastructure",
+        "premiumLabel": "Exclusive Services",
+        "premiumDescription": "Explore our high-end customization services."
       },
       "about": {
         "heroText1": "Founded in 2000, Al Nebras Engineering Office has established itself as a beacon of reliability and technical expertise in the Palestinian construction sector.",
@@ -125,6 +119,49 @@
           ]
         }
       },
+      "partners": {
+        "title": "Our Strategic Partners",
+        "description": "Collaborating with industry leaders to deliver integrated solutions and certified excellence.",
+        "accreditationHeading": "Accreditation & Quality"
+      },
+      "contact": {
+        "title": "Contact",
+        "intro": "Ready to engineer the future? Let’s discuss your vision.",
+        "locationHeading": "Our Location",
+        "mapOverlay": "Interact to explore",
+        "info": {
+          "email": "Email",
+          "phone": "Phone",
+          "hq": "HQ",
+          "addressValue": "Main St, Tubas, Palestine"
+        },
+        "form": {
+          "name": "Name",
+          "email": "Email",
+          "subject": "Subject",
+          "message": "Message",
+          "submit": "Send Message",
+          "namePlaceholder": "John Doe",
+          "emailPlaceholder": "name@company.com",
+          "messagePlaceholder": "Tell us about your project...",
+          "budget": "Estimated Budget",
+          "portfolio": "Portfolio / LinkedIn URL",
+          "organization": "Company / Organization",
+          "position": "Position of Interest"
+        },
+        "subjects": {
+          "inquiry": "New Project Inquiry",
+          "careers": "Careers",
+          "partnership": "Partnership"
+        },
+        "quick": {
+          "title": "Quick Inquiry",
+          "subtitle": "Chat via WhatsApp",
+          "name": "Your Name",
+          "message": "Your Message...",
+          "send": "Send Now"
+        }
+      },
       "projects": {
         "heading": "Our Portfolio",
         "exterior": {
@@ -135,130 +172,87 @@
           "title": "Interior Design",
           "subtitle": "Spaces & Ambiance"
         }
-      },
-      "hero": {
-        "est": "EST. 2000 | PALESTINIAN ENGINEERING LEGACY",
-        "typewriter": "AL NEBRAS.. ENGINEERING THAT INSPIRES",
-        "subtitle": "Over two decades of excellence in the heart of Palestine. Your trusted partner for building your home, project, and future.",
-        "cta": "Explore Our History",
-        "scroll": "Scroll to Explore",
-        "exploreProjects": "Explore Projects",
-        "stats": {
-          "years": "Years",
-          "projects": "Projects",
-          "awards": "Awards"
-        }
-      },
-      "footer": {
-        "description": "Pioneering the future of built environments through precise engineering and sustainable innovation.",
-        "brandNameFull": "AL NEBRAS ENGINEERING",
-        "officeHeading": "Office",
-        "socialHeading": "Social",
-        "address": {
-          "line1": "Main Street",
-          "line2": "Tubas",
-          "line3": "Palestine"
-        },
-        "rights": "© 2024 AL NEBRAS ENGINEERING.",
-        "privacy": "PRIVACY POLICY",
-        "terms": "TERMS OF SERVICE"
-      },
-      "services": {
-        "heroDescription": "Delivering multidisciplinary excellence across every phase of the construction lifecycle.",
-        "sectionCore": "The Engineering Core",
-        "sectionAtelier": "Distinguished Clients",
-        "atelierSubtitle": "Visualization, Fabrication & Documentation",
-        "worldClassBadge": "World-Class Engineering",
-        "coreSubtitle": "Essentials for Modern Infrastructure",
-        "premiumLabel": "Exclusive Services",
-        "premiumDescription": "Explore our high-end customization services."
       }
     },
     "ar": {
-      "contact": {
-        "title": "تواصل معنا",
-        "intro": "هل أنت مستعد لهندسة المستقبل؟ دعنا نناقش رؤيتك.",
-        "locationHeading": "موقعنا",
-        "mapOverlay": "تفاعل مع الخريطة لاستكشاف الموقع",
-        "info": {
-          "email": "البريد الإلكتروني",
-          "phone": "الهاتف",
-          "hq": "المقر الرئيسي",
-          "addressValue": "Main St, Tubas, Palestine"
-        },
-        "form": {
-          "budget": "الميزانية المتوقعة",
-          "message": "الرسالة",
-          "portfolio": "رابط المعرض / لينكدإن",
-          "namePlaceholder": "الاسم الكامل",
-          "position": "المسمى الوظيفي المطلوب",
-          "name": "الاسم",
-          "subject": "الموضوع",
-          "messagePlaceholder": "أخبرنا عن تفاصيل مشروعك...",
-          "organization": "الشركة / المؤسسة",
-          "emailPlaceholder": "name@company.com",
-          "submit": "إرسال الرسالة",
-          "email": "البريد الإلكتروني"
-        },
-        "subjects": {
-          "inquiry": "استفسار عن مشروع جديد",
-          "careers": "وظائف",
-          "partnership": "شراكة"
-        },
-        "quick": {
-          "title": "تواصل سريع",
-          "subtitle": "دردشة عبر واتساب",
-          "name": "الاسم",
-          "message": "رسالتك...",
-          "send": "إرسال الآن"
-        }
-      },
       "nav": {
-        "contact": "تواصل معنا",
-        "blog": "المدونة",
-        "partners": "شركاؤنا",
-        "about": "الشركة",
-        "brandName": "النبراس",
-        "contactNow": "تواصل معنا الآن",
+        "home": "الرئيسية",
         "projects": "المشاريع",
         "services": "خدماتنا",
-        "brandSubtitle": "للاستشارات الهندسية",
-        "home": "الرئيسية"
+        "partners": "شركاؤنا",
+        "about": "الشركة",
+        "blog": "المدونة",
+        "contact": "تواصل معنا",
+        "contactNow": "تواصل معنا الآن",
+        "brandName": "النبراس",
+        "brandSubtitle": "للاستشارات الهندسية"
       },
-      "partners": {
-        "title": "شركاؤنا الاستراتيجيين",
-        "description": "نتعاون مع رواد الصناعة لتقديم حلول متكاملة وتميز معتمد.",
-        "accreditationHeading": "الاعتمادات والجودة"
+      "hero": {
+        "est": "تأسس عام 2000 | عراقة هندسية فلسطينية",
+        "typewriter": "النبراس.. هندسةٌ تُلهم",
+        "subtitle": "أكثر من عقدين من التميز في قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.",
+        "cta": "تصفح تاريخنا",
+        "scroll": "مرر للاستكشاف",
+        "exploreProjects": "استكشف المشاريع",
+        "stats": {
+          "years": "سنوات",
+          "projects": "مشاريع",
+          "awards": "جوائز"
+        }
       },
       "common": {
-        "notFoundDesc": "المخطط الذي تبحث عنه غير موجود أو تم نقله.",
-        "servicesProvided": "مجالات التعاون",
-        "notifyMe": "أعلمني",
+        "viewProject": "عرض دراسة الحالة",
+        "specs": "المواصفات الفنية",
+        "features": "القدرات الأساسية",
         "getInTouch": "ابدأ التعاون",
+        "explore": "استكشاف",
+        "viewAllServices": "عرض كامل الخدمات",
         "filterAll": "كل المشاريع",
-        "notFoundTitle": "404 - خطأ هيكلي",
-        "readMore": "اقرأ المقال كاملاً",
-        "director": "المدير العام",
+        "close": "إغلاق",
+        "backToProjects": "العودة للمشاريع",
         "backToPartners": "العودة للشركاء",
-        "phone": "الهاتف",
-        "returnHome": "العودة للقاعدة",
         "visitWebsite": "زيارة الموقع",
         "partnerSince": "شريك منذ",
-        "gallery": "معرض الصور",
-        "explore": "استكشاف",
-        "viewProject": "عرض دراسة الحالة",
-        "contactLabel": "معلومات التواصل",
-        "testimonials": "آراء عملائنا",
-        "location": "الموقع",
-        "partnerNotFound": "الشريك غير موجود",
-        "specs": "المواصفات الفنية",
-        "close": "إغلاق",
-        "companyInsights": "رؤى النبراس",
-        "viewAllServices": "عرض كامل الخدمات",
-        "latestNews": "أخبار الهندسة العالمية",
-        "backToProjects": "العودة للمشاريع",
+        "servicesProvided": "مجالات التعاون",
         "comingSoon": "قريباً",
-        "features": "القدرات الأساسية"
+        "notifyMe": "أعلمني",
+        "gallery": "معرض الصور",
+        "contactLabel": "معلومات التواصل",
+        "director": "المدير العام",
+        "location": "الموقع",
+        "phone": "الهاتف",
+        "partnerNotFound": "الشريك غير موجود",
+        "testimonials": "آراء عملائنا",
+        "notFoundTitle": "404 - خطأ هيكلي",
+        "notFoundDesc": "المخطط الذي تبحث عنه غير موجود أو تم نقله.",
+        "returnHome": "العودة للقاعدة",
+        "readMore": "اقرأ المقال كاملاً",
+        "latestNews": "أخبار الهندسة العالمية",
+        "companyInsights": "رؤى النبراس"
+      },
+      "footer": {
+        "description": "ريادة مستقبل البيئات المبنية من خلال الهندسة الدقيقة والابتكار المستدام.",
+        "brandNameFull": "مكتب النبراس الهندسي",
+        "officeHeading": "المكتب",
+        "socialHeading": "تواصل اجتماعي",
+        "address": {
+          "line1": "الشارع الرئيسي",
+          "line2": "طوباس",
+          "line3": "فلسطين"
+        },
+        "rights": "© 2024 مكتب النبراس الهندسي.",
+        "privacy": "سياسة الخصوصية",
+        "terms": "شروط الخدمة"
+      },
+      "services": {
+        "heroDescription": "تقديم التميز متعدد التخصصات عبر كل مرحلة من مراحل دورة حياة البناء.",
+        "sectionCore": "الجوهر الهندسي",
+        "sectionAtelier": "العملاء المميزون",
+        "atelierSubtitle": "التصور المرئي، الطباعة، والتوثيق",
+        "worldClassBadge": "هندسة عالمية المستوى",
+        "coreSubtitle": "أساسيات البنية التحتية الحديثة",
+        "premiumLabel": "خدمات حصرية",
+        "premiumDescription": "استكشف خدماتنا المخصصة عالية المستوى."
       },
       "about": {
         "heroText1": "تأسس مكتب النبراس الهندسي عام 2000، ورسخ مكانته كمنارة للموثوقية والخبرة الفنية في قطاع البناء الفلسطيني.",
@@ -299,6 +293,49 @@
           ]
         }
       },
+      "partners": {
+        "title": "شركاؤنا الاستراتيجيين",
+        "description": "نتعاون مع رواد الصناعة لتقديم حلول متكاملة وتميز معتمد.",
+        "accreditationHeading": "الاعتمادات والجودة"
+      },
+      "contact": {
+        "title": "تواصل معنا",
+        "intro": "هل أنت مستعد لهندسة المستقبل؟ دعنا نناقش رؤيتك.",
+        "locationHeading": "موقعنا",
+        "mapOverlay": "تفاعل مع الخريطة لاستكشاف الموقع",
+        "info": {
+          "email": "البريد الإلكتروني",
+          "phone": "الهاتف",
+          "hq": "المقر الرئيسي",
+          "addressValue": "Main St, Tubas, Palestine"
+        },
+        "form": {
+          "name": "الاسم",
+          "email": "البريد الإلكتروني",
+          "subject": "الموضوع",
+          "message": "الرسالة",
+          "submit": "إرسال الرسالة",
+          "namePlaceholder": "الاسم الكامل",
+          "emailPlaceholder": "name@company.com",
+          "messagePlaceholder": "أخبرنا عن تفاصيل مشروعك...",
+          "budget": "الميزانية المتوقعة",
+          "portfolio": "رابط المعرض / لينكدإن",
+          "organization": "الشركة / المؤسسة",
+          "position": "المسمى الوظيفي المطلوب"
+        },
+        "subjects": {
+          "inquiry": "استفسار عن مشروع جديد",
+          "careers": "وظائف",
+          "partnership": "شراكة"
+        },
+        "quick": {
+          "title": "تواصل سريع",
+          "subtitle": "دردشة عبر واتساب",
+          "name": "الاسم",
+          "message": "رسالتك...",
+          "send": "إرسال الآن"
+        }
+      },
       "projects": {
         "heading": "أعمالنا",
         "exterior": {
@@ -309,43 +346,6 @@
           "title": "التصميم الداخلي",
           "subtitle": "المساحات والديكور"
         }
-      },
-      "hero": {
-        "est": "تأسس عام 2000 | عراقة هندسية فلسطينية",
-        "typewriter": "النبراس.. هندسةٌ تُلهم",
-        "subtitle": "أكثر من عقدين من التميز في قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.",
-        "cta": "تصفح تاريخنا",
-        "scroll": "مرر للاستكشاف",
-        "exploreProjects": "استكشف المشاريع",
-        "stats": {
-          "years": "سنوات",
-          "projects": "مشاريع",
-          "awards": "جوائز"
-        }
-      },
-      "footer": {
-        "description": "ريادة مستقبل البيئات المبنية من خلال الهندسة الدقيقة والابتكار المستدام.",
-        "brandNameFull": "مكتب النبراس الهندسي",
-        "officeHeading": "المكتب",
-        "socialHeading": "تواصل اجتماعي",
-        "address": {
-          "line1": "الشارع الرئيسي",
-          "line2": "طوباس",
-          "line3": "فلسطين"
-        },
-        "rights": "© 2024 مكتب النبراس الهندسي.",
-        "privacy": "سياسة الخصوصية",
-        "terms": "شروط الخدمة"
-      },
-      "services": {
-        "heroDescription": "تقديم التميز متعدد التخصصات عبر كل مرحلة من مراحل دورة حياة البناء.",
-        "sectionCore": "الجوهر الهندسي",
-        "sectionAtelier": "العملاء المميزون",
-        "atelierSubtitle": "التصور المرئي، الطباعة، والتوثيق",
-        "worldClassBadge": "هندسة عالمية المستوى",
-        "coreSubtitle": "أساسيات البنية التحتية الحديثة",
-        "premiumLabel": "خدمات حصرية",
-        "premiumDescription": "استكشف خدماتنا المخصصة عالية المستوى."
       }
     }
   },
@@ -384,7 +384,7 @@
         "name": "Eng. Ribhi Sawafta",
         "role": "Head of Road Design",
         "bio": "Expert in infrastructure planning and transportation engineering, ensuring efficient and safe road networks for sustainable urban development.",
-        "image": "/assets/images/unnamed-2-.jpg"
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765617981/unnamed_2_zaiyg7.jpg"
       }
     ],
     "ar": [
@@ -421,64 +421,64 @@
         "name": "م. ربحي صوافطة",
         "role": "مدير تصميم الطرق",
         "bio": "خبير في تخطيط البنية التحتية وهندسة المواصلات، يضمن تصميم شبكات طرق فعالة وآمنة للتطوير الحضري المستدام.",
-        "image": "/assets/images/unnamed-2-.jpg"
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765617981/unnamed_2_zaiyg7.jpg"
       }
     ]
   },
   "PARTNERS": {
     "en": [
       {
-        "logo": "https://i.postimg.cc/90LsVbqN/481053813-1237649231695449-277693057688011472-n.jpg",
-        "name": "Al Shamal Construction Laboratories",
-        "slug": "al-shamal-labs",
-        "director": "Eng. Abdel Rahim Wahdan",
-        "phone": "+970 562 227 750",
-        "gallery": [
-          "https://i.postimg.cc/fRNRJT30/502377288-3043341495843434-1386704520853724408-n.jpg",
-          "https://i.postimg.cc/02mNkJNp/557651481-3613668265430861-3396176642752143056-n.jpg",
-          "https://i.postimg.cc/wTJBqsBX/558090084-3613668568764164-470688488558255220-n.jpg"
-        ],
-        "location": "Tubas – State of Palestine",
-        "accreditation": "Al Shamal Construction Laboratories operates in full compliance with Palestinian national standards and strictly adheres to international quality requirements for construction materials testing and structural assessment. The laboratory maintains a rigorous commitment to accuracy and reliability, following certified procedures and globally recognized frameworks such as ASTM, AASHTO, and ISO standards.",
-        "since": "2015",
-        "website": "www.nebras-bim.com",
         "id": "p1",
-        "contactEmail": "info@alshamal-labs.com",
+        "slug": "al-shamal-labs",
+        "name": "Al Shamal Construction Laboratories",
+        "logo": "https://i.postimg.cc/90LsVbqN/481053813-1237649231695449-277693057688011472-n.jpg",
         "description": "Al Shamal Construction Laboratories is a certified engineering testing facility providing structural materials analysis, field inspections, and quality assurance services for construction projects across Palestine.",
+        "accreditation": "Al Shamal Construction Laboratories operates in full compliance with Palestinian national standards and strictly adheres to international quality requirements for construction materials testing and structural assessment. The laboratory maintains a rigorous commitment to accuracy and reliability, following certified procedures and globally recognized frameworks such as ASTM, AASHTO, and ISO standards.",
+        "website": "",
+        "since": "2015",
+        "director": "Eng. Abdel Rahim Wahdan",
+        "location": "Tubas – State of Palestine",
+        "phone": "+970 562 227 750",
+        "contactEmail": "info@alshamal-labs.com",
         "services": [
           "Structural Materials Testing",
           "Concrete and Steel Analysis",
           "Soil and Foundation Investigation",
           "Quality Control and Field Sampling",
           "Certification and Engineering Reports"
+        ],
+        "gallery": [
+          "https://i.postimg.cc/fRNRJT30/502377288-3043341495843434-1386704520853724408-n.jpg",
+          "https://i.postimg.cc/02mNkJNp/557651481-3613668265430861-3396176642752143056-n.jpg",
+          "https://i.postimg.cc/wTJBqsBX/558090084-3613668568764164-470688488558255220-n.jpg"
         ]
       }
     ],
     "ar": [
       {
-        "logo": "https://i.postimg.cc/90LsVbqN/481053813-1237649231695449-277693057688011472-n.jpg",
-        "name": "مختبرات الشمال الإنشائية",
-        "slug": "al-shamal-labs",
-        "director": "م. عبد الرحيم وهدان",
-        "phone": "+970 562 227 750",
-        "gallery": [
-          "https://i.postimg.cc/fRNRJT30/502377288-3043341495843434-1386704520853724408-n.jpg",
-          "https://i.postimg.cc/02mNkJNp/557651481-3613668265430861-3396176642752143056-n.jpg",
-          "https://i.postimg.cc/wTJBqsBX/558090084-3613668568764164-470688488558255220-n.jpg"
-        ],
-        "location": "طوباس – دولة فلسطين",
-        "accreditation": "تعمل مختبرات الشمال الإنشائية بامتثال كامل للمواصفات الوطنية الفلسطينية وتلتزم بدقة بمتطلبات الجودة العالمية لفحوصات مواد البناء والتقييم الإنشائي. يحافظ المختبر على التزام صارم بالدقة والموثوقية، متبعاً إجراءات معتمدة وأطر عمل معترف بها عالمياً مثل ASTM و AASHTO و ISO لضمان أعلى مستويات السلامة الهيكلية.",
-        "since": "2015",
-        "website": "www.nebras-bim.com",
         "id": "p1",
-        "contactEmail": "info@alshamal-labs.com",
+        "slug": "al-shamal-labs",
+        "name": "مختبرات الشمال الإنشائية",
+        "logo": "https://i.postimg.cc/90LsVbqN/481053813-1237649231695449-277693057688011472-n.jpg",
         "description": "مختبر هندسي متخصص في فحوصات المواد الإنشائية، الفحوصات الحقلية، وضبط الجودة في مشاريع البناء.",
+        "accreditation": "تعمل مختبرات الشمال الإنشائية بامتثال كامل للمواصفات الوطنية الفلسطينية وتلتزم بدقة بمتطلبات الجودة العالمية لفحوصات مواد البناء والتقييم الإنشائي. يحافظ المختبر على التزام صارم بالدقة والموثوقية، متبعاً إجراءات معتمدة وأطر عمل معترف بها عالمياً مثل ASTM و AASHTO و ISO لضمان أعلى مستويات السلامة الهيكلية.",
+        "website": "",
+        "since": "2015",
+        "director": "م. عبد الرحيم وهدان",
+        "location": "طوباس – دولة فلسطين",
+        "phone": "+970 562 227 750",
+        "contactEmail": "info@alshamal-labs.com",
         "services": [
           "فحوصات المواد الإنشائية",
           "تحليل الخرسانة والفولاذ",
           "تحريات التربة والأساسات",
           "ضبط الجودة والعينات الحقلية",
           "شهادات وتقارير هندسية"
+        ],
+        "gallery": [
+          "https://i.postimg.cc/fRNRJT30/502377288-3043341495843434-1386704520853724408-n.jpg",
+          "https://i.postimg.cc/02mNkJNp/557651481-3613668265430861-3396176642752143056-n.jpg",
+          "https://i.postimg.cc/wTJBqsBX/558090084-3613668568764164-470688488558255220-n.jpg"
         ]
       }
     ]
@@ -486,15 +486,21 @@
   "PROJECTS": {
     "en": [
       {
+        "id": "1",
         "slug": "al-aqrabaniya-park",
+        "title": "Public Park in Al-Aqrabaniya",
+        "category": "Landscape & Public Spaces",
+        "location": "Al-Aqrabaniya, Palestine",
+        "year": "2025",
         "area": "2,500 m²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
         ],
-        "location": "Al-Aqrabaniya, Palestine",
+        "description": "A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.",
         "specs": [
           {
             "label": "Green Area",
@@ -508,23 +514,23 @@
             "label": "Facilities",
             "value": "Complete"
           }
-        ],
-        "title": "Public Park in Al-Aqrabaniya",
-        "id": "1",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
-        "description": "A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.",
-        "year": "2025",
-        "category": "Landscape & Public Spaces"
+        ]
       },
       {
+        "id": "2",
         "slug": "tubas-boys-school",
+        "title": "Tubas Secondary School for Boys",
+        "category": "Education",
+        "location": "Tubas, Palestine",
+        "year": "2018",
         "area": "2,388 m² (Built)",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847831/myarchitectai_65021vyr7_sd_rpl6pn.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847829/myarchitectai_1c7lao2ky_sd_irwbo4.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847832/myarchitectai_a5d57imsq_sd_lamhil.jpg"
         ],
-        "location": "Tubas, Palestine",
+        "description": "A modern educational facility designed to foster learning and community. The project includes multiple floors of classrooms, administration offices, and extensive outdoor recreational areas including courts and playgrounds.",
         "specs": [
           {
             "label": "Ground Floor",
@@ -542,22 +548,22 @@
             "label": "Outdoor Area",
             "value": "3,000 m²"
           }
-        ],
-        "title": "Tubas Secondary School for Boys",
-        "id": "2",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
-        "description": "A modern educational facility designed to foster learning and community. The project includes multiple floors of classrooms, administration offices, and extensive outdoor recreational areas including courts and playgrounds.",
-        "year": "2018",
-        "category": "Education"
+        ]
       },
       {
+        "id": "3",
         "slug": "azure-bridge",
+        "title": "Modern Villa in Tubas",
+        "category": "Residential",
+        "location": "Tubas, Palestine",
+        "year": "2024",
         "area": "270 m²",
+        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
         "gallery": [
           "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
           "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
         ],
-        "location": "Tubas, Palestine",
+        "description": "A private residence featuring a modern architectural design, focusing on clean lines and functional spaces.",
         "specs": [
           {
             "label": "Area",
@@ -567,23 +573,23 @@
             "label": "Style",
             "value": "Modern"
           }
-        ],
-        "title": "Modern Villa in Tubas",
-        "id": "3",
-        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
-        "description": "A private residence featuring a modern architectural design, focusing on clean lines and functional spaces.",
-        "year": "2024",
-        "category": "Residential"
+        ]
       },
       {
+        "id": "4",
         "slug": "helix-residence",
+        "title": "Tubas Directorate of Local Government",
+        "category": "Public & Administrative",
+        "location": "Tubas, Palestine",
+        "year": "2023",
         "area": "800 m²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
         ],
-        "location": "Tubas, Palestine",
+        "description": "Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.",
         "specs": [
           {
             "label": "Total Built",
@@ -597,23 +603,23 @@
             "label": "Floors",
             "value": "G + 1"
           }
-        ],
-        "title": "Tubas Directorate of Local Government",
-        "id": "4",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
-        "description": "Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.",
-        "year": "2023",
-        "category": "Public & Administrative"
+        ]
       },
       {
+        "id": "5",
         "slug": "metro-hub",
+        "title": "Mr. Ghassan Salahat Villa",
+        "category": "Residential",
+        "location": "Al-Fara'a, Palestine",
+        "year": "2024",
         "area": "480 m²",
+        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
         "gallery": [
           "https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg",
           "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
           "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
         ],
-        "location": "Al-Fara'a, Palestine",
+        "description": "A sophisticated private residence spanning two floors and a roof terrace. The design features a 205 m² ground floor, a 205 m² first floor, and is surrounded by a vast 1,200 m² landscape area.",
         "specs": [
           {
             "label": "Ground Floor",
@@ -627,26 +633,26 @@
             "label": "Total Built",
             "value": "480 m²"
           }
-        ],
-        "title": "Mr. Ghassan Salahat Villa",
-        "id": "5",
-        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
-        "description": "A sophisticated private residence spanning two floors and a roof terrace. The design features a 205 m² ground floor, a 205 m² first floor, and is surrounded by a vast 1,200 m² landscape area.",
-        "year": "2024",
-        "category": "Residential"
+        ]
       }
     ],
     "ar": [
       {
+        "id": "1",
         "slug": "al-aqrabaniya-park",
+        "title": "حديقة عامة في بلدة العقربانية",
+        "category": "تنسيق حدائق ومرافق عامة",
+        "location": "العقربانية، فلسطين",
+        "year": "2025",
         "area": "2,500 م²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
         ],
-        "location": "العقربانية، فلسطين",
+        "description": "مشروع حديقة عامة متميز يجمع بين الجمال الطبيعي والوظيفة المجتمعية. تحتوي الحديقة على مساحات خضراء ممتدة، وممرات مشاة منظمة، ومرافق عامة متكاملة. تم تصميم الموقع ليكون متنفساً حيوياً للأهالي، مع التركيز على الاستدامة وتوفير بيئة آمنة وجذابة للأنشطة الترفيهية والاجتماعية.",
         "specs": [
           {
             "label": "المساحة الخضراء",
@@ -660,23 +666,23 @@
             "label": "المرافق",
             "value": "شاملة"
           }
-        ],
-        "title": "حديقة عامة في بلدة العقربانية",
-        "id": "1",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/10_kzxtg3.webp",
-        "description": "مشروع حديقة عامة متميز يجمع بين الجمال الطبيعي والوظيفة المجتمعية. تحتوي الحديقة على مساحات خضراء ممتدة، وممرات مشاة منظمة، ومرافق عامة متكاملة. تم تصميم الموقع ليكون متنفساً حيوياً للأهالي، مع التركيز على الاستدامة وتوفير بيئة آمنة وجذابة للأنشطة الترفيهية والاجتماعية.",
-        "year": "2025",
-        "category": "تنسيق حدائق ومرافق عامة"
+        ]
       },
       {
+        "id": "2",
         "slug": "tubas-boys-school",
+        "title": "مدرسة طوباس الثانوية للبنين",
+        "category": "تعليمي",
+        "location": "طوباس، فلسطين",
+        "year": "2018",
         "area": "2,388 م² (بناء)",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847831/myarchitectai_65021vyr7_sd_rpl6pn.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847829/myarchitectai_1c7lao2ky_sd_irwbo4.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847832/myarchitectai_a5d57imsq_sd_lamhil.jpg"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "صرح تعليمي متميز يهدف إلى توفير بيئة تعليمية محفزة. يتكون المشروع من طوابق متعددة للفصول الدراسية والمكاتب الإدارية، بالإضافة إلى ساحات خارجية واسعة وملاعب ومرافق ترفيهية تخدم الطلبة والمجتمع.",
         "specs": [
           {
             "label": "طابق أرضي",
@@ -694,22 +700,22 @@
             "label": "الساحات والملاعب",
             "value": "3000 م²"
           }
-        ],
-        "title": "مدرسة طوباس الثانوية للبنين",
-        "id": "2",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847833/myarchitectai_wjq63e0va_sd_g1nhoa.jpg",
-        "description": "صرح تعليمي متميز يهدف إلى توفير بيئة تعليمية محفزة. يتكون المشروع من طوابق متعددة للفصول الدراسية والمكاتب الإدارية، بالإضافة إلى ساحات خارجية واسعة وملاعب ومرافق ترفيهية تخدم الطلبة والمجتمع.",
-        "year": "2018",
-        "category": "تعليمي"
+        ]
       },
       {
+        "id": "3",
         "slug": "azure-bridge",
+        "title": "فيلا في طوباس",
+        "category": "سكني",
+        "location": "طوباس، فلسطين",
+        "year": "2024",
         "area": "270 م²",
+        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
         "gallery": [
           "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
           "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "فيلا سكنية خاصة تتميز بتصميم مودرن (حديث)، تجمع بين البساطة والأناقة في توزيع المساحات.",
         "specs": [
           {
             "label": "المساحة",
@@ -719,23 +725,23 @@
             "label": "التصميم",
             "value": "مودرن"
           }
-        ],
-        "title": "فيلا في طوباس",
-        "id": "3",
-        "image": "https://i.postimg.cc/3R3GPDvY/myarchitectai-ocdbdv7wq-sd.jpg",
-        "description": "فيلا سكنية خاصة تتميز بتصميم مودرن (حديث)، تجمع بين البساطة والأناقة في توزيع المساحات.",
-        "year": "2024",
-        "category": "سكني"
+        ]
       },
       {
+        "id": "4",
         "slug": "helix-residence",
+        "title": "مقر مديرية الحكم المحلي - طوباس",
+        "category": "مباني عامة وإدارية",
+        "location": "طوباس، فلسطين",
+        "year": "2023",
         "area": "800 م²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848343/myarchitectai_ftg7mda68k_sd_xb9tua.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.",
         "specs": [
           {
             "label": "مساحة البناء",
@@ -749,23 +755,23 @@
             "label": "الطوابق",
             "value": "أرضي + أول"
           }
-        ],
-        "title": "مقر مديرية الحكم المحلي - طوباس",
-        "id": "4",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848317/myarchitectai_1gbmqn6il_sd_fft3iy.jpg",
-        "description": "مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.",
-        "year": "2023",
-        "category": "مباني عامة وإدارية"
+        ]
       },
       {
+        "id": "5",
         "slug": "metro-hub",
+        "title": "فيلا السيد غسان صلاحات المحترم",
+        "category": "سكني",
+        "location": "الفارعة، فلسطين",
+        "year": "2024",
         "area": "480 م²",
+        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
         "gallery": [
           "https://i.postimg.cc/jjHy5r0H/myarchitectai-wngfexfc8-sd.jpg",
           "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
           "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
         ],
-        "location": "الفارعة، فلسطين",
+        "description": "فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق الأرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.",
         "specs": [
           {
             "label": "الطابق الأرضي",
@@ -779,27 +785,27 @@
             "label": "إجمالي البناء",
             "value": "480 م²"
           }
-        ],
-        "title": "فيلا السيد غسان صلاحات المحترم",
-        "id": "5",
-        "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
-        "description": "فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق الأرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.",
-        "year": "2024",
-        "category": "سكني"
+        ]
       }
     ]
   },
   "INTERIOR_PROJECTS": {
     "en": [
       {
+        "id": "i1",
         "slug": "arched-pastel-elegance",
+        "title": "Arched Pastel Elegance",
+        "category": "Residential",
+        "location": "Tubas, Palestine",
+        "year": "2025",
         "area": "25 m²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
         ],
-        "location": "Tubas, Palestine",
+        "description": "A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.",
         "specs": [
           {
             "label": "Style",
@@ -817,22 +823,22 @@
             "label": "Key Features",
             "value": "Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard"
           }
-        ],
-        "title": "Arched Pastel Elegance",
-        "id": "i1",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "description": "A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.",
-        "year": "2025",
-        "category": "Residential"
+        ]
       },
       {
+        "id": "i2",
         "slug": "contemporary-wardrobe-system",
+        "title": "Contemporary Wardrobe System: Glass & Light",
+        "category": "Residential",
+        "location": "Tubas, Palestine",
+        "year": "2025",
         "area": "15 m²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp"
         ],
-        "location": "Tubas, Palestine",
+        "description": "A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.",
         "specs": [
           {
             "label": "Style",
@@ -850,22 +856,22 @@
             "label": "Key Features",
             "value": "Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans"
           }
-        ],
-        "title": "Contemporary Wardrobe System: Glass & Light",
-        "id": "i2",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "description": "A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.",
-        "year": "2025",
-        "category": "Residential"
+        ]
       },
       {
+        "id": "i3",
         "slug": "symphony-of-neutrals",
+        "title": "Symphony of Neutrals: Neoclassical Opulence",
+        "category": "Residential",
+        "location": "Tubas, Palestine",
+        "year": "2025",
         "area": "45 m²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
         ],
-        "location": "Tubas, Palestine",
+        "description": "A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.",
         "specs": [
           {
             "label": "Style",
@@ -883,25 +889,25 @@
             "label": "Key Features",
             "value": "Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier"
           }
-        ],
-        "title": "Symphony of Neutrals: Neoclassical Opulence",
-        "id": "i3",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "description": "A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.",
-        "year": "2025",
-        "category": "Residential"
+        ]
       }
     ],
     "ar": [
       {
+        "id": "i1",
         "slug": "arched-pastel-elegance",
+        "title": "أناقة الأقواس وألوان الباستيل",
+        "category": "سكني",
+        "location": "طوباس، فلسطين",
+        "year": "2025",
         "area": "25 م²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.",
         "specs": [
           {
             "label": "النمط",
@@ -919,22 +925,22 @@
             "label": "الميزات الرئيسية",
             "value": "خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة"
           }
-        ],
-        "title": "أناقة الأقواس وألوان الباستيل",
-        "id": "i1",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "description": "تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.",
-        "year": "2025",
-        "category": "سكني"
+        ]
       },
       {
+        "id": "i2",
         "slug": "contemporary-wardrobe-system",
+        "title": "نظام خزانة معاصر: زجاج وإضاءة",
+        "category": "سكني",
+        "location": "طوباس، فلسطين",
+        "year": "2025",
         "area": "15 م²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.",
         "specs": [
           {
             "label": "النمط",
@@ -952,22 +958,22 @@
             "label": "الميزات الرئيسية",
             "value": "إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية"
           }
-        ],
-        "title": "نظام خزانة معاصر: زجاج وإضاءة",
-        "id": "i2",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "description": "مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.",
-        "year": "2025",
-        "category": "سكني"
+        ]
       },
       {
+        "id": "i3",
         "slug": "symphony-of-neutrals",
+        "title": "سيمفونية الحياد: فخامة الكلاسيكية الجديدة",
+        "category": "سكني",
+        "location": "طوباس، فلسطين",
+        "year": "2025",
         "area": "45 م²",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
         "gallery": [
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
         ],
-        "location": "طوباس، فلسطين",
+        "description": "مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.",
         "specs": [
           {
             "label": "النمط",
@@ -985,13 +991,7 @@
             "label": "الميزات الرئيسية",
             "value": "إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية"
           }
-        ],
-        "title": "سيمفونية الحياد: فخامة الكلاسيكية الجديدة",
-        "id": "i3",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "description": "مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.",
-        "year": "2025",
-        "category": "سكني"
+        ]
       }
     ]
   },
@@ -1349,21 +1349,21 @@
         "id": "1",
         "name": "Ghassan",
         "role": "Homeowner",
-        "company": ".",
+        "company": "",
         "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail."
       },
       {
         "id": "2",
         "name": "Muna",
         "role": "Homeowner",
-        "company": ".",
+        "company": "",
         "content": "Professional, punctual, and creative. They made the complex process of building a home feel simple and organized."
       },
       {
         "id": "3",
         "name": "Ibrahim",
         "role": "Homeowner",
-        "company": ".",
+        "company": "",
         "content": "I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind."
       }
     ],
@@ -1372,21 +1372,21 @@
         "id": "1",
         "name": "غسان",
         "role": "مالك",
-        "company": ".",
+        "company": "",
         "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل."
       },
       {
         "id": "2",
         "name": "منى",
         "role": "مالكة",
-        "company": ".",
+        "company": "",
         "content": "مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة."
       },
       {
         "id": "3",
         "name": "إبراهيم",
         "role": "مالك",
-        "company": ".",
+        "company": "",
         "content": "أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال."
       }
     ]
