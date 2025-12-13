@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
@@ -150,6 +151,7 @@ const About: React.FC = () => {
                                 <OptimizedImage
                                     src={founder.image}
                                     alt={founder.name}
+                                    containerClassName="w-full h-full"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -193,6 +195,7 @@ const About: React.FC = () => {
                                         <OptimizedImage
                                             src={member.image}
                                             alt={member.name}
+                                            containerClassName="w-full h-full"
                                             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

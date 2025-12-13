@@ -102,6 +102,8 @@ const Contact: React.FC = () => {
   const MotionDiv = motion.div as any;
   const MotionH1 = motion.h1 as any;
   const MotionForm = motion.form as any;
+  const MotionP = motion.p as any;
+  const MotionSpan = motion.span as any;
 
   // Header Title Logic
   const getHeaderTitle = () => {
@@ -216,20 +218,20 @@ const Contact: React.FC = () => {
             >
                 {t.contact.title}
             </MotionH1>
-            <motion.div 
+            <MotionDiv 
                 initial={{ width: 0 }}
                 animate={{ width: 120 }}
                 transition={{ delay: 0.3, duration: 0.8 }}
                 className="h-1.5 bg-accent mb-6"
             />
-            <motion.p 
+            <MotionP 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
                 className="text-xl md:text-2xl text-neutral-dim font-light max-w-2xl leading-relaxed"
             >
                 {t.contact.intro}
-            </motion.p>
+            </MotionP>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -340,7 +342,7 @@ const Contact: React.FC = () => {
                     <div className="flex items-center justify-between mb-8 border-b border-neutral-light/5 pb-4">
                         <div className="flex flex-col gap-1">
                             <AnimatePresence mode="wait">
-                                <motion.span 
+                                <MotionSpan 
                                     key={selectedSubject}
                                     initial={{ opacity: 0, x: -10 }}
                                     animate={{ opacity: 1, x: 0 }}
@@ -348,7 +350,7 @@ const Contact: React.FC = () => {
                                     className="font-mono text-xs uppercase tracking-widest text-accent font-bold"
                                 >
                                     {getHeaderTitle()}
-                                </motion.span>
+                                </MotionSpan>
                             </AnimatePresence>
                             <span className="text-[10px] text-neutral-dim font-mono uppercase tracking-wider opacity-60">Confidential Submission</span>
                         </div>
@@ -423,7 +425,7 @@ const Contact: React.FC = () => {
 
                          {/* DYNAMIC FIELDS */}
                          <AnimatePresence mode="wait">
-                            <motion.div
+                            <MotionDiv
                                 key={selectedSubject}
                                 initial={{ opacity: 0, height: 0 }}
                                 animate={{ opacity: 1, height: 'auto' }}
@@ -432,7 +434,7 @@ const Contact: React.FC = () => {
                                 className="overflow-hidden"
                             >
                                 {renderDynamicFields()}
-                            </motion.div>
+                            </MotionDiv>
                          </AnimatePresence>
 
                          {/* Message */}

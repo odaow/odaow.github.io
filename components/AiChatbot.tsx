@@ -49,6 +49,7 @@ const WhatsAppIcon = ({ size = 24, className = "" }: { size?: number, className?
 
 const AiChatbot: React.FC<AiChatbotProps> = ({ hidden = false }) => {
   const { t, language, direction, services } = useLanguage();
+  const MotionDiv = motion.div as any;
   
   // Chatbot State
   const [isOpen, setIsOpen] = useState(false);
@@ -231,8 +232,6 @@ const AiChatbot: React.FC<AiChatbotProps> = ({ hidden = false }) => {
     },
   ];
 
-  const MotionDiv = motion.div as any;
-
   return (
     <>
       {/* 
@@ -291,7 +290,7 @@ const AiChatbot: React.FC<AiChatbotProps> = ({ hidden = false }) => {
                         />
                         
                         {/* Scanning Animation */}
-                        <motion.div 
+                        <MotionDiv 
                           className="absolute left-0 right-0 h-[2px] bg-accent shadow-[0_0_15px_rgba(var(--color-accent),1)] z-10"
                           animate={{ top: ["0%", "100%", "0%"] }}
                           transition={{ 
@@ -502,23 +501,23 @@ const AiChatbot: React.FC<AiChatbotProps> = ({ hidden = false }) => {
             >
                 <AnimatePresence mode="wait">
                     {isFabOpen ? (
-                        <motion.div
+                        <MotionDiv
                             key="close"
                             initial={{ rotate: -90, opacity: 0 }}
                             animate={{ rotate: 0, opacity: 1 }}
                             exit={{ rotate: 90, opacity: 0 }}
                         >
                             <ChevronDown size={32} />
-                        </motion.div>
+                        </MotionDiv>
                     ) : (
-                        <motion.div
+                        <MotionDiv
                             key="open"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             exit={{ scale: 0 }}
                         >
                             <MessageCircle size={32} className="animate-pulse" />
-                        </motion.div>
+                        </MotionDiv>
                     )}
                 </AnimatePresence>
 
