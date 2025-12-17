@@ -50,7 +50,7 @@ const Schema: React.FC<SchemaProps> = ({ type, data }) => {
       }
     ],
     "sameAs": [
-      "https://www.linkedin.com/in/odai-salahat-143748399",
+      "https://www.linkedin.com/company/al-nebras-engineering-office/",
       "https://www.instagram.com/nebrasbim/",
       "https://www.tiktok.com/@nebrasbim"
     ]

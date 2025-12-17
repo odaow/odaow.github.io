@@ -280,7 +280,14 @@ const Contact: React.FC = () => {
                                 {copiedField === 'phone' ? <Check size={16} /> : <Copy size={16} />}
                             </button>
                         </div>
-                        <a href="tel:+970599250094" className="text-lg font-bold text-neutral-light hover:text-accent transition-colors" style={{ direction: 'ltr' }}>
+                        <a 
+                            href="tel:+970599250094" 
+                            className="text-lg font-bold text-neutral-light hover:text-accent transition-colors block" 
+                            style={{ 
+                                direction: 'ltr',
+                                textAlign: language === 'ar' ? 'right' : 'left' 
+                            }}
+                        >
                             +970 599 250 094
                         </a>
                     </div>
