@@ -95,6 +95,10 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         title: 'Our Mission',
         content: 'To elevate the standard of engineering in Palestine by integrating digital efficiency with structural precision, creating safe, sustainable, and aesthetically enduring environments.',
       },
+      vision: {
+        title: 'Our Vision',
+        content: 'To be the leading engineering firm in Palestine, recognized for our commitment to digital innovation, architectural excellence, and the creation of resilient urban landscapes.',
+      },
       values: {
         title: 'Core Values',
         items: [
@@ -112,7 +116,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
     },
     contact: {
       title: 'Contact',
-      intro: 'Ready to engineer the future? Let’s discuss your vision.',
+      intro: "Your vision deserves precision, and your ideas deserve creativity. Let's start designing your future today.",
       locationHeading: 'Our Location',
       mapOverlay: 'Interact to explore',
       info: {
@@ -253,6 +257,10 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         title: 'مهمتنا',
         content: 'الارتقاء بمستوى العمل الهندسي في فلسطين من خلال دمج الكفاءة الرقمية مع الدقة الإنشائية، لخلق بيئات آمنة، مستدامة، وجمالية تدوم للأجيال القادمة.',
       },
+      vision: {
+        title: 'رؤيتنا',
+        content: 'أن نكون المكتب الهندسي الرائد في فلسطين، والمعروف بالتزامنا بالابتكار الرقمي، والتميز المعماري، وخلق مساحات حضرية مرنة ومستدامة.',
+      },
       values: {
         title: 'قيمنا الجوهرية',
         items: [
@@ -270,7 +278,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
     },
     contact: {
       title: 'تواصل معنا',
-      intro: 'هل أنت مستعد لهندسة المستقبل؟ دعنا نناقش رؤيتك.',
+      intro: 'رؤيتك تستحق الدقة، وأفكارك تستحق الإبداع.. لنبدأ بتصميم مستقبلك اليوم.',
       locationHeading: 'موقعنا',
       mapOverlay: 'تفاعل مع الخريطة لاستكشاف الموقع',
       info: {
@@ -320,42 +328,48 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
   },
 };
 
+// Fix for redundant variable declaration (originally lines 323-388)
 export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
   en: [
     { 
       id: 't1', 
       name: 'Eng. Saed Salahat', 
       role: 'Founder & Head of Structural Dept.', 
-      bio: 'With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.', 
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' 
+      bio: 'With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.',
+      specialty: 'structural',
+      authorityStat: '25+ YEARS'
     },
     { 
       id: 't2', 
       name: 'Eng. Mohammed Salahat', 
       role: 'Head of Architecture', 
-      bio: 'A visionary architect dedicated to creating timeless designs that seamlessly merge modern aesthetics with functional living spaces.', 
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
+      bio: 'A visionary architect dedicated to creating timeless designs that seamlessly merge modern aesthetics with functional living spaces.',
+      specialty: 'architecture',
+      authorityStat: 'MASTER DESIGNER'
     },
     { 
       id: 't5', 
       name: 'Eng. Shatha Salahat', 
       role: 'Chief Architect', 
-      bio: 'Leading the architectural vision with a focus on sustainable design and innovative spatial solutions, ensuring every project embodies aesthetic excellence and functional harmony.', 
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' 
+      bio: 'Leading the architectural vision with a focus on sustainable design and innovative spatial solutions, ensuring every project embodies aesthetic excellence.',
+      specialty: 'architecture',
+      authorityStat: 'SUSTAINABILITY'
     },
     { 
       id: 't3', 
       name: 'Eng. Oday Salahat', 
       role: 'BIM Director', 
-      bio: 'Leading the digital transformation of the office through advanced Building Information Modeling (BIM) workflows and smart construction technologies.', 
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop' 
+      bio: 'Leading the digital transformation of the office through advanced Building Information Modeling (BIM) workflows and smart construction technologies.',
+      specialty: 'bim',
+      authorityStat: 'DIGITAL PIONEER'
     },
     { 
       id: 't4', 
       name: 'Eng. Ribhi Sawafta', 
       role: 'Head of Road Design', 
-      bio: 'Expert in infrastructure planning and transportation engineering, ensuring efficient and safe road networks for sustainable urban development.', 
-      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765617981/unnamed_2_zaiyg7.jpg' 
+      bio: 'Expert in infrastructure planning and transportation engineering, ensuring efficient and safe road networks for sustainable urban development.',
+      specialty: 'roads',
+      authorityStat: 'INFRASTRUCTURE'
     },
   ],
   ar: [
@@ -363,36 +377,41 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
       id: 't1', 
       name: 'م. سائد صلاحات', 
       role: 'المؤسس ومدير قسم الانشائيين', 
-      bio: 'بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.', 
-      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop' 
+      bio: 'بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.',
+      specialty: 'structural',
+      authorityStat: 'خبرة +25 سنة'
     },
     { 
       id: 't2', 
       name: 'م. محمد صلاحات', 
       role: 'مدير العمارة', 
-      bio: 'معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.', 
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&auto=format&fit=crop' 
+      bio: 'معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.',
+      specialty: 'architecture',
+      authorityStat: 'خبير تصميم'
     },
     { 
       id: 't5', 
       name: 'م. شذى صلاحات', 
       role: 'كبيرة المهندسين المعماريين', 
-      bio: 'تقود الرؤية المعمارية مع التركيز على التصميم المستدام والحلول المكانية المبتكرة، لضمان أن يجسد كل مشروع التميز الجمالي والتناغم الوظيفي.', 
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop' 
+      bio: 'تقود الرؤية المعمارية مع التركيز على التصميم المستدام والحلول المكانية المبتكرة، لضمان أن يجسد كل مشروع التميز الجمالي.',
+      specialty: 'architecture',
+      authorityStat: 'خبير استدامة'
     },
     { 
       id: 't3', 
       name: 'م. عدي صلاحات', 
       role: 'مدير نمذجة البناء', 
-      bio: 'يقود التحول الرقمي للمكتب من خلال تقنيات نمذجة معلومات البناء (BIM) المتقدمة وتكنولوجيا البناء الذكي.', 
-      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=400&auto=format&fit=crop' 
+      bio: 'يقود التحول الرقمي للمكتب من خلال تقنيات نمذجة معلومات البناء (BIM) المتقدمة وتكنولوجيا البناء الذكي.',
+      specialty: 'bim',
+      authorityStat: 'رائد رقمي'
     },
     { 
       id: 't4', 
       name: 'م. ربحي صوافطة', 
       role: 'مدير تصميم الطرق', 
-      bio: 'خبير في تخطيط البنية التحتية وهندسة المواصلات، يضمن تصميم شبكات طرق فعالة وآمنة للتطوير الحضري المستدام.', 
-      image: 'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765617981/unnamed_2_zaiyg7.jpg' 
+      bio: 'خبير في تخطيط البنية التحتية وهندسة المواصلات، يضمن تصميم شبكات طرق فعالة وآمنة للتطوير الحضري المستدام.',
+      specialty: 'roads',
+      authorityStat: 'بنية تحتية'
     },
   ]
 };
@@ -505,12 +524,12 @@ We handle the entire process for you—from the initial land survey upload to th
       id: 'e-licensing-tubas',
       title: 'التحول الرقمي: ثورة التراخيص الإلكترونية في طوباس',
       excerpt: 'كان النبراس أول مكتب في طوباس يعتمد النظام الإلكتروني الجديد. إليك كيف يستفيد أصحاب العقارات من ذلك.',
-      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهندسين والبلديات المحلية في فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
+      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهنسين والبلديات المحلية in فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
 
 **فوائد النظام لأصحاب العقارات:**
 *   **السرعة:** تم تقليص وقت معالجة التصاريح بأسابيع.
 *   **الشفافية:** يمكنك تتبع حالة ملفك عبر الإنترنت في أي وقت.
-*   **الدقة:** التقديم الرقمي يقلل من الأخطاء البشرية في حساب المساحات والرسوم.
+*   **الدقة:** التقديم الرقمي يقلل من الأخطاء البشرية in حساب المساحات والرسوم.
 
 نحن نتولى العملية بأكملها نيابةً عنك — من رفع المساحة الأولي وحتى الختم الرقمي النهائي — لضمان تجربة خالية من المتاعب.`,
       date: '22 سبتمبر 2024',
@@ -788,7 +807,7 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg',
         'https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg'
       ],
-      description: 'فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق الأرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.',
+      description: 'فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق أرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.',
       specs: [
         { label: 'الطابق الأرضي', value: '205 م²' },
         { label: 'الحدائق', value: '1200 م²' },
@@ -985,7 +1004,7 @@ export const INTERIOR_PROJECTS: Record<'en' | 'ar', Project[]> = {
       description: 'مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.',
       specs: [
         {
-          label: 'النمط',
+          label: 'Style',
           value: 'كلاسيكية جديدة معاصرة فاخرة'
         },
         {

@@ -1,5 +1,4 @@
 
-
 export interface Project {
   id: string;
   slug: string;
@@ -28,7 +27,9 @@ export interface TeamMember {
   name: string;
   role: string;
   bio: string;
-  image: string;
+  image?: string; // Optional now
+  specialty?: 'structural' | 'architecture' | 'bim' | 'roads' | 'mep';
+  authorityStat?: string; // e.g. "25+ YEARS", "+500k sqm"
 }
 
 export interface Partner {
@@ -163,6 +164,10 @@ export interface Translations {
     };
     digitalPioneer: string; // New field for the "First in Tubas" highlight
     mission: {
+      title: string;
+      content: string;
+    };
+    vision: {
       title: string;
       content: string;
     };
