@@ -22,7 +22,7 @@ const ArchitecturalSidebar = ({ side }: { side: 'left' | 'right' }) => {
     return (
         <div className={`fixed top-1/2 -translate-y-1/2 z-[40] hidden xl:flex flex-col items-center gap-12 pointer-events-none mix-blend-difference opacity-20 ${positionClass}`}>
             <div className="h-40 w-px bg-accent/50" />
-            <div className="vertical-text font-mono text-[9px] uppercase tracking-[0.8em] whitespace-nowrap text-accent">
+            <div className="vertical-text font-mono text-[8px] uppercase tracking-[1em] whitespace-nowrap text-accent">
                 {side === 'left' ? 'COORD_SYS: 32.32N / 35.37E' : 'VERIFICATION_ID: NEB-2024-INTEL'}
             </div>
             <div className="h-40 w-px bg-accent/50" />
@@ -37,7 +37,6 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
     const { direction, language } = useLanguage();
     const [isHovered, setIsHovered] = useState(false);
     const MotionDiv = motion.div as any;
-    const MotionPath = motion.path as any;
 
     return (
         <MotionDiv
@@ -47,38 +46,28 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.1, duration: 0.8 }}
-            className="group relative border-b border-neutral-light/10 py-16 md:py-24 cursor-default overflow-hidden"
+            className="group relative border-b border-neutral-light/5 py-12 md:py-20 cursor-default overflow-hidden"
         >
-            <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-12 gap-12 items-start">
+            <div className="relative z-10 flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
                 {/* 1. Name & Authority Stat */}
                 <div className="lg:col-span-7">
                     <div className="flex flex-col gap-2 relative">
                          <div className="flex items-center gap-4 mb-2">
-                             <span className="font-mono text-accent text-[10px] uppercase tracking-[0.4em] opacity-60">
+                             <span className="font-mono text-accent text-[9px] uppercase tracking-[0.5em] font-bold opacity-60">
                                 {member.specialty || 'Lead Engineer'}
                              </span>
                              <div className="h-px flex-1 bg-accent/10" />
                          </div>
                          
-                         <h3 className="text-5xl md:text-8xl font-black text-neutral-light group-hover:text-accent transition-all duration-700 leading-[0.85] tracking-tighter mb-6">
+                         <h3 className="text-4xl md:text-6xl lg:text-7xl font-bold text-neutral-light group-hover:text-accent transition-all duration-700 leading-[0.9] tracking-tighter mb-6">
                             {member.name}
                          </h3>
 
-                         {/* Signature Line Animation */}
-                         <div className="absolute -bottom-2 left-0 w-full h-1 overflow-hidden pointer-events-none">
-                            <motion.div 
-                                initial={{ x: direction === 'rtl' ? '100%' : '-100%' }}
-                                animate={{ x: isHovered ? '0%' : (direction === 'rtl' ? '100%' : '-100%') }}
-                                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                                className="w-full h-full bg-gradient-to-r from-transparent via-accent/40 to-transparent"
-                            />
-                         </div>
-
                          <div className="flex items-center gap-6">
-                            <span className="text-[11px] font-mono font-bold text-accent bg-accent/10 border border-accent/20 px-3 py-1 rounded-sm uppercase tracking-widest">
+                            <span className="text-[10px] font-mono font-bold text-accent border border-accent/20 px-3 py-1 rounded-sm uppercase tracking-[0.25em]">
                                 {member.authorityStat}
                             </span>
-                            <span className="text-xs text-neutral-dim uppercase tracking-[0.2em] font-medium">
+                            <span className="text-[11px] text-neutral-dim uppercase tracking-[0.3em] font-medium opacity-80">
                                 {member.role}
                             </span>
                          </div>
@@ -89,13 +78,13 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
                 <div className="lg:col-span-5 lg:ps-12 border-neutral-light/5">
                     <div className="relative">
                         <QuoteIcon className="absolute -top-6 -left-6 opacity-5 text-accent" />
-                        <p className="text-lg md:text-xl text-neutral-dim leading-relaxed group-hover:text-neutral-light transition-colors duration-500 font-light">
+                        <p className="text-base md:text-lg text-neutral-dim leading-relaxed group-hover:text-neutral-light transition-colors duration-500 font-light">
                             {member.bio}
                         </p>
                     </div>
-                    <div className="mt-10 flex items-center gap-4 text-accent/40">
-                        <Fingerprint size={24} className="group-hover:text-accent transition-colors" />
-                        <span className="font-mono text-[9px] uppercase tracking-[0.4em]">Auth_Signature_Verified</span>
+                    <div className="mt-8 flex items-center gap-4 text-accent/30">
+                        <Fingerprint size={20} className="group-hover:text-accent transition-colors" />
+                        <span className="font-mono text-[8px] uppercase tracking-[0.4em]">Auth_Signature_Verified</span>
                     </div>
                 </div>
             </div>
@@ -105,11 +94,11 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
                 {isHovered && (
                     <motion.div 
                         initial={{ opacity: 0, scale: 1.1, rotate: -5 }}
-                        animate={{ opacity: 0.03, scale: 1, rotate: 0 }}
+                        animate={{ opacity: 0.02, scale: 1, rotate: 0 }}
                         exit={{ opacity: 0 }}
                         className={`absolute top-0 ${direction === 'rtl' ? 'left-0' : 'right-0'} z-0 pointer-events-none`}
                     >
-                         <Layers size={500} className="text-accent" strokeWidth={0.5} />
+                         <Layers size={400} className="text-accent" strokeWidth={0.3} />
                     </motion.div>
                 )}
             </AnimatePresence>
@@ -118,7 +107,7 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
 };
 
 const QuoteIcon = ({ className }: { className?: string }) => (
-    <svg width="48" height="48" viewBox="0 0 48 48" fill="currentColor" className={className}>
+    <svg width="32" height="32" viewBox="0 0 48 48" fill="currentColor" className={className}>
         <path d="M14 17h4v4h-4zm16 0h4v4h-4zm-16 8h8v4h-8zm16 0h8v4h-8z" opacity=".2"/>
         <path d="M12 14v12h12V14H12zm10 10h-8v-8h8v8zm16-10v12h12V14H38zm10 10h-8v-8h8v8z"/>
     </svg>
@@ -127,14 +116,13 @@ const QuoteIcon = ({ className }: { className?: string }) => (
 const About: React.FC = () => {
   const { t, team, language, direction } = useLanguage();
   
-  // Parallax Mouse Logic
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const springX = useSpring(mouseX, { damping: 50, stiffness: 400 });
   const springY = useSpring(mouseY, { damping: 50, stiffness: 400 });
   
-  const moveX = useTransform(springX, [-500, 500], [-15, 15]);
-  const moveY = useTransform(springY, [-500, 500], [-15, 15]);
+  const moveX = useTransform(springX, [-500, 500], [-10, 10]);
+  const moveY = useTransform(springY, [-500, 500], [-10, 10]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -146,16 +134,17 @@ const About: React.FC = () => {
 
   const getIcon = (name: string) => {
     switch (name) {
-      case 'Target': return <Target size={24} />;
-      case 'Zap': return <Zap size={24} />;
-      case 'Shield': return <Shield size={24} />;
-      case 'Leaf': return <Leaf size={24} />;
-      default: return <Target size={24} />;
+      case 'Target': return <Target size={20} />;
+      case 'Zap': return <Zap size={20} />;
+      case 'Shield': return <Shield size={20} />;
+      case 'Leaf': return <Leaf size={20} />;
+      default: return <Target size={20} />;
     }
   };
 
   const MotionDiv = motion.div as any;
   const MotionPath = motion.path as any;
+  const MotionRect = motion.rect as any;
 
   return (
     <div className="relative">
@@ -164,86 +153,104 @@ const About: React.FC = () => {
         <ArchitecturalSidebar side="left" />
         <ArchitecturalSidebar side="right" />
 
-        {/* 1. HERO SECTION: THE IDENTITY */}
-        <Section className="pt-32 pb-0">
-            <div className="relative border-x border-t border-neutral-light/10 dark:border-white/5">
+        {/* 1. HERO SECTION */}
+        <Section className="pt-40 pb-0">
+            <div className="relative border-x border-t border-neutral-light/5 dark:border-white/5">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                     {/* Brand Identity */}
-                    <div className="lg:col-span-8 p-8 md:p-20 border-b border-neutral-light/10 dark:border-white/5">
-                        <div className="flex items-center gap-4 mb-12">
-                            <Box className="text-accent" size={20} />
-                            <span className="font-mono text-[10px] uppercase tracking-[0.6em] text-accent">
-                                {language === 'ar' ? 'القسم 01 // الهوية المؤسسية' : 'Section_01 // Corporate_Identity'}
+                    <div className="lg:col-span-8 p-10 md:p-20 border-b border-neutral-light/5">
+                        <div className="flex items-center gap-4 mb-16">
+                            <Box className="text-accent" size={18} />
+                            <span className="font-mono text-[8px] uppercase tracking-[0.8em] text-accent font-black">
+                                {language === 'ar' ? 'القسم 01 // الهوية' : 'Section_01 // Identity'}
                             </span>
                         </div>
-                        <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-tighter text-neutral-light leading-[0.75] mb-16">
+                        <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-bold uppercase tracking-[-0.05em] text-neutral-light leading-[0.8] mb-20">
                             {t.nav.about}
                         </h1>
-                        <p className="text-2xl md:text-4xl text-neutral-light font-light leading-snug max-w-3xl italic opacity-90">
+                        <p className="text-xl md:text-3xl text-neutral-light/80 font-light leading-snug max-w-2xl italic tracking-tight">
                             "{t.about.heroText1}"
                         </p>
                     </div>
 
                     {/* Fibonacci Lenspod */}
                     <div 
-                        className="lg:col-span-4 p-8 md:p-12 border-b border-l border-neutral-light/10 dark:border-white/5 bg-secondary/30 dark:bg-secondary/50 flex flex-col justify-between"
+                        className="lg:col-span-4 p-10 border-b border-l border-neutral-light/5 bg-secondary/20 flex flex-col justify-between"
                         onMouseMove={handleMouseMove}
                     >
-                        <div className="space-y-12">
-                             <div>
-                                <span className="font-mono text-[10px] uppercase text-accent block mb-3 tracking-widest opacity-50">
-                                    {language === 'ar' ? 'سنة التأسيس' : 'Established'}
-                                </span>
-                                <span className="text-3xl font-black text-neutral-light tracking-tight">
-                                    {language === 'ar' ? 'طوباس، 2000' : 'Tubas, 2000'}
-                                </span>
-                             </div>
+                        <div className="space-y-3">
+                             <span className="font-mono text-[8px] uppercase text-accent block tracking-[0.4em] font-black opacity-60">
+                                {language === 'ar' ? 'سنة التأسيس' : 'Established'}
+                             </span>
+                             <span className="text-2xl font-bold text-neutral-light tracking-tight block">
+                                {language === 'ar' ? 'طوباس، 2000' : 'Tubas, 2000'}
+                             </span>
                         </div>
 
-                        {/* REACTIVE FIBONACCI LENS */}
-                        <div className="pt-12">
-                            <div className="w-full aspect-square border border-accent/20 rounded-full overflow-hidden relative group cursor-crosshair bg-primary/40 dark:bg-black/40 shadow-inner">
+                        {/* MATHEMATICALLY ACCURATE GOLDEN RATIO DRAWING */}
+                        <div className="pt-10">
+                            <div className="w-full aspect-square border border-accent/10 rounded-full overflow-hidden relative group cursor-crosshair bg-primary shadow-inner">
                                 <div className="absolute inset-0 opacity-[0.03] blueprint-grid" />
 
-                                {/* Parallax Fibonacci Spiral */}
                                 <MotionDiv 
-                                    className="absolute inset-0 flex items-center justify-center p-8"
+                                    className="absolute inset-0 flex items-center justify-center p-0"
                                     style={{ x: moveX, y: moveY }}
                                 >
-                                    <svg viewBox="0 0 100 100" className="w-full h-full text-accent opacity-30 group-hover:opacity-60 transition-opacity duration-1000">
+                                    {/* 
+                                      The Golden Ratio Construction:
+                                      Total Viewbox: 21 x 13 (Fibonacci numbers)
+                                      The spiral and squares are mapped to these coordinates.
+                                    */}
+                                    <svg viewBox="0 -1 22 15" className="w-[85%] h-[85%] text-accent transition-opacity duration-1000 overflow-visible">
+                                        <g opacity="0.3">
+                                            {/* Precise Rectangles Mapping */}
+                                            {/* Square 13x13 */}
+                                            <MotionRect x="0" y="0" width="13" height="13" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1 }} />
+                                            {/* Square 8x8 */}
+                                            <MotionRect x="13" y="0" width="8" height="8" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.2 }} />
+                                            {/* Square 5x5 */}
+                                            <MotionRect x="16" y="8" width="5" height="5" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.4 }} />
+                                            {/* Square 3x3 */}
+                                            <MotionRect x="13" y="10" width="3" height="3" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.6 }} />
+                                            {/* Square 2x2 */}
+                                            <MotionRect x="13" y="8" width="2" height="2" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 0.8 }} />
+                                            {/* Square 1x1 (Top) */}
+                                            <MotionRect x="15" y="8" width="1" height="1" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 1.0 }} />
+                                            {/* Square 1x1 (Bottom) */}
+                                            <MotionRect x="15" y="9" width="1" height="1" stroke="currentColor" strokeWidth="0.05" fill="none" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1, delay: 1.2 }} />
+                                        </g>
+
+                                        {/* The Continuous Fibonacci Spiral (Mathematical Arcs) */}
                                         <MotionPath
-                                            d="M 50,50 m -40,0 a 40,40 0 1,0 80,0 a 40,40 0 1,0 -80,0 M 50,50 L 90,50 M 50,50 L 50,10 M 50,50 L 78.28,21.72"
-                                            stroke="currentColor" strokeWidth="0.5" fill="none"
-                                            initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 3 }}
+                                            d="M 0,13 A 13,13 0 0,1 13,0 A 8,8 0 0,1 21,8 A 5,5 0 0,1 16,13 A 3,3 0 0,1 13,10 A 2,2 0 0,1 15,8 A 1,1 0 0,1 16,9 A 1,1 0 0,1 15,10"
+                                            stroke="currentColor" strokeWidth="0.2" fill="none"
+                                            initial={{ pathLength: 0, opacity: 0 }}
+                                            animate={{ pathLength: 1, opacity: 1 }}
+                                            transition={{ duration: 5, ease: "easeInOut" }}
                                         />
-                                        <MotionPath
-                                            d="M1,1 c55,0 98,43 98,98"
-                                            stroke="currentColor" strokeWidth="0.5" fill="none"
-                                            initial={{ pathLength: 0, scale: 0.8 }} animate={{ pathLength: 1, scale: 1 }}
-                                            transition={{ duration: 5, repeat: Infinity, repeatType: "reverse" }}
-                                        />
-                                        <circle cx="50" cy="50" r="10" stroke="currentColor" strokeWidth="0.2" fill="none" />
-                                        <circle cx="50" cy="50" r="20" stroke="currentColor" strokeWidth="0.2" fill="none" />
-                                        <circle cx="50" cy="50" r="30" stroke="currentColor" strokeWidth="0.2" fill="none" />
+
+                                        {/* HUD Annotations */}
+                                        <g opacity="0.4">
+                                            <text x="0" y="-0.5" className="font-mono text-[0.6px] fill-accent uppercase font-black">Ref_13.00</text>
+                                            <text x="13.5" y="-0.5" className="font-mono text-[0.6px] fill-accent uppercase font-black">Ref_08.00</text>
+                                            <motion.line x1="13" y1="0" x2="13" y2="-1" stroke="currentColor" strokeWidth="0.02" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} />
+                                        </g>
+
+                                        {/* Focal Center Point */}
+                                        <motion.circle cx="15" cy="10" r="0.25" fill="currentColor" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 4 }} />
+                                        
+                                        {/* Technical Labeling */}
+                                        <text x="16" y="9.8" className="font-mono text-[0.5px] fill-accent uppercase tracking-widest opacity-60 font-bold">
+                                            PHI_CONSTRUCT
+                                        </text>
+                                        <text x="0" y="14" className="font-mono text-[0.4px] fill-accent uppercase tracking-[0.2em] opacity-30 font-black">
+                                            Scale_1.618033:1
+                                        </text>
                                     </svg>
                                 </MotionDiv>
-                                
-                                {/* Scanning UI */}
-                                <MotionDiv 
-                                    className="absolute top-1/2 left-1/2 w-[200%] h-px bg-gradient-to-r from-transparent via-accent/40 to-transparent z-10"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                                    style={{ originX: "50%", originY: "50%", x: "-50%", y: "-50%" }}
-                                />
 
-                                <div className="absolute inset-0 flex items-center justify-center z-10">
-                                    <div className="p-6 rounded-full border border-accent/20 backdrop-blur-xl bg-accent/5 group-hover:bg-accent/10 transition-all duration-700">
-                                        <Compass className="text-accent" size={32} strokeWidth={1} />
-                                    </div>
-                                </div>
-
-                                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-mono text-[8px] text-accent tracking-[0.5em] opacity-40">
-                                    PRECISION_1.618
+                                <div className="absolute bottom-8 left-0 right-0 text-center font-mono text-[7px] text-accent tracking-[0.8em] font-black opacity-30 pointer-events-none">
+                                    PRECISION_GEO_CERT: #1.618
                                 </div>
                             </div>
                         </div>
@@ -252,29 +259,28 @@ const About: React.FC = () => {
             </div>
         </Section>
 
-        {/* 2. STORY & MISSION: THE FOUNDATION */}
-        <Section className="py-32">
+        {/* 2. STORY & MISSION */}
+        <Section className="py-40">
             <div className="max-w-6xl mx-auto">
-                 <div className="flex flex-col md:flex-row gap-20 items-start">
-                    {/* History Timeline */}
+                 <div className="flex flex-col md:flex-row gap-24 items-start">
                     <div className="flex-1">
-                        <h3 className="font-mono text-accent text-[10px] uppercase tracking-[0.6em] mb-16 flex items-center gap-6">
-                            <span className="w-8 h-[1px] bg-accent" />
+                        <h3 className="font-mono text-accent text-[8px] uppercase tracking-[0.8em] mb-20 flex items-center gap-6 font-black">
+                            <span className="w-10 h-[1px] bg-accent" />
                             {t.about.history.title}
                         </h3>
-                        <div className="ps-12 border-l border-neutral-light/10 dark:border-white/5 space-y-24 relative">
+                        <div className="ps-12 border-l border-neutral-light/5 space-y-32 relative">
                             <MotionDiv initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
-                                <div className="absolute -left-[5px] top-0 w-2 h-2 bg-accent rounded-full" />
-                                <span className="font-mono text-xs text-accent block mb-6 tracking-widest uppercase">YEAR_2000 // Inception</span>
-                                <p className="text-2xl text-neutral-light leading-relaxed font-light max-w-2xl">
+                                <div className="absolute -left-[3px] top-0 w-1.5 h-1.5 bg-accent rounded-full" />
+                                <span className="font-mono text-[10px] text-accent block mb-8 tracking-[0.4em] uppercase font-black">YEAR_2000 // Inception</span>
+                                <p className="text-xl md:text-2xl text-neutral-light leading-relaxed font-light max-w-2xl tracking-tight">
                                     {t.about.history.content.split('. ')[0]}.
                                 </p>
                             </MotionDiv>
                             
                             <MotionDiv initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-                                <div className="p-8 bg-accent/5 border border-accent/20 rounded-sm group hover:bg-accent/10 transition-colors">
-                                    <Zap className="text-accent mb-6" size={28} />
-                                    <p className="text-lg md:text-xl text-neutral-light font-medium leading-relaxed italic">
+                                <div className="p-10 border border-neutral-light/5 hover:border-accent/10 transition-colors relative group">
+                                    <Zap className="text-accent/40 group-hover:text-accent mb-6 transition-colors" size={24} />
+                                    <p className="text-lg md:text-xl text-neutral-dim font-medium leading-relaxed italic group-hover:text-neutral-light transition-colors">
                                         {t.about.digitalPioneer}
                                     </p>
                                 </div>
@@ -282,20 +288,19 @@ const About: React.FC = () => {
                         </div>
                     </div>
 
-                    {/* Mission/Vision Floating Cards */}
-                    <div className="w-full md:w-96 shrink-0 space-y-8">
-                         <div className="p-10 border border-neutral-light/10 bg-secondary/50 backdrop-blur rounded-sm group hover:border-accent/40 transition-all duration-500">
-                            <Target size={24} className="text-accent mb-8" />
-                            <h3 className="font-mono text-accent text-[10px] uppercase tracking-[0.5em] mb-4">{t.about.mission.title}</h3>
-                            <p className="text-lg text-neutral-light leading-relaxed font-light">
+                    <div className="w-full md:w-80 shrink-0 space-y-12">
+                         <div className="p-10 border border-neutral-light/5 bg-secondary/10 backdrop-blur rounded-sm group hover:border-accent/20 transition-all duration-500">
+                            <Target size={20} className="text-accent/60 mb-8" />
+                            <h3 className="font-mono text-accent text-[8px] uppercase tracking-[0.5em] mb-6 font-black">{t.about.mission.title}</h3>
+                            <p className="text-base text-neutral-dim leading-relaxed font-light group-hover:text-neutral-light transition-colors">
                                 {t.about.mission.content}
                             </p>
                          </div>
 
-                         <div className="p-10 border border-neutral-light/10 bg-secondary/50 backdrop-blur rounded-sm group hover:border-accent/40 transition-all duration-500">
-                            <Sparkles size={24} className="text-accent mb-8" />
-                            <h3 className="font-mono text-accent text-[10px] uppercase tracking-[0.5em] mb-4">{t.about.vision.title}</h3>
-                            <p className="text-lg text-neutral-light leading-relaxed font-light">
+                         <div className="p-10 border border-neutral-light/5 bg-secondary/10 backdrop-blur rounded-sm group hover:border-accent/20 transition-all duration-500">
+                            <Sparkles size={20} className="text-accent/60 mb-8" />
+                            <h3 className="font-mono text-accent text-[8px] uppercase tracking-[0.5em] mb-6 font-black">{t.about.vision.title}</h3>
+                            <p className="text-base text-neutral-dim leading-relaxed font-light group-hover:text-neutral-light transition-colors">
                                 {t.about.vision.content}
                             </p>
                          </div>
@@ -304,93 +309,92 @@ const About: React.FC = () => {
             </div>
         </Section>
 
-        {/* 3. IMPACT RIBBON: THE NUMBERS (New Section) */}
-        <div className="bg-neutral-light dark:bg-white text-primary py-24 overflow-hidden shadow-2xl relative z-10">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 items-center">
+        {/* 3. IMPACT RIBBON */}
+        <div className="bg-neutral-light dark:bg-white text-primary py-28 relative z-10">
+            <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-4 items-center">
                 <div className="text-center md:text-start">
-                    <span className="text-[110px] font-black leading-none block tracking-tighter">+2.5M</span>
-                    <span className="font-mono text-xs uppercase tracking-[0.4em] font-bold opacity-60">
+                    <span className="text-6xl md:text-8xl font-bold leading-none block tracking-[-0.08em] mb-2">+2.5M</span>
+                    <span className="font-mono text-[8px] uppercase tracking-[0.6em] font-black opacity-40">
                         {language === 'ar' ? 'متر مربع تم تصميمه' : 'Square Meters Designed'}
                     </span>
                 </div>
-                <div className="text-center md:text-start border-y md:border-y-0 md:border-x border-primary/10 py-12 md:py-0 md:px-12">
-                    <span className="text-[110px] font-black leading-none block tracking-tighter">24+</span>
-                    <span className="font-mono text-xs uppercase tracking-[0.4em] font-bold opacity-60">
+                <div className="text-center md:text-start border-y md:border-y-0 md:border-x border-primary/5 py-16 md:py-0 md:px-16">
+                    <span className="text-6xl md:text-8xl font-bold leading-none block tracking-[-0.08em] mb-2">24+</span>
+                    <span className="font-mono text-[8px] uppercase tracking-[0.6em] font-black opacity-40">
                         {language === 'ar' ? 'عاماً من التفاني' : 'Years of Dedication'}
                     </span>
                 </div>
                 <div className="text-center md:text-start">
-                    <span className="text-[110px] font-black leading-none block tracking-tighter">100%</span>
-                    <span className="font-mono text-xs uppercase tracking-[0.4em] font-bold opacity-60">
+                    <span className="text-6xl md:text-8xl font-bold leading-none block tracking-[-0.08em] mb-2">100%</span>
+                    <span className="font-mono text-[8px] uppercase tracking-[0.6em] font-black opacity-40">
                         {language === 'ar' ? 'نزاهة هندسية' : 'Engineering Integrity'}
                     </span>
                 </div>
             </div>
         </div>
 
-        {/* 4. LEADERSHIP: THE HUMAN AUTHORITY */}
-        <Section className="py-40 bg-primary dark:bg-primary transition-colors">
-            <div className="mb-24">
-                <div className="flex items-center gap-6 mb-8">
-                    <div className="h-[2px] w-24 bg-accent" />
-                    <span className="text-accent font-mono text-xs uppercase tracking-[0.6em] font-bold">The Guardians of Excellence</span>
+        {/* 4. LEADERSHIP */}
+        <Section className="py-48 bg-primary">
+            <div className="mb-32">
+                <div className="flex items-center gap-6 mb-10">
+                    <div className="h-[1px] w-20 bg-accent/40" />
+                    <span className="text-accent font-mono text-[8px] uppercase tracking-[1em] font-black opacity-80">The Authority</span>
                 </div>
-                <h2 className="text-7xl md:text-9xl font-black text-neutral-light uppercase tracking-tighter leading-none">
+                <h2 className="text-5xl md:text-8xl font-bold text-neutral-light uppercase tracking-tighter leading-none">
                     {t.about.leadership}
                 </h2>
             </div>
 
-            <div className="flex flex-col border-t border-neutral-light/10 dark:border-white/5">
+            <div className="flex flex-col border-t border-neutral-light/5">
                 {team.map((member, i) => (
                     <LeadershipRow key={member.id} member={member} index={i} />
                 ))}
             </div>
         </Section>
 
-        {/* 5. CORE VALUES: THE PILLARS */}
-        <Section className="pb-40">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* 5. CORE VALUES */}
+        <Section className="pb-48">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                 {t.about.values.items.map((v, i) => (
                     <MotionDiv 
                         key={i}
-                        whileHover={{ y: -10 }}
-                        className="group p-10 bg-secondary dark:bg-secondary/40 border border-neutral-light/10 rounded-sm relative overflow-hidden flex flex-col justify-between h-72"
+                        whileHover={{ y: -8 }}
+                        className="group p-12 bg-secondary/10 border border-neutral-light/5 rounded-sm relative overflow-hidden flex flex-col justify-between h-80 transition-all duration-700"
                     >
-                        <div className="absolute top-6 right-6 text-accent/10 group-hover:text-accent/30 transition-all duration-700 transform group-hover:scale-110">
+                        <div className="absolute top-10 right-10 text-accent/5 group-hover:text-accent/10 transition-all duration-700">
                             {getIcon(v.icon)}
                         </div>
                         
                         <div>
-                            <div className="w-14 h-14 border border-accent/20 flex items-center justify-center text-accent mb-8 group-hover:border-accent group-hover:bg-accent group-hover:text-primary transition-all duration-700">
+                            <div className="w-12 h-12 border border-accent/10 flex items-center justify-center text-accent/40 mb-10 group-hover:border-accent group-hover:bg-accent group-hover:text-primary transition-all duration-700">
                                 {getIcon(v.icon)}
                             </div>
-                            <h4 className="text-neutral-light font-black uppercase tracking-widest text-2xl mb-4 leading-none">{v.title}</h4>
+                            <h4 className="text-neutral-light font-bold uppercase tracking-[0.1em] text-xl mb-6 leading-none">{v.title}</h4>
                         </div>
                         
-                        <p className="text-neutral-dim text-xs leading-relaxed uppercase tracking-wider font-mono opacity-60">
+                        <p className="text-neutral-dim text-[10px] leading-relaxed uppercase tracking-[0.25em] font-mono opacity-60 group-hover:text-neutral-light group-hover:opacity-100 transition-all">
                             {v.desc}
                         </p>
 
-                        <div className="absolute bottom-4 right-6 font-mono text-[8px] opacity-20 uppercase tracking-[0.3em]">
-                            verified_stat_24
+                        <div className="absolute bottom-6 right-10 font-mono text-[7px] opacity-10 uppercase tracking-[0.4em] font-black">
+                            V_24_CERT
                         </div>
                     </MotionDiv>
                 ))}
             </div>
         </Section>
 
-        {/* 6. CALL TO ACTION: THE SIGNATURE */}
-        <Section className="pb-56 pt-24">
-            <div className="max-w-6xl mx-auto border border-accent/20 bg-secondary/30 rounded-lg p-12 md:p-24 relative overflow-hidden group/closer">
-                {/* Visual Background Element: The Digital Stamp */}
-                <div className="absolute -top-10 -right-10 md:top-1/2 md:right-20 md:-translate-y-1/2 opacity-[0.03] group-hover/closer:opacity-[0.1] transition-opacity duration-1000 pointer-events-none">
+        {/* 6. CALL TO ACTION */}
+        <Section className="pb-64 pt-20">
+            <div className="max-w-5xl mx-auto border border-accent/10 bg-secondary/5 rounded-sm p-12 md:p-24 relative overflow-hidden group/closer">
+                <div className="absolute -top-20 -right-20 md:top-1/2 md:right-20 md:-translate-y-1/2 opacity-[0.03] group-hover/closer:opacity-[0.08] transition-opacity duration-1000 pointer-events-none">
                     <svg width="450" height="450" viewBox="0 0 400 400" className="text-accent animate-spin-slow">
                         <defs>
-                            <path id="circlePath" d="M 200, 200 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" />
+                            <path id="circlePathAbout" d="M 200, 200 m -150, 0 a 150,150 0 1,1 300,0 a 150,150 0 1,1 -300,0" />
                         </defs>
-                        <circle cx="200" cy="200" r="160" fill="none" stroke="currentColor" strokeWidth="1" strokeDasharray="8 8" />
-                        <text className="font-mono text-[14px] uppercase tracking-[0.4em] fill-current">
-                            <textPath href="#circlePath">
+                        <circle cx="200" cy="200" r="160" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="12 12" />
+                        <text className="font-mono text-[10px] uppercase tracking-[0.8em] fill-current font-black">
+                            <textPath href="#circlePathAbout">
                                 AL NEBRAS ENGINEERING OFFICE • PRECISION • AUTHORITY • VISION • EST. 2000 •
                             </textPath>
                         </text>
@@ -398,39 +402,39 @@ const About: React.FC = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-16 text-center md:text-start">
-                    <div className="max-w-2xl">
-                        <div className="flex items-center gap-4 mb-8 justify-center md:justify-start">
-                            <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center text-accent border border-accent/20">
-                                <Award size={24} />
+                    <div className="max-w-xl">
+                        <div className="flex items-center gap-4 mb-10 justify-center md:justify-start">
+                            <div className="w-10 h-10 bg-accent/5 rounded-full flex items-center justify-center text-accent/60 border border-accent/10">
+                                <Award size={20} />
                             </div>
-                            <span className="font-mono text-[11px] uppercase tracking-[0.4em] text-accent/80 font-bold">Ready to Shape the Future?</span>
+                            <span className="font-mono text-[9px] uppercase tracking-[0.6em] text-accent font-black">Building Legacies</span>
                         </div>
-                        <h2 className="text-5xl md:text-7xl font-black text-neutral-light mb-8 leading-[1] uppercase tracking-tighter">
+                        <h2 className="text-4xl md:text-6xl font-bold text-neutral-light mb-10 leading-[0.95] uppercase tracking-tighter">
                             {language === 'ar' ? 'توقيع التميز الهنـدسي' : 'The Signature of Excellence'}
                         </h2>
-                        <p className="text-xl md:text-2xl text-neutral-dim font-light leading-relaxed max-w-xl">
+                        <p className="text-lg md:text-xl text-neutral-dim/80 font-light leading-relaxed max-w-md">
                             {language === 'ar' ? 'لنوقع عقد نجاحك القادم بناءً على أسس صلبة ورؤية مبتكرة.' : "Let's sign your next success contract based on solid foundations and innovative vision."}
                         </p>
                     </div>
 
-                    <div className="shrink-0 flex flex-col items-center gap-8">
+                    <div className="shrink-0 flex flex-col items-center gap-10">
                         <Link 
                             to="/contact" 
-                            className="inline-flex items-center gap-8 px-12 py-6 bg-accent text-primary font-black uppercase tracking-[0.3em] text-sm rounded-sm hover:bg-white hover:shadow-[0_0_50px_rgba(var(--color-accent),0.5)] transition-all duration-500 group/btn"
+                            className="inline-flex items-center gap-10 px-12 py-6 bg-accent text-primary font-bold uppercase tracking-[0.4em] text-xs rounded-sm hover:bg-white transition-all duration-700 group/btn shadow-xl shadow-accent/5"
                         >
-                            {language === 'ar' ? 'ابدأ مشروعك الآن' : 'Start Your Project Now'}
+                            {language === 'ar' ? 'ابدأ مشروعك' : 'Start Project'}
                             <ArrowRight className="group-hover/btn:translate-x-3 transition-transform rtl-flip" />
                         </Link>
                         
-                        <div className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-[0.3em] text-neutral-dim/50">
-                            <Check size={14} className="text-accent" />
-                            {language === 'ar' ? 'مستند موثق إلكترونياً' : 'Electronically Verified'}
+                        <div className="flex items-center gap-4 text-[9px] font-mono uppercase tracking-[0.4em] text-neutral-dim/40 font-black">
+                            <Check size={14} className="text-accent/40" />
+                            {language === 'ar' ? 'مستند موثق' : 'Verified'}
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div className="mt-32 pt-12 border-t border-neutral-light/10 flex flex-wrap justify-between items-center opacity-30 font-mono text-[9px] uppercase tracking-[0.5em] gap-8">
+            <div className="mt-40 pt-10 border-t border-neutral-light/5 flex flex-wrap justify-between items-center opacity-20 font-mono text-[8px] uppercase tracking-[0.8em] gap-8 font-black">
                 <div className="flex items-center gap-4">
                     <Award size={14} />
                     <span>ISO_9001_COMPLIANT</span>

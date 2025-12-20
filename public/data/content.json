@@ -195,7 +195,7 @@
       "hero": {
         "est": "تأسس عام 2000 | عراقة هندسية فلسطينية",
         "typewriter": "النبراس.. هندسةٌ تُلهم",
-        "subtitle": "أكثر من عقدين من التميز in قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.",
+        "subtitle": "أكثر من عقدين من التميز في قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.",
         "cta": "تصفح تاريخنا",
         "scroll": "مرر للاستكشاف",
         "exploreProjects": "استكشف المشاريع",
@@ -675,7 +675,7 @@
         "description": "دراسة في الهندسة الصريحة والضوء؛ حيث تعتمد هذه الفيلا الخاصة على كتل أفقية بيضاء ومساحات زجاجية واسعة من الأرض حتى السقف لإزالة الحواجز بين راحة الداخل وجمال الطبيعة الفلسطينية. تركز الفلسفة المعمارية هنا على \"الشفافية مقابل الخصوصية\"، حيث تعمل البروزات الخرسانية المدروسة على توفير الظل والعزلة مع الحفاظ على شعور بالرحابة غير المحدودة. النتيجة هي بيان سكني فاخر يولي الأولوية للأناقة الوظيفية وتدفق الإضاءة الطبيعية.",
         "specs": [
           { "label": "النمط المعماري", "value": "مودرن تقليلي (Minimalist)" },
-          { "label": "نظام الزجاج", "value": "زجاج عازل بإطارات نحيفة" },
+          { "label": "نظام الزجاج", value: "زجاج عازل بإطارات نحيفة" },
           { "label": "الميزات الهيكلية", "value": "بروزات خرسانية ومخطط مفتوح" },
           { "label": "تصميم الإضاءة", "value": "إضاءة مخفية مدمجة بالهيكل" }
         ]
@@ -726,140 +726,6 @@
       }
     ]
   },
-  "INTERIOR_PROJECTS": {
-    "en": [
-      {
-        "id": "i1",
-        "slug": "arched-pastel-elegance",
-        "title": "Arched Pastel Elegance",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "25 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
-        ],
-        "description": "A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.",
-        "specs": [
-          { "label": "Style", "value": "Soft Contemporary" },
-          { "label": "Materials", "value": "Matte-finish painted wood, velvet and soft linen fabrics, gold/brass accents" },
-          { "label": "Color Palette", "value": "Pastel Pink, Creamy Beige, Warm Off-White" },
-          { "label": "Key Features", "value": "Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard" }
-        ]
-      },
-      {
-        "id": "i2",
-        "slug": "contemporary-wardrobe-system",
-        "title": "Contemporary Wardrobe System: Glass & Light",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "15 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp"
-        ],
-        "description": "A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.",
-        "specs": [
-          { "label": "Style", "value": "Modern Transitional / Minimalist Luxury" },
-          { "label": "Materials", "value": "Black powder-coated metal framing, Transparent or smoked glass fronts, Light-toned wood paneling, Soft fabric seating" },
-          { "label": "Color Palette", "value": "Neutral (Soft Beige/Nude, Black, Warm Wood Tones)" },
-          { "label": "Key Features", "value": "Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans" }
-        ]
-      },
-      {
-        "id": "i3",
-        "slug": "symphony-of-neutrals",
-        "title": "Symphony of Neutrals: Neoclassical Opulence",
-        "category": "Residential",
-        "location": "Tubas, Palestine",
-        "year": "2025",
-        "area": "45 m²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
-        ],
-        "description": "A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.",
-        "specs": [
-          { "label": "Style", "value": "Contemporary Neoclassical Luxury" },
-          { "label": "Materials", "value": "Plaster mouldings, High-gloss wood, Bouclé/Velvet fabrics" },
-          { "label": "Color Palette", "value": "Monochromatic (White, Cream, Beige, Soft Gold)" },
-          { "label": "Key Features", "value": "Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier" }
-        ]
-      }
-    ],
-    "ar": [
-      {
-        "id": "i1",
-        "slug": "arched-pastel-elegance",
-        "title": "أناقة الأقواس وألوان الباستيل",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "25 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848964/Screenshot_2025-09-17_051806_ommqll.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849017/Screenshot_2025-09-17_062220_l79eiw.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849019/Screenshot_2025-09-21_010830_ndhbsx.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848872/Screenshot_2025-09-17_042142_pbfk6z.webp"
-        ],
-        "description": "تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.",
-        "specs": [
-          { "label": "النمط", "value": "معاصر ناعم" },
-          { "label": "المواد", "value": "خشب مطفي، مخمل وكتان، لمسات ذهبية" },
-          { "label": "لوحة الألوان", "value": "وردي باستيل، بيج كريمي، أبيض دافئ" },
-          { "label": "الميزات الرئيسية", "value": "خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة" }
-        ]
-      },
-      {
-        "id": "i2",
-        "slug": "contemporary-wardrobe-system",
-        "title": "نظام خزانة معاصر: زجاج وإضاءة",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "15 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849432/Screenshot_2025-09-09_070949_irxqxx.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849429/Screenshot_2025-09-09_065007_qw8op2.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849427/Screenshot_2025-09-09_055119_xn97na.webp"
-        ],
-        "description": "مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.",
-        "specs": [
-          { "label": "النمط", "value": "انتقالي حديث / فخامة تبسيطية" },
-          { "label": "المواد", "value": "إطارات معدنية سوداء، واجهات زجاجية شفافة، ألواح خشبية فاتحة" },
-          { "label": "لوحة الألوان", "value": "محايدة (بيج ناعم، أسود، خشب دافئ)" },
-          { "label": "الميزات الرئيسية", "value": "إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية" }
-        ]
-      },
-      {
-        "id": "i3",
-        "slug": "symphony-of-neutrals",
-        "title": "سيمفونية الحياد: فخامة الكلاسيكية الجديدة",
-        "category": "سكني",
-        "location": "طوباس، فلسطين",
-        "year": "2025",
-        "area": "45 م²",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849489/Screenshot_2025-09-10_034102_s4loe4.webp",
-        "gallery": [
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849496/b8_ucumiy.webp",
-          "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764849493/c5_nlnsnh.webp"
-        ],
-        "description": "مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.",
-        "specs": [
-          { "label": "Style", "value": "كلاسيكية جديدة معاصر فاخرة" },
-          { "label": "المواد", "value": "قوالب جبسية، خشب عالي اللمعان، أقمشة بوكليه ومخمل" },
-          { "label": "الألوان", "value": "أحادية اللون (أبيض، كريمي، بيج، ذهبي)" },
-          { "label": "الميزات الرئيسية", "value": "إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية" }
-        ]
-      }
-    ]
-  },
   "SERVICES": {
     "en": [
       {
@@ -877,6 +743,46 @@
         "icon": "Layers",
         "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
         "features": ["Seismic Analysis", "Load Calculations", "Steel & Concrete"]
+      },
+      {
+        "id": "bim",
+        "title": "BIM Services",
+        "description": "Advanced Building Information Modeling for efficient project lifecycle management.",
+        "icon": "Box",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
+        "features": ["LOD 300/400", "Clash Detection", "Digital Twins"]
+      },
+      {
+        "id": "consult",
+        "title": "Supervision & Management",
+        "description": "On-site supervision and management to ensure execution matches the design intent.",
+        "icon": "HardHat",
+        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
+        "features": ["Site Inspection", "Quality Control", "Schedule Management"]
+      },
+      {
+        "id": "landscape",
+        "title": "Landscape Architecture",
+        "description": "Designing outdoor environments that blend nature with built structures.",
+        "icon": "Trees",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
+        "features": ["Hardscape", "Softscape", "Irrigation Systems"]
+      },
+      {
+        "id": "interior",
+        "title": "Interior Design",
+        "description": "Crafting functional and aesthetic interior spaces for comfort and style.",
+        "icon": "Compass",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
+        "features": ["Space Planning", "Furniture Selection", "Material Boards"]
+      },
+      {
+        "id": "roads",
+        "title": "Road & Transportation",
+        "description": "Infrastructure planning for efficient transportation networks.",
+        "icon": "Route",
+        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
+        "features": ["Highway Design", "Traffic Analysis", "Pavement Design"]
       }
     ],
     "ar": [
@@ -887,6 +793,54 @@
         "icon": "LayoutTemplate",
         "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop",
         "features": ["تصميم المفاهيم", "التصور ثلاثي الأبعاد", "الاستدامة"]
+      },
+      {
+        "id": "struct",
+        "title": "الهندسة الإنشائية",
+        "description": "تحليل وتصميم إنشائي قوي يضمن السلامة والاستقرار والامتثال للكود.",
+        "icon": "Layers",
+        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
+        "features": ["التحليل الزلزالي", "حسابات الأحمال", "الفولاذ والخرسانة"]
+      },
+      {
+        "id": "bim",
+        "title": "خدمات BIM",
+        "description": "نمذجة معلومات البناء المتقدمة للكشف عن التعارضات وإدارة دورة حياة المشروع.",
+        "icon": "Box",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
+        "features": ["مستوى تفاصيل 300/400", "كشف التعارضات", "التوائم الرقمية"]
+      },
+      {
+        "id": "consult",
+        "title": "الإشراف وإدارة المشاريع",
+        "description": "إشراف ميداني وإدارة صارمة للمشاريع لضمان التنفيذ وفقاً للمخططات.",
+        "icon": "HardHat",
+        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
+        "features": ["فحص الموقع", "مراقبة الجودة", "إدارة الجدول الزمني"]
+      },
+      {
+        "id": "landscape",
+        "title": "هندسة المناظر الطبيعية",
+        "description": "تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.",
+        "icon": "Trees",
+        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
+        "features": ["الهاردسكيب", "السوفتسكيب", "أنظمة الري"]
+      },
+      {
+        "id": "interior",
+        "title": "التصميم الداخلي",
+        "description": "صياغة مساحات داخلية وظيفية وجمالية تعكس هوية العميل.",
+        "icon": "Compass",
+        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
+        "features": ["تخطيط المساحات", "اختيار الأثاث", "لوحات المواد"]
+      },
+      {
+        "id": "roads",
+        "title": "الطرق والمواصلات",
+        "description": "تخطيط البنية التحتية لشبكات نقل فعالة وحركة حضرية سلسة.",
+        "icon": "Route",
+        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
+        "features": ["تصميم الطرق السريعة", "تحليل المرور", "تصميم الأرصفة"]
       }
     ]
   },
@@ -896,7 +850,19 @@
         "id": "1",
         "name": "Ghassan",
         "role": "Homeowner",
-        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality."
+        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail."
+      },
+      {
+        "id": "2",
+        "name": "Muna",
+        "role": "Homeowner",
+        "content": "Professional, punctual, and creative. They made the complex process of building a home feel simple and organized."
+      },
+      {
+        "id": "3",
+        "name": "Ibrahim",
+        "role": "Homeowner",
+        "content": "I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind."
       }
     ],
     "ar": [
@@ -904,7 +870,19 @@
         "id": "1",
         "name": "غسان",
         "role": "مالك",
-        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع."
+        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل."
+      },
+      {
+        "id": "2",
+        "name": "منى",
+        "role": "مالكة",
+        "content": "مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة."
+      },
+      {
+        "id": "3",
+        "name": "إبراهيم",
+        "role": "مالك",
+        "content": "أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال."
       }
     ]
   }
