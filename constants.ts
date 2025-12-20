@@ -328,20 +328,19 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
   },
 };
 
-// Fix for redundant variable declaration (originally lines 323-388)
 export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
   en: [
     { 
       id: 't1', 
-      name: 'Eng. Saed Salahat', 
+      name: 'Saed Salahat', 
       role: 'Founder & Head of Structural Dept.', 
       bio: 'With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.',
       specialty: 'structural',
-      authorityStat: '25+ YEARS'
+      authorityStat: '25+ YEARS EXP'
     },
     { 
       id: 't2', 
-      name: 'Eng. Mohammed Salahat', 
+      name: 'Mohammed Salahat', 
       role: 'Head of Architecture', 
       bio: 'A visionary architect dedicated to creating timeless designs that seamlessly merge modern aesthetics with functional living spaces.',
       specialty: 'architecture',
@@ -349,7 +348,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't5', 
-      name: 'Eng. Shatha Salahat', 
+      name: 'Shatha Salahat', 
       role: 'Chief Architect', 
       bio: 'Leading the architectural vision with a focus on sustainable design and innovative spatial solutions, ensuring every project embodies aesthetic excellence.',
       specialty: 'architecture',
@@ -357,7 +356,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't3', 
-      name: 'Eng. Oday Salahat', 
+      name: 'Oday Salahat', 
       role: 'BIM Director', 
       bio: 'Leading the digital transformation of the office through advanced Building Information Modeling (BIM) workflows and smart construction technologies.',
       specialty: 'bim',
@@ -365,7 +364,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't4', 
-      name: 'Eng. Ribhi Sawafta', 
+      name: 'Ribhi Sawafta', 
       role: 'Head of Road Design', 
       bio: 'Expert in infrastructure planning and transportation engineering, ensuring efficient and safe road networks for sustainable urban development.',
       specialty: 'roads',
@@ -375,7 +374,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
   ar: [
     { 
       id: 't1', 
-      name: 'م. سائد صلاحات', 
+      name: 'سائد صلاحات', 
       role: 'المؤسس ومدير قسم الانشائيين', 
       bio: 'بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.',
       specialty: 'structural',
@@ -383,7 +382,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't2', 
-      name: 'م. محمد صلاحات', 
+      name: 'محمد صلاحات', 
       role: 'مدير العمارة', 
       bio: 'معماري صاحب رؤية يكرس جهوده لابتكار تصاميم خالدة تدمج بين الجماليات الحديثة والمساحات الوظيفية ببراعة.',
       specialty: 'architecture',
@@ -391,7 +390,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't5', 
-      name: 'م. شذى صلاحات', 
+      name: 'شذى صلاحات', 
       role: 'كبيرة المهندسين المعماريين', 
       bio: 'تقود الرؤية المعمارية مع التركيز على التصميم المستدام والحلول المكانية المبتكرة، لضمان أن يجسد كل مشروع التميز الجمالي.',
       specialty: 'architecture',
@@ -399,7 +398,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't3', 
-      name: 'م. عدي صلاحات', 
+      name: 'عدي صلاحات', 
       role: 'مدير نمذجة البناء', 
       bio: 'يقود التحول الرقمي للمكتب من خلال تقنيات نمذجة معلومات البناء (BIM) المتقدمة وتكنولوجيا البناء الذكي.',
       specialty: 'bim',
@@ -407,7 +406,7 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
     },
     { 
       id: 't4', 
-      name: 'م. ربحي صوافطة', 
+      name: 'ربحي صوافطة', 
       role: 'مدير تصميم الطرق', 
       bio: 'خبير في تخطيط البنية التحتية وهندسة المواصلات، يضمن تصميم شبكات طرق فعالة وآمنة للتطوير الحضري المستدام.',
       specialty: 'roads',
@@ -614,6 +613,7 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       gallery: [
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp',
+        // Fixed: Removed invalid CMS configuration object to match string[] type constraint.
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp'
       ],
@@ -1212,7 +1212,7 @@ export const SERVICES: Record<'en' | 'ar', Service[]> = {
       "id": "landscape",
       "title": "هندسة المناظر الطبيعية",
       "description": "تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.",
-      "icon": "Trees",
+      "icon": "HardHat",
       "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
       "features": [
         "الهاردسكيب",
@@ -1277,7 +1277,7 @@ export const SERVICES: Record<'en' | 'ar', Service[]> = {
       "features": [
         "تصميم التكييف",
         "الأنظمة الكهربائية",
-        "مخططات السباكة"
+        "مخطط الصحة"
       ]
     },
     {
