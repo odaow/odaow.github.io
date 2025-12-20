@@ -519,20 +519,11 @@
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
         ],
-        "description": "A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.",
+        "description": "A masterfully engineered terraced public park that transforms a sloped terrain into a multi-functional community destination. The design features a strategic \"zoning\" approach: the western wing hosts a modern, safety-standard playground, while the eastern wing offers a serene sanctuary with a traditional fountain and landscaped terraces. Central to the project is an iconic triangular water feature that serves as a compass for the site. With six contemporary hexagonal gazebos and integrated perimeter LED lighting, the park balances social vitality with architectural tranquility.",
         "specs": [
-          {
-            "label": "Green Area",
-            "value": "70%"
-          },
-          {
-            "label": "Pathways",
-            "value": "Paved"
-          },
-          {
-            "label": "Facilities",
-            "value": "Complete"
-          }
+          { "label": "Layout Type", "value": "Terraced Multi-level" },
+          { "label": "Central Feature", "value": "Iconic Water Compass" },
+          { "label": "Safety", "value": "Integrated LED Wall Lighting & Lighting Poles" }
         ]
       },
       {
@@ -551,22 +542,10 @@
         ],
         "description": "A modern educational facility designed to foster learning and community. The project includes multiple floors of classrooms, administration offices, and extensive outdoor recreational areas including courts and playgrounds.",
         "specs": [
-          {
-            "label": "Ground Floor",
-            "value": "944 m²"
-          },
-          {
-            "label": "First Floor",
-            "value": "822 m²"
-          },
-          {
-            "label": "Second Floor",
-            "value": "474 m²"
-          },
-          {
-            "label": "Outdoor Area",
-            "value": "3,000 m²"
-          }
+          { "label": "Ground Floor", "value": "944 m²" },
+          { "label": "First Floor", "value": "822 m²" },
+          { "label": "Second Floor", "value": "474 m²" },
+          { "label": "Outdoor Area", "value": "3,000 m²" }
         ]
       },
       {
@@ -582,16 +561,12 @@
           "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
           "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
         ],
-        "description": "A private residence featuring a modern architectural design, focusing on clean lines and functional spaces.",
+        "description": "A study in minimalist geometry and light. This private villa utilizes clean horizontal volumes and expansive floor-to-ceiling glazing to dissolve the boundary between interior comfort and the Palestinian landscape. The architectural narrative focuses on \"transparency vs. privacy,\" where strategically placed white slabs provide shade and seclusion while maintaining a sense of limitless space. The result is a high-end residential statement that prioritizes functional elegance and natural light flow.",
         "specs": [
-          {
-            "label": "Area",
-            "value": "270 m²"
-          },
-          {
-            "label": "Style",
-            "value": "Modern"
-          }
+          { "label": "Architectural Style", "value": "Minimalist Contemporary" },
+          { "label": "Glazing System", "value": "High-Performance Slim-Frame" },
+          { "label": "Core Features", "value": "Cantilevered Slabs & Open Floor Plan" },
+          { "label": "Lighting", "value": "Integrated Recessed Lighting Design" }
         ]
       },
       {
@@ -608,20 +583,12 @@
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
         ],
-        "description": "Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.",
+        "description": "An institutional landmark that balances authority with accessibility. The design merges traditional Palestinian stone masonry with modern administrative spatial requirements. The 800 m² facility is organized into clear functional zones to optimize the flow of both staff and citizens. Externally, the 1,200 m² of hardscaped yards and parking are engineered for durability and professional aesthetic, utilizing high-quality local materials that offer superior thermal performance and cultural resonance.",
         "specs": [
-          {
-            "label": "Total Built",
-            "value": "800 m²"
-          },
-          {
-            "label": "External Area",
-            "value": "1,200 m²"
-          },
-          {
-            "label": "Floors",
-            "value": "G + 1"
-          }
+          { "label": "Facade Material", "value": "Palestinian Stone Cladding" },
+          { "label": "Public Flow", "value": "Optimized Administrative Zoning" },
+          { "label": "Sustainability", "value": "Thermal Mass & Passive Cooling" },
+          { "label": "Hardscape", "value": "Heavy-Duty External Landscaping" }
         ]
       },
       {
@@ -629,7 +596,7 @@
         "slug": "metro-hub",
         "title": "Mr. Ghassan Salahat Villa",
         "category": "Residential",
-        "location": "Al-Fara\'a, Palestine",
+        "location": "Al-Fara'a, Palestine",
         "year": "2024",
         "area": "480 m²",
         "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
@@ -638,20 +605,12 @@
           "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
           "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
         ],
-        "description": "A sophisticated private residence spanning two floors and a roof terrace. The design features a 205 m² ground floor, a 205 m² first floor, and is surrounded by a vast 1,200 m² landscape area.",
+        "description": "A luxurious biophilic estate where architecture serves as a bridge to nature. Spanning 480 m² of built area across two levels and a panoramic roof garden, the villa is surrounded by a vast 1,200 m² curated landscape. The design prioritizes indoor-outdoor living, with social spaces opening directly onto garden terraces. The roof serves as a private oasis with 360-degree views of the Al-Fara'a valley, while the internal layout uses a \"social hierarchy\" to separate private family quarters from grand reception areas.",
         "specs": [
-          {
-            "label": "Ground Floor",
-            "value": "205 m²"
-          },
-          {
-            "label": "Landscape",
-            "value": "1,200 m²"
-          },
-          {
-            "label": "Total Built",
-            "value": "480 m²"
-          }
+          { "label": "Landscape Area", "value": "1,200 m² Curated Gardens" },
+          { "label": "Social Zoning", "value": "Separate Grand Reception & Family Wings" },
+          { "label": "Roof Level", "value": "Functional Terrace with Panoramic Views" },
+          { "label": "Site Integration", "value": "Sloped Terrain Management" }
         ]
       }
     ],
@@ -671,20 +630,11 @@
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp"
         ],
-        "description": "مشروع حديقة عامة متميز يجمع بين الجمال الطبيعي والوظيفة المجتمعية. تحتوي الحديقة على مساحات خضراء ممتدة، وممرات مشاة منظمة، ومرافق عامة متكاملة. تم تصميم الموقع ليكون متنفساً حيوياً للأهالي، مع التركيز على الاستدامة وتوفير بيئة آمنة وجذابة للأنشطة الترفيهية والاجتماعية.",
+        "description": "تحفة هندسية تجسد استغلال التضاريس المنحدرة لتحويلها إلى متنزه عام متعدد المستويات والوظائف. يعتمد التصميم على استراتيجية \"فصل المناطق\" الذكية؛ حيث يضم الجناح الغربي منطقة ألعاب حديثة بمعايير سلامة عالمية، بينما يوفر الجناح الشرقي ملاذاً هادئاً يضم نافورة تقليدية وجلسات متدرجة. يتوسط المشروع عنصر مائي مثلثي فريد يعمل كمركز بصري للموقع. ومع وجود ستة أجنحة استراحة (برجولات) سداسية الأضلاع ونظام إضاءة جداري متكامل، يوازن المشروع بين الحيوية الاجتماعية والسكينة المعمارية.",
         "specs": [
-          {
-            "label": "المساحة الخضراء",
-            "value": "70%"
-          },
-          {
-            "label": "الممرات",
-            "value": "مرصوفة"
-          },
-          {
-            "label": "المرافق",
-            "value": "شاملة"
-          }
+          { "label": "نمط التوزيع", "value": "طبقي متعدد المستويات" },
+          { "label": "العنصر المحوري", "value": "بوصلة مائية مركزية" },
+          { "label": "الأمان", "value": "نظام إضاءة LED جداري وأعمدة إنارة" }
         ]
       },
       {
@@ -703,22 +653,10 @@
         ],
         "description": "صرح تعليمي متميز يهدف إلى توفير بيئة تعليمية محفزة. يتكون المشروع من طوابق متعددة للفصول الدراسية والمكاتب الإدارية، بالإضافة إلى ساحات خارجية واسعة وملاعب ومرافق ترفيهية تخدم الطلبة والمجتمع.",
         "specs": [
-          {
-            "label": "طابق أرضي",
-            "value": "944 م²"
-          },
-          {
-            "label": "طابق أول",
-            "value": "822 م²"
-          },
-          {
-            "label": "طابق ثاني",
-            "value": "474 م²"
-          },
-          {
-            "label": "الساحات والملاعب",
-            "value": "3000 م²"
-          }
+          { "label": "طابق أرضي", "value": "944 م²" },
+          { "label": "طابق أول", "value": "822 م²" },
+          { "label": "طابق ثاني", "value": "474 م²" },
+          { "label": "الساحات والملاعب", "value": "3000 م²" }
         ]
       },
       {
@@ -734,16 +672,12 @@
           "https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg",
           "https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg"
         ],
-        "description": "فيلا سكنية خاصة تتميز بتصميم مودرن (حديث)، تجمع بين البساطة والأناقة في توزيع المساحات.",
+        "description": "دراسة في الهندسة الصريحة والضوء؛ حيث تعتمد هذه الفيلا الخاصة على كتل أفقية بيضاء ومساحات زجاجية واسعة من الأرض حتى السقف لإزالة الحواجز بين راحة الداخل وجمال الطبيعة الفلسطينية. تركز الفلسفة المعمارية هنا على \"الشفافية مقابل الخصوصية\"، حيث تعمل البروزات الخرسانية المدروسة على توفير الظل والعزلة مع الحفاظ على شعور بالرحابة غير المحدودة. النتيجة هي بيان سكني فاخر يولي الأولوية للأناقة الوظيفية وتدفق الإضاءة الطبيعية.",
         "specs": [
-          {
-            "label": "المساحة",
-            "value": "270 م²"
-          },
-          {
-            "label": "التصميم",
-            "value": "مودرن"
-          }
+          { "label": "النمط المعماري", "value": "مودرن تقليلي (Minimalist)" },
+          { "label": "نظام الزجاج", "value": "زجاج عازل بإطارات نحيفة" },
+          { "label": "الميزات الهيكلية", "value": "بروزات خرسانية ومخطط مفتوح" },
+          { "label": "تصميم الإضاءة", "value": "إضاءة مخفية مدمجة بالهيكل" }
         ]
       },
       {
@@ -760,20 +694,12 @@
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg",
           "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg"
         ],
-        "description": "مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.",
+        "description": "معلم مؤسسي يوازن بين الهيبة وسهولة الوصول. يدمج التصميم بين الحجر الفلسطيني التقليدي والمتطلبات الفراغية الإدارية الحديثة. تم تنظيم المبنى البالغة مساحته 800 متر مربع ضمن مناطق وظيفية واضحة لتحسين تدفق الموظفين والمواطنين. خارجياً، صُممت الساحات والمواقف بمساحة 1200 متر مربع لضمان الديمومة والجمالية المهنية، باستخدام مواد محلية عالية الجودة توفر أداءً حرارياً فائقاً وارتباطاً ثقافياً بالهوية المكانية.",
         "specs": [
-          {
-            "label": "مساحة البناء",
-            "value": "800 م²"
-          },
-          {
-            "label": "الساحات الخارجية",
-            "value": "1200 م²"
-          },
-          {
-            "label": "الطوابق",
-            "value": "أرضي + أول"
-          }
+          { "label": "مادة الواجهات", "value": "كسوة حجر فلسطيني طبيعي" },
+          { "label": "التوزيع الفراغي", "value": "زونينج إداري محسن" },
+          { "label": "الاستدامة", "value": "كتلة حرارية عالية وعزل متطور" },
+          { "label": "تنسيق الساحات", "value": "هاردسكيب مخصص للأحمال العالية" }
         ]
       },
       {
@@ -790,20 +716,12 @@
           "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
           "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
         ],
-        "description": "فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق أرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.",
+        "description": "عمارة بيئية فاخرة حيث يعمل البناء كجسر للطبيعة. تمتد الفيلا بمساحة بناء 480 متر مربع عبر مستويين وحديقة رووف بانورامية، محاطة بـ 1200 متر مربع من اللاندسكيب المنسق بعناية. يركز التصميم على دمج الداخل بالخارج، مع مساحات اجتماعية تفتح مباشرة على شرفات الحديقة. يمثل الرووف واحة خاصة بإطلالة 360 درجة على وادي الفارعة، بينما يعتمد المخطط الداخلي على \"هرمية اجتماعية\" تفصل بين الأجنحة العائلية الخاصة وصالونات الاستقبال الكبرى.",
         "specs": [
-          {
-            "label": "الطابق الأرضي",
-            "value": "205 م²"
-          },
-          {
-            "label": "الحدائق",
-            "value": "1200 م²"
-          },
-          {
-            "label": "إجمالي البناء",
-            "value": "480 م²"
-          }
+          { "label": "مساحة اللاندسكيب", "value": "1200 م² من الحدائق المنسقة" },
+          { "label": "الهرمية الفراغية", "value": "فصل تام بين الجناح العائلي والضيوف" },
+          { "label": "مستوى السطح", "value": "رووف وظيفي بإطلالات بانورامية" },
+          { "label": "التوافق مع الأرض", "value": "معالجة ذكية لميول التضاريس" }
         ]
       }
     ]
@@ -826,22 +744,10 @@
         ],
         "description": "A contemporary interior design aimed at creating a serene and feminine retreat, achieved by blending soft pastel palettes with striking arched architectural details. The design successfully balances aesthetics and functionality, utilizing abundant natural light and custom-built joinery.",
         "specs": [
-          {
-            "label": "Style",
-            "value": "Soft Contemporary"
-          },
-          {
-            "label": "Materials",
-            "value": "Matte-finish painted wood, velvet and soft linen fabrics, gold/brass accents"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Pastel Pink, Creamy Beige, Warm Off-White"
-          },
-          {
-            "label": "Key Features",
-            "value": "Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard"
-          }
+          { "label": "Style", "value": "Soft Contemporary" },
+          { "label": "Materials", "value": "Matte-finish painted wood, velvet and soft linen fabrics, gold/brass accents" },
+          { "label": "Color Palette", "value": "Pastel Pink, Creamy Beige, Warm Off-White" },
+          { "label": "Key Features", "value": "Fluted arched built-in wardrobes, naturally lit study/vanity area, cloud-shaped bed headboard" }
         ]
       },
       {
@@ -859,22 +765,10 @@
         ],
         "description": "A bespoke interior design project focused on maximizing organization and creating a boutique-like luxury experience within a walk-in closet. The design emphasizes clean lines, transparent storage solutions, and integrated, functional lighting to showcase the wardrobe collection.",
         "specs": [
-          {
-            "label": "Style",
-            "value": "Modern Transitional / Minimalist Luxury"
-          },
-          {
-            "label": "Materials",
-            "value": "Black powder-coated metal framing, Transparent or smoked glass fronts, Light-toned wood paneling, Soft fabric seating"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Neutral (Soft Beige/Nude, Black, Warm Wood Tones)"
-          },
-          {
-            "label": "Key Features",
-            "value": "Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans"
-          }
+          { "label": "Style", "value": "Modern Transitional / Minimalist Luxury" },
+          { "label": "Materials", "value": "Black powder-coated metal framing, Transparent or smoked glass fronts, Light-toned wood paneling, Soft fabric seating" },
+          { "label": "Color Palette", "value": "Neutral (Soft Beige/Nude, Black, Warm Wood Tones)" },
+          { "label": "Key Features", "value": "Integrated linear LED lighting, Glass-fronted display cabinets, Open storage, Central seating ottomans" }
         ]
       },
       {
@@ -892,22 +786,10 @@
         ],
         "description": "A high-end interior design project focused on creating a space of sophisticated opulence and timeless elegance. The design successfully blends classical detailing (wainscoting and mouldings) with contemporary, organic furniture shapes. The primary goal was to achieve a sense of expansive luxury through a refined, monochromatic palette and layered lighting.",
         "specs": [
-          {
-            "label": "Style",
-            "value": "Contemporary Neoclassical Luxury"
-          },
-          {
-            "label": "Materials",
-            "value": "Plaster mouldings, High-gloss wood, Bouclé/Velvet fabrics"
-          },
-          {
-            "label": "Color Palette",
-            "value": "Monochromatic (White, Cream, Beige, Soft Gold)"
-          },
-          {
-            "label": "Key Features",
-            "value": "Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier"
-          }
+          { "label": "Style", "value": "Contemporary Neoclassical Luxury" },
+          { "label": "Materials", "value": "Plaster mouldings, High-gloss wood, Bouclé/Velvet fabrics" },
+          { "label": "Color Palette", "value": "Monochromatic (White, Cream, Beige, Soft Gold)" },
+          { "label": "Key Features", "value": "Decorative wainscoting, Cove lighting, Organic seating, Sculptural chandelier" }
         ]
       }
     ],
@@ -928,22 +810,10 @@
         ],
         "description": "تصميم داخلي معاصر يهدف إلى خلق ملاذ هادئ، يتحقق من خلال مزج ألوان الباستيل الناعمة مع تفاصيل معمارية مقوسة مميزة. يوازن التصميم بنجاح بين الجماليات والوظائف، مستغلاً الضوء الطبيعي الوفير والأثاث المدمج المخصص.",
         "specs": [
-          {
-            "label": "النمط",
-            "value": "معاصر ناعم"
-          },
-          {
-            "label": "المواد",
-            "value": "خشب مطفي، مخمل وكتان، لمسات ذهبية"
-          },
-          {
-            "label": "لوحة الألوان",
-            "value": "وردي باستيل، بيج كريمي، أبيض دافئ"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة"
-          }
+          { "label": "النمط", "value": "معاصر ناعم" },
+          { "label": "المواد", "value": "خشب مطفي، مخمل وكتان، لمسات ذهبية" },
+          { "label": "لوحة الألوان", "value": "وردي باستيل، بيج كريمي، أبيض دافئ" },
+          { "label": "الميزات الرئيسية", "value": "خزائن مقوسة، منطقة تزيين بضوء طبيعي، رأس سرير على شكل سحابة" }
         ]
       },
       {
@@ -961,22 +831,10 @@
         ],
         "description": "مشروع تصميم داخلي مخصص يركز على زيادة التنظيم وخلق تجربة فاخرة تشبه البوتيك داخل خزانة الملابس. يركز التصميم على الخطوط النظيفة، وحلول التخزين الشفافة، والإضاءة الوظيفية المدمجة لعرض مجموعة الملابس.",
         "specs": [
-          {
-            "label": "النمط",
-            "value": "انتقالي حديث / فخامة تبسيطية"
-          },
-          {
-            "label": "المواد",
-            "value": "إطارات معدنية سوداء، واجهات زجاجية شفافة، ألواح خشبية فاتحة"
-          },
-          {
-            "label": "لوحة الألوان",
-            "value": "محايدة (بيج ناعم، أسود، خشب دافئ)"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية"
-          }
+          { "label": "النمط", "value": "انتقالي حديث / فخامة تبسيطية" },
+          { "label": "المواد", "value": "إطارات معدنية سوداء، واجهات زجاجية شفافة، ألواح خشبية فاتحة" },
+          { "label": "لوحة الألوان", "value": "محايدة (بيج ناعم، أسود، خشب دافئ)" },
+          { "label": "الميزات الرئيسية", "value": "إضاءة LED مدمجة، خزائن عرض زجاجية، تخزين مفتوح، مقاعد مركزية" }
         ]
       },
       {
@@ -994,22 +852,10 @@
         ],
         "description": "مشروع تصميم داخلي راقٍ يركز على خلق مساحة تتسم بالفخامة المتطورة والأناقة الخالدة. يمزج التصميم بنجاح بين التفاصيل الكلاسيكية (إطارات الجدران والكرانيش) وأشكال الأثاث العضوية المعاصرة. كان الهدف الأساسي تحقيق شعور بالرحابة والرفاهية من خلال لوحة ألوان أحادية اللون وإضاءة متعددة الطبقات.",
         "specs": [
-          {
-            "label": "النمط",
-            "value": "كلاسيكية جديدة معاصرة فاخرة"
-          },
-          {
-            "label": "المواد",
-            "value": "قوالب جبسية، خشب عالي اللمعان، أقمشة بوكليه ومخمل"
-          },
-          {
-            "label": "الألوان",
-            "value": "أحادية اللون (أبيض، كريمي، بيج، ذهبي)"
-          },
-          {
-            "label": "الميزات الرئيسية",
-            "value": "إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية"
-          }
+          { "label": "Style", "value": "كلاسيكية جديدة معاصر فاخرة" },
+          { "label": "المواد", "value": "قوالب جبسية، خشب عالي اللمعان، أقمشة بوكليه ومخمل" },
+          { "label": "الألوان", "value": "أحادية اللون (أبيض، كريمي، بيج، ذهبي)" },
+          { "label": "الميزات الرئيسية", "value": "إطارات جدارية، إضاءة مخفية، أثاث عضوي، ثريا نحتية" }
         ]
       }
     ]
@@ -1022,11 +868,7 @@
         "description": "Innovative conceptualization and detailed planning for residential, commercial, and public spaces.",
         "icon": "LayoutTemplate",
         "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop",
-        "features": [
-          "Concept Design",
-          "3D Visualization",
-          "Sustainability"
-        ]
+        "features": ["Concept Design", "3D Visualization", "Sustainability"]
       },
       {
         "id": "struct",
@@ -1034,119 +876,7 @@
         "description": "Robust structural analysis and design ensuring safety, stability, and code compliance.",
         "icon": "Layers",
         "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "Seismic Analysis",
-          "Load Calculations",
-          "Steel & Concrete"
-        ]
-      },
-      {
-        "id": "bim",
-        "title": "BIM Services",
-        "description": "Advanced Building Information Modeling for collision detection and efficient project lifecycle management.",
-        "icon": "Box",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
-        "features": [
-          "LOD 300/400",
-          "Clash Detection",
-          "Digital Twins"
-        ]
-      },
-      {
-        "id": "consult",
-        "title": "Supervision & Management",
-        "description": "On-site supervision and rigorous project management to ensure execution matches the design intent.",
-        "icon": "HardHat",
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "Site Inspection",
-          "Quality Control",
-          "Schedule Management"
-        ]
-      },
-      {
-        "id": "landscape",
-        "title": "Landscape Architecture",
-        "description": "Designing harmonious outdoor environments that blend nature with built structures.",
-        "icon": "Trees",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
-        "features": [
-          "Hardscape",
-          "Softscape",
-          "Irrigation Systems"
-        ]
-      },
-      {
-        "id": "interior",
-        "title": "Interior Design",
-        "description": "Crafting functional and aesthetic interior spaces that reflect client identity and comfort.",
-        "icon": "Compass",
-        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "Space Planning",
-          "Furniture Selection",
-          "Material Boards"
-        ]
-      },
-      {
-        "id": "roads",
-        "title": "Road & Transportation",
-        "description": "Infrastructure planning for efficient transportation networks and urban mobility.",
-        "icon": "Route",
-        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "Highway Design",
-          "Traffic Analysis",
-          "Pavement Design"
-        ]
-      },
-      {
-        "id": "lighting",
-        "title": "Lighting Design",
-        "description": "Creating atmospheric and functional lighting schemes for interior and exterior spaces to enhance architectural features.",
-        "icon": "Lightbulb",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765620855/lightingdesignserviceproductimage_iqjjtr.webp",
-        "features": [
-          "Lux Calculation",
-          "Fixture Selection",
-          "Energy Efficiency"
-        ]
-      },
-      {
-        "id": "surveying",
-        "title": "Surveying Engineering",
-        "description": "Precise land surveying and mapping services using advanced GPS and total station equipment.",
-        "icon": "ScanLine",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/best-handheld-gps-for-surveying-1030x687.jpg_ed1mnw.webp",
-        "features": [
-          "Topographic Surveys",
-          "Boundary Demarcation",
-          "GPS Positioning"
-        ]
-      },
-      {
-        "id": "mep",
-        "title": "MEP Engineering",
-        "description": "Integrated Mechanical, Electrical, and Plumbing systems design for optimal building performance.",
-        "icon": "Wrench",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/mechanical-electrical-plumbing_yml11r.png",
-        "features": [
-          "HVAC Design",
-          "Electrical Systems",
-          "Plumbing Layouts"
-        ]
-      },
-      {
-        "id": "environmental",
-        "title": "Environmental Design",
-        "description": "Sustainable design strategies to minimize environmental impact and enhance energy efficiency.",
-        "icon": "Leaf",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/1_AhhyZsPKxvWWMlX-uk9Fxg_rshutx.jpg",
-        "features": [
-          "Green Building",
-          "Energy Analysis",
-          "Sustainable Materials"
-        ]
+        "features": ["Seismic Analysis", "Load Calculations", "Steel & Concrete"]
       }
     ],
     "ar": [
@@ -1156,209 +886,7 @@
         "description": "تصميم مفاهيمي مبتكر وتخطيط تفصيلي للمساحات السكنية والتجارية والعامة.",
         "icon": "LayoutTemplate",
         "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop",
-        "features": [
-          "تصميم المفاهيم",
-          "التصور ثلاثي الأبعاد",
-          "الاستدامة"
-        ]
-      },
-      {
-        "id": "struct",
-        "title": "الهندسة الإنشائية",
-        "description": "تحليل وتصميم إنشائي قوي يضمن السلامة والاستقرار والامتثال للكود.",
-        "icon": "Layers",
-        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "التحليل الزلزالي",
-          "حسابات الأحمال",
-          "الفولاذ والخرسانة"
-        ]
-      },
-      {
-        "id": "bim",
-        "title": "خدمات BIM",
-        "description": "نمذجة معلومات البناء المتقدمة للكشف عن التعارضات وإدارة دورة حياة المشروع بكفاءة.",
-        "icon": "Box",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
-        "features": [
-          "مستوى تفاصيل 300/400",
-          "كشف التعارضات",
-          "التوائم الرقمية"
-        ]
-      },
-      {
-        "id": "consult",
-        "title": "الإشراف وإدارة المشاريع",
-        "description": "إشراف ميداني وإدارة صارمة للمشاريع لضمان التنفيذ وفقاً لنية التصميم.",
-        "icon": "HardHat",
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "فحص الموقع",
-          "مراقبة الجودة",
-          "إدارة الجدول الزمني"
-        ]
-      },
-      {
-        "id": "landscape",
-        "title": "هندسة المناظر الطبيعية",
-        "description": "تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.",
-        "icon": "Trees",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
-        "features": [
-          "الهاردسكيب",
-          "السوفتسكيب",
-          "أنظمة الري"
-        ]
-      },
-      {
-        "id": "interior",
-        "title": "التصميم الداخلي",
-        "description": "صياغة مساحات داخلية وظيفية وجمالية تعكس هوية العميل وتوفر الراحة.",
-        "icon": "Compass",
-        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "تخطيط المساحات",
-          "اختيار الأثاث",
-          "لوحات المواد"
-        ]
-      },
-      {
-        "id": "roads",
-        "title": "الطرق والمواصلات",
-        "description": "تخطيط البنية التحتية لشبكات نقل فعالة وحركة حضرية سلسة.",
-        "icon": "Route",
-        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
-        "features": [
-          "تصميم الطرق السريعة",
-          "تحليل المرور",
-          "تصميم الأرصفة"
-        ]
-      },
-      {
-        "id": "lighting",
-        "title": "تصميم الإنارة",
-        "description": "ابتكار مخططات إنارة وظيفية وجمالية للمساحات الداخلية والخارجية لتعزيز العناصر المعمارية.",
-        "icon": "Lightbulb",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765620855/lightingdesignserviceproductimage_iqjjtr.webp",
-        "features": [
-          "حسابات اللوكس",
-          "اختيار وحدات الإنارة",
-          "كفاءة الطاقة"
-        ]
-      },
-      {
-        "id": "surveying",
-        "title": "هندسة المساحة",
-        "description": "خدمات مسح ورسم خرائط دقيقة للأراضي باستخدام أجهزة GPS ومحطات الرصد المتطورة.",
-        "icon": "ScanLine",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/best-handheld-gps-for-surveying-1030x687.jpg_ed1mnw.webp",
-        "features": [
-          "المسوحات الطبوغرافية",
-          "تحديد الحدود",
-          "تحديد المواقع GPS"
-        ]
-      },
-      {
-        "id": "mep",
-        "title": "ميكانيك وكهرباء (MEP)",
-        "description": "تصميم متكامل للأنظمة الميكانيكية والكهربائية والصحية لضمان الأداء الأمثل للمبنى.",
-        "icon": "Wrench",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/mechanical-electrical-plumbing_yml11r.png",
-        "features": [
-          "تصميم التكييف",
-          "الأنظمة الكهربائية",
-          "مخططات السباكة"
-        ]
-      },
-      {
-        "id": "environmental",
-        "title": "التصميم البيئي",
-        "description": "استراتيجيات تصميم مستدامة لتقليل التأثير البيئي وتعزيز كفاءة الطاقة.",
-        "icon": "Leaf",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/1_AhhyZsPKxvWWMlX-uk9Fxg_rshutx.jpg",
-        "features": [
-          "البناء الأخضر",
-          "تحليل الطاقة",
-          "مواد مستدامة"
-        ]
-      }
-    ]
-  },
-  "PREMIUM_SERVICES": {
-    "en": [
-      {
-        "id": "viz",
-        "title": "Visualization Studio",
-        "description": "High-end photorealistic rendering and cinematic architectural walkthroughs.",
-        "icon": "Glasses",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765621100/1732011068_0f1151ee4bacb1f8a634336566235962_slj0gi.webp",
-        "features": [
-          "4K Renderings",
-          "VR Tours",
-          "Animation"
-        ]
-      },
-      {
-        "id": "3dprint",
-        "title": "3D Fabrication",
-        "description": "High-precision physical models for tangible project visualization and prototyping.",
-        "icon": "Printer",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765620978/3d-printed-architectural-model-min_ec16wm.jpg",
-        "features": [
-          "Scale Models",
-          "Prototyping",
-          "Detailed Textures"
-        ]
-      },
-      {
-        "id": "booklet",
-        "title": "Premium Booklets",
-        "description": "Curated architectural presentations and marketing booklets for real estate developers.",
-        "icon": "BookOpen",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765621291/il_fullxfull.5189918492_nyqs_sg3ysj.avif",
-        "features": [
-          "Design Portfolio",
-          "Marketing Collateral",
-          "Brand Integration"
-        ]
-      }
-    ],
-    "ar": [
-      {
-        "id": "viz",
-        "title": "استوديو التصور",
-        "description": "إظهار معماري واقعي عالي الجودة وجولات افتراضية سينمائية للمشاريع.",
-        "icon": "Glasses",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765621100/1732011068_0f1151ee4bacb1f8a634336566235962_slj0gi.webp",
-        "features": [
-          "رندرة 4K",
-          "جولات الواقع الافتراضي",
-          "أنيميشن"
-        ]
-      },
-      {
-        "id": "3dprint",
-        "title": "الطباعة ثلاثية الأبعاد",
-        "description": "نماذج فيزيائية عالية الدقة لتصور ملموس للمشروع والنماذج الأولية.",
-        "icon": "Printer",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765620978/3d-printed-architectural-model-min_ec16wm.jpg",
-        "features": [
-          "نماذج مصغرة",
-          "نماذج أولية",
-          "أنسجة دقيقة"
-        ]
-      },
-      {
-        "id": "booklet",
-        "title": "الكتيب المميز",
-        "description": "عروض معمارية منسقة وكتيبات تسويقية للمطورين العقاريين.",
-        "icon": "BookOpen",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765621291/il_fullxfull.5189918492_nyqs_sg3ysj.avif",
-        "features": [
-          "ملف التصميم",
-          "مواد تسويقية",
-          "تكامل الهوية"
-        ]
+        "features": ["تصميم المفاهيم", "التصور ثلاثي الأبعاد", "الاستدامة"]
       }
     ]
   },
@@ -1368,22 +896,7 @@
         "id": "1",
         "name": "Ghassan",
         "role": "Homeowner",
-        "company": "",
-        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail."
-      },
-      {
-        "id": "2",
-        "name": "Muna",
-        "role": "Homeowner",
-        "company": "",
-        "content": "Professional, punctual, and creative. They made the complex process of building a home feel simple and organized."
-      },
-      {
-        "id": "3",
-        "name": "Ibrahim",
-        "role": "Homeowner",
-        "company": "",
-        "content": "I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind."
+        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality."
       }
     ],
     "ar": [
@@ -1391,22 +904,7 @@
         "id": "1",
         "name": "غسان",
         "role": "مالك",
-        "company": "",
-        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل."
-      },
-      {
-        "id": "2",
-        "name": "منى",
-        "role": "مالكة",
-        "company": "",
-        "content": "مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة."
-      },
-      {
-        "id": "3",
-        "name": "إبراهيم",
-        "role": "مالك",
-        "company": "",
-        "content": "أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال."
+        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع."
       }
     ]
   }

@@ -523,12 +523,12 @@ We handle the entire process for you—from the initial land survey upload to th
       id: 'e-licensing-tubas',
       title: 'التحول الرقمي: ثورة التراخيص الإلكترونية في طوباس',
       excerpt: 'كان النبراس أول مكتب في طوباس يعتمد النظام الإلكتروني الجديد. إليك كيف يستفيد أصحاب العقارات من ذلك.',
-      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهنسين والبلديات المحلية in فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
+      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهنسين والبلديات المحلية في فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
 
 **فوائد النظام لأصحاب العقارات:**
 *   **السرعة:** تم تقليص وقت معالجة التصاريح بأسابيع.
 *   **الشفافية:** يمكنك تتبع حالة ملفك عبر الإنترنت في أي وقت.
-*   **الدقة:** التقديم الرقمي يقلل من الأخطاء البشرية in حساب المساحات والرسوم.
+*   **الدقة:** التقديم الرقمي يقلل من الأخطاء البشرية في حساب المساحات والرسوم.
 
 نحن نتولى العملية بأكملها نيابةً عنك — من رفع المساحة الأولي وحتى الختم الرقمي النهائي — لضمان تجربة خالية من المتاعب.`,
       date: '22 سبتمبر 2024',
@@ -613,15 +613,14 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
       gallery: [
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/2_dg1zsl.webp',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/3_mbncdt.webp',
-        // Fixed: Removed invalid CMS configuration object to match string[] type constraint.
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp'
       ],
-      description: 'A thoughtfully designed public park serving as a green lung for Al-Aqrabaniya. The project features lush green spaces, organized pedestrian pathways, and essential public facilities. It focuses on environmental sustainability and community well-being, providing a safe and serene recreational area for families.',
+      description: 'A masterfully engineered terraced public park that transforms a sloped terrain into a multi-functional community destination. The design features a strategic "zoning" approach: the western wing hosts a modern, safety-standard playground, while the eastern wing offers a serene sanctuary with a traditional fountain and landscaped terraces. Central to the project is an iconic triangular water feature that serves as a compass for the site. With six contemporary hexagonal gazebos and integrated perimeter LED lighting, the park balances social vitality with architectural tranquility.',
       specs: [
-        { label: 'Green Area', value: '70%' },
-        { label: 'Pathways', value: 'Paved' },
-        { label: 'Facilities', value: 'Complete' }
+        { label: 'Layout Type', value: 'Terraced Multi-level' },
+        { label: 'Central Feature', value: 'Iconic Water Compass' },
+        { label: 'Safety', value: 'Integrated LED Wall Lighting & Lighting Poles' }
       ]
     },
     {
@@ -659,10 +658,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg',
         'https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg'
       ],
-      description: 'A private residence featuring a modern architectural design, focusing on clean lines and functional spaces.',
+      description: 'A study in minimalist geometry and light. This private villa utilizes clean horizontal volumes and expansive floor-to-ceiling glazing to dissolve the boundary between interior comfort and the Palestinian landscape. The architectural narrative focuses on "transparency vs. privacy," where strategically placed white slabs provide shade and seclusion while maintaining a sense of limitless space. The result is a high-end residential statement that prioritizes functional elegance and natural light flow.',
       specs: [
-        { label: 'Area', value: '270 m²' },
-        { label: 'Style', value: 'Modern' }
+        { label: 'Architectural Style', value: 'Minimalist Contemporary' },
+        { label: 'Glazing System', value: 'High-Performance Slim-Frame' },
+        { label: 'Core Features', value: 'Cantilevered Slabs & Open Floor Plan' },
+        { label: 'Lighting', value: 'Integrated Recessed Lighting Design' }
       ]
     },
     {
@@ -679,11 +680,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg'
       ],
-      description: 'Headquarters for the Directorate of Local Government in Tubas. The project consists of a ground floor, first floor, and staircase extension totaling 800 m², along with 1,200 m² of external yards and parking facilities.',
+      description: 'An institutional landmark that balances authority with accessibility. The design merges traditional Palestinian stone masonry with modern administrative spatial requirements. The 800 m² facility is organized into clear functional zones to optimize the flow of both staff and citizens. Externally, the 1,200 m² of hardscaped yards and parking are engineered for durability and professional aesthetic, utilizing high-quality local materials that offer superior thermal performance and cultural resonance.',
       specs: [
-        { label: 'Total Built', value: '800 m²' },
-        { label: 'External Area', value: '1,200 m²' },
-        { label: 'Floors', value: 'G + 1' }
+        { label: 'Facade Material', value: 'Palestinian Stone Cladding' },
+        { label: 'Public Flow', value: 'Optimized Administrative Zoning' },
+        { label: 'Sustainability', value: 'Thermal Mass & Passive Cooling' },
+        { label: 'Hardscape', value: 'Heavy-Duty External Landscaping' }
       ]
     },
     {
@@ -700,11 +702,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg',
         'https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg'
       ],
-      description: 'A sophisticated private residence spanning two floors and a roof terrace. The design features a 205 m² ground floor, a 205 m² first floor, and is surrounded by a vast 1,200 m² landscape area.',
+      description: 'A luxurious biophilic estate where architecture serves as a bridge to nature. Spanning 480 m² of built area across two levels and a panoramic roof garden, the villa is surrounded by a vast 1,200 m² curated landscape. The design prioritizes indoor-outdoor living, with social spaces opening directly onto garden terraces. The roof serves as a private oasis with 360-degree views of the Al-Fara\'a valley, while the internal layout uses a "social hierarchy" to separate private family quarters from grand reception areas.',
       specs: [
-        { label: 'Ground Floor', value: '205 m²' },
-        { label: 'Landscape', value: '1,200 m²' },
-        { label: 'Total Built', value: '480 m²' }
+        { label: 'Landscape Area', value: '1,200 m² Curated Gardens' },
+        { label: 'Social Zoning', value: 'Separate Grand Reception & Family Wings' },
+        { label: 'Roof Level', value: 'Functional Terrace with Panoramic Views' },
+        { label: 'Site Integration', value: 'Sloped Terrain Management' }
       ]
     }
   ],
@@ -724,11 +727,11 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847564/5_zijkds.webp',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764847563/9_buxhgp.webp'
       ],
-      description: 'مشروع حديقة عامة متميز يجمع بين الجمال الطبيعي والوظيفة المجتمعية. تحتوي الحديقة على مساحات خضراء ممتدة، وممرات مشاة منظمة، ومرافق عامة متكاملة. تم تصميم الموقع ليكون متنفساً حيوياً للأهالي، مع التركيز على الاستدامة وتوفير بيئة آمنة وجذابة للأنشطة الترفيهية والاجتماعية.',
+      description: 'تحفة هندسية تجسد استغلال التضاريس المنحدرة لتحويلها إلى متنزه عام متعدد المستويات والوظائف. يعتمد التصميم على استراتيجية "فصل المناطق" الذكية؛ حيث يضم الجناح الغربي منطقة ألعاب حديثة بمعايير سلامة عالمية، بينما يوفر الجناح الشرقي ملاذاً هادئاً يضم نافورة تقليدية وجلسات متدرجة. يتوسط المشروع عنصر مائي مثلثي فريد يعمل كمركز بصري للموقع. ومع وجود ستة أجنحة استراحة (برجولات) سداسية الأضلاع ونظام إضاءة جداري متكامل، يوازن المشروع بين الحيوية الاجتماعية والسكينة المعمارية.',
       specs: [
-        { label: 'المساحة الخضراء', value: '70%' },
-        { label: 'الممرات', value: 'مرصوفة' },
-        { label: 'المرافق', value: 'شاملة' }
+        { label: 'نمط التوزيع', value: 'طبقي متعدد المستويات' },
+        { label: 'العنصر المحوري', value: 'بوصلة مائية مركزية' },
+        { label: 'الأمان', value: 'نظام إضاءة LED جداري وأعمدة إنارة' }
       ]
     },
     {
@@ -766,10 +769,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://i.postimg.cc/JhNJ6QGy/myarchitectai-cn6fwfzme-sd.jpg',
         'https://i.postimg.cc/85Tvqr6T/myarchitectai-in3cjdk31-sd.jpg'
       ],
-      description: 'فيلا سكنية خاصة تتميز بتصميم مودرن (حديث)، تجمع بين البساطة والأناقة في توزيع المساحات.',
+      description: 'دراسة في الهندسة الصريحة والضوء؛ حيث تعتمد هذه الفيلا الخاصة على كتل أفقية بيضاء ومساحات زجاجية واسعة من الأرض حتى السقف لإزالة الحواجز بين راحة الداخل وجمال الطبيعة الفلسطينية. تركز الفلسفة المعمارية هنا على "الشفافية مقابل الخصوصية"، حيث تعمل البروزات الخرسانية المدروسة على توفير الظل والعزلة مع الحفاظ على شعور بالرحابة غير المحدودة. النتيجة هي بيان سكني فاخر يولي الأولوية للأناقة الوظيفية وتدفق الإضاءة الطبيعية.',
       specs: [
-        { label: 'المساحة', value: '270 م²' },
-        { label: 'التصميم', value: 'مودرن' }
+        { label: 'النمط المعماري', value: 'مودرن تقليلي (Minimalist)' },
+        { label: 'نظام الزجاج', value: 'زجاج عازل بإطارات نحيفة' },
+        { label: 'الميزات الهيكلية', value: 'بروزات خرسانية ومخطط مفتوح' },
+        { label: 'تصميم الإضاءة', value: 'إضاءة مخفية مدمجة بالهيكل' }
       ]
     },
     {
@@ -786,11 +791,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848318/myarchitectai_6m0dg04vrg_sd_oybp8h.jpg',
         'https://res.cloudinary.com/dmdp1hnwx/image/upload/v1764848340/myarchitectai_ikp27h2pr_sd_s4h2f6.jpg'
       ],
-      description: 'مشروع مقر مديرية الحكم المحلي في محافظة طوباس. يتكون المبنى من طابق أرضي وأول ومكرر درج بمساحة إجمالية 800 متر مربع، بالإضافة إلى ساحات خارجية ومواقف سيارات بمساحة 1200 متر مربع.',
+      description: 'معلم مؤسسي يوازن بين الهيبة وسهولة الوصول. يدمج التصميم بين الحجر الفلسطيني التقليدي والمتطلبات الفراغية الإدارية الحديثة. تم تنظيم المبنى البالغة مساحته 800 متر مربع ضمن مناطق وظيفية واضحة لتحسين تدفق الموظفين والمواطنين. خارجياً، صُممت الساحات والمواقف بمساحة 1200 متر مربع لضمان الديمومة والجمالية المهنية، باستخدام مواد محلية عالية الجودة توفر أداءً حرارياً فائقاً وارتباطاً ثقافياً بالهوية المكانية.',
       specs: [
-        { label: 'مساحة البناء', value: '800 م²' },
-        { label: 'الساحات الخارجية', value: '1200 م²' },
-        { label: 'الطوابق', value: 'أرضي + أول' }
+        { label: 'مادة الواجهات', value: 'كسوة حجر فلسطيني طبيعي' },
+        { label: 'التوزيع الفراغي', value: 'زونينج إداري محسن' },
+        { label: 'الاستدامة', value: 'كتلة حرارية عالية وعزل متطور' },
+        { label: 'تنسيق الساحات', value: 'هاردسكيب مخصص للأحمال العالية' }
       ]
     },
     {
@@ -807,11 +813,12 @@ export const PROJECTS: Record<'en' | 'ar', Project[]> = {
         'https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg',
         'https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg'
       ],
-      description: 'فيلا سكنية فاخرة تتكون من طابقين ورووف، بمساحة 205 متر مربع للطابق أرضي ومثلها للطابق الأول، مع تنسيق حدائق خارجية بمساحة 1200 متر مربع.',
+      description: 'عمارة بيئية فاخرة حيث يعمل البناء كجسر للطبيعة. تمتد الفيلا بمساحة بناء 480 متر مربع عبر مستويين وحديقة رووف بانورامية، محاطة بـ 1200 متر مربع من اللاندسكيب المنسق بعناية. يركز التصميم على دمج الداخل بالخارج، مع مساحات اجتماعية تفتح مباشرة على شرفات الحديقة. يمثل الرووف واحة خاصة بإطلالة 360 درجة على وادي الفارعة، بينما يعتمد المخطط الداخلي على "هرمية اجتماعية" تفصل بين الأجنحة العائلية الخاصة وصالونات الاستقبال الكبرى.',
       specs: [
-        { label: 'الطابق الأرضي', value: '205 م²' },
-        { label: 'الحدائق', value: '1200 م²' },
-        { label: 'إجمالي البناء', value: '480 م²' }
+        { label: 'مساحة اللاندسكيب', value: '1200 م² من الحدائق المنسقة' },
+        { label: 'الهرمية الفراغية', value: 'فصل تام بين الجناح العائلي والضيوف' },
+        { label: 'مستوى السطح', value: 'رووف وظيفي بإطلالات بانورامية' },
+        { label: 'التوافق مع الأرض', value: 'معالجة ذكية لميول التضاريس' }
       ]
     }
   ]
@@ -1212,7 +1219,7 @@ export const SERVICES: Record<'en' | 'ar', Service[]> = {
       "id": "landscape",
       "title": "هندسة المناظر الطبيعية",
       "description": "تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.",
-      "icon": "HardHat",
+      "icon": "Trees",
       "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
       "features": [
         "الهاردسكيب",
