@@ -1,6 +1,9 @@
+
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { Link } = ReactRouterDOM as any;
 import { AlertTriangle, Home } from 'lucide-react';
 import { motion } from 'framer-motion';
 

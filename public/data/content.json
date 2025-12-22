@@ -15,7 +15,7 @@
         "brandSubtitle": "Engineering Office"
       },
       "hero": {
-        "est": "EST. 2000 | PALESTINIAN ENGINEERING LEGACY",
+        "est": "EST. 1997 | PALESTINIAN ENGINEERING LEGACY",
         "typewriter": "AL NEBRAS.. ENGINEERING THAT INSPIRES",
         "subtitle": "Over two decades of excellence in the heart of Palestine. Your trusted partner for building your home, project, and future.",
         "cta": "Explore Our History",
@@ -82,12 +82,12 @@
         "premiumDescription": "Explore our high-end customization services."
       },
       "about": {
-        "heroText1": "Founded in 2000, Al Nebras Engineering Office has established itself as a beacon of reliability and technical expertise in the Palestinian construction sector.",
+        "heroText1": "Founded in 1997, Al Nebras Engineering Office has established itself as a beacon of reliability and technical expertise in the Palestinian construction sector.",
         "heroText2": "We combine over two decades of local experience with modern engineering standards to deliver projects that stand the test of time.",
-        "leadership": "Leadership",
+        "leadership": "Our Professional Team",
         "history": {
           "title": "Our History",
-          "content": "Established in 2000 in Tubas, Palestine, Al Nebras has grown from a specialized design studio into a leading engineering consultancy. With a strong reputation for rigorous project supervision and architectural integrity, we have successfully delivered hundreds of residential, commercial, and public infrastructure projects. Our legacy is built on strict adherence to Palestinian building codes and an unyielding commitment to client satisfaction."
+          "content": "Established in 1997 in Tubas, Palestine, Al Nebras has grown from a specialized design studio into a leading engineering consultancy. With a strong reputation for rigorous project supervision and architectural integrity, we have successfully delivered hundreds of residential, commercial, and public infrastructure projects. Our legacy is built on strict adherence to Palestinian building codes and an unyielding commitment to client satisfaction."
         },
         "digitalPioneer": "We are proud to be the first engineering office in Tubas Governorate to officially implement and process transactions through the electronic engineering licensing system, marking a milestone in our leadership towards digital transformation.",
         "mission": {
@@ -103,7 +103,7 @@
           "items": [
             {
               "title": "Credibility",
-              "desc": "Trust built over 24 years of service.",
+              "desc": "Trust built over 27 years of service.",
               "icon": "Shield"
             },
             {
@@ -193,7 +193,7 @@
         "brandSubtitle": "للاستشارات الهندسية"
       },
       "hero": {
-        "est": "تأسس عام 2000 | عراقة هندسية فلسطينية",
+        "est": "تأسس عام 1997 | عراقة هندسية فلسطينية",
         "typewriter": "النبراس.. هندسةٌ تُلهم",
         "subtitle": "أكثر من عقدين من التميز في قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.",
         "cta": "تصفح تاريخنا",
@@ -260,12 +260,12 @@
         "premiumDescription": "استكشف خدماتنا المخصصة عالية المستوى."
       },
       "about": {
-        "heroText1": "تأسس مكتب النبراس الهندسي عام 2000، ورسخ مكانته كمنارة للموثوقية والخبرة الفنية في قطاع البناء الفلسطيني.",
+        "heroText1": "تأسس مكتب النبراس الهندسي عام 1997، ورسخ مكانته كمنارة للموثوقية والخبرة الفنية في قطاع البناء الفلسطيني.",
         "heroText2": "نجمع بين أكثر من عقدين من الخبرة المحلية والمعايير الهندسية الحديثة لتقديم مشاريع تصمد أمام اختبار الزمن.",
-        "leadership": "القيادة",
+        "leadership": "فريق العمل",
         "history": {
           "title": "تاريخنا العريق",
-          "content": "تأسس مكتب النبراس عام 2000 في محافظة طوباس، فلسطين. على مدار 24 عاماً، تطورنا لنصبح إسماً مرادفاً للثقة والتميز في التصميم المعماري والإنشائي والإشراف الهندسي. سجلنا حافل بتسليم مئات المشاريع السكنية والتجارية والبنية التحتية بنجاح، مستندين في ذلك إلى التزام صارم بكود البناء الفلسطيني وتفانٍ مطلق في تحقيق رؤية العميل."
+          "content": "تأسس مكتب النبراس عام 1997 في محافظة طوباس، فلسطين. على مدار 27 عاماً، تطورنا لنصبح إسماً مرادفاً للثقة والتميز في التصميم المعماري والإنشائي والإشراف الهندسي. سجلنا حافل بتسليم مئات المشاريع السكنية والتجارية والبنية التحتية بنجاح، مستندين في ذلك إلى التزام صارم بكود البناء الفلسطيني وتفانٍ مطلق في تحقيق رؤية العميل."
         },
         "digitalPioneer": "نفتخر بكوننا أول مكتب هندسي في محافظة طوباس يعتمد النظام الإلكتروني الرسمي لإصدار التراخيص وإتمام المعاملات الهندسية، مما يعكس ريادتنا في التحول الرقمي وكفاءة الإجراءات.",
         "mission": {
@@ -281,7 +281,7 @@
           "items": [
             {
               "title": "المصداقية",
-              "desc": "ثقة بنيت عبر 24 عاماً من الخدمة.",
+              "desc": "ثقة بنيت عبر 27 عاماً من الخدمة.",
               "icon": "Shield"
             },
             {
@@ -364,9 +364,9 @@
         "id": "t1",
         "name": "Eng. Saed Salahat",
         "role": "Founder & Head of Structural Dept.",
-        "bio": "With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.",
+        "bio": "With over 30 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.",
         "specialty": "structural",
-        "authorityStat": "25+ YEARS"
+        "authorityStat": "30+ YEARS"
       },
       {
         "id": "t2",
@@ -406,9 +406,9 @@
         "id": "t1",
         "name": "م. سائد صلاحات",
         "role": "المؤسس ومدير قسم الانشائيين",
-        "bio": "بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.",
+        "bio": "بخبرة تزيد عن 30 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.",
         "specialty": "structural",
-        "authorityStat": "خبرة +25 سنة"
+        "authorityStat": "خبرة +30 سنة"
       },
       {
         "id": "t2",
@@ -596,7 +596,7 @@
         "slug": "metro-hub",
         "title": "Mr. Ghassan Salahat Villa",
         "category": "Residential",
-        "location": "Al-Fara'a, Palestine",
+        "location": "Al-Fara\'a, Palestine",
         "year": "2024",
         "area": "480 m²",
         "image": "https://i.postimg.cc/s2Y5XRdP/myarchitectai-07pq1blnc-sd.jpg",
@@ -605,7 +605,7 @@
           "https://i.postimg.cc/YS6Q9wKf/myarchitectai-u4eeqnory-sd.jpg",
           "https://i.postimg.cc/yNm0dz4P/myarchitectai-7ca3xzz0rl-sd.jpg"
         ],
-        "description": "A luxurious biophilic estate where architecture serves as a bridge to nature. Spanning 480 m² of built area across two levels and a panoramic roof garden, the villa is surrounded by a vast 1,200 m² curated landscape. The design prioritizes indoor-outdoor living, with social spaces opening directly onto garden terraces. The roof serves as a private oasis with 360-degree views of the Al-Fara'a valley, while the internal layout uses a \"social hierarchy\" to separate private family quarters from grand reception areas.",
+        "description": "A luxurious biophilic estate where architecture serves as a bridge to nature. Spanning 480 m² of built area across two levels and a panoramic roof garden, the villa is surrounded by a vast 1,200 m² curated landscape. The design prioritizes indoor-outdoor living, with social spaces opening directly onto garden terraces. The roof serves as a private oasis with 360-degree views of the Al-Fara\'a valley, while the internal layout uses a \"social hierarchy\" to separate private family quarters from grand reception areas.",
         "specs": [
           { "label": "Landscape Area", "value": "1,200 m² Curated Gardens" },
           { "label": "Social Zoning", "value": "Separate Grand Reception & Family Wings" },
@@ -723,166 +723,6 @@
           { "label": "مستوى السطح", "value": "رووف وظيفي بإطلالات بانورامية" },
           { "label": "التوافق مع الأرض", "value": "معالجة ذكية لميول التضاريس" }
         ]
-      }
-    ]
-  },
-  "SERVICES": {
-    "en": [
-      {
-        "id": "arch",
-        "title": "Architectural Design",
-        "description": "Innovative conceptualization and detailed planning for residential, commercial, and public spaces.",
-        "icon": "LayoutTemplate",
-        "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop",
-        "features": ["Concept Design", "3D Visualization", "Sustainability"]
-      },
-      {
-        "id": "struct",
-        "title": "Structural Engineering",
-        "description": "Robust structural analysis and design ensuring safety, stability, and code compliance.",
-        "icon": "Layers",
-        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
-        "features": ["Seismic Analysis", "Load Calculations", "Steel & Concrete"]
-      },
-      {
-        "id": "bim",
-        "title": "BIM Services",
-        "description": "Advanced Building Information Modeling for efficient project lifecycle management.",
-        "icon": "Box",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
-        "features": ["LOD 300/400", "Clash Detection", "Digital Twins"]
-      },
-      {
-        "id": "consult",
-        "title": "Supervision & Management",
-        "description": "On-site supervision and management to ensure execution matches the design intent.",
-        "icon": "HardHat",
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
-        "features": ["Site Inspection", "Quality Control", "Schedule Management"]
-      },
-      {
-        "id": "landscape",
-        "title": "Landscape Architecture",
-        "description": "Designing outdoor environments that blend nature with built structures.",
-        "icon": "Trees",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
-        "features": ["Hardscape", "Softscape", "Irrigation Systems"]
-      },
-      {
-        "id": "interior",
-        "title": "Interior Design",
-        "description": "Crafting functional and aesthetic interior spaces for comfort and style.",
-        "icon": "Compass",
-        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-        "features": ["Space Planning", "Furniture Selection", "Material Boards"]
-      },
-      {
-        "id": "roads",
-        "title": "Road & Transportation",
-        "description": "Infrastructure planning for efficient transportation networks.",
-        "icon": "Route",
-        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
-        "features": ["Highway Design", "Traffic Analysis", "Pavement Design"]
-      }
-    ],
-    "ar": [
-      {
-        "id": "arch",
-        "title": "التصميم المعماري",
-        "description": "تصميم مفاهيمي مبتكر وتخطيط تفصيلي للمساحات السكنية والتجارية والعامة.",
-        "icon": "LayoutTemplate",
-        "image": "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=2070&auto=format&fit=crop",
-        "features": ["تصميم المفاهيم", "التصور ثلاثي الأبعاد", "الاستدامة"]
-      },
-      {
-        "id": "struct",
-        "title": "الهندسة الإنشائية",
-        "description": "تحليل وتصميم إنشائي قوي يضمن السلامة والاستقرار والامتثال للكود.",
-        "icon": "Layers",
-        "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2000&auto=format&fit=crop",
-        "features": ["التحليل الزلزالي", "حسابات الأحمال", "الفولاذ والخرسانة"]
-      },
-      {
-        "id": "bim",
-        "title": "خدمات BIM",
-        "description": "نمذجة معلومات البناء المتقدمة للكشف عن التعارضات وإدارة دورة حياة المشروع.",
-        "icon": "Box",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614437/Building-Information-Modeling-BIM-top-bim-software_nni9xn.webp",
-        "features": ["مستوى تفاصيل 300/400", "كشف التعارضات", "التوائم الرقمية"]
-      },
-      {
-        "id": "consult",
-        "title": "الإشراف وإدارة المشاريع",
-        "description": "إشراف ميداني وإدارة صارمة للمشاريع لضمان التنفيذ وفقاً للمخططات.",
-        "icon": "HardHat",
-        "image": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2000&auto=format&fit=crop",
-        "features": ["فحص الموقع", "مراقبة الجودة", "إدارة الجدول الزمني"]
-      },
-      {
-        "id": "landscape",
-        "title": "هندسة المناظر الطبيعية",
-        "description": "تصميم بيئات خارجية متناغمة تمزج الطبيعة مع الهياكل المبنية.",
-        "icon": "Trees",
-        "image": "https://res.cloudinary.com/dmdp1hnwx/image/upload/v1765614436/landscape-design-services_og9aqz.jpg",
-        "features": ["الهاردسكيب", "السوفتسكيب", "أنظمة الري"]
-      },
-      {
-        "id": "interior",
-        "title": "التصميم الداخلي",
-        "description": "صياغة مساحات داخلية وظيفية وجمالية تعكس هوية العميل.",
-        "icon": "Compass",
-        "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop",
-        "features": ["تخطيط المساحات", "اختيار الأثاث", "لوحات المواد"]
-      },
-      {
-        "id": "roads",
-        "title": "الطرق والمواصلات",
-        "description": "تخطيط البنية التحتية لشبكات نقل فعالة وحركة حضرية سلسة.",
-        "icon": "Route",
-        "image": "https://images.unsplash.com/photo-1494522358652-f30e61a60313?q=80&w=2000&auto=format&fit=crop",
-        "features": ["تصميم الطرق السريعة", "تحليل المرور", "تصميم الأرصفة"]
-      }
-    ]
-  },
-  "TESTIMONIALS": {
-    "en": [
-      {
-        "id": "1",
-        "name": "Ghassan",
-        "role": "Homeowner",
-        "content": "The villa design exceeded my expectations. Al Nebras team turned my dream home into reality with amazing attention to detail."
-      },
-      {
-        "id": "2",
-        "name": "Muna",
-        "role": "Homeowner",
-        "content": "Professional, punctual, and creative. They made the complex process of building a home feel simple and organized."
-      },
-      {
-        "id": "3",
-        "name": "Ibrahim",
-        "role": "Homeowner",
-        "content": "I truly appreciate their commitment to the budget and schedule. The structural integrity of the building gives us peace of mind."
-      }
-    ],
-    "ar": [
-      {
-        "id": "1",
-        "name": "غسان",
-        "role": "مالك",
-        "content": "تصميم الفيلا فاق توقعاتي. حول فريق النبراس منزل أحلامي إلى واقع مع اهتمام مذهل بالتفاصيل."
-      },
-      {
-        "id": "2",
-        "name": "منى",
-        "role": "مالكة",
-        "content": "مهنية، التزام بالوقت، وإبداع. جعلوا عملية بناء المنزل المعقدة تبدو بسيطة ومنظمة."
-      },
-      {
-        "id": "3",
-        "name": "إبراهيم",
-        "role": "مالك",
-        "content": "أقدر حقاً التزامهم بالميزانية والجدول الزمني. المتانة الإنشائية للمبنى تمنحنا راحة البال."
       }
     ]
   }

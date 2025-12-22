@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { NavLink, Link, useLocation } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { NavLink, Link, useLocation } = ReactRouterDOM as any;
 import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
 import { Menu, X, Globe, ChevronRight, ArrowRight, Moon, Sun } from 'lucide-react';
 import CustomCursor from './CustomCursor';
@@ -147,7 +149,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
           {/* 2. CENTER COLUMN: Navigation Links (Flex-1 Centered) */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-6 lg:gap-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link: any) => (
               <NavLink 
                 key={link.path} 
                 to={link.path}
@@ -240,7 +242,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             className="fixed inset-0 z-40 bg-primary pt-32 px-6 md:hidden flex flex-col h-screen overflow-y-auto"
           >
             <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
+              {navLinks.map((link: any) => (
                 <NavLink 
                   key={link.path} 
                   to={link.path}

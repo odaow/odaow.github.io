@@ -1,6 +1,8 @@
 
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { useParams, Link } = ReactRouterDOM as any;
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
@@ -9,10 +11,10 @@ import { ArrowLeft, Calendar, User, Tag, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const BlogPostDetail: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const { t, internalBlogPosts } = useLanguage();
   
-  const post = internalBlogPosts.find(p => p.id === id);
+  const post = internalBlogPosts.find((p: any) => p.id === id);
 
   if (!post) {
     return (

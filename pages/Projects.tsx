@@ -8,7 +8,9 @@ import Schema from '../components/Schema';
 import OptimizedImage from '../components/OptimizedImage';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Maximize2, ArrowLeft, ChevronLeft, ChevronRight, MapPin, Calendar, Ruler, Building, Armchair, ChevronDown } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { useLocation } = ReactRouterDOM as any;
 
 const Projects: React.FC = () => {
   const { t, language, direction, projects: exteriorProjects, interiorProjects } = useLanguage();
@@ -295,7 +297,7 @@ const Projects: React.FC = () => {
                 exit="exit"
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
             >
-                {filteredProjects.map((project) => (
+                {filteredProjects.map((project: any) => (
                     <MotionDiv 
                         variants={cardVariants}
                         key={project.id}
@@ -391,7 +393,7 @@ const Projects: React.FC = () => {
                                                     {t.common.gallery}
                                                 </h3>
                                                 <div className="grid grid-cols-2 gap-3 md:gap-4">
-                                                    {selectedProject.gallery.map((img, i) => (
+                                                    {selectedProject.gallery.map((img: any, i: number) => (
                                                         <div 
                                                             key={i} 
                                                             className="aspect-[4/3] overflow-hidden border border-neutral-light/5 rounded-sm cursor-zoom-in relative group"
@@ -451,7 +453,7 @@ const Projects: React.FC = () => {
                                                 {t.common.specs}
                                             </h3>
                                             <ul className="space-y-4">
-                                                {selectedProject.specs.map((spec, i) => (
+                                                {selectedProject.specs.map((spec: any, i: number) => (
                                                     <li key={i} className="flex justify-between items-center text-sm">
                                                         <span className="text-neutral-dim">{spec.label}</span>
                                                         <span className="font-bold text-neutral-light">{spec.value}</span>
@@ -503,7 +505,7 @@ const Projects: React.FC = () => {
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ duration: 0.3 }}
                             className="relative max-w-[95vw] md:max-w-[90vw] max-h-[80vh] md:max-h-[85vh]"
-                            onClick={(e) => e.stopPropagation()}
+                            onClick={(e: any) => e.stopPropagation()}
                         >
                             <img 
                                 src={allImages[lightboxIndex]} 

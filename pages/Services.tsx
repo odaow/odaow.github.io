@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, useAnimationFrame, useMotionValue } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { useNavigate } = ReactRouterDOM as any;
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import { SERVICES as STATIC_SERVICES, PREMIUM_SERVICES as STATIC_PREMIUM_SERVICES } from '../constants';
@@ -339,7 +341,7 @@ const Services: React.FC = () => {
               className={`flex gap-6 md:gap-8 w-max px-6 md:px-8 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}
               style={{ x: xCore }}
           >
-              {coreCarouselItems.map((pair, index) => (
+              {coreCarouselItems.map((pair: any, index: number) => (
                   <div 
                     key={`col-${index}`} 
                     dir={direction}
@@ -395,7 +397,7 @@ const Services: React.FC = () => {
                     className={`flex gap-6 md:gap-8 w-max px-6 md:px-8 transition-opacity duration-700 ${isReady ? 'opacity-100' : 'opacity-0'}`}
                     style={{ x: xPremium }}
                 >
-                    {premiumCarouselItems.map((service, index) => (
+                    {premiumCarouselItems.map((service: any, index: number) => (
                         <div 
                             key={`prem-${index}`}
                             dir={direction}

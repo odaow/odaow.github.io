@@ -6,7 +6,9 @@ import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
 import { motion } from 'framer-motion';
 import { ArrowRight, Building, MapPin, User } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { Link } = ReactRouterDOM as any;
 
 const Partners: React.FC = () => {
   const { t, partners } = useLanguage();

@@ -16,7 +16,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       brandSubtitle: 'Engineering Office',
     },
     hero: {
-      est: 'EST. 2000 | PALESTINIAN ENGINEERING LEGACY',
+      est: 'EST. 1997 | PALESTINIAN ENGINEERING LEGACY',
       typewriter: 'AL NEBRAS.. ENGINEERING THAT INSPIRES',
       subtitle: 'Over two decades of excellence in the heart of Palestine. Your trusted partner for building your home, project, and future.',
       cta: 'Explore Our History',
@@ -83,12 +83,12 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       premiumDescription: 'Explore our high-end customization services.'
     },
     about: {
-      heroText1: 'Founded in 2000, Al Nebras Engineering Office has established itself as a beacon of reliability and technical expertise in the Palestinian construction sector.',
+      heroText1: 'Founded in 1997, Al Nebras Engineering Office has established itself as a beacon of reliability and technical expertise in the Palestinian construction sector.',
       heroText2: 'We combine over two decades of local experience with modern engineering standards to deliver projects that stand the test of time.',
-      leadership: 'Leadership',
+      leadership: 'Our Professional Team',
       history: {
         title: 'Our History',
-        content: 'Established in 2000 in Tubas, Palestine, Al Nebras has grown from a specialized design studio into a leading engineering consultancy. With a strong reputation for rigorous project supervision and architectural integrity, we have successfully delivered hundreds of residential, commercial, and public infrastructure projects. Our legacy is built on strict adherence to Palestinian building codes and an unyielding commitment to client satisfaction.',
+        content: 'Established in 1997 in Tubas, Palestine, Al Nebras has grown from a specialized design studio into a leading engineering consultancy. With a strong reputation for rigorous project supervision and architectural integrity, we have successfully delivered hundreds of residential, commercial, and public infrastructure projects. Our legacy is built on strict adherence to Palestinian building codes and an unyielding commitment to client satisfaction.',
       },
       digitalPioneer: 'We are proud to be the first engineering office in Tubas Governorate to officially implement and process transactions through the electronic engineering licensing system, marking a milestone in our leadership towards digital transformation.',
       mission: {
@@ -102,7 +102,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       values: {
         title: 'Core Values',
         items: [
-          { title: 'Credibility', desc: 'Trust built over 24 years of service.', icon: 'Shield' },
+          { title: 'Credibility', desc: 'Trust built over 27 years of service.', icon: 'Shield' },
           { title: 'Precision', desc: 'Strict adherence to engineering codes.', icon: 'Target' },
           { title: 'Leadership', desc: 'Pioneering digital engineering solutions.', icon: 'Zap' },
           { title: 'Commitment', desc: 'Dedicated project supervision.', icon: 'Leaf' },
@@ -138,6 +138,10 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         portfolio: 'Portfolio / LinkedIn URL',
         organization: 'Company / Organization',
         position: 'Position of Interest'
+      },
+      languages: {
+        en: 'English',
+        ar: 'Arabic'
       },
       subjects: {
         inquiry: 'New Project Inquiry',
@@ -178,7 +182,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       brandSubtitle: 'للاستشارات الهندسية',
     },
     hero: {
-      est: 'تأسس عام 2000 | عراقة هندسية فلسطينية',
+      est: 'تأسس عام 1997 | عراقة هندسية فلسطينية',
       typewriter: 'النبراس.. هندسةٌ تُلهم',
       subtitle: 'أكثر من عقدين من التميز في قلب فلسطين. شريكك الموثوق لبناء منزلك، مشروعك، ومستقبلك.',
       cta: 'تصفح تاريخنا',
@@ -245,12 +249,12 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       premiumDescription: 'استكشف خدماتنا المخصصة عالية المستوى.',
     },
     about: {
-      heroText1: 'تأسس مكتب النبراس الهندسي عام 2000، ورسخ مكانته كمنارة للموثوقية والخبرة الفنية في قطاع البناء الفلسطيني.',
+      heroText1: 'تأسس مكتب النبراس الهندسي عام 1997، ورسخ مكانته كمنارة للموثوقية والخبرة الفنية في قطاع البناء الفلسطيني.',
       heroText2: 'نجمع بين أكثر من عقدين من الخبرة المحلية والمعايير الهندسية الحديثة لتقديم مشاريع تصمد أمام اختبار الزمن.',
-      leadership: 'القيادة',
+      leadership: 'فريق العمل',
       history: {
         title: 'تاريخنا العريق',
-        content: 'تأسس مكتب النبراس عام 2000 في محافظة طوباس، فلسطين. على مدار 24 عاماً، تطورنا لنصبح إسماً مرادفاً للثقة والتميز في التصميم المعماري والإنشائي والإشراف الهندسي. سجلنا حافل بتسليم مئات المشاريع السكنية والتجارية والبنية التحتية بنجاح، مستندين في ذلك إلى التزام صارم بكود البناء الفلسطيني وتفانٍ مطلق في تحقيق رؤية العميل.',
+        content: 'تأسس مكتب النبراس عام 1997 في محافظة طوباس، فلسطين. على مدار 27 عاماً، تطورنا لنصبح إسماً مرادفاً للثقة والتميز في التصميم المعماري والإنشائي والإشراف الهندسي. سجلنا حافل بتسليم مئات المشاريع السكنية والتجارية والبنية التحتية بنجاح، مستندين في ذلك إلى التزام صارم بكود البناء الفلسطيني وتفانٍ مطلق في تحقيق رؤية العميل.',
       },
       digitalPioneer: 'نفتخر بكوننا أول مكتب هندسي في محافظة طوباس يعتمد النظام الإلكتروني الرسمي لإصدار التراخيص وإتمام المعاملات الهندسية، مما يعكس ريادتنا في التحول الرقمي وكفاءة الإجراءات.',
       mission: {
@@ -264,7 +268,7 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
       values: {
         title: 'قيمنا الجوهرية',
         items: [
-          { title: 'المصداقية', desc: 'ثقة بنيت عبر 24 عاماً من الخدمة.', icon: 'Shield' },
+          { title: 'المصداقية', desc: 'ثقة بنيت عبر 27 عاماً من الخدمة.', icon: 'Shield' },
           { title: 'الدقة', desc: 'التزام صارم بالمعايير الهندسية.', icon: 'Target' },
           { title: 'الريادة', desc: 'سباقون في الحلول الهندسية الرقمية.', icon: 'Zap' },
           { title: 'الالتزام', desc: 'إشراف هندسي ومتابعة حثيثة.', icon: 'Leaf' },
@@ -301,6 +305,10 @@ export const TRANSLATIONS: Record<'en' | 'ar', Translations> = {
         organization: 'الشركة / المؤسسة',
         position: 'المسمى الوظيفي المطلوب'
       },
+      languages: {
+        en: 'الإنجليزية',
+        ar: 'العربية'
+      },
       subjects: {
         inquiry: 'استفسار عن مشروع جديد',
         careers: 'وظائف',
@@ -334,9 +342,9 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
       id: 't1', 
       name: 'Saed Salahat', 
       role: 'Founder & Head of Structural Dept.', 
-      bio: 'With over 25 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.',
+      bio: 'With over 30 years of experience, Eng. Saed established Al Nebras as a pillar of structural integrity and engineering excellence in Palestine.',
       specialty: 'structural',
-      authorityStat: '25+ YEARS EXP'
+      authorityStat: '30+ YEARS EXP'
     },
     { 
       id: 't2', 
@@ -376,9 +384,9 @@ export const TEAM: Record<'en' | 'ar', TeamMember[]> = {
       id: 't1', 
       name: 'سائد صلاحات', 
       role: 'المؤسس ومدير قسم الانشائيين', 
-      bio: 'بخبرة تزيد عن 25 عاماً، أسس المهندس سائد مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.',
+      bio: 'بخبرة تزيد عن 30 عاماً، أسس مكتب النبراس ليكون منارة للنزاهة الإنشائية والتميز الهندسي في فلسطين.',
       specialty: 'structural',
-      authorityStat: 'خبرة +25 سنة'
+      authorityStat: 'خبرة +30 سنة'
     },
     { 
       id: 't2', 
@@ -523,7 +531,7 @@ We handle the entire process for you—from the initial land survey upload to th
       id: 'e-licensing-tubas',
       title: 'التحول الرقمي: ثورة التراخيص الإلكترونية في طوباس',
       excerpt: 'كان النبراس أول مكتب في طوباس يعتمد النظام الإلكتروني الجديد. إليك كيف يستفيد أصحاب العقارات من ذلك.',
-      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهنسين والبلديات المحلية في فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
+      content: `ولى زمن حمل لفائف المخططات الورقية بين المكاتب البلدية. انتقلت نقابة المهنسين والبلديات المحلية in فلسطين إلى نظام التراخيص الإلكتروني، ويفخر مكتب النبراس بكونه رائداً في هذا التحول داخل محافظة طوباس.
 
 **فوائد النظام لأصحاب العقارات:**
 *   **السرعة:** تم تقليص وقت معالجة التصاريح بأسابيع.

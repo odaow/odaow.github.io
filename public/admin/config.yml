@@ -43,6 +43,7 @@ collections:
                     fields:
                        - {label: "Intro Text 1", name: "heroText1", widget: "text"}
                        - {label: "Intro Text 2", name: "heroText2", widget: "text"}
+                       - {label: "Team Section Title", name: "leadership", widget: "string"}
                   - label: "Contact Section"
                     name: "contact"
                     widget: "object"
@@ -66,6 +67,7 @@ collections:
                     fields:
                        - {label: "Intro Text 1", name: "heroText1", widget: "text"}
                        - {label: "Intro Text 2", name: "heroText2", widget: "text"}
+                       - {label: "Team Section Title", name: "leadership", widget: "string"}
                   - label: "Contact Section"
                     name: "contact"
                     widget: "object"

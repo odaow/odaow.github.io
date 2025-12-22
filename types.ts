@@ -207,6 +207,11 @@ export interface Translations {
       organization: string;
       position: string;
     };
+    // Added languages property to fix type error in constants.ts
+    languages: {
+      en: string;
+      ar: string;
+    };
     subjects: {
       inquiry: string;
       careers: string;

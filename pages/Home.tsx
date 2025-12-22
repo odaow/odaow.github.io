@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { Link, useNavigate } = ReactRouterDOM as any;
 import { motion, useMotionValue, useInView, animate, useTransform, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Layers, Zap, HardHat, LayoutTemplate, Compass, Box, Trees, Lightbulb, Route,
@@ -42,7 +44,7 @@ const StatItem = ({ value, label }: { value: string, label: string }) => {
     const count = useMotionValue(0);
     const rounded = useTransform(count, (latest: number) => Math.round(latest));
     
-    // Parse numeric part and suffix (e.g., "250+" -> 250 and "+")
+    // Parse numeric part and suffix (e.g., "2500+" -> 2500 and "+")
     const numericValue = parseInt((value || '0').replace(/\D/g, '')) || 0;
     const suffix = value.replace(/[0-9]/g, '');
 
@@ -125,10 +127,7 @@ const Home: React.FC = () => {
     }
   };
 
-  // Curated Featured Projects Selection:
-  // 1. Children's Bedroom (Interior - i1)
-  // 2. Villa in Tubas (Exterior - 3 'azure-bridge')
-  // 3. Luxury Bathroom (Interior - i3)
+  // Curated Featured Projects Selection
   const childrenBedroom = interiorProjects.find(p => p.id === 'i1');
   const villaTubas = projects.find(p => p.id === '3');
   const luxuryBathroom = interiorProjects.find(p => p.id === 'i3');
@@ -179,33 +178,27 @@ const Home: React.FC = () => {
                />
              </AnimatePresence>
              
-             {/* Adaptive Overlay - Deep Blue Tone similar to reference */}
              <div className="absolute inset-0 bg-blue-950/40 mix-blend-multiply z-[1]" />
              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 z-[2]" />
         </div>
 
-        {/* SLIDER CONTROLS (Manual Navigation) */}
-        {/* Left Arrow: Always Prev */}
+        {/* SLIDER CONTROLS */}
         <button 
           onClick={prevSlide}
           className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full border border-white/20 text-white/50 hover:text-white hover:bg-white/10 hover:border-white transition-all hidden md:flex opacity-0 group-hover/hero:opacity-100 duration-500"
           aria-label="Previous Slide"
         >
-          {/* No rtl-flip here, we want it to point left always */}
           <ChevronLeft className="w-8 h-8" />
         </button>
 
-        {/* Right Arrow: Always Next */}
         <button 
           onClick={nextSlide}
           className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full border border-white/20 text-white/50 hover:text-white hover:bg-white/10 hover:border-white transition-all hidden md:flex opacity-0 group-hover/hero:opacity-100 duration-500"
           aria-label="Next Slide"
         >
-          {/* No rtl-flip here, we want it to point right always */}
           <ChevronRight className="w-8 h-8" />
         </button>
 
-        {/* Dot Indicators */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
           {HERO_SLIDES.map((_, idx) => (
             <button
@@ -234,7 +227,6 @@ const Home: React.FC = () => {
             </p>
             
             <div className="flex flex-col md:flex-row items-center gap-6">
-                {/* PRIMARY ACTION: EXPLORE PROJECTS */}
                 <Link 
                   to="/projects" 
                   className="inline-flex items-center gap-4 px-6 md:px-10 py-3 md:py-4 bg-accent border border-accent text-primary hover:bg-white hover:border-white transition-all duration-300 group font-mono text-xs md:text-sm uppercase tracking-wider shadow-[0_0_20px_rgba(var(--color-accent),0.4)]"
@@ -243,7 +235,6 @@ const Home: React.FC = () => {
                   <ArrowRight className="group-hover:translate-x-1 transition-transform rtl-flip" />
                 </Link>
 
-                {/* SECONDARY ACTION: HISTORY */}
                 <Link 
                   to="/about" 
                   className="inline-flex items-center gap-4 px-6 md:px-10 py-3 md:py-4 bg-transparent border border-white text-white hover:bg-white/10 transition-all duration-300 group font-mono text-xs md:text-sm uppercase tracking-wider backdrop-blur-sm"
@@ -251,7 +242,6 @@ const Home: React.FC = () => {
                   {t.hero.cta}
                 </Link>
 
-                {/* Mobile Only Quick CTA */}
                 <button 
                   onClick={scrollToProjects}
                   className="md:hidden flex items-center gap-2 text-sm text-gray-300 hover:text-white font-mono uppercase tracking-widest border-b border-white/30 pb-1 transition-colors"
@@ -259,11 +249,10 @@ const Home: React.FC = () => {
                   <ArrowDown className="w-4 h-4 animate-bounce" />
                 </button>
             </div>
-
           </MotionDiv>
         </div>
 
-        {/* Scroll Indicator (Desktop Only) */}
+        {/* Scroll Indicator */}
         <MotionDiv 
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
@@ -303,7 +292,6 @@ const Home: React.FC = () => {
                     containerClassName="w-full h-full"
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                    />
-                   {/* Overlay Stats */}
                    <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-primary/90 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
                      <div className="grid grid-cols-2 gap-4 text-xs font-mono text-accent">
                         {project.specs.slice(0,2).map((s: any, i: number) => (
@@ -346,9 +334,7 @@ const Home: React.FC = () => {
                     transition={{ duration: 0.6, delay: i * 0.05, ease: "easeOut" }}
                     className="relative p-6 md:p-8 border border-neutral-light/10 bg-secondary group overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:border-accent/30 hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)]"
                 >
-                    {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-out pointer-events-none" />
-                    
                     <div className="relative z-10">
                         <div className="text-accent mb-6 transform transition-transform duration-500 ease-out group-hover:scale-110 ltr:origin-left rtl:origin-right">
                             {getIcon(service.icon)}
@@ -368,7 +354,6 @@ const Home: React.FC = () => {
             ))}
         </div>
 
-        {/* View All Services Button */}
         <div className="mt-12 flex justify-center">
             <Link 
               to="/services" 
@@ -382,14 +367,13 @@ const Home: React.FC = () => {
         </div>
       </Section>
 
-      {/* TESTIMONIALS SECTION */}
+      {/* TESTIMONIALS */}
       {testimonials.length > 0 && (
           <Section className="bg-secondary/20">
              <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-neutral-light">{t.common.testimonials}</h2>
                 <div className="w-20 h-1 bg-accent mx-auto" />
              </div>
-             
              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, i) => (
                     <MotionDiv
@@ -419,11 +403,11 @@ const Home: React.FC = () => {
           </Section>
       )}
 
-      {/* STATS BANNER */}
+      {/* STATS BANNER - Updated to 27+ Years */}
       <div className="bg-accent text-primary py-12 md:py-20 overflow-hidden">
          <div className="max-w-7xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             {[
-                { val: '24+', label: t.hero.stats.years },
+                { val: '27+', label: t.hero.stats.years },
                 { val: '2500+', label: t.hero.stats.projects },
                 { val: '12', label: t.hero.stats.awards },
             ].map((stat, i) => (

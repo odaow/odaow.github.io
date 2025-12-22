@@ -1,6 +1,9 @@
 
 import React, { useState, Suspense } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { HashRouter, Routes, Route, useLocation, Navigate } = ReactRouterDOM as any;
+const Router = HashRouter;
 import { AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import Layout from './components/Layout';

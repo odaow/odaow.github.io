@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { Link } = ReactRouterDOM as any;
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -36,6 +38,7 @@ const ArchitecturalSidebar = ({ side }: { side: 'left' | 'right' }) => {
 const LeadershipRow = ({ member, index }: { member: TeamMember, index: number }) => {
     const { direction, language } = useLanguage();
     const [isHovered, setIsHovered] = useState(false);
+    // Fix: Use any cast for motion components to avoid type errors
     const MotionDiv = motion.div as any;
 
     return (
@@ -92,14 +95,14 @@ const LeadershipRow = ({ member, index }: { member: TeamMember, index: number })
             {/* Subtle Specialty Background Graphic */}
             <AnimatePresence>
                 {isHovered && (
-                    <motion.div 
+                    <MotionDiv 
                         initial={{ opacity: 0, scale: 1.1, rotate: -5 }}
                         animate={{ opacity: 0.02, scale: 1, rotate: 0 }}
                         exit={{ opacity: 0 }}
                         className={`absolute top-0 ${direction === 'rtl' ? 'left-0' : 'right-0'} z-0 pointer-events-none`}
                     >
                          <Layers size={400} className="text-accent" strokeWidth={0.3} />
-                    </motion.div>
+                    </MotionDiv>
                 )}
             </AnimatePresence>
         </MotionDiv>
@@ -142,9 +145,12 @@ const About: React.FC = () => {
     }
   };
 
+  // Fix: Cast motion components to any to avoid property doesn't exist errors
   const MotionDiv = motion.div as any;
   const MotionPath = motion.path as any;
   const MotionRect = motion.rect as any;
+  const MotionLine = motion.line as any;
+  const MotionCircle = motion.circle as any;
 
   return (
     <div className="relative overflow-x-hidden">
@@ -183,7 +189,7 @@ const About: React.FC = () => {
                                 {language === 'ar' ? 'سنة التأسيس' : 'Established'}
                              </span>
                              <span className="text-xl md:text-2xl font-bold text-neutral-light tracking-tight block">
-                                {language === 'ar' ? 'طوباس، 2000' : 'Tubas, 2000'}
+                                {language === 'ar' ? 'طوباس، 1997' : 'Tubas, 1997'}
                              </span>
                         </div>
 
@@ -218,10 +224,12 @@ const About: React.FC = () => {
                                         <g opacity="0.4">
                                             <text x="0" y="-0.5" className="font-mono text-[0.6px] fill-accent uppercase font-black">Ref_13.00</text>
                                             <text x="13.5" y="-0.5" className="font-mono text-[0.6px] fill-accent uppercase font-black">Ref_08.00</text>
-                                            <motion.line x1="13" y1="0" x2="13" y2="-1" stroke="currentColor" strokeWidth="0.02" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} />
+                                            {/* Fix: Use casted MotionLine */}
+                                            <MotionLine x1="13" y1="0" x2="13" y2="-1" stroke="currentColor" strokeWidth="0.02" initial={{ scaleY: 0 }} animate={{ scaleY: 1 }} />
                                         </g>
 
-                                        <motion.circle cx="15" cy="10" r="0.25" fill="currentColor" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 4 }} />
+                                        {/* Fix: Use casted MotionCircle */}
+                                        <MotionCircle cx="15" cy="10" r="0.25" fill="currentColor" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ duration: 0.5, delay: 4 }} />
                                         
                                         <text x="16" y="9.8" className="font-mono text-[0.5px] fill-accent uppercase tracking-widest opacity-60 font-bold">
                                             PHI_CONSTRUCT
@@ -254,7 +262,7 @@ const About: React.FC = () => {
                         <div className="ps-6 md:ps-12 border-l border-neutral-light/5 space-y-20 md:space-y-32 relative">
                             <MotionDiv initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}>
                                 <div className="absolute -left-[3px] top-0 w-1.5 h-1.5 bg-accent rounded-full" />
-                                <span className="font-mono text-[9px] md:text-[10px] text-accent block mb-6 md:mb-8 tracking-[0.4em] uppercase font-black">YEAR_2000 // Inception</span>
+                                <span className="font-mono text-[9px] md:text-[10px] text-accent block mb-6 md:mb-8 tracking-[0.4em] uppercase font-black">YEAR_1997 // Inception</span>
                                 <p className="text-lg md:text-2xl text-neutral-light leading-relaxed font-light max-w-2xl tracking-tight">
                                     {t.about.history.content.split('. ')[0]}.
                                 </p>
@@ -302,7 +310,7 @@ const About: React.FC = () => {
                     </span>
                 </div>
                 <div className="text-center md:text-start border-y md:border-y-0 md:border-x border-primary/5 py-10 md:py-0 md:px-16">
-                    <span className="text-5xl md:text-8xl font-bold leading-none block tracking-[-0.08em] mb-2">24+</span>
+                    <span className="text-5xl md:text-8xl font-bold leading-none block tracking-[-0.08em] mb-2">27+</span>
                     <span className="font-mono text-[7px] md:text-[8px] uppercase tracking-[0.5em] md:tracking-[0.6em] font-black opacity-40">
                         {language === 'ar' ? 'عاماً من التفاني' : 'Years of Dedication'}
                     </span>
@@ -338,7 +346,7 @@ const About: React.FC = () => {
         {/* 5. CORE VALUES */}
         <Section className="pb-24 md:pb-48">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 md:px-0">
-                {t.about.values.items.map((v, i) => (
+                {t.about.values.items.map((v: any, i: number) => (
                     <MotionDiv 
                         key={i}
                         whileHover={{ y: -8 }}
@@ -378,7 +386,7 @@ const About: React.FC = () => {
                         <circle cx="200" cy="200" r="160" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="12 12" />
                         <text className="font-mono text-[10px] uppercase tracking-[0.8em] fill-current font-black">
                             <textPath href="#circlePathAbout">
-                                AL NEBRAS ENGINEERING OFFICE • PRECISION • AUTHORITY • VISION • EST. 2000 •
+                                AL NEBRAS ENGINEERING OFFICE • PRECISION • AUTHORITY • VISION • EST. 1997 •
                             </textPath>
                         </text>
                     </svg>

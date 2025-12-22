@@ -1,7 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { Link } = ReactRouterDOM as any;
 import Section from '../components/Section';
 import SEO from '../components/SEO';
 import OptimizedImage from '../components/OptimizedImage';
@@ -151,7 +153,7 @@ const BlogCard: React.FC<{ post: BlogPost, index: number, t: any }> = ({ post, i
                     alt={post.title} 
                     containerClassName="w-full h-full"
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" 
-                    onError={(e) => {
+                    onError={(e: any) => {
                         (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop';
                     }}
                 />

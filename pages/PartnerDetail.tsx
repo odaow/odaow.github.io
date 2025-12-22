@@ -1,6 +1,8 @@
 
 import React, { useState, useCallback, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+// Fix: Use namespace import and any casting to resolve named export issues
+import * as ReactRouterDOM from 'react-router-dom';
+const { useParams, Link } = ReactRouterDOM as any;
 import { useLanguage } from '../context/LanguageContext';
 import Section from '../components/Section';
 import SEO from '../components/SEO';
@@ -9,9 +11,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ExternalLink, Calendar, Briefcase, Mail, Award, MapPin, Phone, User, Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const PartnerDetail: React.FC = () => {
-  const { slug } = useParams<{ slug: string }>();
+  const { slug } = useParams();
   const { t, direction, partners } = useLanguage();
-  const partner = partners.find(p => p.slug === slug);
+  const partner = partners.find((p: any) => p.slug === slug);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const handleNextImage = useCallback(() => {
@@ -193,7 +195,7 @@ const PartnerDetail: React.FC = () => {
                     <Briefcase className="w-4 h-4" /> {t.common.servicesProvided}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {partner.services.map((service, index) => (
+                    {partner.services.map((service: string, index: number) => (
                         <div key={index} className="flex items-center gap-3 p-4 border border-neutral-light/10 bg-secondary rounded-sm hover:border-accent/30 transition-colors">
                             <div className="w-1.5 h-1.5 bg-accent rounded-full shrink-0" />
                             <span className="text-sm font-medium text-neutral-light">{service}</span>
@@ -213,7 +215,7 @@ const PartnerDetail: React.FC = () => {
                         <Maximize2 className="w-4 h-4" /> {t.common.gallery}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {partner.gallery.map((img, i) => (
+                        {partner.gallery.map((img: string, i: number) => (
                             <div 
                                 key={i} 
                                 className="aspect-[4/3] overflow-hidden rounded-sm border border-neutral-light/10 cursor-zoom-in relative group"
@@ -249,7 +251,7 @@ const PartnerDetail: React.FC = () => {
                     </button>
 
                     <button 
-                        onClick={(e) => { e.stopPropagation(); handlePrevImage(); }}
+                        onClick={(e: any) => { e.stopPropagation(); handlePrevImage(); }}
                         className="absolute start-2 md:start-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210]"
                     >
                         <ChevronLeft className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip" />
@@ -276,7 +278,7 @@ const PartnerDetail: React.FC = () => {
                     </MotionDiv>
 
                     <button 
-                        onClick={(e) => { e.stopPropagation(); handleNextImage(); }}
+                        onClick={(e: any) => { e.stopPropagation(); handleNextImage(); }}
                         className="absolute end-2 md:end-8 top-1/2 -translate-y-1/2 p-2 md:p-4 text-neutral-dim hover:text-accent hover:bg-white/10 rounded-full transition-all z-[210]"
                     >
                         <ChevronRight className="w-[32px] h-[32px] md:w-[40px] md:h-[40px] rtl-flip" />
