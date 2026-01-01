@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 // Fix: Use namespace import and any casting to resolve named export issues
 import * as ReactRouterDOM from 'react-router-dom';
@@ -10,6 +10,59 @@ import CustomCursor from './CustomCursor';
 import AnoLogo from './AnoLogo';
 import Footer from './Footer';
 import AiChatbot from './AiChatbot';
+
+// --- HIGH VISIBILITY HEADER SNOW (FIXED FOR LIGHT MODE) ---
+const HeaderSnow = () => {
+  const particles = useMemo(() => {
+    return Array.from({ length: 45 }).map((_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      delay: Math.random() * 5,
+      duration: 7 + Math.random() * 8,
+      size: Math.random() * 5 + 3, // Slightly larger
+      type: i % 4 === 0 ? '+' : i % 4 === 1 ? 'square' : i % 4 === 2 ? 'dot' : 'x',
+      opacity: 0.6 + Math.random() * 0.3 // Significantly higher opacity for light mode
+    }));
+  }, []);
+
+  const MotionDiv = motion.div as any;
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      {particles.map((p) => (
+        <MotionDiv
+          key={p.id}
+          className="absolute text-accent font-mono leading-none select-none"
+          style={{ 
+            left: `${p.x}%`, 
+            top: -20, 
+            fontSize: `${p.size}px`,
+            opacity: p.opacity,
+            // Added shadow for visibility on light backgrounds
+            filter: 'drop-shadow(0px 1px 1px rgba(0,0,0,0.15))'
+          }}
+          initial={{ y: -20 }}
+          animate={{ 
+            y: [0, 100],
+            rotate: [0, 360],
+            x: [`${p.x}%`, `${p.x + (Math.random() * 4 - 2)}%`]
+          }}
+          transition={{ 
+            duration: p.duration, 
+            repeat: Infinity, 
+            delay: p.delay,
+            ease: "linear"
+          }}
+        >
+          {p.type === '+' && '+'}
+          {p.type === 'square' && '▫'}
+          {p.type === 'dot' && '•'}
+          {p.type === 'x' && '×'}
+        </MotionDiv>
+      ))}
+    </div>
+  );
+};
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { t, language, toggleLanguage, direction } = useLanguage();
@@ -88,10 +141,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }}
       />
       
-      {/* AI Chatbot Widget (Self-Contained) */}
+      {/* AI Chatbot Widget */}
       <AiChatbot hidden={isMenuOpen} />
       
-      {/* Page Border Frame - Adaptive Color (Hidden on Home for Full Immersion) */}
       {!isHomePage && (
         <div className="fixed inset-0 pointer-events-none z-[55] border-[12px] md:border-[20px] border-primary transition-colors duration-500" />
       )}
@@ -99,11 +151,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* GLOBAL BACKGROUND PHOTO */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         {isHomePage ? (
-          // Home Page: Background handled inside Home.tsx or here if needed, 
-          // but usually Home.tsx has its own Hero. We leave this empty or minimal.
           null
         ) : (
-          // Internal Pages (Services, Projects, etc.): Refined Architectural Background
           <>
             <div 
               className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.15] dark:opacity-[0.1] grayscale"
@@ -117,18 +166,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         )}
       </div>
 
-      {/* Grid Background */}
       <div className="fixed inset-0 pointer-events-none z-0 blueprint-grid opacity-20" />
 
-      {/* Navigation - Increased Z-Index to 90 to be above Project Modal (z-60) */}
+      {/* Navigation */}
       <nav 
         className={`fixed w-full z-[90] top-0 left-0 right-0 transition-all duration-500 
         ${isHomePage && !scrolled ? 'bg-transparent border-transparent py-4' : 'bg-primary/90 backdrop-blur-md border-b border-neutral-light/5 py-0'}
         `}
       >
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+        {/* NEW YEAR HIGH VISIBILITY SNOW - Updated for Light/Dark Balance */}
+        <HeaderSnow />
+
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative z-10">
           
-          {/* 1. LEFT COLUMN: Logo (Fixed Width) */}
           <div className="w-[260px] flex justify-start">
             <NavLink 
               to="/" 
@@ -147,7 +197,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </NavLink>
           </div>
 
-          {/* 2. CENTER COLUMN: Navigation Links (Flex-1 Centered) */}
           <div className="hidden md:flex flex-1 justify-center items-center gap-6 lg:gap-8">
             {navLinks.map((link: any) => (
               <NavLink 
@@ -175,13 +224,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             ))}
           </div>
 
-          {/* 3. RIGHT COLUMN: Actions (Fixed Width) */}
           <div className="hidden md:flex w-[260px] justify-end items-center gap-4">
-            
-            {/* SETTINGS POD */}
             <div className={`h-10 flex items-center backdrop-blur-md border rounded-full px-2 gap-3 shadow-sm transition-colors ${isHomePage && !scrolled ? 'bg-black/30 border-white/10' : 'bg-secondary/80 border-neutral-light/10'}`}>
-                
-                {/* Language Toggle */}
                 <button 
                   onClick={toggleLanguage}
                   className={`flex items-center justify-center px-2 text-[10px] font-mono font-bold transition-colors h-full ${isHomePage && !scrolled ? 'text-white/80 hover:text-accent' : 'text-neutral-dim hover:text-accent'}`}
@@ -190,10 +234,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   {language === 'en' ? 'AR' : 'EN'}
                 </button>
 
-                {/* Divider */}
                 <div className="w-px h-3 bg-current opacity-20" />
 
-                {/* Theme Toggle */}
                 <button
                     onClick={toggleTheme}
                     className={`relative h-6 w-10 rounded-full border transition-colors hover:border-accent/30 ${isHomePage && !scrolled ? 'bg-black/40 border-white/20' : 'bg-primary/50 border-neutral-light/10'}`}
@@ -218,10 +260,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             >
               {t.nav.contact}
             </Link>
-
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button 
             className="md:hidden text-accent p-2 z-50"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -232,7 +272,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
           <MotionDiv 
@@ -285,7 +324,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         )}
       </AnimatePresence>
 
-      {/* Main Content - Flex-1 ensures it pushes footer down */}
       <main className={`${isHomePage ? 'pt-0' : 'pt-28'} flex-1 relative z-10 transition-colors duration-500`}>
         {children}
       </main>
