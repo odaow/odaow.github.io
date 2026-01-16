@@ -11,59 +11,6 @@ import AnoLogo from './AnoLogo';
 import Footer from './Footer';
 import AiChatbot from './AiChatbot';
 
-// --- HIGH VISIBILITY HEADER SNOW (FIXED FOR LIGHT MODE) ---
-const HeaderSnow = () => {
-  const particles = useMemo(() => {
-    return Array.from({ length: 45 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      delay: Math.random() * 5,
-      duration: 7 + Math.random() * 8,
-      size: Math.random() * 5 + 3, // Slightly larger
-      type: i % 4 === 0 ? '+' : i % 4 === 1 ? 'square' : i % 4 === 2 ? 'dot' : 'x',
-      opacity: 0.6 + Math.random() * 0.3 // Significantly higher opacity for light mode
-    }));
-  }, []);
-
-  const MotionDiv = motion.div as any;
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {particles.map((p) => (
-        <MotionDiv
-          key={p.id}
-          className="absolute text-accent font-mono leading-none select-none"
-          style={{ 
-            left: `${p.x}%`, 
-            top: -20, 
-            fontSize: `${p.size}px`,
-            opacity: p.opacity,
-            // Added shadow for visibility on light backgrounds
-            filter: 'drop-shadow(0px 1px 1px rgba(0,0,0,0.15))'
-          }}
-          initial={{ y: -20 }}
-          animate={{ 
-            y: [0, 100],
-            rotate: [0, 360],
-            x: [`${p.x}%`, `${p.x + (Math.random() * 4 - 2)}%`]
-          }}
-          transition={{ 
-            duration: p.duration, 
-            repeat: Infinity, 
-            delay: p.delay,
-            ease: "linear"
-          }}
-        >
-          {p.type === '+' && '+'}
-          {p.type === 'square' && '▫'}
-          {p.type === 'dot' && '•'}
-          {p.type === 'x' && '×'}
-        </MotionDiv>
-      ))}
-    </div>
-  );
-};
-
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { t, language, toggleLanguage, direction } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -174,9 +121,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         ${isHomePage && !scrolled ? 'bg-transparent border-transparent py-4' : 'bg-primary/90 backdrop-blur-md border-b border-neutral-light/5 py-0'}
         `}
       >
-        {/* NEW YEAR HIGH VISIBILITY SNOW - Updated for Light/Dark Balance */}
-        <HeaderSnow />
-
         <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between relative z-10">
           
           <div className="w-[260px] flex justify-start">

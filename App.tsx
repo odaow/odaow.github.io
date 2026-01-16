@@ -1,5 +1,4 @@
-
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, Component } from 'react';
 // Fix: Use namespace import and any casting to resolve named export issues
 import * as ReactRouterDOM from 'react-router-dom';
 const { HashRouter, Routes, Route, useLocation, Navigate } = ReactRouterDOM as any;
@@ -31,9 +30,9 @@ const ScrollToTop = () => {
     return null;
 };
 
-// Error Boundary
-class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
-  constructor(props: any) {
+// Error Boundary - Properly typed class component
+class ErrorBoundary extends Component<{children: React.ReactNode}, {hasError: boolean}> {
+  constructor(props: {children: React.ReactNode}) {
     super(props);
     this.state = { hasError: false };
   }
@@ -47,6 +46,7 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
   }
 
   render() {
+    // Explicitly using this.state as defined by Component generic
     if (this.state.hasError) {
       return (
         <div className="flex items-center justify-center min-h-screen bg-primary text-accent font-mono text-center p-4">

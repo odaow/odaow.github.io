@@ -7,57 +7,6 @@ interface PreloaderProps {
   onComplete: () => void;
 }
 
-// --- ENHANCED TECHNICAL SNOW COMPONENT ---
-const TechnicalSnow = ({ count = 80 }) => {
-  const particles = useMemo(() => {
-    return Array.from({ length: count }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      delay: Math.random() * 5,
-      duration: 8 + Math.random() * 12,
-      size: Math.random() * 4 + 2,
-      type: i % 4 === 0 ? '+' : i % 4 === 1 ? 'square' : i % 4 === 2 ? 'triangle' : 'dot',
-      opacity: 0.3 + Math.random() * 0.4
-    }));
-  }, [count]);
-
-  const MotionDiv = motion.div as any;
-
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-      {particles.map((p) => (
-        <MotionDiv
-          key={p.id}
-          className="absolute text-accent font-mono filter drop-shadow-[0_0_2px_rgba(var(--color-accent),0.5)]"
-          style={{ 
-            left: `${p.x}%`, 
-            top: -20, 
-            fontSize: `${p.size}px`,
-            opacity: p.opacity 
-          }}
-          initial={{ y: -20 }}
-          animate={{ 
-            y: ['0vh', '110vh'],
-            rotate: [0, 360],
-            x: [`${p.x}%`, `${p.x + (Math.random() * 6 - 3)}%`]
-          }}
-          transition={{ 
-            duration: p.duration, 
-            repeat: Infinity, 
-            delay: p.delay,
-            ease: "linear"
-          }}
-        >
-          {p.type === '+' && '+'}
-          {p.type === 'square' && <div className="w-1.5 h-1.5 border border-accent" />}
-          {p.type === 'triangle' && '△'}
-          {p.type === 'dot' && '•'}
-        </MotionDiv>
-      ))}
-    </div>
-  );
-};
-
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [count, setCount] = useState(0);
   const { language } = useLanguage();
@@ -99,9 +48,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 1, ease: [0.76, 0, 0.24, 1] } }}
     >
-      {/* High Visibility Snow */}
-      <TechnicalSnow count={100} />
-
       {/* Blueprint Grid Drawing */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <svg width="100%" height="100%">

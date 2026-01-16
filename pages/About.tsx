@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 // Fix: Use namespace import and any casting to resolve named export issues
@@ -34,8 +33,9 @@ const ArchitecturalSidebar = ({ side }: { side: 'left' | 'right' }) => {
 
 /**
  * Human Authority Row Component (Leadership)
+ * Use React.FC to handle key prop correctly
  */
-const LeadershipRow = ({ member, index }: { member: TeamMember, index: number }) => {
+const LeadershipRow: React.FC<{ member: TeamMember; index: number }> = ({ member, index }) => {
     const { direction, language } = useLanguage();
     const [isHovered, setIsHovered] = useState(false);
     // Fix: Use any cast for motion components to avoid type errors

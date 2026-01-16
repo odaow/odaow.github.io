@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 // Fix: Use namespace import and any casting to resolve named export issues
 import * as ReactRouterDOM from 'react-router-dom';
@@ -38,7 +37,8 @@ const HERO_SLIDES = [
   }
 ];
 
-const StatItem = ({ value, label }: { value: string, label: string }) => {
+// Use React.FC to handle key prop correctly
+const StatItem: React.FC<{ value: string; label: string }> = ({ value, label }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-20%" });
     const count = useMotionValue(0);
